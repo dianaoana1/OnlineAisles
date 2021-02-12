@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "user-settings.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <div class = "user-login-form">
+        <form action = "change password">
+            <label>Username : </label>
+            <input type = "text" onfocus = "this.value = ''" name = "usrNm" value = " Email address / username" size = "19"/>
+            <br/>
+            <br/>
+            <label>Current Password : </label>
+            <input type = "text" name = "current-psw" size = "12" maxlength = "12"/>
+            <br/>
+            <br/>
+            <label>New Password : </label>
+            <input type = "text" name = "new-psw" size = "12" maxlength = "12" minlength = "6"/>
+            <p class = "password-limitations">
+                <style> p {color:red;}</style>
+                Must be 6-12 characters long with at least one special character and uppercase letter.
+            </p>
+
+            <label>Confirm Password : </label>
+            <input type = "text" onfocus = "this.value = ''" name = "new-psw" value = " Re-enter new password" size = "17" maxlength = "12"/>
+        </form>
+    </div>
+    
+
+    <div class = "button">
+        
+    </div>
+</body>
+</html>
