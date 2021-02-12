@@ -1,0 +1,16 @@
+body {
+    margin: 15px;
+    padding: 10px;
+}
+nav{
+    display: block;
+    background-color:  rgb(73, 73, 73);
+    color: white; 
+}
+
+.sidenav {
+    color: white;
+    background-color: rgb(73, 73, 73);
+    width:auto;
+    height: auto;
+}

@@ -1,0 +1,21 @@
+body {
+    margin: 10px;
+    padding: 15px;
+    background-color: rgb(73, 73, 73);
+}
+
+.form-box {
+    background-color: darkgrey;
+    padding: 10px;
+    height: 100px;
+    color:black;
+}
+.column1 {
+    
+    float: left;
+}
+
+.column2 {
+    background-color: lightgray;
+    float: right;
+}
