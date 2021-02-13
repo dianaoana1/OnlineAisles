@@ -17,22 +17,122 @@
         }
     </style>
     <link rel = "stylesheet" type = "text/css" href = "\CSS\Back end\account-info.css"/>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+        <a class="navbar-brand" href="\html\Main Page.html">Online Grocery Store</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="\html\Aisle.html" target="_self">Aisles</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="\html\Promotions.html" target="_self">Weekly Promotions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="\html\Shopping Cart.html" target="_blank">My Cart</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="\html\Login.html" target = "_blank">Login / Sign up</a>
+                </li>
+                <li class = "nav-item">
+                    <a class = "nav-link" href = "\html\user-settings.html"> <img id = "settings-logo" src = "\Images\settings-icon.jpg" width = 30px height = 30px alt = "Settings"/> </a>
+                    <!--image src: https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.pinimg.com%2F474x%2F6b%2Fd3%2F8a%2F6bd38aa501f07e08932445c0f8432219.jpg&imgrefurl=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F366128644712545178%2F&tbnid=uvqtjmu4fpkDVM&vet=12ahUKEwjfnNb5mePuAhVJjOAKHes0DOUQMygCegUIARDcAQ..i&docid=ZIUDOoywpL9OsM&w=300&h=300&q=settings%20icon&ved=2ahUKEwjfnNb5mePuAhVJjOAKHes0DOUQMygCegUIARDcAQ-->
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br>
 </head>
 <body>
+    <div class = "sidenav">
+        <a href = "change password.html"> Change Password</a> <br/>
+        <a href = "account-info.html"> Account Info</a> <br/>
+        <a href = "delete-user.html">Delete Account</a> <br/>
+    </div>
     <div class = "form-box">
         <div class = "column1">
+            <h3>Contact Info : </h3>
             <form  action = "">
-                    <label>First Name : </label>
-                    <input type = "text" name = "first-name" size = "20" minlength = "1"/>
-    
-            </form>        
-        </div>
-        <div class = "column2">
-            <form  action = "">
-                <label>Last Name : </label>
-                <input type = "text" name = "first-name" size = "20" minlength = "1"/>
+                <p>
+                    <div class = "column1-left">
+                        <p>
+                            <label>First Name : </label>
+                            <br/>
+                            <input type = "text" name = "first-name" size = "30" minlength = "1"/>
+                        </p>
+                        <p>
+                            <label>Primary Email : </label>
+                            <br/>
+                            <input type = "text" name = "email" size = "30"/>
+                        </p>
+                        <p>
+                            <label>Primary Phone : </label>
+                            <br/>
+                            <input type = "text" name = "phone1" size = "30" minlength = "10"/>
+                        </p>
+                    </div>
+
+                    <div class = "column1-right">
+                        <p>
+                            <label>Last Name : </label>
+                            <br/>
+                            <input type = "text" name = "first-name" size = "30" minlength = "1"/>
+                        </p>
+                        <p>
+                            <label>Recovery Email : </label>
+                            <br/>
+                            <input type = "text" name = "recovery-email" size = "30"/>
+                        </p>
+                        <p>
+                            <label>Secondary Phone : </label>
+                            <br/>
+                            <input type = "text" name = "phone2" size = "30" minlength = "10"/> 
+                        </p>
+                    </div>
+                </p>
             </form>
         </div>
+
+        <div class = "column2">
+            <h3>Billing Address:</h3>
+                <form action = "">
+                    <p>
+                    <div class = "column2-inner">
+                        <p>
+                            <label>Address Line 1 : </label>
+                            <input type = "text" name = "address-L1" size = "20" minlength = "1"/>
+                            <br/>
+                            <label>Address Line 2 : </label>
+                            <input type = "text" name = "address-L2" size = "20"/>
+                            <br/>
+                            <label>P.O. Box : </label>
+                            <input type = "text" name = "PO-box" size = "27"/>
+                            <br/>
+                            <label>Postal Code : </label>
+                            <input type = "text" name = "postal-code" size = "23"/>
+                            <br/>
+                            <label>City : </label>
+                            <input type = "text" name = "city" size = "31" minlength = "1"/>
+                            <br/>
+                            <label>Province/State : </label>
+                            <input type = "text" name = "province/state" size = "20" minlength = "1"/>
+                            <br/>
+                            <label>Country : </label>
+                            <select id="country" name="country">
+                                <option value="Canada">Canada</option>
+                                <option value = "USA"> United States</option>
+                            </select>
+                        </p>
+                    </div>
+
+                    <br/>
+
+                    </p>
+                </form>
+        </div>
+
     </div>
 
 </body>
