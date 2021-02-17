@@ -6,24 +6,182 @@
         </title>
     </head>
     <body>
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+            <a class="navbar-brand" href="">Online Grocery Store</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Aisle.html" target="_self">Aisles</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="Promotions.html" target="_self">Weekly Promotions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Shopping Cart.html" target="_blank">My Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Login.html" target = "_blank">Login / Sign up</a>
+                    </li>
+                    <li class = "nav-item">
+                        <a class = "nav-link" href = "user-settings.html"> <img id = "settings-logo" src = "..\Images\settings-icon.jpg" width = 30px height = 30px alt = "Settings"/> </a>
+                        <!--image src: https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.pinimg.com%2F474x%2F6b%2Fd3%2F8a%2F6bd38aa501f07e08932445c0f8432219.jpg&imgrefurl=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F366128644712545178%2F&tbnid=uvqtjmu4fpkDVM&vet=12ahUKEwjfnNb5mePuAhVJjOAKHes0DOUQMygCegUIARDcAQ..i&docid=ZIUDOoywpL9OsM&w=300&h=300&q=settings%20icon&ved=2ahUKEwjfnNb5mePuAhVJjOAKHes0DOUQMygCegUIARDcAQ-->
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <br>
         <div class="page-content">
-            <p>Already have an OnlineGorceryStore.ca account? <a href=Login.html>Sign in</a></p>
-            <div class="card">
-                <h1>
-                    Do you have an OGS membership card?
-                </h1>
-                <div class="check">
-                    <table class="selection">
-    
-                    </table>
+            <p>Already have an onlinegorcerystore.ca account? <a href=Login.html>Sign in</a></p>
+            <p>* mentadory field</p>
+            <form class="sign-up-form">
+                <div class="card">
+                    <h1>
+                        *Do you have an OGS membership card?
+                    </h1>
+                    <div class="check">
+                        <table class="selection" style="width:30%">
+                            <tr>
+                                <td><input type="radio" name="havecard" value="Yes" /> I already have a card
+                                    <p>and I would like to create an onlinegorcerystore.ca profile to access my personalized offers.</p>
+                                </td>
+                                <td><input type="radio" name="havecard" value="Want" /> I want an OGS membership card
+                                    <p>to access all the perks of the program including personalized offers.</p>
+                                </td>
+                                <td><input type="radio" name="havecard" value="No" /> I do not want an OGS membership card
+                                    <p>but I wish to create an onlinegrocerystore.ca profile to shop online or recieve the newsletter.</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-            </div>
-            <div class="personal-info">
-                <h1>Personal Information</h1>
-                <div class="signup-form">
-    
+                <div class="personal-info">
+                    <h1>Personal Information</h1>
+                    <div class="signup-form">
+                        <table class="personal-info-inputs" style="width:30%">
+                            <form class="personal-info-form"></form>
+                                <tr>
+                                    <label for="Title">*TITLE</label><br>
+                                    <select id="Title" name="Title">
+                                        <option value="Select">Select your title</option>
+                                        <option value="Mr.">Mr.</option>
+                                        <option value="Mrs.">Mrs.</option>
+                                        <option value="Miss">Miss</option>
+                                        <option value="Ms.">Ms.</option>
+                                    </select>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="FirstName">*FIRST NAME</label><br>
+                                        <input type="text" id="FirstName" name="FirstName">
+                                    </td>
+                                    <td>
+                                        <label for="LastName">*LAST NAME</label><br>
+                                        <input type="text" id="LastName" name="LastName">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" id="CorporateClient" name="CorporateClient">
+                                        <label for="CorporateClient">Corporate Client</label>
+                                    </td>
+                                    <td>
+                                        <label for="CompanyName">COMPANY NAME</label><br>
+                                        <input type="text" id="CompanyName" name="CompanyName">
+                                    </td>
+                                </tr>
+                            </form>
+                        </table>
+                    </div>
                 </div>
-            </div>
+                <div class="contact-information">
+                    <h1>Contact Information</h1>
+                    <div class="contact-info-form">
+                        <table class="contact-info-table" style="width:30%" >
+                            <tr>
+                                <td>
+                                    <label for="Address">*ADDRESS LINE 1 (No, Street)</label><br>
+                                    <input type="text" id="Address" name="Address">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="Address">ADDRESS LINE 2 (No, Street)</label><br>
+                                    <input type="text" id="Address" name="Address">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="Apartment">APARTMENT</label><br>
+                                    <input type="text" id="Apartment" name="Apartment">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="City">*CITY</label><br>
+                                    <input type="text" id="City" name="City">
+                                </td>
+                                <td>
+                                    <label for="province">*PROVINCE</label><br>
+                                    <select id="province" name="province">
+                                        <option value="select">Select your province</option>
+                                        <option value="Alberta">Alberta</option>
+                                        <option value="British Columbia">British Columbia</option>
+                                        <option value="Manitoba">Manitoba</option>
+                                        <option value="New Brunswick">New Brunswick</option>
+                                        <option value="Newfoundland And Labrador">Newfoundland And Labrador</option>
+                                        <option value="Northwest Territories">Northwest Territories</option>
+                                        <option value="Nova Scotia">Nova Scotia</option>
+                                        <option value="Nunavut">Nunavut</option>
+                                        <option value="Ontario">Ontario</option>
+                                        <option value="Prince Edward Island">Prince Edward Island</option>
+                                        <option value="Quebec">Quebec</option>
+                                        <option value="Saskatchewan">Saskatchewan</option>
+                                        <option value="Yukon">Yukon</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="Postal Code">*POSTAL CODE</label><br>
+                                    <input type="text" class="Postal Code" name="Postal Code">
+                                </td>
+                                <td>
+                                    <label for="telephone">PHONE NUMBER</label><br>
+                                    <input type="text" class="telephone" name="telephone">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="email">EMAIL</label><br>
+                                    <input type="text" class="email" name="email">
+                                </td>
+                                <td>
+                                    <label for="confirm-email">CONFIRM EMAIL</label><br>
+                                    <input type="text" class="confirm-email" name="confirm-email">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="password">PASSWORD</label><br>
+                                    <input type="text" class="password" name="password">
+                                </td>
+                                <td>
+                                    <label for="confirm-password">CONFIRM PASSWORD</label><br>
+                                    <input type="text" class="confirm-password" name="confirm-password">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <input type="checkbox" class="terms" name="terms">
+                <label for="terms">I accept the Online Grocery Store terms and conditions.</label><br>
+                <input type="checkbox" class="newsletter" name="newsletter">
+                <label for="newsletter">I wish to receive our newsletter by email to stay up to date with our latest offers.</label><br>
+                <input type="submit" value="Submit">
+            </form>
         </div>
     </body>
 </html>
