@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Account Info</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link rel = "stylesheet" type = "text/css" href = "\CSS\Back end\account-info copy.css"/>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
+        <a class="navbar-brand" href="Main Page.html">Online Grocery Store</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <div class="dropdown show">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aisles</a>
+                    
+                    <div class="dropdown-menu" aria-labelledby="dropdown03">
+                        <a class="dropdown-item" href="Product links/fruits and veggies.html" target="_self">Fruits and Vegetables</a>
+                        <a class="dropdown-item" href="Product links/meats and poultry.html" target="_self"> Meats and Poultry </a>
+                        <a class="dropdown-item" href="Product links/seafood.html" target="_self">Seafood </a>
+                        <a class="dropdown-item" href="Product links/dairy and eggs.html" target="_self">Dairy and Eggs </a>
+                        <a class="dropdown-item" href="Product links/cereal products.html" target="_self">Cereal Products </a>
+                        <a class="dropdown-item" href="Product links/alcoholic beverages.html" target="_self">Alcoholic Beverages </a>
+                    </div>
+                </li>
+                <li>
+                    <a class="nav-link" href="Promotions.html" target="_self">Weekly Promotions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Login.html" target="_blank">Login / Sign up</a>
+                </li>
+                <li class="nav-item">
+                    <li class="nav-item dropdown">
+                        <div class="dropdown show">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#9881;</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown03">
+                            <a class="dropdown-item" href="change password.html" target="_blank"> Change Password</a>
+                            <a class="dropdown-item" href="account-info.html" target="_self"> Account Info</a></a>
+                            <a class="dropdown-item" href="delete-user.html" target = "_blank">Delete Account</a>
+                        </div>
+                        
+                    </li>
+                    
+                </li>
+                
+                
+            </ul>
+            <div class="shopping-cart-holder">
+                <a class="nav-link shopping-cart" href="shopping_cart.html">&#128722; </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class = "form-box">
+        <div class = "buttons">
+            <button type = "text" name = "save-button" style = "font-weight: bold;">Save Changes</button>
+            <button type = "text" name = "revert-button" style = "font-weight: bold;">Revert Changes</button>
+            <button type = "text" class = "reset button" name = "reset-button" style = "font-weight: bold; color:rgb(226, 5, 5)">Reset</button>
+            <br/>
+        </div>
+
+        <div class = "column1">
+            <h3>Contact Info : </h3>
+            <form  action = "">
+                <p>
+                    <div class = "column1-left">
+                        <p>
+                            <label>First Name : </label>
+                            <br/>
+                            <input type = "text" name = "first-name" size = "30" minlength = "1"/>
+                        </p>
+                        <p>
+                            <label>Primary Email : </label>
+                            <br/>
+                            <input type = "text" name = "email" size = "30"/>
+                        </p>
+                        <p>
+                            <label>Primary Phone : </label>
+                            <br/>
+                            <input type = "text" name = "phone1" size = "30" minlength = "10"/>
+                        </p>
+                    </div>
+
+                    <div class = "column1-right">
+                        <p>
+                            <label>Last Name : </label>
+                            <br/>
+                            <input type = "text" name = "first-name" size = "30" minlength = "1"/>
+                        </p>
+                        <p>
+                            <label>Recovery Email : </label>
+                            <br/>
+                            <input type = "text" name = "recovery-email" size = "30"/>
+                        </p>
+                        <p>
+                            <label>Secondary Phone : </label>
+                            <br/>
+                            <input type = "text" name = "phone2" size = "30" minlength = "10"/> 
+                        </p>
+                    </div>
+                </p>
+            </form>
+        </div>
+
+        <div class = "column2">
+            <h3>Billing Address:</h3>
+                <form action = "">
+                    <p>
+                    <div class = "column2-inner">
+                        <p>
+                            <label>Address Line 1 : </label>
+                            <input type = "text" name = "address-L1" size = "20" minlength = "1"/>
+                            <br/>
+                            <label>Address Line 2 : </label>
+                            <input type = "text" name = "address-L2" size = "20"/>
+                            <br/>
+                            <label>P.O. Box : </label>
+                            <input type = "text" name = "PO-box" size = "27"/>
+                            <br/>
+                            <label>Postal Code : </label>
+                            <input type = "text" name = "postal-code" size = "23"/>
+                            <br/>
+                            <label>City : </label>
+                            <input type = "text" name = "city" size = "31" minlength = "1"/>
+                            <br/>
+                            <label>Province/State : </label>
+                            <input type = "text" name = "province/state" size = "20" minlength = "1"/>
+                            <br/>
+                            <label>Country : </label>
+                            <select id="country" name="country">
+                                <option value="Canada">Canada</option>
+                                <option value = "USA"> United States</option>
+                            </select>
+                        </p>
+                    </div>
+
+                    <br/>
+
+                    </p>
+                </form>
+        </div>
+
+    </div>
+
+</body>
+</html>
