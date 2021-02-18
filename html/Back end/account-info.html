@@ -11,23 +11,29 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <style>
-        body {
-            padding-top: 50px
-        }
-    </style>
+
     <link rel = "stylesheet" type = "text/css" href = "\CSS\Back end\account-info.css"/>
+</head>
+<body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
         <a class="navbar-brand" href="Main Page.html">Online Grocery Store</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
-
-
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="Aisle.html" target="_self">Aisles</a>
+                <li class="nav-item dropdown">
+                    <div class="dropdown show">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aisles</a>
+                    
+                    <div class="dropdown-menu" aria-labelledby="dropdown03">
+                        <a class="dropdown-item" href="Product links/fruits and veggies.html" target="_self">Fruits and Vegetables</a>
+                        <a class="dropdown-item" href="Product links/meats and poultry.html" target="_self"> Meats and Poultry </a>
+                        <a class="dropdown-item" href="Product links/seafood.html" target="_self">Seafood </a>
+                        <a class="dropdown-item" href="Product links/dairy and eggs.html" target="_self">Dairy and Eggs </a>
+                        <a class="dropdown-item" href="Product links/cereal products.html" target="_self">Cereal Products </a>
+                        <a class="dropdown-item" href="Product links/alcoholic beverages.html" target="_self">Alcoholic Beverages </a>
+                    </div>
                 </li>
                 <li>
                     <a class="nav-link" href="Promotions.html" target="_self">Weekly Promotions</a>
@@ -36,36 +42,29 @@
                     <a class="nav-link" href="Login.html" target="_blank">Login / Sign up</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Back end\account-info.html"> &#9881; </a>
-                    
+                    <li class="nav-item dropdown">
+                        <div class="dropdown show">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#9881;</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown03">
+                            <a class="dropdown-item" href="change password.html" target="_blank"> Change Password</a>
+                            <a class="dropdown-item" href="account-info.html" target="_self"> Account Info</a></a>
+                            <a class="dropdown-item" href="delete-user.html" target = "_blank">Delete Account</a>
+                        </div>
+                    </li>
                 </li>
-                
-                <li class="nav-item dropdown">
-                    <div class="dropdown-menu" aria-labelledby="dropdown03">
-                        <a class="dropdown-item" href="Aisle.html" target="_self">Aisles</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
+
             </ul>
             <div class="shopping-cart-holder">
-                <a class="nav-link shopping-cart" href="shopping_cart.html" target = "_blank">&#128722; </a>
+                <a class="nav-link shopping-cart" href="shopping_cart.html">&#128722; </a>
             </div>
         </div>
     </nav>
-    <br>
-</head>
-<body>
-    <div class = "sidenav">
-        <a href = "change password.html"> Change Password</a> <br/>
-        <a href = "account-info.html"> Account Info</a> <br/>
-        <a href = "delete-user.html">Delete Account</a> <br/>
-    </div>
+
     <div class = "form-box">
         <div class = "buttons">
-            <button type = "text" name = "save-button" style = "font-weight: bold;">Save Changes</button>
-            <button type = "text" name = "revert-button" style = "font-weight: bold;">Revert Changes</button>
-            <button type = "text" class = "reset button" name = "reset-button" style = "font-weight: bold; color:rgb(226, 5, 5)">Reset</button>
+            <button type = "text" name = "save-button" style = "font-weight: bold; background-color: rgb(13, 216, 6);" class = "btn btn-primary">Save Changes</button>
+            <button type = "text" name = "revert-button" style = "font-weight: bold;" class = "btn btn-primary">Revert Changes</button>
+            <button type = "text" name = "reset-button" style = "font-weight: bold; background-color:rgb(226, 5, 5)" class = "btn btn-primary">Reset</button>
             <br/>
         </div>
 
