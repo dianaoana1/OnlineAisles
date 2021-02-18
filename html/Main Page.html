@@ -13,7 +13,7 @@
         body {
             padding-top: 50px
         }
-        
+
         .shopping-cart-holder .shopping-cart {
             font-size: 20px;
             text-align: center;
@@ -22,7 +22,17 @@
         .nav-item {
             text-align: center !important;
         }
-        
+
+        .container {
+            width: 100% !important;
+            padding: 0px !important;
+            margin: 0px !important;
+        }
+
+        .row {
+            width: 100% !important;
+            margin: 0px !important;
+        }
     </style>
 </head>
 
@@ -34,8 +44,8 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            
-            
+
+
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="Aisle.html" target="_self">Aisles</a>
@@ -57,9 +67,9 @@
             <div class="shopping-cart-holder">
                 <a class="nav-link shopping-cart" href="shopping_cart.html">&#128722; </a>
             </div>
-            
-            
-            
+
+
+
             <!--<ul class="navbar-nav">
                 <li>
                     <a class="nav-link" href="Promotions.html" target="_self">Weekly Promotions</a>
@@ -84,33 +94,44 @@
     <br>
 
     <div class="container">
-        <h1>Welcome to the <em>Online Grocery Store</em> !</h1>
-        <p>This is a course taught at <a href="https://concordia.ca">Concordia University</a> in Montreal, Canada.</p>
-        <p>Follow the links in the navigation bar for more details.</p>
+        <div class="row">
+            <h1>Welcome to the <em>Online Grocery Store</em> !</h1>
+            <p>This is a course taught at <a href="https://concordia.ca">Concordia University</a> in Montreal, Canada.
+            </p>
+            <p>Follow the links in the navigation bar for more details.</p>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="quick links">
+                    <p> Quick links:
+                        <a class="nav-link" href="Product links/fruits and veggies.html" target="_self">Fruits and
+                            Vegetables</a>
+                        <a class="nav-link" href="Product links/meats.html" target="_self">Meat Products</a>
+                        <a class="nav-link" href="Product links/seafood.html" target="_self">Fish and Seafood</a>
+                        <a class="nav-link" href="Product links/cheese and deli.html" target="_self">Cheese and Deli</a>
+                        <a class="nav-link" href="Product links/alcoholic beverages.html" target="_self">Alcoholic
+                            Beverages</a>
+                        <a class="nav-link" href="Product links/other.html" target="_self">Other</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h3> Contact Info</h3>
+            <div class="row">
+                <dt class="col-sm-3">Address :</dt>
+                <dd class="col-sm-9"> 123 Main Street</dd>
+                <dt class="col-sm-3">Tel. :</dt>
+                <dd class="col-sm-9"><a href="514-123-4567">514-123-4567</a></dd>
+                <dt class="col-sm-3">Email :</dt>
+                <dd class="col-sm-9"><a
+                        href="mailto:zixi.quan@concordia.ca?subject=SOEN287">online_grocerystore@groceries.ca</a>
+                </dd>
+            </div>
+        </div>
     </div>
-    <div class="quick links">
-        <p> Quick links:
-            <a class="nav-link" href="Product links/fruits and veggies.html" target="_self">Fruits and Vegetables</a>
-            <a class="nav-link" href="Product links/meats.html" target="_self">Meat Products</a>
-            <a class="nav-link" href="Product links/seafood.html" target="_self">Fish and Seafood</a>
-            <a class="nav-link" href="Product links/cheese and deli.html" target="_self">Cheese and Deli</a>
-            <a class="nav-link" href="Product links/alcoholic beverages.html" target="_self">Alcoholic Beverages</a>
-            <a class="nav-link" href="Product links/other.html" target="_self">Other</a>
-        </p>
-    </div>
-    <div class="container">
-        <h3> Contact Info</h3>
-        <dl class="row">
-            <dt class="col-sm-3">Address :</dt>
-            <dd class="col-sm-9"> 123 Main Street</dd>
-            <dt class="col-sm-3">Tel. :</dt>
-            <dd class="col-sm-9"><a href="514-123-4567">514-123-4567</a></dd>
-            <dt class="col-sm-3">Email :</dt>
-            <dd class="col-sm-9"><a
-                    href="mailto:zixi.quan@concordia.ca?subject=SOEN287">online_grocerystore@groceries.ca</a>
-            </dd>
-        </dl>
-    </div>
+
+   
 
 </body>
 
