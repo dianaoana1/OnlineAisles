@@ -13,6 +13,16 @@
         body {
             padding-top: 50px
         }
+        
+        .shopping-cart-holder .shopping-cart {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .nav-item {
+            text-align: center !important;
+        }
+        
     </style>
 </head>
 
@@ -24,24 +34,51 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-                <li class="nav-item">
+            
+            
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
                     <a class="nav-link" href="Aisle.html" target="_self">Aisles</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <div class="dropdown-menu" aria-labelledby="dropdown03">
+                        <a class="dropdown-item" href="Aisle.html" target="_self">Aisles</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="shopping-cart-holder">
+                <a class="nav-link shopping-cart" href="shopping_cart.html">&#128722; </a>
+            </div>
+            
+            
+            
+            <!--<ul class="navbar-nav">
                 <li>
                     <a class="nav-link" href="Promotions.html" target="_self">Weekly Promotions</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Shopping Cart.html" target="_blank">My Cart</a>
+                    <a class="nav-link" href="shopping_cart.html" target="_blank">My Cart</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Login.html" target = "_blank">Login / Sign up</a>
+                    <a class="nav-link" href="Login.html" target="_blank">Login / Sign up</a>
                 </li>
-                <li class = "nav-item">
-                    <a class = "nav-link" href = "user-settings.html"> <img id = "settings-logo" src = "..\Images\settings-icon.jpg" width = 30px height = 30px alt = "Settings"/> </a>
-                    <!--image src: https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.pinimg.com%2F474x%2F6b%2Fd3%2F8a%2F6bd38aa501f07e08932445c0f8432219.jpg&imgrefurl=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F366128644712545178%2F&tbnid=uvqtjmu4fpkDVM&vet=12ahUKEwjfnNb5mePuAhVJjOAKHes0DOUQMygCegUIARDcAQ..i&docid=ZIUDOoywpL9OsM&w=300&h=300&q=settings%20icon&ved=2ahUKEwjfnNb5mePuAhVJjOAKHes0DOUQMygCegUIARDcAQ-->
+                <li class="nav-item">
+                    <a class="nav-link" href="user-settings.html"> <img id="settings-logo"
+                            src="..\Images\settings-icon.jpg" width=30px height=30px alt="Settings" /> </a>
+                    
                 </li>
-            </ul>
+                <li class="nav-item">
+                    <a class="nav-link shopping-cart" href="shopping_cart.html">&#128722; </a>
+                </li>
+            </ul>!-->
         </div>
     </nav>
     <br>
@@ -51,14 +88,14 @@
         <p>This is a course taught at <a href="https://concordia.ca">Concordia University</a> in Montreal, Canada.</p>
         <p>Follow the links in the navigation bar for more details.</p>
     </div>
-    <div class = "quick links">
+    <div class="quick links">
         <p> Quick links:
-        <a class="nav-link" href="Product links/fruits and veggies.html" target="_self">Fruits and Vegetables</a>
-        <a class="nav-link" href="Product links/meats.html" target="_self">Meat Products</a>
-        <a class="nav-link" href="Product links/seafood.html" target="_self">Fish and Seafood</a>
-        <a class="nav-link" href="Product links/cheese and deli.html" target="_self">Cheese and Deli</a>
-        <a class="nav-link" href="Product links/alcoholic beverages.html" target="_self">Alcoholic Beverages</a>
-        <a class="nav-link" href="Product links/other.html" target="_self">Other</a>
+            <a class="nav-link" href="Product links/fruits and veggies.html" target="_self">Fruits and Vegetables</a>
+            <a class="nav-link" href="Product links/meats.html" target="_self">Meat Products</a>
+            <a class="nav-link" href="Product links/seafood.html" target="_self">Fish and Seafood</a>
+            <a class="nav-link" href="Product links/cheese and deli.html" target="_self">Cheese and Deli</a>
+            <a class="nav-link" href="Product links/alcoholic beverages.html" target="_self">Alcoholic Beverages</a>
+            <a class="nav-link" href="Product links/other.html" target="_self">Other</a>
         </p>
     </div>
     <div class="container">
@@ -69,7 +106,8 @@
             <dt class="col-sm-3">Tel. :</dt>
             <dd class="col-sm-9"><a href="514-123-4567">514-123-4567</a></dd>
             <dt class="col-sm-3">Email :</dt>
-            <dd class="col-sm-9"><a href="mailto:zixi.quan@concordia.ca?subject=SOEN287">online_grocerystore@groceries.ca</a>
+            <dd class="col-sm-9"><a
+                    href="mailto:zixi.quan@concordia.ca?subject=SOEN287">online_grocerystore@groceries.ca</a>
             </dd>
         </dl>
     </div>
