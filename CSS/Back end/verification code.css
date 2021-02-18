@@ -1,0 +1,10 @@
+.container{
+    padding: 15px;
+    position: center;
+    text-align: center;
+    font-weight: bold;
+}
+
+.verification-code {
+    text-align: center;
+}

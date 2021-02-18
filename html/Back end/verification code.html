@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <title>Login / Sign up</title>
+    <title>Verify Email</title>
+    <link rel = "stylesheet" href = "\CSS\Back end\verification code.css"/>
 </head>
 <body>
-    <div>
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
         <a class="navbar-brand" href="Main Page.html">Online Grocery Store</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
-
-
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="Aisle.html" target="_self">Aisles</a>
@@ -48,26 +48,19 @@
             </div>
         </div>
     </nav>
-</div>
-<div>
-    <h1>
-        Log in
-    </h1>
-    <div class="login">
-        <form>
-            <label for="username">Username</label><br>
-            <input type="text" id="username">
-        </form>
-        <form>
-            <label for="password">Password</label><br>
-            <input type="text" id="password">
-        </form>
-        <p>
-            <a href = "Back end\verification code.html" style = "font-style:italic">Forgot password?</a>
-        </p>
 
-        <p>Don't have an account? Sign up <em><a href="Signup.html">here</a></em></p>
+    <div class = "container">
+        <h5>Verification code sent to email associated with this account.</h5>
+        <p>
+            Enter verification code to proceed to changing password.
+            <form class = "verification-code">
+                <input type = "text" onfocus = "this.value = ''" name = "verification-code" value = "Enter 6-digit code here" size = "20" maxlength = "6"/>
+            </form>
+
+        </p>
+        <p>
+            <a href="change password.html" class = "btn btn-primary">Change Password</a>
+        </p>
     </div>
-</div>
 </body>
 </html>
