@@ -4,9 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <title>Login / Sign up</title>
 </head>
 <body>
+    <div>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+        <a class="navbar-brand" href="">Online Grocery Store</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="Aisle.html" target="_self">Aisles</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="Promotions.html" target="_self">Weekly Promotions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Login.html" target="_blank">Login / Sign up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="user-settings.html"> <img id="settings-logo"
+                            src="..\Images\settings-icon.jpg" width=30px height=30px alt="Settings" /> </a>
+                    
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <div class="dropdown-menu" aria-labelledby="dropdown03">
+                        <a class="dropdown-item" href="Aisle.html" target="_self">Aisles</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="shopping-cart-holder">
+                <a class="nav-link shopping-cart" href="shopping_cart.html">&#128722; </a>
+            </div>
+        </div>
+    </nav>
+</div>
+<div>
     <h1>
         Log in
     </h1>
@@ -21,5 +65,6 @@
         </form>
         <p>Don't have an account? Sign up <em><a href="Signup.html">here</a></em></p>
     </div>
+</div>
 </body>
 </html>
