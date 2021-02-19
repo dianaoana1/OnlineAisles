@@ -14,7 +14,20 @@
          margin-left: 0%;
          margin-right:0%;
         }
-    
+        .remover{
+            text-decoration: underline;
+             text-decoration-color: blue;
+             background-color: white;
+
+        }
+        .plus{
+            background-color: green; 
+            color:white
+        }
+        .minus{
+            background-color:red; 
+            color:white
+        }
     </style>
 
 </head>
@@ -77,17 +90,20 @@
                     Alcoolic beverages
                 </td>
                 <td>
-                    <input type="button" onclick="" value=&#8722; style="background-color:red; color:white"/>
+                    <input type="button" class="minus" onclick="" value=&#8722; />
                 </td>
                 <td>
                     QTY:3
                 </td>
                 <td>
-                    <input type="button" onclick="" value=&#43; style="background-color: green; color:white"/> 
+                    <input type="button" class="plus" onclick="" value=&#43; /> 
                 </td>
                 <td>
                     Price: 100000$
 
+                </td>
+                <td>
+                    <input type="button" onclick=""class="remover" value="Remove" />  
                 </td>
             </tr>
             <p>Item 2 </p>
@@ -100,16 +116,19 @@
                     Seafood
                 </td>
                 <td>
-                    <input type="button" onclick="" value=&#8722; style="background-color:red; color:white"/>
+                    <input type="button" class="minus" onclick="" value=&#8722; />
                 </td>
                 <td>
                     QTY:4
                 </td>
                 <td>
-                    <input type="button" onclick="" value=&#43; style="background-color: green; color:white"/> 
+                    <input type="button" class="plus" onclick="" value=&#43; /> 
                 </td><td>
                     Price: 100000$
 
+                </td>
+                <td>
+                   <input type="button" class="remover" onclick="" value="Remove" />  
                 </td>
             </tr>
             <p>Item 3 </p>
@@ -121,15 +140,18 @@
                     Veggies
                 </td>
                 <td>
-                    <input type="button" onclick="" value=&#8722; style="background-color:red; color:white"/>
+                    <input type="button" class="minus" onclick="" value=&#8722; />
                 </td>
                 <td>
                     QTY:1
                 </td>
                 <td>
-                    <input type="button" onclick="" value=&#43; style="background-color: green; color:white"/> 
+                    <input type="button" class="plus" onclick="" value=&#43; /> 
                 </td><td>
                     Price:1000000$
+                </td>
+                <td>
+                    <input type="button" class="remover" onclick="" value="Remove"/>  
                 </td>
             </tr>
           </div>
