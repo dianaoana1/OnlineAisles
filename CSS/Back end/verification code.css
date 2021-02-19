@@ -1,5 +1,8 @@
 .container{
-    padding: 15px;
+    padding-top: 80px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
     position: center;
     text-align: center;
     font-weight: bold;
