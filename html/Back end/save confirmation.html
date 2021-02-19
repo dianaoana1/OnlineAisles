@@ -9,7 +9,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <title>Settings - Change Password</title>
+    <title>Settings - Save Confirmation</title>
+    <link rel = "stylesheet" type = "text/css" href = "CSS\Back end\save confirmation.css"/>
 </head>
 <body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
@@ -56,30 +57,12 @@
         </div>
     </nav>
     <div class = "container">
-        <div class = "user-login-form">
-            <form action = "change password">
-                <label>Username : </label>
-                <input type = "text" onfocus = "this.value = ''" name = "usrNm" value = " Email address / username" size = "19"/>
-                <br/>
-                <br/>
-                <label>Current Password : </label>
-                <input type = "text" name = "current-psw" size = "12" maxlength = "12"/>
-                <br/>
-                <br/>
-                <label>New Password : </label>
-                <input type = "text" name = "new-psw" size = "12" maxlength = "12" minlength = "6"/>
-                <p class = "password-limitations">
-                    <style> p {color:red;}</style>
-                    <strong>Must be 6-12 characters long with at least one special character and uppercase letter.</strong>
-                </p>
-    
-                <label>Confirm Password : </label>
-                <input type = "text" onfocus = "this.value = ''" name = "new-psw" value = " Re-enter new password" size = "17" maxlength = "12"/>
-            </form>
-        </div>
-        <div class = "save-button">
-            <br/>
-            <a href = "..\Main Page.html" class = "btn btn-primary">Save and Return to Main Page</button></a>
+        <div class = "save-confirmation">
+            <h5>
+                Saved.
+            </h5>
+            <br>
+            <button type = "text" name = "main-page-button" style = "font-weight: bold;" class = "btn btn-primary" href = "..\Main Page.html">Click here to retrun to main page.</button>
         </div>
     </div>
 </body>
