@@ -21,6 +21,19 @@
 }
 
 .row {
+    text-align:left;
+    padding-left: 50px;
+    padding-bottom: 50px;
+    padding-top: 10px;
+}
+
+.contact-info-header {
+    padding-top: 30px;
+    padding-left: 50px;
+}
+.footer {
     width: 100% !important;
-    margin: 0px !important;
+    margin-top: 50px !important;
+    background-color: #343a40!important;
+    color: white !important;
 }
