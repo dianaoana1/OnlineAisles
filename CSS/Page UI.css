@@ -32,8 +32,14 @@
     padding-left: 50px;
 }
 .footer {
-    position: absolute;
-    bottom:0;
+    position:absolute;
+    bottom: 0;
+    width: 100% !important;
+    margin-top: 50px !important;
+    background-color: #343a40!important;
+    color: white !important;
+}
+.signup-footer{
     width: 100% !important;
     margin-top: 50px !important;
     background-color: #343a40!important;

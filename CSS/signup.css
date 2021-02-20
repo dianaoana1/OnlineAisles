@@ -1,0 +1,48 @@
+.page-content{
+    width:800px;
+    margin: auto;
+}
+
+.card{
+    padding: 10px;
+    background-color: lightgrey;
+    border:0px;
+    border-radius: 10px;
+}
+
+.card-form{
+    padding:10px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.personal-info{
+    background-color: lightgrey;
+    padding:10px;
+    border-radius: 10px;
+}
+
+.personal-info-form{
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+.contact-information{
+   background-color: lightgrey; 
+   padding: 10px;
+   border-radius: 10px;
+}
+
+.contact-info-form{
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+td{
+    padding:5px;
+}
+
+input[type=text]{
+    width:370px;
+}

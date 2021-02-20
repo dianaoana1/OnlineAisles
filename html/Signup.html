@@ -5,10 +5,13 @@
             Register | OGS
         </title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="\CSS\Page UI.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="\CSS\Page UI.css">
+        <link rel="stylesheet" href="\CSS\signup.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
         <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
@@ -54,7 +57,6 @@
                 </div>
             </div>
         </nav>
-    <div>
         <br>
         <div class="page-content">
             <p>Already have an onlinegorcerystore.ca account? <a href=Login.html>Sign in</a></p>
@@ -64,36 +66,42 @@
                     <h1>
                         *Do you have an OGS membership card?
                     </h1>
-                    <div class="check">
-                        <table class="selection" style="width:30%">
-                            <tr>
-                                <td><input type="radio" name="havecard" value="Yes" /> I already have a card
-                                    <p>and I would like to create an onlinegorcerystore.ca profile to access my personalized offers.</p>
-                                </td>
-                                <td><input type="radio" name="havecard" value="Want" /> I want an OGS membership card
-                                    <p>to access all the perks of the program including personalized offers.</p>
-                                </td>
-                                <td><input type="radio" name="havecard" value="No" /> I do not want an OGS membership card
-                                    <p>but I wish to create an onlinegrocerystore.ca profile to shop online or recieve the newsletter.</p>
-                                </td>
-                            </tr>
-                        </table>
+                    <div class="card-form">
+                        <div class="check">
+                            <table class="selection">
+                                <tr>
+                                    <td><input type="radio" name="havecard" value="Yes" /> <b>I already have a card</b>
+                                        <p>and I would like to create an onlinegorcerystore.ca profile to access my personalized offers.</p>
+                                    </td>
+                                    <td><input type="radio" name="havecard" value="Want" /> <b>I want an OGS membership card</b>
+                                        <p>to access all the perks of the program including personalized offers.</p>
+                                    </td>
+                                    <td><input type="radio" name="havecard" value="No" /> <b>I do not want an OGS membership card</b>
+                                        <p>but I wish to create an onlinegrocerystore.ca profile to shop online or recieve the newsletter.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
+                
+                <br>
                 <div class="personal-info">
                     <h1>Personal Information</h1>
-                    <div class="signup-form">
-                        <table class="personal-info-inputs" style="width:30%">
+                    <div class="personal-info-form">
+                        <table class="personal-info-inputs">
                             <form class="personal-info-form"></form>
                                 <tr>
-                                    <label for="Title">*TITLE</label><br>
-                                    <select id="Title" name="Title">
-                                        <option value="Select">Select your title</option>
-                                        <option value="Mr.">Mr.</option>
-                                        <option value="Mrs.">Mrs.</option>
-                                        <option value="Miss">Miss</option>
-                                        <option value="Ms.">Ms.</option>
-                                    </select>
+                                    <td>
+                                        <label for="Title">*TITLE</label><br>
+                                        <select id="Title" name="Title">
+                                            <option value="Select">Select your title</option>
+                                            <option value="Mr.">Mr.</option>
+                                            <option value="Mrs.">Mrs.</option>
+                                            <option value="Miss">Miss</option>
+                                            <option value="Ms.">Ms.</option>
+                                        </select>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -119,10 +127,11 @@
                         </table>
                     </div>
                 </div>
+                <br>
                 <div class="contact-information">
                     <h1>Contact Information</h1>
                     <div class="contact-info-form">
-                        <table class="contact-info-table" style="width:30%" >
+                        <table class="contact-info-table">
                             <tr>
                                 <td>
                                     <label for="Address">*ADDRESS LINE 1 (No, Street)</label><br>
@@ -178,27 +187,28 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <label for="email">EMAIL</label><br>
+                                    <label for="email">*EMAIL</label><br>
                                     <input type="text" class="email" name="email">
                                 </td>
                                 <td>
-                                    <label for="confirm-email">CONFIRM EMAIL</label><br>
+                                    <label for="confirm-email">*CONFIRM EMAIL</label><br>
                                     <input type="text" class="confirm-email" name="confirm-email">
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <label for="password">PASSWORD</label><br>
+                                    <label for="password">*PASSWORD</label><br>
                                     <input type="text" class="password" name="password">
                                 </td>
                                 <td>
-                                    <label for="confirm-password">CONFIRM PASSWORD</label><br>
+                                    <label for="confirm-password">*CONFIRM PASSWORD</label><br>
                                     <input type="text" class="confirm-password" name="confirm-password">
                                 </td>
                             </tr>
                         </table>
                     </div>
                 </div>
+                <br>
                 <input type="checkbox" class="terms" name="terms">
                 <label for="terms">I accept the Online Grocery Store terms and conditions.</label><br>
                 <input type="checkbox" class="newsletter" name="newsletter">
@@ -206,20 +216,19 @@
                 <input type="submit" value="Submit">
             </form>
         </div>
-    </div>
-    <div class = "footer">
+    <footer class="signup-footer">
         <h4 class = contact-info-header> Contact Info</h4>
-            <div class="row">
-                <br/>
-                <dt class="col-sm-3">Address :</dt>
-                <dd class="col-sm-9"> 123 Main Street</dd>
-                <dt class="col-sm-3">Tel. :</dt>
-                <dd class="col-sm-9"><a href="514-123-4567">514-123-4567</a></dd>
-                <dt class="col-sm-3">Email :</dt>
-                <dd class="col-sm-9"><a
-                        href="mailto:zixi.quan@concordia.ca?subject=SOEN287">online_grocerystore@groceries.ca</a>
-                </dd>
-            </div>
-    </div>
+        <div class="row">
+            <br/>
+            <dt class="col-sm-3">Address :</dt>
+            <dd class="col-sm-9"> 123 Main Street</dd>
+            <dt class="col-sm-3">Tel. :</dt>
+            <dd class="col-sm-9"><a href="514-123-4567">514-123-4567</a></dd>
+            <dt class="col-sm-3">Email :</dt>
+            <dd class="col-sm-9"><a
+                    href="mailto:zixi.quan@concordia.ca?subject=SOEN287">online_grocerystore@groceries.ca</a>
+            </dd>
+        </div>
+    </footer>
     </body>
 </html>
