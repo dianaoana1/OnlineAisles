@@ -46,3 +46,7 @@ td{
 input[type=text]{
     width:370px;
 }
+
+#signin-button{
+    float:right;
+}
