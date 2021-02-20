@@ -1,10 +1,10 @@
-.container{
-    position: center;
-    text-align: center;
-    font-weight: bold;
-}
-
 .verification-code {
     text-align: center;
     position:center;
+}
+
+.verification-body {
+    position: center;
+    text-align: center;
+    font-weight: bold;
 }

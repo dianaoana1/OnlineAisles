@@ -1,8 +1,4 @@
-/* body {
-    position:center;
-    text-align: center;
-} */
 .save-confirmation {
-    position: center;
-    text-align: center;
-}
+    position: center !important;
+    text-align: center !important;
+} 

@@ -162,13 +162,14 @@
                     </tr>
                     <tr>
                         <td>
-                            <label for="Apartment">APARTMENT</label><br>
+                            <label for="Apartment">Apartment Number</label><br>
                             <input type="text" id="Apartment" name="Apartment">
                         </td>
                         <td>
                             <label>P.O. Box : </label><br />
                             <input type="text" name="PO-box" />
                         </td>
+                        
                     </tr>
                     <tr>
                         <td>
@@ -176,9 +177,15 @@
                             <input type="text" name="postal-code" />
                         </td>
                         <td>
-                            <label>Province/State : </label>
+                            <label>*City : </label><br/>
+                            <input type="text" name="city" minlength="1" />
+                        
+                        </td>
+                    </tr>
 
-                            <label for="province">*PROVINCE</label><br>
+                    <tr>
+                        <td>
+                            <label for="province">*Province</label><br>
                             <select id="province" name="province">
                                 <option value="Select">Select</option>
                                 <option value="Alberta">Alberta</option>
@@ -195,13 +202,6 @@
                                 <option value="Saskatchewan">Saskatchewan</option>
                                 <option value="Yukon">Yukon</option>
                             </select>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <label>*City : </label><br/>
-                            <input type="text" name="city" minlength="1" />
                         </td>
                     </tr>
                     </form>
