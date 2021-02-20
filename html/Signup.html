@@ -38,16 +38,16 @@
                         <a class="nav-link" href="Promotions.html" target="_self">Weekly Promotions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Login.html" target="_blank">Login / Sign up</a>
+                        <a class="nav-link" href="Login.html">Login / Sign up</a>
                     </li>
                     <li class="nav-item">
                         <li class="nav-item dropdown">
                             <div class="dropdown show">
                                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#9881;</a>
                             <div class="dropdown-menu" aria-labelledby="dropdown03">
-                                <a class="dropdown-item" href="Back end\change password.html" target="_blank"> Change Password</a>
+                                <a class="dropdown-item" href="Back end\change password.html"> Change Password</a>
                                 <a class="dropdown-item" href="Back end\account-info.html" target="_self"> Account Info</a></a>
-                                <a class="dropdown-item" href="Back end\delete-user.html" target = "_blank">Delete Account</a>
+                                <a class="dropdown-item" href="Back end\delete-user.html">Delete Account</a>
                             </div>
                         </li>
                     </li>
@@ -59,9 +59,9 @@
         </nav>
         <br>
         <div class="page-content">
-            <p>Already have an onlinegorcerystore.ca account? <a href=Login.html>Sign in</a></p>
-            <p>* mentadory field</p>
-            <form class="sign-up-form">
+            <p id="signin-button">Already have an onlinegorcerystore.ca account? <em><a href=Login.html>Sign in</a></em></p>
+            <p id="mendatoryfield">* mentadory field</p>
+            <form class="sign-up-form" action="signupconfirmation.html">
                 <div class="card">
                     <h1>
                         *Do you have an OGS membership card?
@@ -198,11 +198,11 @@
                             <tr>
                                 <td>
                                     <label for="password">*PASSWORD</label><br>
-                                    <input type="text" class="password" name="password">
+                                    <input type="password" class="password" name="password">
                                 </td>
                                 <td>
                                     <label for="confirm-password">*CONFIRM PASSWORD</label><br>
-                                    <input type="text" class="confirm-password" name="confirm-password">
+                                    <input type="password" class="confirm-password" name="confirm-password">
                                 </td>
                             </tr>
                         </table>
@@ -213,12 +213,10 @@
                 <label for="terms">I accept the Online Grocery Store terms and conditions.</label><br>
                 <input type="checkbox" class="newsletter" name="newsletter">
                 <label for="newsletter">I wish to receive our newsletter by email to stay up to date with our latest offers.</label><br>
-                <a href="signupconfirmation.html">
-                    <input type="submit" value="Register">
-                </a>
+                <input class="btn btn-primary" type="submit" value="Register">
             </form>
         </div>
-    <footer class="signup-footer">
+    <footer class="footer2">
         <h4 class = contact-info-header> Contact Info</h4>
         <div class="row">
             <br/>
