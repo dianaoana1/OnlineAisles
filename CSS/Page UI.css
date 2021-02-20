@@ -45,3 +45,11 @@
     background-color: #343a40!important;
     color: white !important;
 }
+.save-confirmation{
+    text-align: center!important;
+    position:center;
+    margin: auto;
+}
+.return-wrapper{
+    text-align: center;
+}
