@@ -9,12 +9,35 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-    <link rel = "stylesheet" href = "\CSS\Page UI.css">
+    <link rel="stylesheet" href="\CSS\Page UI.css">
+    <style>
+    .footer2 {
+        position: bottom ;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color:#343a40;
+        color: white;
+        text-align: center;
+    }
+    .row1{
+        text-align: center;
+    }
+    .img-container{
+        text-align: center;
+        
+    }
+    .quick-links{
+        text-align: center;
+    }
+    h3{
+        text-align: center;
+    }
+    
+    </style>
 </head>
 
 <body>
-
     <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
         <a class="navbar-brand" href="Main Page.html">Online Grocery Store</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -26,15 +49,22 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
                     <div class="dropdown show">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aisles</a>
-                    
-                    <div class="dropdown-menu" aria-labelledby="dropdown03">
-                        <a class="dropdown-item" href="Product links/fruits and veggies.html" target="_self">Fruits and Vegetables</a>
-                        <a class="dropdown-item" href="Product links/meats and poultry.html" target="_self"> Meats and Poultry </a>
-                        <a class="dropdown-item" href="Product links/seafood.html" target="_self">Seafood </a>
-                        <a class="dropdown-item" href="Product links/dairy and eggs.html" target="_self">Dairy and Eggs </a>
-                        <a class="dropdown-item" href="Product links/cereal products.html" target="_self">Cereal Products </a>
-                        <a class="dropdown-item" href="Product links/alcoholic beverages.html" target="_self">Alcoholic Beverages </a>
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aisles</a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdown03">
+                            <a class="dropdown-item" href="Product links/fruits and veggies.html" target="_self">Fruits
+                                and Vegetables</a>
+                            <a class="dropdown-item" href="Product links/meats and poultry.html" target="_self"> Meats
+                                and Poultry </a>
+                            <a class="dropdown-item" href="Product links/seafood.html" target="_self">Seafood </a>
+                            <a class="dropdown-item" href="Product links/dairy and eggs.html" target="_self">Dairy and
+                                Eggs </a>
+                            <a class="dropdown-item" href="Product links/cereal products.html" target="_self">Cereal
+                                Products </a>
+                            <a class="dropdown-item" href="Product links/alcoholic beverages.html"
+                                target="_self">Alcoholic Beverages </a>
+                        </div>
                     </div>
                 </li>
                 <li>
@@ -44,64 +74,81 @@
                     <a class="nav-link" href="Login.html" target="_blank">Login / Sign up</a>
                 </li>
                 <li class="nav-item">
-                    <li class="nav-item dropdown">
-                        <div class="dropdown show">
-                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#9881;</a>
+                <li class="nav-item dropdown">
+                    <div class="dropdown show">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#9881;</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="Back end\change password.html" target="_blank"> Change Password</a>
-                            <a class="dropdown-item" href="Back end\account-info.html" target="_self"> Account Info</a></a>
-                            <a class="dropdown-item" href="Back end\delete-user.html" target = "_blank">Delete Account</a>
+                            <a class="dropdown-item" href="Back end\change password.html" target="_blank"> Change
+                                Password</a>
+                            <a class="dropdown-item" href="Back end\account-info.html" target="_self"> Account
+                                Info</a></a>
+                            <a class="dropdown-item" href="Back end\delete-user.html" target="_blank">Delete Account</a>
                         </div>
-                    </li>
+                    </div>
+                </li>
                 </li>
             </ul>
             <div class="shopping-cart-holder">
-                <a class="nav-link shopping-cart" href="shopping_cart.html" target = "_blank">&#128722; </a>
+                <a class="nav-link shopping-cart" href="shopping_cart.html" target="_blank">&#128722; </a>
             </div>
         </div>
     </nav>
-    <br>
-
-    <div class="container">
-        <div class="row">
+    
+    <div class="container" style="max-width: 100%;">
+        <div class="row1">
             <h1>Welcome to the <em>Online Grocery Store</em> !</h1>
-            <p>This is a course taught at <a href="https://concordia.ca">Concordia University</a> in Montreal, Canada.
-            </p>
-            <p>Follow the links in the navigation bar for more details.</p>
+            <h4>Our grocery store has fresh food with free shipping on all orders </h4>
+           
         </div>
-        <div class="row">
-            <div class="col-3">
+        <div class="img-container">
+           
+                    <img src="..\Images\Grocery.jpg"alt="grocerypicture" width="25%"  height="25%">
+               
+                    <img src="..\Images\grocery2.jpg" alt="secgrocerypicture" width="25%"  height="25%">
+                    <h4>Our motto is that the customer always comes first </h4>
+                    <p>The online grocery store has been opened since 1986 is one of the fastest growing companies in canada</p>
+        </div>
+    </br>
+        <div class="container">
                 <div class="quick links">
-                    <p> Quick links:
+                    <p><h3> Quick links:</h3>
+                        <div class="row">
+                            <p class="col-sm-2">
                         <a class="nav-link" href="Product links/fruits and veggies.html" target="_self">Fruits and
-                            Vegetables</a>
-                        <a class="nav-link" href="Product links/dairy and eggs.html" target="_self">Dairy and Eggs</a>
-                        <a class="nav-link" href="Product links/meats.html" target="_self">Meat and Poultry</a>
-                        <a class="nav-link" href="Product links/seafood.html" target="_self">Fish and Seafood</a>
+                            Vegetables</a></p>
+                            <p class="col-sm-2">
+                        <a class="nav-link" href="Product links/dairy and eggs.html" target="_self">Dairy and Eggs</a></p>
+                        <p class="col-sm-2">
+                        <a class="nav-link" href="Product links/meats.html" target="_self">Meat and Poultry</a></p>
+                        <p class="col-sm-2">
+                        <a class="nav-link" href="Product links/seafood.html" target="_self">Fish and Seafood</a></p>
+                        <p class="col-sm-2">
                         <a class="nav-link" href="Product links/alcoholic beverages.html" target="_self">Alcoholic
-                            Beverages</a>
-                        <a class="nav-link" href="Product links/cereal products.html" target="_self">Cereal Products</a>
+                            Beverages</a></p>
+                            <p class="col-sm-2">
+                        <a class="nav-link" href="Product links/cereal products.html" target="_self">Cereal Products</a></p>
+                    </div>
                     </p>
+                
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <h3> Contact Info</h3>
-            <div class="row">
-                <dt class="col-sm-3">Address :</dt>
-                <dd class="col-sm-9"> 123 Main Street</dd>
-                <dt class="col-sm-3">Tel. :</dt>
-                <dd class="col-sm-9"><a href="514-123-4567">514-123-4567</a></dd>
-                <dt class="col-sm-3">Email :</dt>
-                <dd class="col-sm-9"><a
-                        href="mailto:zixi.quan@concordia.ca?subject=SOEN287">online_grocerystore@groceries.ca</a>
-                </dd>
-            </div>
         </div>
     </div>
 
-   
-
+    <footer class="footer2">
+        <h4 class = contact-info-header> Contact Info</h4>
+        <div class="row">
+            <br/>
+            <dt class="col-sm-5">Address :</dt>
+            <dd class="col-sm-7"> 123 Main Street</dd>
+            <dt class="col-sm-5">Tel. :</dt>
+            <dd class="col-sm-7"><a href="514-123-4567">514-123-4567</a></dd>
+            <dt class="col-sm-5">Email :</dt>
+            <dd class="col-sm-7"><a
+                    href="mailto:zixi.quan@concordia.ca?subject=SOEN287">online_grocerystore@groceries.ca</a>
+            </dd>
+        </div>
+    </footer>
 </body>
 
 </html>

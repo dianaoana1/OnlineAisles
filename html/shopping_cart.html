@@ -9,6 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <title>My Cart</title>
+    <link rel="stylesheet" href="\CSS\Page UI.css">
     <style>
         .container{
          margin-left: 0%;
@@ -17,7 +18,7 @@
         .remover{
             text-decoration: underline;
              text-decoration-color: blue;
-             background-color: white;
+             background-color:lightblue;
 
         }
         .plus{
@@ -28,6 +29,15 @@
             background-color:red; 
             color:white
         }
+        .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color:darkslategray;
+        color: white;
+        text-align: center;
+    }
     </style>
 
 </head>
@@ -58,16 +68,16 @@
                     <a class="nav-link" href="Promotions.html" target="_self">Weekly Promotions</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Login.html" target="_blank">Login / Sign up</a>
+                    <a class="nav-link" href="Login.html" target="_self">Login / Sign up</a>
                 </li>
                 <li class="nav-item">
                     <li class="nav-item dropdown">
                         <div class="dropdown show">
                             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#9881;</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="Back end\change password.html" target="_blank"> Change Password</a>
+                            <a class="dropdown-item" href="Back end\change password.html" target="_self"> Change Password</a>
                             <a class="dropdown-item" href="Back end\account-info.html" target="_self"> Account Info</a></a>
-                            <a class="dropdown-item" href="Back end\delete-user.html" target = "_blank">Delete Account</a>
+                            <a class="dropdown-item" href="Back end\delete-user.html" target = "_self">Delete Account</a>
                         </div>
                     </li>
                 </li>
@@ -154,6 +164,9 @@
                     <input type="button" class="remover" onclick="" value="Remove"/>  
                 </td>
             </tr>
+        </br>
+    </br>
+            <p><a href="Main Page.html" class="btn btn-primary">Return Shopping</a></p>
           </div>
           <div id="Sub-Total"  class="col-3"  >
             
@@ -186,13 +199,28 @@
                         <td><b style="font-size: 20px;font-style:italic"> 69.69$</b></td>
                     </tr>
                 </table>
-                <a href="checkout.html" class="btn btn-primary">Go to Checkout</a>
+            <p>Discount code:</br>
+                <input type="text"onfocus="this.value=''" name="Discount"value="Discount" size="10%">
+                        <a href="checkout.html" class="btn btn-primary">Go to Checkout</a></p> 
           </div>
           
           
         </div>
       </div>
-     
+      <footer class="footer">
+        <h4 class = contact-info-header> Contact Info</h4>
+        <div class="row">
+            <br/>
+            <dt class="col-sm-5">Address :</dt>
+            <dd class="col-sm-7"> 123 Main Street</dd>
+            <dt class="col-sm-5">Tel. :</dt>
+            <dd class="col-sm-7"><a href="514-123-4567">514-123-4567</a></dd>
+            <dt class="col-sm-5">Email :</dt>
+            <dd class="col-sm-7"><a
+                    href="mailto:zixi.quan@concordia.ca?subject=SOEN287">online_grocerystore@groceries.ca</a>
+            </dd>
+        </div>
+    </footer>
    
 </body>
 </html>
