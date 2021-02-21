@@ -1,0 +1,22 @@
+.container{
+    margin-left: 0%;
+    margin-right:0%;
+   }
+   .remover{
+       text-decoration: underline;
+        text-decoration-color: blue;
+        background-color:lightblue;
+
+   }
+   .plus{
+       background-color: green; 
+       color:white
+   }
+   .minus{
+       background-color:red; 
+       color:white
+   }
+   .footer2{
+       position: fixed-bottom;
+   }
+  
