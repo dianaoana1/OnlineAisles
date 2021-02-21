@@ -45,11 +45,23 @@
     background-color: #343a40!important;
     color: white !important;
 }
-.save-confirmation{
-    text-align: center!important;
-    position:center;
-    margin: auto;
+.shopping-cart-holder:hover{
+    opacity: 0.75;
 }
-.return-wrapper{
+   h3{
     text-align: center;
 }
+.quick-links{
+    text-align: center;
+    margin:auto;
+}
+
+.row1{
+    text-align: center;
+}
+.img-container{
+    text-align: center;
+    
+}
+
+
