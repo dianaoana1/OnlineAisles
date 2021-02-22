@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Home - Online Grocery Store</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="\CSS\Page UI.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
+        <a class="navbar-brand" href="Main Page.html">Online Grocery Store</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <div class="dropdown show">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aisles</a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdown03">
+                            <a class="dropdown-item" href="Product links/fruits and veggies.html" target="_self">Fruits
+                                and Vegetables</a>
+                            <a class="dropdown-item" href="Product links/meats and poultry.html" target="_self"> Meats
+                                and Poultry </a>
+                            <a class="dropdown-item" href="Product links/seafood.html" target="_self">Seafood </a>
+                            <a class="dropdown-item" href="Product links/dairy and eggs.html" target="_self">Dairy and
+                                Eggs </a>
+                            <a class="dropdown-item" href="Product links/cereal products.html" target="_self">Cereal
+                                Products </a>
+                        </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <div class="dropdown show">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Back end Pages</a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdown03">
+                            <a class="dropdown-item" href="..\user-list.html" target="_self">User List</a>
+                            <a class="dropdown-item" href="..\Productlist.html" target="_self"> Product list </a>
+                            <a class="dropdown-item" href="..\Product links/seafood.html" target="_self">Order List </a>
+                        </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Login.html" target="_blank">Login / Sign up</a>
+                </li>
+                <li class="nav-item">
+                <li class="nav-item dropdown">
+                    <div class="dropdown show">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#9881;</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown03">
+                            <a class="dropdown-item" href="Back end\change password.html" target="_blank"> Change
+                                Password</a>
+                            <a class="dropdown-item" href="Back end\account-info.html" target="_self"> Account
+                                Info</a></a>
+                            <a class="dropdown-item" href="Back end\delete-user.html" target="_blank">Delete Account</a>
+                        </div>
+                </li>
+                </li>
+            </ul>
+            <div class="shopping-cart-holder">
+                <a class="nav-link shopping-cart" href="shopping_cart.html" target="_blank">&#128722; </a>
+            </div>
+        </div>
+    </nav>
+    <br>
+
+    <style type="text/css">
+        .tg {
+            border-collapse: collapse;
+            border-color: #ccc;
+            border-spacing: 0;
+            margin: 0px auto;
+        }
+
+        .tg td {
+            width: 250px;
+            background-color: #fff;
+            border-color: #ccc;
+            border-style: solid;
+            border-width: 2px;
+            color: #333;
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            overflow: hidden;
+            padding: 10px 5px;
+            word-break: normal;
+        }
+
+        .tg th {
+            width: 250px;
+            background-color: #f0f0f0;
+            border-color: #ccc;
+            border-style: solid;
+            border-width: 2px;
+            color: #333;
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            font-weight: normal;
+            overflow: hidden;
+            padding: 20px 10px;
+            word-break: normal;
+        }
+
+        .tg .tg-header {
+            width: 250px;
+            position: -webkit-sticky;
+            position: sticky;
+            text-align: center;
+            top: -1px;
+            vertical-align: top;
+            will-change: transform;
+        }
+
+        .tg .tg-odd {
+            width: 250px;
+            background-color: #f9f9f9;
+            text-align: center;
+            vertical-align: top;
+        }
+
+        .tg .tg-even {
+            width: 250px;
+            text-align: center;
+            vertical-align: top;
+        }
+
+        .lastRow {
+            width: 750px;
+            text-align: center;
+            vertical-align: top;
+        }
+    </style>
+    <table class="tg">
+        <thead>
+            <tr>
+                <th class="tg-header">Last name</th>
+                <th class="tg-header">First Name</th>
+                <th class="tg-header">Tel.1</th>
+                <th class="tg-header">Tel.2</th>
+                <th class="tg-header">Email</th>
+                <th class="tg-header">Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="tg-even">Barry</td>
+                <td class="tg-even">Oumar</td>
+                <td class="tg-even"><a href="514-123-4567">514-123-456</a></td>
+                <td class="tg-even"><a href="514-891-0111">514-891-0111</a></td>
+                <td class="tg-even"><a
+                        href="mailto:zixi.quan@concordia.ca?subject=SOEN287">online_grocerystore@groceries.ca</a></td>
+                <td class="tg-even">123 Main Street, QC, A1B 2C3</td>
+            </tr>
+            <tr>
+                <td class="tg-odd">Beaulieu</td>
+                <td class="tg-odd">Matthew</td>
+                <td class="tg-odd"><a href="514-123-4567">514-123-456</a></td>
+                <td class="tg-odd"><a href="514-891-0111">514-891-0111</a></td>
+                <td class="tg-odd"> <a
+                        href="mailto:zixi.quan@concordia.ca?subject=SOEN287">online_grocerystore@groceries.ca</a></td>
+                <td class="tg-odd">123 Main Street, QC, A1B 2C3</td>
+            </tr>
+            <tr>
+                <td class="tg-even">Merlusca</td>
+                <td class="tg-even">Diana</td>
+                <td class="tg-even"><a href="514-123-4567">514-123-456</a></td>
+                <td class="tg-even"><a href="514-891-0111">514-891-0111</a></td>
+                <td class="tg-even"> <a
+                        href="mailto:zixi.quan@concordia.ca?subject=SOEN287">online_grocerystore@groceries.ca</a></td>
+                <td class="tg-even">123 Main Street, QC, A1B 2C3</td>
+            </tr>
+            <tr>
+                <td class="tg-odd">Spyridakos</td>
+                <td class="tg-odd">Alexandra</td>
+                <td class="tg-odd"><a href="514-123-4567">514-123-456</a></td>
+                <td class="tg-odd"><a href="514-891-0111">514-891-0111</a></td>
+                <td class="tg-odd"> <a
+                        href="mailto:zixi.quan@concordia.ca?subject=SOEN287">online_grocerystore@groceries.ca</a></td>
+                <td class="tg-odd">123 Main Street, QC, A1B 2C3</td>
+            </tr>
+            <tr>
+                <td class="tg-even">Wang</td>
+                <td class="tg-even">Ziyi</td>
+                <td class="tg-even"><a href="514-123-4567">514-123-456</a></td>
+                <td class="tg-even"><a href="514-891-0111">514-891-0111</a></td>
+                <td class="tg-even"> <a
+                        href="mailto:zixi.quan@concordia.ca?subject=SOEN287">online_grocerystore@groceries.ca</a></td>
+                <td class="tg-even">123 Main Street, QC, A1B 2C3</td>
+            </tr>
+            <tr>
+                <td class="tg-odd"><textarea type="text" id="myText"></textarea></td>
+                <td class="tg-odd"><textarea type="text" id="myText"></textarea></td>
+                <td class="tg-odd"><textarea type="text" id="myText"></textarea></td>
+                <td class="tg-odd"><textarea type="text" id="myText"></textarea></td>
+                <td class="tg-odd"><textarea type="text" id="myText"></textarea></td>
+                <td class="tg-odd"><textarea type="text" id="myText"></textarea></td>
+            </tr>
+        </tbody>
+    </table>
+    <div
+        style="position:center; text-align:center; margin:20px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal;overflow:hidden">
+        <a type="text" name="edit-user-button" style="font-weight: bold;" class="btn btn-primary"
+            href="..\user-list.html">Save</a>
+    </div>
+
+    <footer class="footer2" style="position: bottom;">
+        <h4 class=contact-info-header> Contact Info</h4>
+        <div class="row">
+            <br />
+            <dt class="col-sm-5">Address :</dt>
+            <dd class="col-sm-7"> 123 Main Street</dd>
+            <dt class="col-sm-5">Tel. :</dt>
+            <dd class="col-sm-7"><a href="514-123-4567">514-123-4567</a></dd>
+            <dt class="col-sm-5">Email :</dt>
+            <dd class="col-sm-7"><a
+                    href="mailto:zixi.quan@concordia.ca?subject=SOEN287">online_grocerystore@groceries.ca</a>
+            </dd>
+        </div>
+    </footer>
+</body>
+
+</html>
