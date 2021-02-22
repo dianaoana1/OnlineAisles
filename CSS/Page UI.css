@@ -7,7 +7,7 @@
     
 }
 .footer2 {
-    position: bottom ;
+    position:fixed ;
     left: 0;
     bottom: 0;
     width: 100%;
