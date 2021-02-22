@@ -1,0 +1,64 @@
+.tg {
+    border-collapse: collapse;
+    border-color: #ccc;
+    border-spacing: 0;
+    margin: 0px auto;
+}
+
+.tg td {
+    width: 250px;
+    background-color: #fff;
+    border-color: #ccc;
+    border-style: solid;
+    border-width: 2px;
+    color: #333;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+
+.tg th {
+    width: 250px;
+    background-color: #f0f0f0;
+    border-color: #ccc;
+    border-style: solid;
+    border-width: 2px;
+    color: #333;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    overflow: hidden;
+    padding: 20px 10px;
+    word-break: normal;
+}
+
+.tg .tg-header {
+    width: 250px;
+    position: -webkit-sticky;
+    position: sticky;
+    text-align: center;
+    top: -1px;
+    vertical-align: top;
+    will-change: transform;
+}
+
+.tg .tg-odd {
+    width: 250px;
+    background-color: #f9f9f9;
+    text-align: center;
+    vertical-align: top;
+}
+
+.tg .tg-even {
+    width: 250px;
+    text-align: center;
+    vertical-align: top;
+}
+
+.lastRow {
+    width: 750px;
+    text-align: center;
+    vertical-align: top;
+}
