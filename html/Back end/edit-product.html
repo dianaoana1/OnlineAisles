@@ -10,14 +10,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-    <link rel = "stylesheet" href = "../CSS\Page UI.css">
-    <link rel ="stylesheet" href ="\CSS\Back end\list.css"/>
+    <link rel = "stylesheet" href = "\CSS\Page UI.css">
+    <link rel ="stylesheet" href = "\CSS\Back end\list.css"/>
 </head>
 
 <body>
 
     <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
-        <a class="navbar-brand" href="Main Page.html">Online Grocery Store</a>
+        <a class="navbar-brand" href="..\Main Page.html">Online Grocery Store</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -44,26 +44,26 @@
                     <div class="dropdown-menu" aria-labelledby="dropdown03">
                       <a class="dropdown-item" href="user-list.html" target="_self">User List</a>
                       <a class="dropdown-item" href="Productlist.html" target="_self"> Product list </a>
-                      <a class="dropdown-item" href="Back end/Order-list.html" target="_self">Order List </a>
+                      <a class="dropdown-item" href="Order-list.html" target="_self">Order List </a>
                   </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Login.html" target="_blank">Login / Sign up</a>
+                    <a class="nav-link" href="..\Login.html" target="_blank">Login / Sign up</a>
                 </li>
                 <li class="nav-item">
                     <li class="nav-item dropdown">
                         <div class="dropdown show">
                             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#9881;</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="Back end\change password.html" target="_blank"> Change Password</a>
-                            <a class="dropdown-item" href="Back end\account-info.html" target="_self"> Account Info</a></a>
-                            <a class="dropdown-item" href="Back end\delete-user.html" target = "_blank">Delete Account</a>
+                            <a class="dropdown-item" href="change password.html" target="_blank"> Change Password</a>
+                            <a class="dropdown-item" href="account-info.html" target="_self"> Account Info</a></a>
+                            <a class="dropdown-item" href="delete-user.html" target = "_blank">Delete Account</a>
                         </div>
                     </li>
                 </li>
             </ul>
             <div class="shopping-cart-holder">
-                <a class="nav-link shopping-cart" href="shopping_cart.html" target = "_blank">&#128722; </a>
+                <a class="nav-link shopping-cart" href="..\shopping_cart.html" target = "_blank">&#128722; </a>
             </div>
         </div>
     </nav>
@@ -72,132 +72,117 @@
         <thead>
           <tr>
             <th class="tg-header">Product Name</th>
-            <th class="tg-header">Type</th>
+            <th class="tg-header">Type and Description</th>
             <th class="tg-header">Price</th>
             <th class="tg-header">Quantity</th>
-            <th class="tg-header">Update</th>
             <th class="tg-header">Select Item</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td class="tg-odd">Apple</td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"><a href="product-edit.html">Edit</a></td>
+            <td class="tg-odd"><textarea type = "text" id = "myText">Apple</textarea></td>
+            <td class="tg-odd"><textarea type = "text" id = "myText">fruit</textarea></td>
+            <td class="tg-odd">$<textarea type = "text" id = "myText">4</textarea></td>
+            <td class="tg-odd"><input type="number" value="4"></td>
             <td class="tg-odd"><input type="checkbox" class="users" name="user"></td>
           </tr>
           <tr>
-            <td class="tg-even">Banana</td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
-            <td class="tg-even"><a href="product-edit.html">Edit</a></td>
+            <td class="tg-even"><textarea type = "text" id = "myText">Banana</textarea></td>
+            <td class="tg-even"><textarea type = "text" id = "myText">fruit</textarea></td>
+            <td class="tg-even">$<textarea type = "text" id = "myText">4</textarea></td>
+            <td class="tg-even"><input type="number" value="4"></td>
             <td class="tg-even"><input type="checkbox" class="users" name="user"></td>
           </tr>
           <tr>
-            <td class="tg-odd">Pear</td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"><a href="product-edit.html">Edit</a></td>
+            <td class="tg-odd"><textarea type = "text" id = "myText">Pear</textarea></td>
+            <td class="tg-odd"><textarea type = "text" id = "myText">fruit</textarea></td>
+            <td class="tg-odd">$<textarea type = "text" id = "myText">6</textarea></td>
+            <td class="tg-odd"><input type="number" value="6"></td>
             <td class="tg-odd"><input type="checkbox" class="users" name="user"></td>
           </tr>
           <tr>
-            <td class="tg-even">Carrots</td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
-            <td class="tg-even"><a href="product-edit.html">Edit</a></td>
+            <td class="tg-even"><textarea type = "text" id = "myText">Carrots</textarea></td>
+            <td class="tg-even"><textarea type = "text" id = "myText">veggie</textarea></td>
+            <td class="tg-even">$<textarea type = "text" id = "myText">3</textarea></td>
+            <td class="tg-even"><input type="number" value="3"></td>
             <td class="tg-even"><input type="checkbox" class="users" name="user"></td>
           </tr>
           <tr>
-            <td class="tg-odd">Broccoli</td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
+            <td class="tg-odd"><textarea type = "text" id = "myText">Broccoli</textarea></td>
+            <td class="tg-odd"><textarea type = "text" id = "myText">veggie</textarea></td>
+            <td class="tg-odd">$<textarea type = "text" id = "myText">1</textarea></td>
+            <td class="tg-odd"><input type="number" value="1"></td>
             <td class="tg-odd"><input type="checkbox" class="users" name="user"></td>
           </tr>
           <tr>
-            <td class="tg-even">Mushrooms</td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
+            <td class="tg-even"><textarea type = "text" id = "myText">Mushrooms</textarea></td>
+            <td class="tg-even"><textarea type = "text" id = "myText">veggie</textarea></td>
+            <td class="tg-even">$<textarea type = "text" id = "myText">8</textarea></td>
+            <td class="tg-even"><input type="number" value="8"></td>
             <td class="tg-even"><input type="checkbox" class="users" name="user"></td>
           </tr>
           <tr>
-            <td class="tg-odd">Onions</td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
+            <td class="tg-odd"><textarea type = "text" id = "myText">Onions</textarea></td>
+            <td class="tg-odd"><textarea type = "text" id = "myText">veggie</textarea></td>
+            <td class="tg-odd">$<textarea type = "text" id = "myText">6</textarea></td>
+            <td class="tg-odd"><input type="number" value="6"></td>
             <td class="tg-odd"><input type="checkbox" class="users" name="user"></td>
           </tr>
           <tr>
-            <td class="tg-even">Eggs</td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
+            <td class="tg-even"><textarea type = "text" id = "myText">Eggs</textarea></td>
+            <td class="tg-even"><textarea type = "text" id = "myText">dairy</textarea></td>
+            <td class="tg-even">$<textarea type = "text" id = "myText">5</textarea></td>
+            <td class="tg-even"><input type="number" value="5"></td>
             <td class="tg-even"><input type="checkbox" class="users" name="user"></td>
           </tr>
           <tr>
-            <td class="tg-odd">Butter</td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
+            <td class="tg-odd"><textarea type = "text" id = "myText">Butter</textarea></td>
+            <td class="tg-odd"><textarea type = "text" id = "myText">dairy</textarea></td>
+            <td class="tg-odd">$<textarea type = "text" id = "myText">7</textarea></td>
+            <td class="tg-odd"><input type="number" value="7"></td>
             <td class="tg-odd"><input type="checkbox" class="users" name="user"></td>
           </tr>
           <tr>
-            <td class="tg-even">Cheese</td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
+            <td class="tg-even"><textarea type = "text" id = "myText">Cheese</textarea></td>
+            <td class="tg-even"><textarea type = "text" id = "myText">dairy</textarea></td>
+            <td class="tg-even">$<textarea type = "text" id = "myText">2</textarea></td>
+            <td class="tg-even"><input type="number" value="2"></td>
             <td class="tg-even"><input type="checkbox" class="users" name="user"></td>
           </tr>
           <tr>
-            <td class="tg-odd">Milk</td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
+            <td class="tg-odd"><textarea type = "text" id = "myText">Milk</textarea></td>
+            <td class="tg-odd"><textarea type = "text" id = "myText">dairy</textarea></td>
+            <td class="tg-odd">$<textarea type = "text" id = "myText">3</textarea></td>
+            <td class="tg-odd"><input type="number" value="3"></td>
             <td class="tg-even"><input type="checkbox" class="users" name="user"></td>
           </tr>
           <tr>
-            <td class="tg-even">Yogurt</td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
+            <td class="tg-even"><textarea type = "text" id = "myText">Yogurt</textarea></td>
+            <td class="tg-even"><textarea type = "text" id = "myText">dairy</textarea></td>
+            <td class="tg-even">$<textarea type = "text" id = "myText">3</textarea></td>
+            <td class="tg-even"><input type="number" value="3"></td>
             <td class="tg-even"><input type="checkbox" class="users" name="user"></td>
           </tr>
           <tr>
-            <td class="tg-odd">Rice</td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
+            <td class="tg-odd"><textarea type = "text" id = "myText">Rice</textarea></td>
+            <td class="tg-odd"><textarea type = "text" id = "myText">grain</textarea></td>
+            <td class="tg-odd">$<textarea type = "text" id = "myText">2</textarea></td>
+            <td class="tg-odd"><input type="number" value="2"></td>
             <td class="tg-odd"><input type="checkbox" class="users" name="user"></td>
           </tr>
           <tr>
-            <td class="tg-even">Pasta</td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
+            <td class="tg-even"><textarea type = "text" id = "myText">Pasta</textarea></td>
+            <td class="tg-even"><textarea type = "text" id = "myText">grain</textarea></td>
+            <td class="tg-even">$<textarea type = "text" id = "myText">1</textarea></td>
+            <td class="tg-even"><input type="number" value="1"></td>
             <td class="tg-even"><input type="checkbox" class="users" name="user"></td>
           </tr>
 
         </tbody>
         </table>
         <div class = "list-buttons">
-          <a type="text" name="add-product-button" style="font-weight: bold;" class="btn btn-primary" href = "Back end\add-produt.html">Add New Product</a>
-          <a type="text" name="edit-product-button" style="font-weight: bold;" class="btn btn-primary" href="Back end\edit-product.html">Edit Product</a>
+          <a type="text" name="add-product-button" style="font-weight: bold;" class="btn btn-primary" href = "add-product.html">Add New Product</a>
+          <a type="text" name="edit-product-button" style="font-weight: bold;" class="btn btn-primary" href="edit-product.html">Edit Product</a>
           <a type="text" name="delete-product-button" style="font-weight: bold;" class="btn btn-primary" href = "#">Remove Selected Products</a>
         </div>
         <footer class="footer2" style="position: bottom;">

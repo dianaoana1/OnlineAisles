@@ -3,6 +3,7 @@
     border-color: #ccc;
     border-spacing: 0;
     margin: 0px auto;
+    margin-bottom:200px !important;
 }
 
 .tg td {
@@ -61,4 +62,13 @@
     width: 750px;
     text-align: center;
     vertical-align: top;
+}
+.list-buttons{
+    position:center; 
+    text-align:center;
+    margin:20px;
+    font-family:Arial, sans-serif;
+    font-size:20px;
+    font-weight:normal;
+    overflow:hidden;
 }
