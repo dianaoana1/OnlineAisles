@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Product List - Online Grocery Store</title>
+    <title>Home - Online Grocery Store</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -10,12 +10,39 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+    
+    <link rel="stylesheet" href="\CSS\Page UI.css">
+    <style>
+    .footer {
+        position: bottom ;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color:#343a40;
+        color: white;
+        text-align: center;
+    }
+    .row1{
+        text-align: center;
+    }
+    .img-container{
+        text-align: center;
+        
+    }
+    .quick-links{
+        text-align: center;
+    }
+    h3{
+        text-align: center;
+    }
+    
+    </style>
+
     <link rel = "stylesheet" href = "../CSS\Page UI.css">
-    <link rel ="stylesheet" href ="..\CSS\Back end\list.css"/>
+
 </head>
 
 <body>
-
     <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
         <a class="navbar-brand" href="Main Page.html">Online Grocery Store</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -23,10 +50,10 @@
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
 
-
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
                     <div class="dropdown show">
+
                         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aisles</a>
                     
                     <div class="dropdown-menu" aria-labelledby="dropdown03">
@@ -35,6 +62,7 @@
                         <a class="dropdown-item" href="Product links/seafood.html" target="_self">Seafood </a>
                         <a class="dropdown-item" href="Product links/dairy and eggs.html" target="_self">Dairy and Eggs </a>
                         <a class="dropdown-item" href="Product links/cereal products.html" target="_self">Cereal Products </a>
+
                     </div>
                 </li>
                 <li class = "nav-item dropdown">
@@ -44,151 +72,239 @@
                     <div class="dropdown-menu" aria-labelledby="dropdown03">
                       <a class="dropdown-item" href="user-list.html" target="_self">User List</a>
                       <a class="dropdown-item" href="Productlist.html" target="_self"> Product list </a>
-                      <a class="dropdown-item" href="Back end/Order-list.html" target="_self">Order List </a>
+                      <a class="dropdown-item" href="Order-list.html" target="_self">Order List </a>
                   </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="Login.html" target="_blank">Login / Sign up</a>
                 </li>
                 <li class="nav-item">
-                    <li class="nav-item dropdown">
-                        <div class="dropdown show">
-                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#9881;</a>
+                <li class="nav-item dropdown">
+                    <div class="dropdown show">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#9881;</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="Back end\change password.html" target="_blank"> Change Password</a>
-                            <a class="dropdown-item" href="Back end\account-info.html" target="_self"> Account Info</a></a>
-                            <a class="dropdown-item" href="Back end\delete-user.html" target = "_blank">Delete Account</a>
+                            <a class="dropdown-item" href="Back end\change password.html" target="_blank"> Change
+                                Password</a>
+                            <a class="dropdown-item" href="Back end\account-info.html" target="_self"> Account
+                                Info</a></a>
+                            <a class="dropdown-item" href="Back end\delete-user.html" target="_blank">Delete Account</a>
+                           
                         </div>
-                    </li>
+                    </div>
+                </li>
                 </li>
             </ul>
             <div class="shopping-cart-holder">
-                <a class="nav-link shopping-cart" href="shopping_cart.html" target = "_blank">&#128722; </a>
+                <a class="nav-link shopping-cart" href="shopping_cart.html" target="_blank">&#128722; </a>
             </div>
         </div>
     </nav>
-    <br>
+    
+    <style type="text/css">
+        .tg  {border-collapse:collapse;border-color:#ccc;border-spacing:0;margin:0px auto}
+        .tg td{width:180px;background-color:#fff;border-color:#ccc;border-style:solid;border-width:2px;color:#333;
+          font-family:Arial, sans-serif;font-size:20px;overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg th{width:180px;background-color:#b3b3b3;border-color:#ccc;border-style:solid;border-width:2px;color:#333;
+          font-family:Arial, sans-serif;font-size:20px;font-weight:normal;overflow:hidden;padding:20px 10px;word-break:normal;}
+        .tg .tg-header{width:180px;position:-webkit-sticky;position:sticky;text-align:center;top:-1px;vertical-align:top;will-change:transform}
+        .tg .tg-odd{width:180px;background-color:#f9f9f9;text-align:center;vertical-align:top}
+        .tg .tg-even{width:180px;text-align:center;vertical-align:top}
+        .tg .tg-des{font-size:15px;width:400px;text-align:left;vertical-align:top}
+        .lastRow{width:160px;text-align:center;vertical-align:top}
+        </style>
         <table class="tg">
         <thead>
           <tr>
             <th class="tg-header">Product Name</th>
-            <th class="tg-header">Type and Description</th>
+            <th class="tg-header">Type</th>
             <th class="tg-header">Price</th>
             <th class="tg-header">Quantity</th>
+            <th class="tg-header">Description</th>
+            <th class="tg-header">Update</th>
             <th class="tg-header">Select Item</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td class="tg-odd">Apple</td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"><input type="checkbox" class="users" name="user"></td>
+            <td class="tg-odd">Vegetables & Fruits</td>
+            <td class="tg-odd">$0.89</td>
+            <td class="tg-odd">300</td>
+            <td class="tg-des">Apples are perfect for a quick and filling snack. Being high in fiber and water it leaves the impression of being satiated and refreshed.</td>
+            <td class="tg-odd"><a href="product-edit.html">Edit</a></td>
+            <td class="tg-odd"><input type='checkbox' name='chkboxes'> <br></td>
           </tr>
           <tr>
             <td class="tg-even">Banana</td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
-            <td class="tg-even"><input type="checkbox" class="users" name="user"></td>
+            <td class="tg-even">Vegetables & Fruits</td>
+            <td class="tg-even">$0.33</td>
+            <td class="tg-even">300</td>
+            <td class="tg-des">Bananas are rich in fibers and many minerals such as zinc which is an oligo-element (present in little quantities in the body). It therefore contains important vitamins for our immune system.</td>
+            <td class="tg-even"><a href="product-edit.html">Edit</a></td>
+            <td class="tg-even"><input type='checkbox' name='chkboxes'> <br></td>
           </tr>
           <tr>
             <td class="tg-odd">Pear</td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"><input type="checkbox" class="users" name="user"></td>
+            <td class="tg-odd">Vegetables & Fruits</td>
+            <td class="tg-odd">$1.05</td>
+            <td class="tg-odd">200</td>
+            <td class="tg-des">Belly-fat killers, pear are helpfull in weight loss and beneficit gut and heart health. And remember to eat the peel which contains most nutrients!</td>
+            <td class="tg-odd"><a href="product-edit.html">Edit</a></td>
+            <td class="tg-odd"><input type='checkbox' name='chkboxes'> <br></td>
           </tr>
           <tr>
             <td class="tg-even">Carrots</td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
-            <td class="tg-even"><input type="checkbox" class="users" name="user"></td>
+            <td class="tg-even">Vegetables & Fruits</td>
+            <td class="tg-even">$2.99</td>
+            <td class="tg-even">150</td>
+            <td class="tg-des">They might not help you get rid of your glasses, but carrots are indeed protected your eyes by being a good source of antioxidants lutein and beta carotene. They also improve the overall health.</td>
+            <td class="tg-even"><a href="product-edit.html">Edit</a></td>
+            <td class="tg-even"><input type='checkbox' name='chkboxes'> <br></td>
           </tr>
           <tr>
             <td class="tg-odd">Broccoli</td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"><input type="checkbox" class="users" name="user"></td>
+            <td class="tg-odd">Vegetables & Fruits</td>
+            <td class="tg-odd">$3.49</td>
+            <td class="tg-odd">1000</td>
+            <td class="tg-des">This melting pot of vitamins (A,C,E,K) contains also a good amount of fiber,protein, potassium, magnesium and calcium. If you'd have to stick with one vegetable broccoli would be the right choice!</td>
+            <td class="tg-odd"><a href="product-edit.html">Edit</a></td>
+            <td class="tg-odd"><input type='checkbox' name='chkboxes'> <br></td>
           </tr>
           <tr>
             <td class="tg-even">Mushrooms</td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
-            <td class="tg-even"><input type="checkbox" class="users" name="user"></td>
+            <td class="tg-even">Vegetables & Fruits</td>
+            <td class="tg-even">$2.49</td>
+            <td class="tg-even">500</td>
+            <td class="tg-des">Mushrooms are not considered as a superfood for nothing. They lower the risk of developping desease such as alzheimer,cancer and diabetes. And on top of that they actually taste good!</td>
+            <td class="tg-even"><a href="product-edit.html">Edit</a></td>
+            <td class="tg-even"><input type='checkbox' name='chkboxes'> <br></td>
           </tr>
           <tr>
-            <td class="tg-odd">Onions</td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"><input type="checkbox" class="users" name="user"></td>
+            <td class="tg-odd">Whole Chicken</td>
+            <td class="tg-odd">Meat</td>
+            <td class="tg-odd">$12.54</td>
+            <td class="tg-odd">50</td>
+            <td class="tg-des">Chicken is high in proteines, in nutriment, tasty and easy to cook but still good for your health because of it's lean proteins and low fat. It should be in everyone diet as it also helps with bone health and muscle growth.</td>
+            <td class="tg-odd"><a href="product-edit.html">Edit</a></td>
+            <td class="tg-odd"><input type='checkbox' name='chkboxes'> <br></td>
           </tr>
           <tr>
-            <td class="tg-even">Eggs</td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
-            <td class="tg-even"><input type="checkbox" class="users" name="user"></td>
+            <td class="tg-even">Ground Beef</td>
+            <td class="tg-even">Meat</td>
+            <td class="tg-even">$1.54/100g</td>
+            <td class="tg-even">20kg</td>
+            <td class="tg-des">Ground beef being red meat is one of the most nutrious foods (full of vitamins minerals and other good things) but being grounded makes it more expose to bacteria. It can also have a good amount of fat, so it should be eaten in moderation!           </td>
+            <td class="tg-even"><a href="product-edit.html">Edit</a></td>
+            <td class="tg-even"><input type='checkbox' name='chkboxes'> <br></td>
           </tr>
           <tr>
-            <td class="tg-odd">Butter</td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"><input type="checkbox" class="users" name="user"></td>
+            <td class="tg-odd">Two-Sausages</td>
+            <td class="tg-odd">Meat</td>
+            <td class="tg-odd">$3.75</td>
+            <td class="tg-odd">500</td>
+            <td class="tg-des">Depending on the sausages, they can can be high or low in fat and calories but are usually high in protein. Some can even contain chemicals bad for the health. At least they are tasty! </td>
+            <td class="tg-odd"><a href="product-edit.html">Edit</a></td>
+            <td class="tg-odd"><input type='checkbox' name='chkboxes'> <br></td>
+          </tr>
+          <tr>
+            <td class="tg-even">Steak</td>
+            <td class="tg-even">Meat</td>
+            <td class="tg-even">$44.07/kg</td>
+            <td class="tg-even">40kg</td>
+            <td class="tg-des">Ever felt light-headed after standing up? One of the top source of proteine also prevents iron defiency. Steak is a very healthy and nutrious red meat. </td>
+            <td class="tg-even"><a href="product-edit.html">Edit</a></td>
+            <td class="tg-even"><input type='checkbox' name='chkboxes'> <br></td>
+          </tr>
+          <tr>
+            <td class="tg-odd">Eggs</td>
+            <td class="tg-odd">Dairy & Eggs</td>
+            <td class="tg-odd">$2.99/dozen</td>
+            <td class="tg-odd">150</td>
+            <td class="tg-des">Eggs are one of the best source of protein and can be eaten everyday (3max). They are filling, rich and full of "good" cholesterol, you already know what is on your breakfast table tomorrow!</td>
+            <td class="tg-odd"><a href="product-edit.html">Edit</a></td>
+            <td class="tg-odd"><input type='checkbox' name='chkboxes'> <br></td>
           </tr>
           <tr>
             <td class="tg-even">Cheese</td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
-            <td class="tg-even"><input type="checkbox" class="users" name="user"></td>
+            <td class="tg-even">Dairy & Eggs</td>
+            <td class="tg-even">$6.09/500g</td>
+            <td class="tg-even">300</td>
+            <td class="tg-des">Cheese is not only the enemy of people having lactose intolerance, it is high in saturated fat and salt leading to cardiovascular disease. However it still has a lot of calcium and proteins.</td>
+            <td class="tg-even"><a href="product-edit.html">Edit</a></td>
+            <td class="tg-even"><input type='checkbox' name='chkboxes'> <br></td>
           </tr>
           <tr>
             <td class="tg-odd">Milk</td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
-            <td class="tg-even"><input type="checkbox" class="users" name="user"></td>
+            <td class="tg-odd">Dairy & Eggs</td>
+            <td class="tg-odd">$4.99/2L</td>
+            <td class="tg-odd">60</td>
+            <td class="tg-des">Drinking milk is essential especially at a young age for bone and dental health due to it's high calcium contration. The downside is that dairy product such as milk contain cholesterol, saturated fat and a lot of calories that can cause obesity and some disease such as diabetes.</td>
+            <td class="tg-odd"><a href="product-edit.html">Edit</a></td>
+            <td class="tg-odd"><input type='checkbox' name='chkboxes'> <br></td>
           </tr>
           <tr>
-            <td class="tg-even">Yogurt</td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
-            <td class="tg-even"><input type="checkbox" class="users" name="user"></td>
+            <td class="tg-even">Butter</td>
+            <td class="tg-even">Dairy & Eggs</td>
+            <td class="tg-even">$4.69/454g</td>
+            <td class="tg-even">3000g</td>
+            <td class="tg-des">What is one disease that everyone fears? Cancer, butter lowers the chances of developping a form of it because of its concentration in beta-carotene that is transformed in vitamine A in the body.</td>
+            <td class="tg-even"><a href="product-edit.html">Edit</a></td>
+            <td class="tg-even"><input type='checkbox' name='chkboxes'> <br></td>
           </tr>
           <tr>
             <td class="tg-odd">Rice</td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"></td>
-            <td class="tg-odd"><input type="checkbox" class="users" name="user"></td>
+            <td class="tg-odd">Cereal Product</td>
+            <td class="tg-odd">$19.99</td>
+            <td class="tg-odd">250</td>
+            <td class="tg-des">Rice is rich in many vitamins such as niacin,thiamine, riboflavin and others. It also contains minerals and is high in carb, but white rice being refined has less carbs but has a higher glycemic index than brown rice.</td>
+            <td class="tg-odd"><a href="product-edit.html">Edit</a></td>
+            <td class="tg-odd"><input type='checkbox' name='chkboxes'> <br></td>
           </tr>
           <tr>
-            <td class="tg-even">Pasta</td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
-            <td class="tg-even"></td>
-            <td class="tg-even"><input type="checkbox" class="users" name="user"></td>
+            <td class="tg-even">Slice Bread</td>
+            <td class="tg-even">Cereal Product</td>
+            <td class="tg-even">$1.99</td>
+            <td class="tg-even">300</td>
+            <td class="tg-des">What could boost the starting of your day better than a high source of carbs and fiber? Bread, especially whole grain is important for health and helps prevent many disease due to all the fiber it contains.</td>
+            <td class="tg-even"><a href="product-edit.html">Edit</a></td>
+            <td class="tg-even"><input type='checkbox' name='chkboxes'> <br></td>
+          </tr>
+          <tr>
+            <td class="tg-odd">Cereals</td>
+            <td class="tg-odd">Cereal Product</td>
+            <td class="tg-odd">$4.99</td>
+            <td class="tg-odd">45</td>
+            <td class="tg-des">The majority of cereal nowadays are loaded with sugard making them bad for your health. It can cause several disease such as type 2 diabetes, obesity and other. </td>
+            <td class="tg-odd"><a href="product-edit.html">Edit</a></td>
+            <td class="tg-odd"><input type='checkbox' name='chkboxes'> <br></td>
+          </tr>
+          <tr>
+            <td class="tg-even">Fusilli</td>
+            <td class="tg-even">Cereal Product</td>
+            <td class="tg-even">$2.49</td>
+            <td class="tg-even">99</td>
+            <td class="tg-des">Wondering how to have energy for any physical activites? Pasta can be the answer to that question as it is a good source of energy. It can also contain fiber (more if it is whole grain) which are good for the digestive system.</td>
+            <td class="tg-even"><a href="product-edit.html">Edit</a></td>
+            <td class="tg-even"><input type='checkbox' name='chkboxes'> <br></td>
           </tr>
 
         </tbody>
         </table>
-        <div class = "list-buttons">
-          <a type="text" name="add-product-button" style="font-weight: bold;" class="btn btn-primary" href = "Back end\add-product.html">Add New Product</a>
-          <a type="text" name="edit-product-button" style="font-weight: bold;" class="btn btn-primary" href="Back end\edit-product.html">Edit Product</a>
-          <a type="text" name="delete-product-button" style="font-weight: bold;" class="btn btn-primary" href = "#">Remove Selected Products</a>
+
+        <div style = "display: flex; justify-content:flex-end; margin-right: 489px;margin-top: 34px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal;overflow:hidden">
+            <button></a>Add New Product</button>
         </div>
-        <footer class="footer2" style="position: bottom;">
-          <h4 class=contact-info-header> Contact Info</h4>
+        
+        <div style = "display: flex; justify-content:flex-end; margin-right: 209px;margin-top: -36px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal;overflow:hidden">
+            <button>Remove Selected Products</button>
+        </div>
+        <br/>
+        <br/>
+        <footer class="footer2" style="position:unset">
+          <h4 class = contact-info-header> Contact Info</h4>
           <div class="row">
-              <br />
+              <br/>
               <dt class="col-sm-5">Address :</dt>
               <dd class="col-sm-7"> 123 Main Street</dd>
               <dt class="col-sm-5">Tel. :</dt>
