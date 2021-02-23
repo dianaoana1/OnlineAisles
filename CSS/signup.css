@@ -1,6 +1,10 @@
-.page-content{
+.container{
     width:800px;
     margin: auto;
+}
+
+.column{
+
 }
 
 .card{
@@ -44,7 +48,7 @@ td{
 }
 
 input[type=text]{
-    width:370px;
+    width:100%;
 }
 
 #signin-button{
