@@ -3,7 +3,6 @@
     border-color: #ccc;
     border-spacing: 0;
     margin: 0px auto;
-    margin-bottom:200px !important;
 }
 
 .tg td {
@@ -71,4 +70,5 @@
     font-size:20px;
     font-weight:normal;
     overflow:hidden;
+    margin-bottom:200px !important;
 }
