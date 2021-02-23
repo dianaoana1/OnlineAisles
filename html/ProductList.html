@@ -11,34 +11,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     
-    <link rel="stylesheet" href="\CSS\Page UI.css">
-    <style>
-    .footer {
-        position: bottom ;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        background-color:#343a40;
-        color: white;
-        text-align: center;
-    }
-    .row1{
-        text-align: center;
-    }
-    .img-container{
-        text-align: center;
-        
-    }
-    .quick-links{
-        text-align: center;
-    }
-    h3{
-        text-align: center;
-    }
-    
-    </style>
-
-    <link rel = "stylesheet" href = "../CSS\Page UI.css">
+    <link rel="stylesheet" href = "\CSS\Page UI.css">
+    <link rel ="stylesheet" href = "\CSS\Back end\list.css"/>
 
 </head>
 
@@ -101,18 +75,6 @@
         </div>
     </nav>
     
-    <style type="text/css">
-        .tg  {border-collapse:collapse;border-color:#ccc;border-spacing:0;margin:0px auto}
-        .tg td{width:180px;background-color:#fff;border-color:#ccc;border-style:solid;border-width:2px;color:#333;
-          font-family:Arial, sans-serif;font-size:20px;overflow:hidden;padding:10px 5px;word-break:normal;}
-        .tg th{width:180px;background-color:#b3b3b3;border-color:#ccc;border-style:solid;border-width:2px;color:#333;
-          font-family:Arial, sans-serif;font-size:20px;font-weight:normal;overflow:hidden;padding:20px 10px;word-break:normal;}
-        .tg .tg-header{width:180px;position:-webkit-sticky;position:sticky;text-align:center;top:-1px;vertical-align:top;will-change:transform}
-        .tg .tg-odd{width:180px;background-color:#f9f9f9;text-align:center;vertical-align:top}
-        .tg .tg-even{width:180px;text-align:center;vertical-align:top}
-        .tg .tg-des{font-size:15px;width:400px;text-align:left;vertical-align:top}
-        .lastRow{width:160px;text-align:center;vertical-align:top}
-        </style>
         <table class="tg">
         <thead>
           <tr>
@@ -292,12 +254,10 @@
         </tbody>
         </table>
 
-        <div style = "display: flex; justify-content:flex-end; margin-right: 489px;margin-top: 34px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal;overflow:hidden">
-            <button></a>Add New Product</button>
-        </div>
-        
-        <div style = "display: flex; justify-content:flex-end; margin-right: 209px;margin-top: -36px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal;overflow:hidden">
-            <button>Remove Selected Products</button>
+        <div class = "list-buttons">
+          <a type="text" name="add-product-button" style="font-weight: bold;" class="btn btn-primary" href = "Back end\add-product.html">Add New Product</a>
+          <a type="text" name="edit-product-button" style="font-weight: bold;" class="btn btn-primary" href="Back end\edit-product.html">Edit Product</a>
+          <a type="text" name="delete-product-button" style="font-weight: bold;" class="btn btn-primary" href = "#">Remove Selected Products</a>
         </div>
         <br/>
         <br/>
