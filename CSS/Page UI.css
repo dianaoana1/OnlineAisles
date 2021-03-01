@@ -33,4 +33,31 @@
 .btn btn-secondary dropdown-toggle:hover{
     opacity:0.6;
 }
+.col-veg{
+    background-image:url('../Images/vegetables.jpg') ;
+    width: 20%;
+    
+}
+.col-meat{
+    background-image: url('../Images/meat2.jpg');
+    width: 20%;
+    
+}
+.col-egg{
+    background-image: url('../Images/dairy-egg.jpg');
+    width: 20%;
+  
+}
 
+.col-sea{
+    background-image: url('../Images/seafood.jpg');
+    width: 20%;
+  
+
+}
+
+.col-cer{
+    background-image: url('../Images/other.jpg');
+    width: 20%;
+    
+}
