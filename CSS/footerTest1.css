@@ -1,0 +1,35 @@
+/* body {
+    display:flex;
+    justify-content:flex-end;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background:whitesmoke;
+} */
+
+footer {
+    /* width:100%;
+    position: relative;
+    height:auto;
+    padding: 15px;
+    color: whitesmoke;
+    background: rgb(58, 58, 58);
+    display:flex;
+    justify-content: wrap; */
+    
+    margin:0px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color:#343a40;
+    padding:15px;
+    color: white;
+    text-align: center;
+}
+
+footer .container {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-direction: wrap;
+}

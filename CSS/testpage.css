@@ -1,0 +1,138 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body {
+    display:flex;
+    justify-content:flex-end;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background:whitesmoke;
+}
+
+footer {
+    width:100%;
+    position: relative;
+    height:auto;
+    padding: 50px 100px;
+    color: whitesmoke;
+    background: rgb(58, 58, 58);
+    display:flex;
+    justify-content: wrap;
+}
+
+footer .container {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-direction: wrap;
+}
+
+footer .container .section {
+    margin-right: 30px;
+}
+
+footer .container .section .about-us{
+    width:40%;
+}
+
+footer .container h2{
+    position:relative;
+    color:aliceblue;
+    font-weight:500;
+    margin-bottom: 15px;
+}
+
+footer p{
+    color: whitesmoke;
+}
+
+.icons {
+    margin-top:20px;
+    display:flex;
+}
+
+.icons li {
+    list-style:none;
+}
+
+.icons li a{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    margin-right:10px;
+    text-decoration: none;
+    border-radius:4px;
+}
+
+.icons li a:hover{
+    background: rgb(0, 174, 255);
+}
+
+.icons li a .fa{
+    color:whitesmoke;
+    font-size:20px;
+}
+
+.quick-links {
+    width:25%;
+    position:relative;   
+}
+
+.quick-links ul li{
+    list-style:none;
+}
+
+.quick-links ul li a{
+    display: inline-block;
+    margin-bottom:10px;
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.quick-links ul li a:hover{
+    text-decoration: none;
+    color: rgb(0, 174, 255);
+}
+
+.contactInfo {
+    width: calc(35%-60px);
+    margin-right: 0 !important;
+}
+
+.contactInfo .info {
+    position: relative;
+}
+
+.contactInfo .info li {
+    display:flex;
+    margin-bottom: 16px;
+}
+
+.contactInfo .info li span {
+    color: whitesmoke;
+    font-size:20px;
+    margin-right: 16px;
+}
+
+.contactInfo .info li span {
+    color:whitesmoke;
+}
+
+.contactInfo .info li a{
+    color:whitesmoke;
+    text-decoration:none;
+}
+
+.contactInfo .info li a:hover{
+    color:rgb(0, 174, 255);
+    text-decoration:none;
+}
+
