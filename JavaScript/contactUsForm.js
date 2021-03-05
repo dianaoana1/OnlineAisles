@@ -11,4 +11,4 @@ function checkOrderNum(order_num) {
     }
 }
 document.getElementById("contactUsForm").onsubmit = checkOrderNum;
-document.getElementById("contactUsFrom").onblur = checkOrderNum;
+document.getElementById("contactUsForm").onblur = checkOrderNum;
