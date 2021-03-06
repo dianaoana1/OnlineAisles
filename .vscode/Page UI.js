@@ -1,3 +1,3 @@
-// $(document).ready(function(){
-//     $('.container').height($(window).height());
-//   })
+$(document).ready(function(){
+    $('body').height($(window).height());
+  })
