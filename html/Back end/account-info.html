@@ -12,10 +12,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css"
-        href="..\..\CSS\Page UI.css">
+    <link rel="stylesheet" type="text/css" href="..\..\CSS\Page UI.css">
     <link rel="stylesheet" type="text/css" href="..\..\CSS\Back end\account-info.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 
 <body>
@@ -76,160 +76,186 @@
             </div>
         </div>
     </nav>
-
-    <div class="form-box">
-        <div class="button-box">
-            <div class="buttons">
-                <a type="text" name="save-button"
-                    style="font-weight: bold; background-color: rgb(13, 216, 6);border-color: rgb(13, 216, 6);"
-                    class="btn btn-primary" href="save confirmation.html">Save Changes</a>
-                <a type="text" name="revert-button" style="font-weight: bold;" class="btn btn-primary"
-                    href="account-info.html">Revert Changes</a>
-                <a type="text" name="reset-button"
-                    style="font-weight: bold; background-color:rgb(226, 5, 5); border-color:rgb(226, 5, 5); color:white;"
-                    class="btn btn-primary">Reset</a>
-                <br />
+    <div class="container">
+        <div class="form-box">
+            <div class="button-box">
+                <div class="buttons">
+                    <a type="text" name="save-button"
+                        style="font-weight: bold; background-color: rgb(13, 216, 6);border-color: rgb(13, 216, 6);"
+                        class="btn btn-primary" href="save confirmation.html">Save Changes</a>
+                    <a type="text" name="revert-button" style="font-weight: bold;" class="btn btn-primary"
+                        href="account-info.html">Revert Changes</a>
+                    <a type="text" name="reset-button"
+                        style="font-weight: bold; background-color:rgb(226, 5, 5); border-color:rgb(226, 5, 5); color:white;"
+                        class="btn btn-primary">Reset</a>
+                    <br />
+                </div>
             </div>
-        </div>
-        <br />
-        <div class="contact-info">
-            <h3>Contact Information : </h3>
-            <div class="contact-info-form">
-                <table class="contact-info-inputs">
-                    <form class="contact-info-form"></form>
-                    <tr>
-                        <td>
-                            <label for="FirstName">*FIRST NAME</label><br>
-                            <input type="text" id="FirstName" name="FirstName">
-                        </td>
-                        <td>
-                            <label for="LastName">*LAST NAME</label><br>
-                            <input type="text" id="LastName" name="LastName">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>*Primary Email : </label><br />
-                            <input type="text" id="email" name="email" />
-                        </td>
-                        <td>
-                            <label>*Recovery Email : </label><br />
-                            <input type="text" id="recovery-email" name="recovery-email" />
-                        </td>
-                    </tr>
+            <br />
+            <div class="contact-info">
+                <h3>Contact Information : </h3>
+                <div class="contact-info-form">
+                    <table class="contact-info-inputs">
+                        <form class="contact-info-form"></form>
+                        <tr>
+                            <td>
+                                <label for="FirstName">*FIRST NAME</label><br>
+                                <input type="text" id="FirstName" name="FirstName">
+                            </td>
+                            <td>
+                                <label for="LastName">*LAST NAME</label><br>
+                                <input type="text" id="LastName" name="LastName">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>*Primary Email : </label><br />
+                                <input type="text" id="email" name="email" />
+                            </td>
+                            <td>
+                                <label>*Recovery Email : </label><br />
+                                <input type="text" id="recovery-email" name="recovery-email" />
+                            </td>
+                        </tr>
 
-                    <tr>
-                        <td>
-                            <label>*Primary Phone : </label><br />
-                            <input type="text" id="phone1" name="phone1" minlength="10" />
-                        </td>
-                        <td>
-                            <label for="phone1"></label><br>
-                            <select id="phone1-type" name="phone1-type">
-                                <option value="Select">Select</option>
-                                <option value="mobile">Mobile</option>
-                                <option value="home">Home</option>
-                                <option value="work">Work</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>Secondary Phone : </label><br />
-                            <input type="text" id="phone2" name="phone2" minlength="10" />
-                        </td>
-                        <td>
-                            <label for="phone2"></label><br>
-                            <select id="phone2-type" name="phone2-type">
-                                <option value="Select">Select</option>
-                                <option value="mobile">Mobile</option>
-                                <option value="home">Home</option>
-                                <option value="work">Work</option>
-                            </select>
-                        </td>
-                    </tr>
-                    </form>
-                </table>
+                        <tr>
+                            <td>
+                                <label>*Primary Phone : </label><br />
+                                <input type="text" id="phone1" name="phone1" minlength="10" />
+                            </td>
+                            <td>
+                                <label for="phone1"></label><br>
+                                <select id="phone1-type" name="phone1-type">
+                                    <option value="Select">Select</option>
+                                    <option value="mobile">Mobile</option>
+                                    <option value="home">Home</option>
+                                    <option value="work">Work</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Secondary Phone : </label><br />
+                                <input type="text" id="phone2" name="phone2" minlength="10" />
+                            </td>
+                            <td>
+                                <label for="phone2"></label><br>
+                                <select id="phone2-type" name="phone2-type">
+                                    <option value="Select">Select</option>
+                                    <option value="mobile">Mobile</option>
+                                    <option value="home">Home</option>
+                                    <option value="work">Work</option>
+                                </select>
+                            </td>
+                        </tr>
+                        </form>
+                    </table>
+                </div>
             </div>
-        </div>
-        <br />
-        <div class="billing-info">
-            <h3>Billing Information : </h3>
-            <div class="billing-info-form">
-                <table class="billing-info-inputs">
-                    <form class="billing-info-form"></form>
-                    <tr>
-                        <td>
-                            <label>*Address Line 1 : </label><br />
-                            <input type="text" name="address-L1" minlength="1" />
-                        </td>
-                        <td>
-                            <label>Address Line 2 : </label><br />
-                            <input type="text" name="address-L2" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="Apartment">Apartment Number</label><br>
-                            <input type="text" id="Apartment" name="Apartment">
-                        </td>
-                        <td>
-                            <label>P.O. Box : </label><br />
-                            <input type="text" name="PO-box" />
-                        </td>
+            <br />
+            <div class="billing-info">
+                <h3>Billing Information : </h3>
+                <div class="billing-info-form">
+                    <table class="billing-info-inputs">
+                        <form class="billing-info-form"></form>
+                        <tr>
+                            <td>
+                                <label>*Address Line 1 : </label><br />
+                                <input type="text" name="address-L1" minlength="1" />
+                            </td>
+                            <td>
+                                <label>Address Line 2 : </label><br />
+                                <input type="text" name="address-L2" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="Apartment">Apartment Number</label><br>
+                                <input type="text" id="Apartment" name="Apartment">
+                            </td>
+                            <td>
+                                <label>P.O. Box : </label><br />
+                                <input type="text" name="PO-box" />
+                            </td>
 
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>*Postal Code : </label><br />
-                            <input type="text" name="postal-code" />
-                        </td>
-                        <td>
-                            <label>*City : </label><br />
-                            <input type="text" name="city" minlength="1" />
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>*Postal Code : </label><br />
+                                <input type="text" name="postal-code" />
+                            </td>
+                            <td>
+                                <label>*City : </label><br />
+                                <input type="text" name="city" minlength="1" />
 
-                        </td>
-                    </tr>
+                            </td>
+                        </tr>
 
-                    <tr>
-                        <td>
-                            <label for="province">*Province</label><br>
-                            <select id="province" name="province">
-                                <option value="Select">Select</option>
-                                <option value="Alberta">Alberta</option>
-                                <option value="British Columbia">British Columbia</option>
-                                <option value="Manitoba">Manitoba</option>
-                                <option value="New Brunswick">New Brunswick</option>
-                                <option value="Newfoundland And Labrador">Newfoundland And Labrador</option>
-                                <option value="Northwest Territories">Northwest Territories</option>
-                                <option value="Nova Scotia">Nova Scotia</option>
-                                <option value="Nunavut">Nunavut</option>
-                                <option value="Ontario">Ontario</option>
-                                <option value="Prince Edward Island">Prince Edward Island</option>
-                                <option value="Quebec">Quebec</option>
-                                <option value="Saskatchewan">Saskatchewan</option>
-                                <option value="Yukon">Yukon</option>
-                            </select>
-                        </td>
-                    </tr>
-                    </form>
-                </table>
+                        <tr>
+                            <td>
+                                <label for="province">*Province</label><br>
+                                <select id="province" name="province">
+                                    <option value="Select">Select</option>
+                                    <option value="Alberta">Alberta</option>
+                                    <option value="British Columbia">British Columbia</option>
+                                    <option value="Manitoba">Manitoba</option>
+                                    <option value="New Brunswick">New Brunswick</option>
+                                    <option value="Newfoundland And Labrador">Newfoundland And Labrador</option>
+                                    <option value="Northwest Territories">Northwest Territories</option>
+                                    <option value="Nova Scotia">Nova Scotia</option>
+                                    <option value="Nunavut">Nunavut</option>
+                                    <option value="Ontario">Ontario</option>
+                                    <option value="Prince Edward Island">Prince Edward Island</option>
+                                    <option value="Quebec">Quebec</option>
+                                    <option value="Saskatchewan">Saskatchewan</option>
+                                    <option value="Yukon">Yukon</option>
+                                </select>
+                            </td>
+                        </tr>
+                        </form>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
     <br>
-    <footer class="footer2">
-        <h4 class=contact-info-header> Contact Info</h4>
-        <div class="row">
-            <br />
-            <dt class="col-sm-5">Address :</dt>
-            <dd class="col-sm-7"> 123 Main Street</dd>
-            <dt class="col-sm-5">Tel. :</dt>
-            <dd class="col-sm-7"><a href="514-123-4567">514-123-4567</a></dd>
-            <dt class="col-sm-5">Email :</dt>
-            <dd class="col-sm-7"><a
-                    href="mailto:zixi.quan@concordia.ca?subject=SOEN287">online_grocerystore@groceries.ca</a>
-            </dd>
+    <footer>
+        <div class="section contactInfo">
+            <h3>Contact Info</h3>
+            <ul class="info">
+                <li>
+                    <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                    <p>123 Main Street<br /> Montreal, QC<br /> Canada</p>
+                </li>
+                <li>
+                    <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                    <p><a href="tel:5141234567">514-123-4567</a></p>
+                </li>
+                <li>
+                    <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                    <p><a href="mailto:zixi.quan@concordia.ca?subject=SOEN287">online_grocerystore@groceries.ca</a></p>
+                </li>
+                <li>
+                    <span><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                    <p><a href="..\html\contactUsFrom.html">Help us improve your experience</a></p>
+                </li>
+            </ul>
+            <ul class="icons">
+                <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.youtube.com/"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+        <div class="section about-us">
+            <h3>About Us</h3>
+            <p>
+                At the start of 2020, the coronavirus pandemic brought on new difficulties for many people with
+                pre-existing medical conditions. Something as simple as grocery shopping was now a high risk activity
+                for those who were more succeptible to serious illnesses cause by the Covid-19 virus. Our goal is to
+                make grocery shopping safe and affordable for all Canadians so that no one is has to face food
+                insecurity in these difficult times.
+            </p>
         </div>
     </footer>
 </body>
