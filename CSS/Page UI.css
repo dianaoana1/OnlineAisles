@@ -81,12 +81,12 @@ footer .container h2{
     background-color:rgb(158, 156, 156);
     border-color:rgb(158, 156, 156);
 }
-
+/* 
 .btn-primary:focus{
     background-color:rgb(159, 179, 71, 0.856) !important;
     outline: none;
     box-shadow: none;
-}
+} */
   
 .btn-primary:active{
     background-color:rgb(159, 179, 71, 0.856) !important;
