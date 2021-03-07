@@ -7,17 +7,16 @@
     background-color: white;
     padding-top: 10px;
     padding-bottom:10px;
-    position: absolute;
-    top:62px;
+    position: center absolute;
 }
+
 .buttons {
-    position: center;
     text-align: center;
 }
 
 .contact-info{
-    background-color: lightgrey;
-    margin-top:45px;
+    background-color: rgb(185, 185, 185, 0.493);
+    margin-top:50px;
     padding:10px;
     border-radius: 10px;
 }
@@ -28,16 +27,15 @@
     border-radius: 10px;
 }
 .contact-information{
-   background-color: lightgrey; 
+   background-color: rgb(185, 185, 185, 0.493); 
    padding: 10px;
    border-radius: 10px;
 }
 
 .billing-info{
-    background-color: lightgrey;
+    background-color: rgb(185, 185, 185, 0.493);
     padding:10px;
     border-radius: 10px;
-    margin-bottom: 200px;
 }
 
 .billing-info-form{
@@ -46,25 +44,14 @@
     border-radius: 10px;
 }
 .billing-information{
-   background-color: lightgrey; 
+   background-color: rgb(185, 185, 185, 0.493); 
    padding: 10px;
    border-radius: 10px;
 }
 
-td{
-    padding:5px;
+td{padding:5px;
 }
 
 input[type=text]{
     width:370px;
-}
-
-.footer2 {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color:#343a40;
-    color: white;
-    text-align: center;
 }

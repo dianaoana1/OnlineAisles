@@ -1,15 +1,12 @@
 .container{
     width:800px;
     margin: auto;
-}
-
-.column{
-
+    height:97vh;
 }
 
 .card{
     padding: 10px;
-    background-color: lightgrey;
+    background-color: rgb(185, 185, 185, 0.493);
     border:0px;
     border-radius: 10px;
 }
@@ -22,7 +19,7 @@
 
 
 .personal-info{
-    background-color: lightgrey;
+    background-color: rgb(185, 185, 185, 0.493);
     padding:10px;
     border-radius: 10px;
 }
@@ -33,7 +30,7 @@
     border-radius: 10px;
 }
 .contact-information{
-   background-color: lightgrey; 
+   background-color: rgb(185, 185, 185, 0.493); 
    padding: 10px;
    border-radius: 10px;
 }
