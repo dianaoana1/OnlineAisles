@@ -40,7 +40,7 @@ function deleteSelectedRows() {
                 table.deleteRow(checkedOrders[k]);
         else
             for (var l = 0; l < tableRows.length; l++) {
-                tableRows[l].cells[7].firstChild.checked = false;
+                tableRows[l].cells[5].firstChild.checked = false;
             }
     }
     else {
@@ -49,7 +49,7 @@ function deleteSelectedRows() {
                 table.deleteRow(checkedOrders[k]);
         else
             for (var l = 0; l < tableRows.length; l++) {
-                tableRows[l].cells[7].firstChild.checked = false;
+                tableRows[l].cells[5].firstChild.checked = false;
             }
     }
 }
