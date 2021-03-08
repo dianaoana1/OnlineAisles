@@ -10,7 +10,7 @@ function addRow() {
         var row = table.insertRow(-1).innerHTML = '<tr><td class="tg-even">' + orderNumber + '</td><td class="tg-even"><textarea type="text" id="myText"></textarea></td><td class="tg-even"><textarea type="text" id="myText"></textarea></td><td class="tg-even"><textarea type="text" id="myText"></textarea></td><td class="tg-even"><textarea type="text" id="myText"></textarea></td><td class="tg-even"><input type="checkbox"></td></tr>';
     }
     addedRowCount++;
-} 
+}
 
 
 function deleteSelectedRows() {
@@ -39,14 +39,18 @@ function deleteSelectedRows() {
             for (var k = checkedOrders.length - 1; k >= 0; k--)
                 table.deleteRow(checkedOrders[k]);
         else
-            location.reload();
+            for (var l = 0; l < tableRows.length; l++) {
+                tableRows[l].cells[7].firstChild.checked = false;
+            }
     }
     else {
         if (confirm("Are you sure you want to delete order numbers " + checkedOrderNumbers + "?"))
             for (var k = checkedOrders.length - 1; k >= 0; k--)
                 table.deleteRow(checkedOrders[k]);
         else
-            location.reload();
+            for (var l = 0; l < tableRows.length; l++) {
+                tableRows[l].cells[7].firstChild.checked = false;
+            }
     }
 }
 

@@ -1,5 +1,5 @@
 body {
-    width:100%;
+    width:100vw;
     background-color:rgb(204, 211, 175, 0.986) !important;
     /* max-height:auto; */
     max-height:65vh;
@@ -8,14 +8,14 @@ body {
 
 .container {
     padding:0px !important;
-    width:100%;
+    width:100vw;
     margin-bottom:50px;
     height:65vh;
 }
 
 /* footer */
 footer {
-    width:100%;
+    width:100vw;
     position: relative;
     max-height:35vh;
     overflow:auto;
