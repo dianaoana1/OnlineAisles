@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fish and Seafood</title>
+    <title>Bananas</title>
 
-    <meta charset="utf-8">
+    <meta charset="utf-8" name=>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -19,14 +19,14 @@
     <link rel="stylesheet" href="..\..\CSS\Page UI.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
- <style>
-     button:hover{
-      text-decoration: underline;
-     }
- </style>
- <script>
-     var name="banana";
- </script>
+    <style>
+        button:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        var name = "banana";
+    </script>
 </head>
 
 
@@ -101,7 +101,7 @@
             <div class="products_row">
                 <div class="right-side">
                     <h2>Bananas</h2>
-                    <img src="../../Images/banana.jpg"width="400" height="400">
+                    <img src="../../Images/banana.jpg" width="400" height="400">
                     <h4>$0.33/un</h4>
                     <input type="number" value="1">
                     <a href="" class="button">Add To Cart</a>
@@ -112,7 +112,14 @@
                         Bananas are rich in fibers and many minerals such as zinc which is an oligo-element (present in
                         little quantities in the body). It therefore contains important vitamins for our immune system.
                     </p>
-                <button class="button" style="color:#007bff" onclick="openDetails(name)">Detailed description</button>
+                    <button class="accordion">Full Product description</button>
+                    <div class="panel">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+
+                   
                 </div>
             </div>
         </div>
@@ -157,6 +164,22 @@
         </div>
     </footer>
 
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+              panel.style.display = "none";
+            } else {
+              panel.style.display = "block";
+            }
+          });
+        }
+        </script>
 </body>
 
 </html>
