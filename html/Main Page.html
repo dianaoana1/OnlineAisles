@@ -10,12 +10,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/CSS" href="..\CSS\Page UI.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <script src = "..\.vscode\Page UI.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="..\.vscode\Page UI.js"></script>
+   
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark" >
+    <div id="mega-container" >
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <a class="navbar-brand" href="Main Page.html">Online Grocery Store</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -23,7 +26,7 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
-                    <div class="dropdown show" >
+                    <div class="dropdown show">
                         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aisles</a>
 
@@ -40,7 +43,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="nav-item dropdown" >
+                <li class="nav-item dropdown">
                     <div class="dropdown show">
                         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Back end Pages</a>
@@ -76,64 +79,72 @@
         </div>
     </nav>
 
-    <div class="container" style="max-width: 100%; height:75vh">
-        <div class="bg">
-            <img src = "..\Images\crops.jpg" alt = "Crops" width = "100%"> <!--https://www.google.com/url?sa=i&url=https%3A%2F%2Ffarm-advisory.eu%2Fen%2F&psig=AOvVaw3D46mh3g8TE0I6zFbuL6eU&ust=1615056545189000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPja0dLome8CFQAAAAAdAAAAABAD-->
-            <!-- <img src="..\Images\grocery store.jpg" alt="shopping cart picture" width="100%"> https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.zerotothree.org%2Fresources%2F2225-got-math-20-tips-for-making-your-trip-to-the-grocery-store-count&psig=AOvVaw0n5vjWS-6vEW48RzSxtzGd&ust=1615054877836000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIDJ2b7ime8CFQAAAAAdAAAAABBQ -->
-            <div class = "overlay-text">
-                <h2>Welcome to the <em>Online Grocery Store</em> !</h2>
-                <h5>Our grocery store has fresh food with free shipping on all orders </h5>
-            </div>
-        </div>
-        
-        <div class="img-container">
-            <div class = "text">
-                <h4 style = "color:rgb(59, 50, 28);">Our motto is that the customer always comes first </h4>
-                <p style = "color:rgb(73, 61, 34); font-weight: bold">The online grocery store has been opened since 2020 is one of the fastest growing companies in Canada</p>
-            </div>
-            <img src="..\Images\Grocery.jpg" alt="grocerypicture" width="25%" height="25%">
-            <img src="..\Images\grocery2.jpg" alt="secgrocerypicture" width="25%" height="25%">
-        </div>
-        </br>
-        <div class="container" style="height: 25%">
-            <div class="quick-links">
-                <p>
-                <h3 style="text-align: center;"> Quick links:</h3>
-                <div class="row">
-                    <p class="col-veg">
-                        <a class="nav-link" href="Product links/fruits and veggies.html" target="_self">Fruits and
-                            Vegetables</a>
-                    </p>
-                    <p class="col-egg">
-                        <a class="nav-link" href="Product links/dairy and eggs.html" target="_self">Dairy and Eggs</a>
-                    </p>
-                    <p class="col-meat">
-                        <a class="nav-link" href="Product links/meats and poultry.html" target="_self">Meat and
-                            Poultry</a>
-                    </p>
-                    <p class="col-sea">
-                        <a class="nav-link" href="Product links/seafood.html" target="_self">Fish and Seafood</a>
-                    </p>
-                    <p class="col-cer">
-                        <a class="nav-link" href="Product links/cereal products.html" target="_self">Cereal Products</a>
-                    </p>
+    <div class="container" style="max-width: 100%; height:100%;" >
+        <div id="Main">
+            <div class="bg">
+                <img src="..\Images\crops.jpg" alt="Crops" width="100%">
+                <!--https://www.google.com/url?sa=i&url=https%3A%2F%2Ffarm-advisory.eu%2Fen%2F&psig=AOvVaw3D46mh3g8TE0I6zFbuL6eU&ust=1615056545189000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPja0dLome8CFQAAAAAdAAAAABAD-->
+                <!-- <img src="..\Images\grocery store.jpg" alt="shopping cart picture" width="100%"> https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.zerotothree.org%2Fresources%2F2225-got-math-20-tips-for-making-your-trip-to-the-grocery-store-count&psig=AOvVaw0n5vjWS-6vEW48RzSxtzGd&ust=1615054877836000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIDJ2b7ime8CFQAAAAAdAAAAABBQ -->
+                <div class="overlay-text">
+                    <h2>Welcome to the <em>Online Grocery Store</em> !</h2>
+                    <h5>Our grocery store has fresh food with free shipping on all orders </h5>
                 </div>
-                </p>
+            </div>
+
+            <div class="img-container">
+                <div class="text">
+                    <h4 style="color:rgb(59, 50, 28);">Our motto is that the customer always comes first </h4>
+                    <p style="color:rgb(73, 61, 34); font-weight: bold">The online grocery store has been opened since
+                        2020 is one of the fastest growing companies in Canada</p>
+                </div>
+                <img src="..\Images\Grocery.jpg" alt="grocerypicture" width="25%" height="25%">
+                <img src="..\Images\grocery2.jpg" alt="secgrocerypicture" width="25%" height="25%">
+            </div>
+            </br>
+            <div class="container" style="height: 25%">
+                <div class="quick-links">
+                    <p>
+                    <h3 style="text-align: center;"> Quick links:</h3>
+                    <div class="row">
+                        <p class="col-veg">
+                            <a class="nav-link" href="Product links/fruits and veggies.html" target="_self">Fruits and
+                                Vegetables</a>
+                        </p>
+                        <p class="col-egg">
+                            <a class="nav-link" href="Product links/dairy and eggs.html" target="_self">Dairy and
+                                Eggs</a>
+                        </p>
+                        <p class="col-meat">
+                            <a class="nav-link" href="Product links/meats and poultry.html" target="_self">Meat and
+                                Poultry</a>
+                        </p>
+                        <p class="col-sea">
+                            <a class="nav-link" href="Product links/seafood.html" target="_self">Fish and Seafood</a>
+                        </p>
+                        <p class="col-cer">
+                            <a class="nav-link" href="Product links/cereal products.html" target="_self">Cereal
+                                Products</a>
+                        </p>
+                    </div>
+                    </p>
+
+                </div>
+            </div>
+            <div class="Promotions-container">
 
             </div>
-        </div>
-        <div class="Promotions-container">
-
         </div>
     </div>
-
-    <footer>
+  </div>
+  <div style="clear: both"></div>
+  <div style="clear: both"></div>
+    <footer id="footer"  >
         <div class="section contactInfo">
             <h3>Contact Info</h3>
             <ul class="info">
                 <li>
                     <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-                    <p>123 Main Street<br/> Montreal, QC<br/> Canada</p>
+                    <p>123 Main Street<br /> Montreal, QC<br /> Canada</p>
                 </li>
                 <li>
                     <span><i class="fa fa-phone" aria-hidden="true"></i></span>
@@ -144,15 +155,19 @@
                     <p><a href="mailto:zixi.quan@concordia.ca?subject=SOEN287">online_grocerystore@groceries.ca</a></p>
                 </li>
                 <li>
-                    <span><i class = "fa fa-smile-o" aria-hidden = "true"></i></span>
-                    <p><a href = "..\html\contactUsFrom.html">Help us improve your experience</a></p>
+                    <span><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                    <p><a href="..\html\contactUsFrom.html">Help us improve your experience</a></p>
                 </li>
-            </ul> 
+            </ul>
         </div>
         <div class="section about-us">
             <h3>About Us</h3>
             <p>
-                At the start of 2020, the coronavirus pandemic brought on new difficulties for many people with pre-existing medical conditions. Something as simple as grocery shopping was now a high risk activity for those who were more succeptible to serious illnesses cause by the Covid-19 virus. Our goal is to make grocery shopping safe and affordable for all Canadians so that no one is has to face food insecurity in these difficult times.  
+                At the start of 2020, the coronavirus pandemic brought on new difficulties for many people with
+                pre-existing medical conditions. Something as simple as grocery shopping was now a high risk activity
+                for those who were more succeptible to serious illnesses cause by the Covid-19 virus. Our goal is to
+                make grocery shopping safe and affordable for all Canadians so that no one is has to face food
+                insecurity in these difficult times.
             </p>
             <ul class="icons">
                 <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
