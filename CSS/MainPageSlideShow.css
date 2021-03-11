@@ -39,6 +39,7 @@ img {vertical-align: middle;}
 }
 
 #text2,#text3,#text4,#text5{
+    color:green;
     text-align: center;
    
     font-size: 30px;

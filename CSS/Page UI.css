@@ -294,3 +294,7 @@ h5 {font-size:2.1vmin;}
 .login a {
     color:rgb(98, 168, 32) !important;
 }
+#current-promotion{
+    color:green;
+    font-size:30px;
+}
