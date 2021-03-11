@@ -10,10 +10,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/CSS" href="..\CSS\Page UI.css">
+    <link rel="stylesheet" type="text/CSS" href="..\CSS\MainPageSlideShow.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <script src="..\.vscode\Page UI.js"></script>
-
+    <script src="..\JavaScript\weeklydeals.js"></script>
 </head>
 
 <body>
@@ -137,7 +138,44 @@
                     </div>
                 </div>
                 <div class="Promotions-container">
+                    <h3 style="text-align: center;"> Weekly Promotions:</h3>
+                    <div class="slideshow-container" style="max-height: 500px;max-width: 500px;">
 
+                        <div class="mySlides fade">
+                          <div class="numbertext">1 / 4</div>
+                          <img src="..\Images\apple.png" style="width:100%">
+                          <div class="text2">Week 1 </div>
+                        </div>
+                        
+                        <div class="mySlides fade">
+                          <div class="numbertext">2 / 4</div>
+                          <img src="..\Images\banana.jpg" style="width:100%">
+                          <div class="text2">Week 2</div>
+                        </div>
+                        
+                        <div class="mySlides fade">
+                          <div class="numbertext">3 / 4</div>
+                          <img src="..\Images\bread.jpg" style="width:100%">
+                          <div class="text2">Week 3</div>
+                        </div>
+                        <div class="mySlides fade">
+                            <div class="numbertext">4 / 4</div>
+                            <img src="..\Images\brocco.jpg" style="width:100%">
+                            <div class="text2">Week 4</div>
+                          </div>
+                        
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        
+                        </div>
+                        <br>
+                        
+                        <div style="text-align:center">
+                          <span class="dot" onclick="currentSlide(1)"></span> 
+                          <span class="dot" onclick="currentSlide(2)"></span> 
+                          <span class="dot" onclick="currentSlide(3)"></span> 
+                          <span class="dot" onclick="currentSlide(4)"></span> 
+                        </div>
                 </div>
             </div>
         </div>
