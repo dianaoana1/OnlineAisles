@@ -4,6 +4,7 @@ window.onload = function () {
         e.preventDefault();
         checkItemName(); 
         checkOrderNum();
+        checkComment();
     });
 };
 
@@ -40,10 +41,12 @@ function checkItemName(){
        return true;
     }
 }
-
-/*
-document.getElementById("contactUsForm").onsubmit = checkOrderNum;
-document.getElementById("contactUsForm").onblur = checkOrderNum;
-document.getElementById("contactUsForm").onsubmit = checkItemName;
-document.getElementById("contactUsForm").onblur = checkItemName;
-*/
+function checkComment(){
+    var comment = document.getElementById("questions").value;
+    if(comment.length==0){
+      alert("Please enter a comment");
+      return false;
+    }else{
+        return true;
+    }
+}

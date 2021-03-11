@@ -105,6 +105,20 @@
                         Apples are perfect for a quick and filling snack. Being high in fiber and water it leaves the
                         impression of being satiated and refreshed.
                     </p>
+                    <button class="accordion">Full Product description</button>
+                    <div class="panel">
+                        <p>An apple is an edible fruit produced by an apple tree (Malus domestica). Apple trees are cultivated 
+                           worldwide and are the most widely grown species in the genus Malus.ere are the nutrition facts for one raw, unpeeled, medium-sized apple (100 grams):
+                             <ul id="nutritionList">
+                                <li>Calories: 52</li>
+                             <li>Water: 86%</li>
+                             <li>Protein: 0.3 grams</li>
+                             <li> Carbs: 13.8 grams</li>
+                             <li> Sugar: 10.4 grams</li>
+                             <li> Fiber: 2.4 grams</li>
+                             <li>Fat: 0.2 grams</li>
+                             </ul></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -150,5 +164,21 @@
         </div>
     </footer>
 </body>
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    }
+    </script>
 
 </html>
