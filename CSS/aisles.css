@@ -154,4 +154,7 @@
 		background-color:rgb(204, 211, 175, 0.986);
 		overflow: hidden;
 	  }
+	  #nutritionList{
+		  text-align: left;
+	  }
 	
