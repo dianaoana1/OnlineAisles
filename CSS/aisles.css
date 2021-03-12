@@ -131,7 +131,7 @@
 		border-radius: 10px;
 	}
 	.accordion {
-		background-color: #166616;
+		background-color: #3c8f3c;
 		color: #102cc7;
 		cursor: pointer;
 		padding: 18px;
@@ -145,7 +145,8 @@
 	  }
 	  
 	  .active, .accordion:hover {
-		background-color:  #166616; 
+		background-color: #3c8f3c; 
+		text-decoration: underline;
 	  }
 	  
 	  .panel {
