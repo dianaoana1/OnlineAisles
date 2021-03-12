@@ -332,3 +332,7 @@ input[type=password]:hover{
 select{
     border: 0px;
 }
+.Promotions-container{
+    height: 100%;
+    width: 80%;
+} 
