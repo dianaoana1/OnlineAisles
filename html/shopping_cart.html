@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="..\CSS\Page UI.css">
     <link rel="stylesheet" href="..\CSS\shopping-cart.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-   
+    <script type = "text/javascript" src = "..\JavaScript\cart.js"></script>
+
 </head>
 <body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
@@ -71,6 +72,9 @@
         <div class="row" style="width: 100%;height: 100%;">
           <div class="col-9"style="height:100%">
             <b style="font-size: 20px;font-style:italic">Your Cart:</b>
+            <ul class="shopping-list">
+
+            </ul>
             <p>Item 1 </p>
 
             <tr>
@@ -125,7 +129,7 @@
           </div>
           <div id="Sub-Total"  class="col-3" style="margin-top:10px; max-width: 75%;margin-bottom: 200px;" >
             
-                <table style="border: 1px solid black ;">
+                <table class= "total" style="border: 2px solid rgb(63, 105, 63) ;padding:50px;">
                     <tr>
                         <th><b style="font-size: 20px;font-style:italic">Sub-Total:</b></th>
                         <th><b style="font-size: 20px;font-style:italic">60.00$ </th>
