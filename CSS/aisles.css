@@ -87,6 +87,12 @@
 
 
 /*p.3*/
+@media screen and (max-width: 600px) {
+	.right-side p
+	{
+		font-size:8px;
+	}
+}
 	
 	.products {
 		margin: auto;
@@ -100,6 +106,13 @@
 		justify-content: space-around;
 		flex-wrap: wrap;
 		align-items: center;
+	}
+	.right-side img{
+		width:"75%";
+		 height:auto;
+		  max-width:75%;
+		  margin-left:"auto";
+		  margin-right:"auto";
 	}
 	.right-side {
 		text-align: center;
