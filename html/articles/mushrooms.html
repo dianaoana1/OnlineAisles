@@ -39,7 +39,7 @@
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
                             <a class="dropdown-item" href="../Product links/fruits and veggies.html"
                                 target="_self">Fruits
-                                and Vegetables</a>
+                               </a>
                             <a class="dropdown-item" href="../Product links/meats and poultry.html" target="_self">
                                 Meats
                                 and Poultry </a>
@@ -49,6 +49,7 @@
                                 Eggs </a>
                             <a class="dropdown-item" href="../Product links/cereal products.html" target="_self">Cereal
                                 Products </a>
+                                <a class="dropdown-item" href="../Product links/Vegetables.html" target="_self">Vegetables </a>
                         </div>
                     </div>
                 </li>
@@ -60,7 +61,7 @@
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
                             <a class="dropdown-item" href="..\user-list.html" target="_self">User List</a>
                             <a class="dropdown-item" href="..\Productlist.html" target="_self"> Product list </a>
-                            <a class="dropdown-item" href="..\back end\Order-list.html" _self">Order List </a>
+                            <a class="dropdown-item" href="..\back end\Order-list.html" target="_self">Order List </a>
                         </div>
                 </li>
                 <li class="nav-item">
@@ -105,6 +106,23 @@
                         Mushrooms are not considered as a superfood for nothing. They lower the risk of developping
                         desease such as alzheimer,cancer and diabetes. And on top of that they actually taste good!
                     </p>
+                    <button class="accordion">Full Product description</button>
+                    <div class="panel">
+                        <p>A mushroom or toadstool is the fleshy, spore bearing fruiting body of a fungus, typically produced above ground,on soil,or on its food source.
+                            The standard for the name is the cultivated whit button mushroom.One cup 96 grams provides:
+                        <ul id="nutritionList">
+                            <li>Calories: 21</li>
+                            <li>Carbs: 3 grams</li>
+                            <li>Fiber: 1 gram</li>
+                            <li>Protein: 3 grams</li>
+                            <li>Fat: 0 grams</li>
+                            <li>Vitamin D: 33% of the Daily Value (DV)</li>
+                            <li>Selenium: 16% of the DV</li>
+                            <li>Phosphorus: 12% of the DV</li>
+                            <li>Folate: 4% of the DV</li>
+
+                            </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -150,5 +168,22 @@
     </footer>
 
 </body>
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+
+</script>
 
 </html>
