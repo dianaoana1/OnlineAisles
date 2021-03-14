@@ -1,5 +1,6 @@
 var addedRowCount = 0;
 
+//add users
 function addRow() {
     var table = document.getElementById("userTable");
     var userId = table.rows.length;
@@ -11,7 +12,7 @@ function addRow() {
     addedRowCount++;
 }
 
-
+//delete users
 function deleteSelectedRows() {
     var table = document.getElementById("userTable");
     var tableRows = table.rows;
@@ -53,6 +54,7 @@ function deleteSelectedRows() {
     }
 }
 
+//edit users
 function editSelectedRows() {
     var table = document.getElementById("userTable");
     var tableRows = table.rows;
@@ -73,7 +75,6 @@ function editSelectedRows() {
 }
 
 function editRow(row) {
-    var userId = row.item(0).innerHTML;
     var lastName = row.item(1).innerHTML;
     var firstName = row.item(2).innerHTML;
     var tel1 = row.item(3).innerText;
