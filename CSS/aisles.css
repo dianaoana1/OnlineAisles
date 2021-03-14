@@ -9,10 +9,13 @@
 
 
 }
+
 	.Categories h1{
 		background-image: url('../Images/vegetables.jpg');
 		padding: 35px;
 	}
+	
+	
 	
 	.Categories h2{
 		background-image: url('../Images/other.jpg');
