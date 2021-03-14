@@ -105,7 +105,20 @@
                         Depending on the sausages, they can can be high or low in fat and calories but are usually high
                         in protein. Some can even contain chemicals bad for the health. At least they are tasty!
                     </p>
-                </div>
+                    <button class="accordion">Full Product description</button>
+                    <div class="panel" style = "padding:10px;">
+                        <p> <strong>Pair of Linked Sausages</strong>
+                            <br/> These no-name sausages dubbed "mystery meat" of aisle 5, while delicious, will probably have questionable side effects on your heart health.
+                            <br/>
+                        <h6 style="position:left; text-align:left; margin-left:23px">Nutrition Facts:</h6>
+                        <ul id="nutritionList">
+                            <li>Calories: 268</li>
+                            <li>Saturated fat: 7 grams</li>
+                            <li>Protein: 27 grams</li>
+                            <li>Fat: 60 grams</li>
+                        </ul>
+                        </p>
+                    </div>
             </div>
         </div>
     </div>
@@ -149,7 +162,22 @@
             </ul>
         </div>
     </footer>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
 
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

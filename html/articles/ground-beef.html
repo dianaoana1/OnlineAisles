@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
+    <script src="..\..\JavaScript\product_descriptions.js"></script>
+
 </head>
 
 <body>
@@ -96,7 +98,7 @@
                     <img src="../../Images/ground-beef.jpg" width="400" height="400">
                     <h4>$1.54/100g</h4>
                     <input type="number" value="1">
-                    <a href="" class="button">Add To Cart</a>
+                    <a href="" id="add-to-cart" onclick="add()" class="button">Add To Cart</a>
                 </div>
                 <div class="right-side">
                     <h2>Quick description</h2>
@@ -105,6 +107,20 @@
                         other good things) but being grounded makes it more expose to bacteria. It can also have a good
                         amount of fat, so it should be eaten in moderation!
                     </p>
+                    <button class="accordion">Full Product description</button>
+                    <div class="panel" style = "padding:10px;">
+                        <p> <strong>Canadian AAA Medium Ground Beef</strong>
+                            <br/>Great for burgers, spaghetti and meat-sauce, or even moussaka.
+                            <br/>
+                        <h6 style="position:left; text-align:left; margin-left:23px">Nutrition Facts:</h6>
+                        <ul id="nutritionList">
+                            <li>Calories: 270</li>
+                            <li>Saturated Fat: 7 grams</li>
+                            <li>Protein: 26 grams</li>
+                            <li>Fat: 18 grams</li>
+                        </ul>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -148,6 +164,22 @@
             </ul>
         </div>
     </footer>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
 
 </body>
 
