@@ -1,6 +1,5 @@
 var addedRowCount = 0;
 
-
 function addRow() {
     var table = document.getElementById("userTable");
     var userId = table.rows.length;
@@ -61,22 +60,31 @@ function editSelectedRows() {
 
     for (var i = 0; i < tableRows.length; i++) {
         var selectedUser = tableRows[i].cells[7].firstChild.checked;
-        if (selectedUser)
+        if (selectedUser){
             checkedUsers.push(i);
+        }
     }
 
-    function editRow() {
-        var userID = tableRows[checkedUsers].cells[0].fristChild.value;
-        document.write(userID);
-        var lastName = tableRows[checkedUsers].cells[1].fristChild.value;
-        var firstName = tableRows[checkedUsers].cells[2].fristChild.value;
-        var tel1 = tableRows[checkedUsers].cells[3].fristChild.value;
-        var tel2 = tableRows[checkedUsers].cells[4].fristChild.value;
-        var email = tableRows[checkedUsers].cells[5].fristChild.value;
-        var address = tableRows[checkedUsers].cells[6].fristChild.value;
-        tableRows[checkedUsers].innerHTML = "";//make textboxes in same format as table row expect with variables values gathered above as temporary textbox values
+    for (var j = 0; j<checkedUsers.length; j++) {
+        var selectedRow = checkedUsers[j];
+        var row = table.rows[selectedRow].cells
+        editRow(row);
     }
+}
 
-    for (var j = checkedUsers.length - 1; j >= 0; j--)
-        table.editRow(checkedUsers[j]);
+function editRow(row) {
+    var userId = row.item(0).innerHTML;
+    var lastName = row.item(1).innerHTML;
+    var firstName = row.item(2).innerHTML;
+    var tel1 = row.item(3).innerText;
+    var tel2 = row.item(4).innerText;
+    var email = row.item(5).innerText;
+    var address = row.item(6).innerText;
+
+    row[1].innerHTML = "<textarea>" + lastName + "</textarea>";    
+    row[2].innerHTML = "<textarea>" + firstName + "</textarea>";   
+    row[3].innerHTML = "<textarea>" + tel1 + "</textarea>";   
+    row[4].innerHTML = "<textarea>" + tel2 + "</textarea>";   
+    row[5].innerHTML = "<textarea>" + email + "</textarea>";   
+    row[6].innerHTML = "<textarea>" + address + "</textarea>";   
 }
