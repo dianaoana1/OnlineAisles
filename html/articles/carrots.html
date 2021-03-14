@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fish and Seafood</title>
+    <title>Carrots</title>
 
     <meta charset="utf-8">
 
@@ -36,9 +36,9 @@
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aisles</a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="../Product links/fruits and veggies.html"
-                                target="_self">Fruits
-                                and Vegetables</a>
+                            <a class="dropdown-item" href="../Product links/fruits.html" target="_self">Fruits</a>
+                            <a class="dropdown-item" href="../Product links/Vegetables.html"
+                                target="_self">]Vegetables</a>
                             <a class="dropdown-item" href="../Product links/meats and poultry.html" target="_self">
                                 Meats
                                 and Poultry </a>
@@ -105,6 +105,21 @@
                         being a good source of antioxidants lutein and beta carotene. They also improve the overall
                         health.
                     </p>
+                    <button class="accordion">Full Product description</button>
+                    <div class="panel">
+                        <p>The carrot is a root vegetable usually orange in color. They are a domesticated form of the
+                            wild carrot.
+                            The plant originated in Persia and was originally cultivated for its leaves adn seeds.A
+                            serving of 100 grams of carrots has:
+                        <ul id="nutritionList">
+                            <li>Calories: 41</li>
+                            <li>Water: 88%</li>
+                            <li>Fat: 0.2 grams</li>
+                            <li>Sugar: 4.7 grams</li>
+                            <li>Fiber: 2.8 grams</li>
+                            <li>The carrot is also a good source of vitamin A</li>
+                            </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -151,5 +166,22 @@
     </footer>
 
 </body>
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+
+</script>
 
 </html>

@@ -13,9 +13,10 @@
     <link rel="stylesheet" type="text/CSS" href="..\CSS\Page UI.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script type = "text/javascript" src = "..\JavaScript\contactUsForm.js"></script>
 </head>
 
-<body style = "background-color:rgb(252, 246, 221) !important;">
+<body style = "background-color:rgb(252, 246, 221) !important;font-size: 100%;">
     <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
         <a class="navbar-brand" href="Main Page.html">Online Grocery Store</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -23,8 +24,9 @@
         </button>
         </div>
     </nav>
-
-    <div class = "container" style = "margin-top:50px;">
+    
+    <div class = "container" style = "margin-top:50px;text-align: center;">
+        <h3 style="color: green;">Contact Us Form</h3>
         <form id = "contactUsForm">
             <label>Username : </label>
             <input type = "text" id = "userNm" name = "username"><br>
@@ -33,11 +35,12 @@
             <label>Order Number : </label>
             <input type = "text" id = "orderNum" name = "orderNumber"><br>
             <label>Questions/Comments : </label><br>
-            <textarea type = "text" id = "questions" maxlength = "250" onfocus = "value = ''" style = "color:red; font-style: italic; font-weight:bold; font-size:14px;">Maximum 250 characters</textarea>
+            <textarea type = "text" id = "questions" maxlength = "250" onfocus = "value = ''"rows="4" cols="50" style = "color:red; font-style: italic; font-weight:bold; font-size:14px;max-width: 100%;">Maximum 250 characters</textarea>
             <br/>
-            <input class="btn btn-primary" type="submit" name="submit">
+            <input class="btn btn-primary" type="submit" id="submitButton" name="submit" >
         </form>
-        <script type = "text/javascript" src = "JavaScript\contactUsForm.js"></script>
+       
+      
     </div>
 
     <footer>

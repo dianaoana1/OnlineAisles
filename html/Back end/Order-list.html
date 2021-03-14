@@ -34,8 +34,10 @@
 
 
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="..\Product links/fruits and veggies.html"
-                                target="_self">Fruits and Vegetables</a>
+                            <a class="dropdown-item" href="..\Product links/fruits.html"
+                                target="_self">Fruits</a>
+                            <a class="dropdown-item" href="..\Product links/Vegetables.html"
+                                target="_self">Vegetables</a>
                             <a class="dropdown-item" href="..\Product links/meats and poultry.html" target="_self">
                                 Meats and Poultry </a>
                             <a class="dropdown-item" href="..\Product links/seafood.html" target="_self">Seafood </a>
@@ -77,7 +79,7 @@
             </div>
         </div>
     </nav>
-    <div class="container" style="height:66vh">
+    <div class="container" style="margin-top:30px;position:center absolute;max-width: 80%; height:100%">
         <div class="list-buttons">
             <a type="text" name="edit-order-button" style="font-weight: bold;" class="btn btn-primary"
             href="Order-list.html">Save Changes</a>
@@ -154,6 +156,7 @@
             <!-- <a type="text" id="add-button" style="font-weight: bold;" class="btn btn-primary" href="add-order.html"
                 onclick="addRow()">Add
                 New Order</a> -->
+
             <a type="text" id="add-button" style="font-weight: bold;" class="btn btn-primary" href="#"
                 onclick="addRow()">Add
                 New Order</a>
@@ -162,12 +165,17 @@
                 onclick="addRow();">Add New Order</button> -->
 
             <a type="text" id="edit-button" style="font-weight: bold;" class="btn btn-primary"
-                href="edit-order.html">Edit Order</a>
+                href="#" onclick = "editSelectedRows()">Edit Order</a>
+
+            <!-- <a type="text" id="edit-button" style="font-weight: bold;" class="btn btn-primary"
+                href="edit-order.html" onclick = "editSelectedRows()">Edit Order</a> -->
+
             <a type="text" id="delete-button" style="font-weight: bold;" class="btn btn-primary" href="#"
                 onclick="deleteSelectedRows()">Delete
                 Order</a>
         </div>
     </div>
+
     <footer>
         <div class="section contactInfo">
             <h3>Contact Info</h3>

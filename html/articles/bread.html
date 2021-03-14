@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fish and Seafood</title>
+    <title>Bread</title>
 
     <meta charset="utf-8">
 
@@ -36,9 +36,10 @@
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aisles</a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="../Product links/fruits and veggies.html"
-                                target="_self">Fruits
-                                and Vegetables</a>
+                            <a class="dropdown-item" href="../Product links/fruits.html"
+                                target="_self">Fruits</a>
+                            <a class="dropdown-item" href="../Product links/Vegetables.html"
+                                target="_self">Vegetables</a>
                             <a class="dropdown-item" href="../Product links/meats and poultry.html" target="_self">
                                 Meats
                                 and Poultry </a>
@@ -105,6 +106,22 @@
                         especially whole grain is important for health and helps prevent many disease due to all the
                         fiber it contains.
                     </p>
+                    <button class="accordion">Full Product description</button>
+                    <div class="panel">
+                        <p>Bread is a staple food prepared from a dough of flour and water, usually by baking. Throughout recorded
+                             history, it has been a prominent food in large parts of the world. It is one of the oldest man-made foods, 
+                             having been of significant importance since the dawn of agriculture, and plays an essential role in both religious
+                             rituals and secular culture.
+                            . One slick of bread (32g) of whole weat bread:
+                             <ul id="nutritionList">
+                                <li>Calories: 82</li>
+                             <li>Fat: 1.1g</li>
+                             <li>Sodium: 144mg</li>
+                             <li> Carbohydrates: 13.8g</li>
+                             <li>Fiber: 1.9g</li>
+                             <li> Sugars: 1.4g</li>
+                             <li>Protein: 4g</li>
+                             </ul></p>
                 </div>
             </div>
         </div>
@@ -150,5 +167,21 @@
     </footer>
 
 </body>
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    }
+    </script>
 
 </html>

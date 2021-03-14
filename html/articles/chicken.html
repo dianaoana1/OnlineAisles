@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fish and Seafood</title>
+    <title>Chicken</title>
 
     <meta charset="utf-8">
 
@@ -36,9 +36,10 @@
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aisles</a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="../Product links/fruits and veggies.html"
-                                target="_self">Fruits
-                                and Vegetables</a>
+                            <a class="dropdown-item" href="../Product links/fruits.html"
+                                target="_self">Fruits</a>
+                                <a class="dropdown-item" href="../Product links/Vegetables.html"
+                                target="_self">Vegetables</a>
                             <a class="dropdown-item" href="../Product links/meats and poultry.html" target="_self">
                                 Meats
                                 and Poultry </a>
@@ -96,15 +97,28 @@
                     <img src="../../Images/chicken.jpg" width="400" height="400">
                     <h4>$12.54</h4>
                     <input type="number" value="1">
-                    <a href="" class="button">Add To Cart</a>
+                    <a href="" id="add-to-cart" onclick="add()" class="button">Add To Cart</a>
                 </div>
                 <div class="right-side">
                     <h2>Quick description</h2>
                     <p>
-                        Chicken is high in proteines, in nutriment, tasty and easy to cook but still good for your
+                        Chicken is high in protein, in nutriment, and is tasty and easy to cook but still good for your
                         health because of it's lean proteins and low fat. It should be in everyone diet as it also helps
                         with bone health and muscle growth.
                     </p>
+                    <button class="accordion">Full Product description</button>
+                    <div class="panel" style = "padding:10px;">
+                        <p> <strong>Small Organic Whole Chicken</strong>
+                            <br/> Chicken is one of the most versatile meats to use in the kitchen. There's nothing like a tasty oven roasted chicken with a side of nutritous veggies and some crispy potatoes for dinner to make the whole family happy.
+                            <br/>
+                        <h6 style="position:left; text-align:left; margin-left:23px">Nutrition Facts:</h6>
+                        <ul id="nutritionList">
+                            <li>Calories: 284</li>
+                            <li>Protein: 53.4 grams</li>
+                            <li>Fat: 6.2 grams</li>
+                        </ul>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -149,7 +163,22 @@
             </ul>
         </div>
     </footer>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
 
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

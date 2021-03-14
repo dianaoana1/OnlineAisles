@@ -12,9 +12,31 @@
     <title>Login / Sign up</title>
     <link rel="stylesheet" type="text/css" href="..\CSS\Page UI.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+        
+
+        .forgot-pass{
+            font-style:italic;
+        }
+
+        .btn-primary{
+            background-color:rgb(107, 124, 32);
+        }
+
+        input[type=text]{
+            border-radius: 10px;
+            border: 0px;
+        }
+
+        input[type=password]{
+            border-radius: 10px;
+            border: 0px;
+        }
+
+    </style>
 </head>
 
-<body>
+<body class="loginbody">
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <a class="navbar-brand" href="Main Page.html">Online Grocery Store</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -27,8 +49,8 @@
                         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aisles</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="Product links/fruits and veggies.html" target="_self">Fruits
-                                and Vegetables</a>
+                            <a class="dropdown-item" href="Product links/fruits.html" target="_self">Fruits</a>
+                            <a class="dropdown-item" href="Product links/Vegetables.html" target="_self">Vegetables</a>
                             <a class="dropdown-item" href="Product links/meats and poultry.html" target="_self">
                                 Meats and Poultry </a>
                             <a class="dropdown-item" href="Product links/seafood.html" target="_self">Seafood </a>
@@ -73,21 +95,23 @@
             </div>
         </div>
     </nav>
+    <div id="megadiv" style = background-image:url(..\Images\fruitsandveggies.jpg)>
     <div class= "container">
         <div class="login">
             <form>
-                <label for="username">Email</label><br>
+                <label for="username"><b>Email or Username</b></label><br>
                 <input type="text" id="username"><br><br>
-                <label for="password">Password</label><br>
+                <label for="password"><b>Password</b></label><br>
                 <input type="password" id="password"><br>
                 <p>
-                    <a href="Back end\verification code.html" style="font-style:italic">Forgot password?</a>
+                    <a class="forgot-pass" href="Back end\verification code.html">Forgot password?</a>
                 </p>
                 <input class="btn btn-primary" type="submit" value="Login">
             </form>
             <br>
             <p>Don't have an account? Sign up <em><a href="Signup.html" target="_blank">here</a></em></p>
         </div>
+    </div>
     </div>
 
     <footer>

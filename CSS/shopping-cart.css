@@ -2,21 +2,33 @@
     margin-left: 0%;
     margin-right:0%;
    }
-   .remover{
-       text-decoration: underline;
-        text-decoration-color: blue;
-        background-color:lightblue;
+.remover{
+    color: white;
+    background-color:rgb(61, 59, 65);
+    border-radius: 15px;
+    border: none;
+    padding: 5px 10px;
 
-   }
-   .plus{
-       background-color: green; 
-       color:white
-   }
-   .minus{
-       background-color:red; 
-       color:white
-   }
-   .footer2{
-       position: fixed;
-   }
-  
+}
+.plus{
+    background-color: rgb(61, 59, 65); 
+    color:white;
+    border-radius: 15px;
+    border: none;
+    padding: 5px 10px;
+}
+.minus{
+    background-color:rgb(61, 59, 65); 
+    color:white;
+    border-radius: 15px;
+    border: none;
+    padding: 5px 10px;
+}
+.footer2{
+    position: fixed;
+}
+
+#mega-container{
+    padding:20px;
+    margin-left: 20px;
+}

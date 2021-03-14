@@ -6,38 +6,38 @@
 
 .card{
     padding: 10px;
-    background-color: rgb(185, 185, 185, 0.493);
+    background-color: rgb(159, 179, 71, 0.856);
     border:0px;
     border-radius: 10px;
 }
 
 .card-form{
     padding:10px;
-    background-color: white;
+    background-color: rgba(253, 255, 245, 0.856);
     border-radius: 10px;
 }
 
 
 .personal-info{
-    background-color: rgb(185, 185, 185, 0.493);
+    background-color: rgb(159, 179, 71, 0.856);
     padding:10px;
     border-radius: 10px;
 }
 
 .personal-info-form{
     padding: 10px;
-    background-color: white;
+    background-color: rgba(253, 255, 245, 0.856);
     border-radius: 10px;
 }
 .contact-information{
-   background-color: rgb(185, 185, 185, 0.493); 
+   background-color: rgb(159, 179, 71, 0.856); 
    padding: 10px;
    border-radius: 10px;
 }
 
 .contact-info-form{
     padding: 10px;
-    background-color: white;
+    background-color: rgba(253, 255, 245, 0.856);
     border-radius: 10px;
 }
 
@@ -45,9 +45,7 @@ td{
     padding:5px;
 }
 
-input[type=text]{
-    width:100%;
-}
+
 
 #signin-button{
     float:right;

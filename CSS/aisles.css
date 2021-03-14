@@ -9,10 +9,13 @@
 
 
 }
+
 	.Categories h1{
 		background-image: url('../Images/vegetables.jpg');
 		padding: 35px;
 	}
+	
+	
 	
 	.Categories h2{
 		background-image: url('../Images/other.jpg');
@@ -87,6 +90,12 @@
 
 
 /*p.3*/
+@media screen and (max-width: 600px) {
+	.right-side p
+	{
+		font-size:8px;
+	}
+}
 	
 	.products {
 		margin: auto;
@@ -100,6 +109,13 @@
 		justify-content: space-around;
 		flex-wrap: wrap;
 		align-items: center;
+	}
+	.right-side img{
+		width:"75%";
+		 height:auto;
+		  max-width:75%;
+		  margin-left:"auto";
+		  margin-right:"auto";
 	}
 	.right-side {
 		text-align: center;
@@ -131,7 +147,7 @@
 		border-radius: 10px;
 	}
 	.accordion {
-		background-color: #166616;
+		background-color: #3c8f3c;
 		color: #102cc7;
 		cursor: pointer;
 		padding: 18px;
@@ -145,7 +161,8 @@
 	  }
 	  
 	  .active, .accordion:hover {
-		background-color:  #166616; 
+		background-color: #3c8f3c; 
+		text-decoration: underline;
 	  }
 	  
 	  .panel {

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pear</title>
+    <title>Fruits</title>
 
     <meta charset="utf-8">
 
@@ -14,17 +14,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="..\../CSS/aisles.css">
+    <link rel="stylesheet" href="../../CSS/aisles.css">
 
-    <link rel="stylesheet" href="..\..\CSS\Page UI.css">
+    <link rel="stylesheet" href="../../CSS\Page UI.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
 </head>
 
 <body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
-        <a class="navbar-brand" href="..\Main Page.html">Online Grocery Store</a>
+        <a class="navbar-brand" href="../Main Page.html">Online Grocery Store</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -36,21 +35,17 @@
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aisles</a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="../Product links/fruits.html"
-                            target="_self">Fruits
-                            </a>
-                        <a class="dropdown-item" href="../Product links/Vegetables.html" target="_self">Vegetables </a>
+                            <a class="dropdown-item" href="fruits.html" target="_self">Fruits</a>
+                            <a class="dropdown-item" href="Vegetables.html" target="_self">Vegetables </a>
+                            <a class="dropdown-item" href="meats and poultry.html" target="_self"> Meats
+                                and Poultry </a>
+                            <a class="dropdown-item" href="seafood.html" target="_self">Seafood </a>
+                            <a class="dropdown-item" href="dairy and eggs.html" target="_self">Dairy and
+                                Eggs </a>
+                            <a class="dropdown-item" href="cereal products.html" target="_self">Cereal
+                                Products </a>
+                                
                         </div>
-                        <a class="dropdown-item" href="../Product links/meats and poultry.html" target="_self">
-                            Meats
-                            and Poultry </a>
-                        <a class="dropdown-item" href="../Product links/seafood.html" target="_self">Seafood </a>
-                        <a class="dropdown-item" href="../Product links/dairy and eggs.html" target="_self">Dairy
-                            and
-                            Eggs </a>
-                        <a class="dropdown-item" href="../Product links/cereal products.html" target="_self">Cereal
-                            Products </a>
-                        
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -61,7 +56,7 @@
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
                             <a class="dropdown-item" href="..\user-list.html" target="_self">User List</a>
                             <a class="dropdown-item" href="..\Productlist.html" target="_self"> Product list </a>
-                            <a class="dropdown-item" href="..\back end\Order-list.html" _self">Order List </a>
+                            <a class="dropdown-item" href="..\back end\Order-list.html" target="_self">Order List </a>
                         </div>
                 </li>
                 <li class="nav-item">
@@ -90,26 +85,49 @@
             </div>
         </div>
     </nav>
-    <div class="conatiner">
-        <div class="products">
-            <div class="products_row">
-                <div class="right-side">
-                    <h2>Pear</h2>
-                    <img src="../../Images/pear.jpg">
-                    <h4>$1.05/un</h4>
-                    <input type="number" value="1">
-                    <a href="" class="button">Add To Cart</a>
+    <div class="container"style="max-width: 100%; height:100%;">
+        <div class=Categories id="fruits"  >
+            <h1 style="background-image: url(../../Images/fruits.jpg);">FRUITS</h1>
+        </div>
+        <div class="format" style="margin-bottom: 200px;">
+            <a class="contour" style="text-decoration:none;" href="../articles/banana.html"
+                title="Click for a full description">
+                <div class="article_image">
+                    <img src="../../Images/banana.jpg" alt="banana picture">
                 </div>
-                <div class="right-side">
-                    <h2>Quick description</h2>
-                    <p>
-                        Belly-fat killers, pear are helpfull in weight loss and beneficit gut and heart health. And
-                        remember to eat the peel which contains most nutrients!
-                    </p>
+                <div class="article_text">
+                    <div>Banana</div>
+                    <div>$0.33/un</div>
                 </div>
-            </div>
+            </a>
+
+            <a class="contour" style="text-decoration:none;" href="../articles/apple.html"
+                title="Click for a full description">
+                <div class="article_image">
+                    <img src="../../Images/apple.png" alt="apple picture">
+                </div>
+                <div class="article_text">
+                    <div>Apple</div>
+                    <div>$0.89/un</div>
+                </div>
+            </a>
+
+            <a class="contour" style="text-decoration:none;" href="../articles/pear.html"
+                title="Click for a full description">
+                <div class="article_image">
+                    <img src="../../Images/pear.jpg" alt="pear picture">
+                </div>
+                <div class="article_text">
+                    <div>Pear</div>
+                    <div>$1.05/un</div>
+                </div>
+            </a>
+
+            
         </div>
     </div>
+    <div style="clear: both"></div>
+    <div style="clear: both"></div>
     <footer>
         <div class="section contactInfo">
             <h3>Contact Info</h3>
@@ -149,7 +167,6 @@
             </ul>
         </div>
     </footer>
-
 </body>
 
 </html>
