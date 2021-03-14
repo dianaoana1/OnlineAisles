@@ -10,6 +10,7 @@ function addProductRow() {
     addRowCounter++;
 }
 
+
 function deleteProductRows() {
     var table = document.getElementById("productTable");
     var tableRows = table.rows;
