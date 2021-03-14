@@ -52,7 +52,6 @@ function deleteProductRows() {
     }
 } 
 
-
     /*document.getElementById("delete").addEventListener("click", function() {
         var tableRef = document.getElementById('productTable');
         var tableRows = tableRef.rows;
