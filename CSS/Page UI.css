@@ -184,26 +184,34 @@ h5 {font-size:2.1vmin;}
 
 .col-veg{
     background-image:url('../Images/vegetables.jpg') ;
-    width: 20%;  
+    width: 15%;
+   
+}
+.col-fruits{
+    background-image:url('../Images/fruits.jpg') ;
+    width: 15%;
+   
 }
 .col-meat{
     background-image: url('../Images/meat2.jpg');
-    width: 20%;
+    width: 15%;
+   
 }
 
 .col-egg{
     background-image: url('../Images/dairy-egg.jpg');
-    width: 20%;
+    width: 15%;
+    
 }
 
 .col-sea{
     background-image: url('../Images/seafood.jpg');
-    width: 20%;
+    width: 15%;
 }
 
 .col-cer{
     background-image: url('../Images/other.jpg');
-    width: 20%;
+    width: 15%;
 }
 
 .contactInfo .info li {
