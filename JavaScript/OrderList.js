@@ -1,6 +1,6 @@
 var addedRowCount = 0;
 
-
+//add orders
 function addRow() {
     var table = document.getElementById("orderTable");
     var orderNumber = table.rows.length;
@@ -12,7 +12,7 @@ function addRow() {
     addedRowCount++;
 }
 
-
+//delete orders
 function deleteSelectedRows() {
     var table = document.getElementById("orderTable");
     var tableRows = table.rows;
@@ -54,6 +54,37 @@ function deleteSelectedRows() {
     }
 }
 
+//edit orders
+function editSelectedRows() {
+    var table = document.getElementById("orderTable");
+    var tableRows = table.rows;
+    var checkedOrders = [];
+
+    for (var i = 0; i < tableRows.length; i++) {
+        var selectedOrder = tableRows[i].cells[5].firstChild.checked;
+        if (selectedOrder)
+            checkedOrders.push(i);
+    }
+
+    for (var j = 0; j<checkedOrders.length; j++) {
+        var selectedRow = checkedOrders[j];
+        var row = table.rows[selectedRow].cells
+        editRow(row);
+    }
+}
+
+function editRow(row) {
+    var userName = row.item(1).innerHTML;
+    var totalItems = row.item(2).innerHTML;
+    var subTotal = row.item(3).innerHTML;
+    var productNum = row.item(4).innerHTML;
+
+    row[1].innerHTML = "<textarea>" + userName + "</textarea>";    
+    row[2].innerHTML = "<textarea>" + totalItems + "</textarea>";   
+    row[3].innerHTML = "<textarea>" + subTotal + "</textarea>";   
+    row[4].innerHTML = "<textarea>" + productNum + "</textarea>";   
+
+}
 
 
 
