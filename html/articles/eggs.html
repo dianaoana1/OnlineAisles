@@ -38,7 +38,7 @@
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
                             <a class="dropdown-item" href="../Product links/fruits.html"
                                 target="_self">Fruits</a>
-                            <a class="dropdown-item" href="../Product links/Vegetables.html"
+                                <a class="dropdown-item" href="../Product links/Vegetables.html"
                                 target="_self">Vegetables</a>
                             <a class="dropdown-item" href="../Product links/meats and poultry.html" target="_self">
                                 Meats
@@ -96,19 +96,30 @@
                     <h2>Dozen of eggs</h2>
                     <img src="../../Images/eggs.jpeg" width="400" height="400">
                     <h4>$2.99</h4>
-                    <input type="number" value="1">
-                    <a href="" class="button">Add To Cart</a>
+                    <input id = "quantity" type="number" value="1">
+                    <a href="" id="add-to-cart" onclick="add()" class="button">Add To Cart</a>
                 </div>
                 <div class="right-side">
                     <h2>Quick description</h2>
                     <p>
-                        Eggs are one of the best source of protein and can be eaten everyday (3max). They are filling,
-                        rich and full of "good" cholesterol, you already know what is on your breakfast table tomorrow!
+                         Eggs are one of the best source of protein and can be eaten everyday (3max). They are filling, rich and full of "good" cholesterol, you already know what is on your breakfast table tomorrow!
                     </p>
+                    <button class="accordion">Full Product description</button>
+                    <div class="panel">
+                        <p>The native eggs refer to the eggs laid by the native chickens raised in the farm, and the beverage eggs, or foreign eggs, refer to the eggs laid by the chickens raised by the chicken farms or professional chicken farmers with synthetic feed. The soil egg does not contain any synthetic antibiotics, hormones, and pigments. Compared with ordinary eggs, the protein content is thicker, the protein content is increased by 5%-6%, the fat is reduced by 3%, the cholesterol is reduced by 19.8%, and the taste is delicious, tender and tasteless. . Native eggs are rich in nutrients and are an important ingredient in women's beauty diet. One egg a day is not redundant. If the blood cholesterol does not exceed the standard, there is no need to deliberately discard the egg yolk. Eggs are the food with the highest protein quality. Eggs contain high-quality protein with the highest physiological utilization among natural foods.
+                        <ul id="nutritionList">
+                            <li>Calories : 70</li>
+                            <li>Fat: 4.5 g</li>
+                            <li>Sodium: 65 mg</li>
+                            <li>Protein: 6 g</li>                           
+                        </ul>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
     <footer>
         <div class="section contactInfo">
             <h3>Contact Info</h3>
@@ -148,7 +159,22 @@
             </ul>
         </div>
     </footer>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
 
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
