@@ -108,6 +108,20 @@
                         minerals and is high in carb, but white rice being refined has less carbs but has a higher
                         glycemic index than brown rice.
                     </p>
+                    <button class="accordion">Full Product description</button>
+                    <div class="panel">
+                        <p> Mostly popular in  Asian and African countries, rice has become the most consumed staple food. It is mostly produced in locations of low labour costs and high rainfall.
+                            There exists many different types of rice, of many different colours, but white rice is the post popular amongst the world population.
+                            <h6>per serving size: 100g</h6>
+                             <ul id="nutritionList">
+                             <li> Calories: 130</li>
+                             <li> Protein: 2.7 grams</li>
+                             <li> Total fat: 0.3 grams</li>
+                             <li> Sugar: 0.1 grams</li>
+                             <li> Fiber: 1.4 grams</li>
+                             <li> Sodium: 1 milligrams</li>
+                             </ul></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -152,5 +166,22 @@
         </div>
     </footer>
 </body>
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    }
+
+</script>
 
 </html>
