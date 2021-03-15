@@ -42,7 +42,7 @@ function deleteProductRows() {
             }
     }
     else {
-        if (confirm("Are you sure to delete these product from the list?"))
+        if (confirm("Are you sure to delete these products from the list?"))
             for (var k = checkedProducts.length - 1; k >= 0; k--)
                 table.deleteRow(checkedProducts[k]);
         else
