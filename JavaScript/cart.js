@@ -110,6 +110,7 @@ function decreaseQuantity() {
 
 //deletes item from cart
 function deleteItem() {
+    
     var table = document.getElementById("cartTable");
     var tableRows = table.rows.length;
     var td = event.target.parentNode;
@@ -117,11 +118,13 @@ function deleteItem() {
     tr.parentNode.removeChild(tr);
     if (document.getElementById("cartTable").rows.length == 1) {
         alert("Cart is now empty. Return shopping to refill your cart.");
+        totalCalculators();
     }
     for (var i = 1; i <= tableRows; i++) {
         document.getElementById("cartTable").rows[i].cells[0].innerText = i;
+        totalCalculators();
     }
-    totalCalculators()
+
 }
 
 /*
