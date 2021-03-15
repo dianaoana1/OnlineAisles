@@ -16,18 +16,18 @@ function showSlides(n) {
     var i;
     var slides = document.getElementsByClassName("mySlides");
     var dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {slideIndex = 1}    
-    if (n < 1) {slideIndex = slides.length}
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
     for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
+        slides[i].style.display = "none";
     }
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
-    slides[slideIndex-1].style.display = "block";  
-    dots[slideIndex-1].className += " active";
-  }
-  Date.prototype.getWeek = function() {
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+}
+Date.prototype.getWeek = function () {
     var date = new Date(this.getTime());
     date.setHours(0, 0, 0, 0);
     // Thursday in current week decides the year.
@@ -36,25 +36,62 @@ function showSlides(n) {
     var week1 = new Date(date.getFullYear(), 0, 4);
     // Adjust to Thursday in week 1 and count number of weeks from date to week1.
     return 1 + Math.round(((date.getTime() - week1.getTime()) / 86400000
-                          - 3 + (week1.getDay() + 6) % 7) / 7);
-  }
-  
+        - 3 + (week1.getDay() + 6) % 7) / 7);
+}
 
-function weekDeal(){
-    let myDate=new Date();
-myDate.getDay();
-console.log(myDate.getWeek());
-   if(myDate.getWeek()%4==0){
-    return 4;
-    console.log("Deal week 4");
-   }else if(myDate.getWeek()%3==0){
-       return 3;
-    console.log("Deal week 3");
-  }else if(myDate.getWeek()%2==0){
-      return 2;
-    console.log("Deal week 2");
-  } else {
-      return 1;
-       console.log("Deal week 1");
-   }
+
+function weekDeal() {
+    let myDate = new Date();
+    myDate.getDay();
+    console.log(myDate.getWeek());
+    var weekOfMonth = 0;
+    if (myDate.getWeek() > 48) {
+        weekOfMonth = myDate.getWeek() - 48;
+    } else if (myDate.getWeek() > 44) {
+        weekOfMonth = myDate.getWeek() - 44;
     }
+    else if (myDate.getWeek() > 40) {
+        weekOfMonth = myDate.getWeek() - 40;
+    }
+    else if (myDate.getWeek() > 36) {
+        weekOfMonth = myDate.getWeek() - 36;
+    }
+    else if (myDate.getWeek() > 32) {
+        weekOfMonth = myDate.getWeek() - 32;
+    }
+    else if (myDate.getWeek() > 28) {
+        weekOfMonth = myDate.getWeek() - 28;
+    }
+    else if (myDate.getWeek() > 24) {
+        weekOfMonth = myDate.getWeek() - 24;
+    }
+    else if (myDate.getWeek() > 20) {
+        weekOfMonth = myDate.getWeek() - 20;
+    }
+    else if (myDate.getWeek() > 16) {
+        weekOfMonth = myDate.getWeek() - 16;
+    }
+    else if (myDate.getWeek() > 12) {
+        weekOfMonth = myDate.getWeek() - 12;
+    }
+    else if (myDate.getWeek() > 8) {
+        weekOfMonth = myDate.getWeek() - 8;
+    }
+    else if (myDate.getWeek() > 4) {
+        weekOfMonth = myDate.getWeek() - 4;
+    }
+    console.log(weekOfMonth);
+    if (weekOfMonth % 4 == 0) {
+        return 4;
+        console.log("Deal week 4");
+    } else if (weekOfMonth % 3 == 0) {
+        return 3;
+        console.log("Deal week 3");
+    } else if (weekOfMonth % 2 == 0) {
+        return 2;
+        console.log("Deal week 2");
+    } else {
+        return 1;
+        console.log("Deal week 1");
+    }
+}
