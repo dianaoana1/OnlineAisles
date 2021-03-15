@@ -94,7 +94,7 @@ function decreaseQuantity() {
             var quantity = event.target.parentNode.previousSibling.parentNode.children[4].innerHTML++;
         }
     }
-    totalCalculators()
+    totalCalculators();
 }
 
 //deletes item from cart
@@ -113,7 +113,6 @@ function deleteItem() {
         document.getElementById("cartTable").rows[i].cells[0].innerText = i;
         totalCalculators();
     }
-
 }
 
 /*
@@ -132,6 +131,7 @@ function updateCartTotal(){
     document.getElementsByClassName('total-price')[0].innerText = total;
 
 }*/
+
 function totalCalculators() {
     subTotalCalculator();
     GSTcalculator();
