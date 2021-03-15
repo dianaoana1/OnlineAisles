@@ -1,0 +1,14 @@
+.nav-link{
+    color:transparent;
+}
+.col:hover{
+    opacity: 0.7;
+   
+        color:red;
+  
+}
+.col:hover>.nav-link{
+    color:green;
+    opacity: 1;
+    text-align: center;
+}
