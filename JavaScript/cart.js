@@ -140,6 +140,7 @@ function updateCartTotal(){
     document.getElementsByClassName('total-price')[0].innerText = total;
 
 }*/
+
 function totalCalculators() {
     subTotalCalculator();
     GSTcalculator();
