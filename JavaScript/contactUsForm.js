@@ -5,6 +5,10 @@ window.onload = function () {
         checkItemName(); 
         checkOrderNum();
         checkComment();
+        if(checkOrderNum() && checkItemName() && checkComment()){
+            window.location.replace("Main Page.html");
+            //eventually put php code to send to "server"
+        }
     });
 };
 

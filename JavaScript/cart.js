@@ -110,14 +110,31 @@ function deleteItem() {
     updateCartTotal()
 }
 
+/*
 function updateCartTotal(){
-    var cartItemContainer = document.getElementsById('cartTable');
+    var cartItemContainer = document.getElementById("cartTable");
     var cartRows = cartItemContainer.document.getElementsbyClassName('cart-row');
     var total=0;
-    for(var i =0; i < cartRows .length; i++){
+    for(var i =0; i < cartRows.length; i++){
         var cartRow = cartRows[i];
         var priceElement = cartRow.getElementsByClassName('item-price')[0];
         var quantityElement = cartRow.getElementsByClassName('item-quantity')[0];
+        var price = parseFloat(priceElement.innerText.replace('$',''))
+        var quantity = quantityElement.value;
+        total = price * quantity * 1.05 *1.0998;
+    }
+    document.getElementsByClassName('total-price')[0].innerText = total;
+
+}*/
+
+function updateCartTotal(){
+    var table = document.getElementById("cartTable");
+    var tableRows = table.rows;
+    var total=0;
+    for(var i =0; i < tableRows.length; i++){
+        var row = tableRows[i];
+        var priceElement = tableRow.getElementsByClassName('item-price')[0];
+        var quantityElement = tableRow.getElementsByClassName('item-quantity')[0];
         var price = parseFloat(priceElement.innerText.replace('$',''))
         var quantity = quantityElement.value;
         total = price * quantity * 1.05 *1.0998;
