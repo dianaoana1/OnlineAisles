@@ -367,7 +367,9 @@ select{
 .Promotions-container{
     height: 100%;
     width: 80%;
+   
 } 
+
 #current-price{
     color:red;
     text-align: center;
