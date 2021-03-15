@@ -38,7 +38,7 @@
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
                             <a class="dropdown-item" href="../Product links/fruits.html"
                                 target="_self">Fruits</a>
-                            <a class="dropdown-item" href="../Product links/Vegetables.html"
+                                <a class="dropdown-item" href="../Product links/Vegetables.html"
                                 target="_self">Vegetables</a>
                             <a class="dropdown-item" href="../Product links/meats and poultry.html" target="_self">
                                 Meats
@@ -96,20 +96,34 @@
                     <h2>Milk</h2>
                     <img src="../../Images/milk.jpg" width="400" height="400">
                     <h4>$4.99/2L</h4>
-                    <input type="number" value="1">
-                    <a href="" class="button">Add To Cart</a>
+                    <input id = "quantity" type="number" value="1">
+                    <a href="" id="add-to-cart" onclick="add()" class="button">Add To Cart</a>
                 </div>
                 <div class="right-side">
                     <h2>Quick description</h2>
                     <p>
-                        Drinking milk is essential especially at a young age for bone and dental health due to it's high
-                        calcium contration. The downside is that dairy product such as milk contain cholesterol,
-                        saturated fat and a lot of calories that can cause obesity and some disease such as diabetes.
+                        The fat content of reduced-fat milk is generally 2%, and the fat content of low-fat milk is generally 1%. It tastes smoother. Compared with whole milk, low-fat or reduced-fat milk has lower fat content, which is more suitable for middle-aged and elderly people with high blood fat or who want to control blood fat or lose weight.
                     </p>
+                    <button class="accordion">Full Product description</button>
+                    <div class="panel">
+                        <p>The good: This food is a good source of Protein, Vitamin B12 and Phosphorus, and a very good source of Vitamin D, Riboflavin and Calcium.
+
+                            The bad: This food is high in Saturated Fat, and a large portion of the calories in this food come from sugars.
+                            
+                           
+                        <ul id="nutritionList">
+                            <li>Calories : 130</li>
+                            <li>Fat: 5 g</li>
+                            <li>Sodium: 130 mg</li>
+                            <li>Protein: 9 g</li>                           
+                        </ul>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
     <footer>
         <div class="section contactInfo">
             <h3>Contact Info</h3>
@@ -149,7 +163,22 @@
             </ul>
         </div>
     </footer>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
 
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
