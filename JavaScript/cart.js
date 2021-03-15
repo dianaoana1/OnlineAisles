@@ -105,7 +105,7 @@ function decreaseQuantity() {
             var quantity = event.target.parentNode.previousSibling.parentNode.children[4].innerHTML++;
         }
     }
-    totalCalculators()
+    totalCalculators();
 }
 
 //deletes item from cart
@@ -121,7 +121,7 @@ function deleteItem() {
     for (var i = 1; i <= tableRows; i++) {
         document.getElementById("cartTable").rows[i].cells[0].innerText = i;
     }
-    totalCalculators()
+    totalCalculators();
 }
 
 /*
