@@ -1,13 +1,13 @@
-if(document.readyState == "loading"){
+if (document.readyState == "loading") {
     document.addEventListener("DOMContentLoader", ready)
 }
-else{
+else {
     ready();
 }
 
-function ready(){
+function ready() {
     var addToCartButtons = document.getElementsByClassName("add-to-cart");
-    for(var i = 0; i < addToCartButtons; i++){
+    for (var i = 0; i < addToCartButtons; i++) {
         var button = addToCartButtons[i];
         button.addEventListener('click', addToCartClicked);
     }
@@ -68,7 +68,7 @@ function add(){
 }
 }
 */
-function addToCartClicked(event){
+function addToCartClicked(event) {
     var button = event.target;
     console.log("clicked!");
     var shopItem = button.parentElement;
@@ -76,36 +76,46 @@ function addToCartClicked(event){
     console.log(itemName);
 }
 
-function increaseQuantity(addClicked) {     //not functional
-    // var row = event.target.parentNode.parentNode.id
-    quantity = document.getElementById("quantity").innerText;
-    // document.getElementById("quantity").innerText= ++quantity;
-    document.getElementById("cartTable").rows[target.parentNode.parentNode.id].cells[4].innerText = ++quantity;
-    var rowId = event.target.parentNode.parentNode.id; 
-    var data = document.getElementById(rowId).querySelectorAll(".row-data");  
-              /*returns array of all elements with  
-              "row-data" class within the row with given id*/ 
-    ++data[4].innerText;
-  
+function increaseQuantity() {
+    var quantity = event.target.parentNode.previousSibling.parentNode.children[4].innerHTML++;
 }
 
-function decreaseQuantity(subtractClicked) {    //not functional
-    quantity = document.getElementById("quantity").innerText;
-    document.getElementById("quantity").innerText= --quantity;
+function decreaseQuantity() {
+    var quantity = event.target.parentNode.previousSibling.parentNode.children[4].innerHTML--;
+    if (quantity <2) {
+        answer = confirm("Are you sure you want to remove this item from your cart?");
+        if (answer) {
+            var table = document.getElementById("cartTable");
+            var tableRows = table.rows.length;
+            var td = event.target.parentNode;
+            var tr = td.parentNode;
+            tr.parentNode.removeChild(tr);
+            if (document.getElementById("cartTable").rows.length == 1) {
+                alert("Cart is now empty. Return shopping to refill your cart.");
+            }
+            for (var i = 1; i <= tableRows; i++) {
+                document.getElementById("cartTable").rows[i].cells[0].innerText = i;
+            }
+        }
+        else {
+            var quantity = event.target.parentNode.previousSibling.parentNode.children[4].innerHTML++;
+        }
+    }
+    updateCartTotal()
 }
 
 
 function deleteItem() {
     var table = document.getElementById("cartTable");
     var tableRows = table.rows.length;
-    var td = event.target.parentNode; 
-    var tr = td.parentNode; 
-    tr.parentNode.removeChild(tr); 
-    if (document.getElementById("cartTable").rows.length == 1){
-        alert("Cart is now empty. Return shopping to refill your cart.");        
+    var td = event.target.parentNode;
+    var tr = td.parentNode;
+    tr.parentNode.removeChild(tr);
+    if (document.getElementById("cartTable").rows.length == 1) {
+        alert("Cart is now empty. Return shopping to refill your cart.");
     }
-    for (var i = 1; i<=tableRows; i++){
-            document.getElementById("cartTable").rows[i].cells[0].innerText = i;
+    for (var i = 1; i <= tableRows; i++) {
+        document.getElementById("cartTable").rows[i].cells[0].innerText = i;
     }
     updateCartTotal()
 }
@@ -127,17 +137,17 @@ function updateCartTotal(){
 
 }*/
 
-function updateCartTotal(){
+function updateCartTotal() {
     var table = document.getElementById("cartTable");
     var tableRows = table.rows;
-    var total=0;
-    for(var i =0; i < tableRows.length; i++){
+    var total = 0;
+    for (var i = 0; i < tableRows.length; i++) {
         var row = tableRows[i];
         var priceElement = tableRow.getElementsByClassName('item-price')[0];
         var quantityElement = tableRow.getElementsByClassName('item-quantity')[0];
-        var price = parseFloat(priceElement.innerText.replace('$',''))
+        var price = parseFloat(priceElement.innerText.replace('$', ''))
         var quantity = quantityElement.value;
-        total = price * quantity * 1.05 *1.0998;
+        total = price * quantity * 1.05 * 1.0998;
     }
     document.getElementsByClassName('total-price')[0].innerText = total;
 
