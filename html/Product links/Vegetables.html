@@ -15,7 +15,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../../CSS/aisles.css">
-
+     <script tyep="text/css" src="../../JavaScript\weeklydealsProduct.js"></script>
     <link rel="stylesheet" href="../../CSS\Page UI.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -99,7 +99,7 @@
                 </div>
                 <div class="article_text">
                     <div>Broccoli</div>
-                    <div>$3.49/un</div>
+                    <div id="price_broccoli">$3.49/un</div>
                 </div>
             </a>
 
@@ -109,7 +109,7 @@
                 </div>
                 <div class="article_text">
                     <div>Carrots</div>
-                    <div>$2.99/un</div>
+                    <div id="price_carrot">$2.99/un</div>
                 </div>
             </a>
 
@@ -119,11 +119,12 @@
                 </div>
                 <div class="article_text">
                     <div>Mushrooms</div>
-                    <div>$2.49</div>
+                    <div id="price_mushrooms">$2.49</div>
                 </div>
             </a>
         </div>
     </div>
+    <script>productPriceSet('broccoli','')</script>
     <div style="clear: both"></div>
     <div style="clear: both"></div>
     <footer>

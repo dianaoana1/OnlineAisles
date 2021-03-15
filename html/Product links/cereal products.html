@@ -15,7 +15,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="..\../CSS/aisles.css">
-
+    <script tyep="text/css" src="../../JavaScript\weeklydealsProduct.js"></script>
     <link rel="stylesheet" href="..\..\CSS\Page UI.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -98,7 +98,7 @@
                 </div>
                 <div class="article_text">
                     <div>Fusilli</div>
-                    <div>$2.49</div>
+                    <div id="price_fusilli">$2.49</div>
                 </div>
             </a>
 
@@ -109,7 +109,7 @@
                 </div>
                 <div class="article_text">
                     <div>Sliced bread</div>
-                    <div>$1.99</div>
+                    <div id="price_bread">$1.99</div>
                 </div>
             </a>
 
@@ -120,7 +120,7 @@
                 </div>
                 <div class="article_text">
                     <div>Cereal</div>
-                    <div>$4.99</div>
+                    <div id="price_cereal">$4.99</div>
                 </div>
             </a>
 
@@ -131,11 +131,12 @@
                 </div>
                 <div class="article_text">
                     <div>Rice</div>
-                    <div>$19.99</div>
+                    <div id="price_rice">$19.99</div>
                 </div>
             </a>
         </div>
     </div>
+    <script>productPriceSet('bread','')</script>
     <div style="clear: both"></div>
     <div style="clear: both"></div>
     <footer>

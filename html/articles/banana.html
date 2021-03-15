@@ -16,6 +16,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="..\../CSS/aisles.css">
     <script src="..\..\JavaScript\ItemDetails.js"></script>
+    <script type="text/javascript" src="..\..\JavaScript\weeklydealsProduct.js"></script>
     <link rel="stylesheet" href="..\..\CSS\Page UI.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -23,6 +24,7 @@
     <script>
         var name = "banana";
     </script>
+        <script type="text/javascript" srx="..\..\JavaScript\weeklydeals.js"></script>
         <script type = "text/javascript" src = "..\..\JavaScript\cart.js" async></script>
 
 </head>
@@ -102,7 +104,8 @@
                 <div class="right-side">
                     <h2 class ="item">Bananas</h2>
                     <img class="image" src="../../Images/banana.jpg">
-                    <h4 class="price">$0.33/un</h4>
+                    <h4 class="price_banana">$0.33/un</h4>
+                    <script>productPriceSet('banana')</script>
                     <input class="quatity" type="number" value="1">
                     <a href="" id="add-to-cart" onclick="add()" class="button add-to-cart">Add To Cart</a>
                 </div>

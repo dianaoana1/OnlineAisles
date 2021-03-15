@@ -15,7 +15,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="..\../CSS/aisles.css">
-
+    <script type="text/javascript" src="..\..\JavaScript\weeklydealsProduct.js"></script>
     <link rel="stylesheet" href="..\..\CSS\Page UI.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -95,7 +95,10 @@
                 <div class="right-side">
                     <h2>Sliced bread</h2>
                     <img src="../../Images/bread.jpg" width="400" height="400">
-                    <h4>$1.99</h4>
+
+                   
+                    <h4 id="price_bread">$1.99</h4>
+                    <script>productPriceSet('bread')</script>
                     <input type="number" value="1">
                     <a href="" onclick="add()" class="button">Add To Cart</a>
                 </div>
@@ -126,56 +129,56 @@
                             <li>Protein: 4g</li>
                         </ul>
                         </p>
-                        
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-        <div style="clear: both"></div>
-        <div style="clear: both"></div>
-        <footer>
-            <div class="section contactInfo">
-                <h3>Contact Info</h3>
-                <ul class="info">
-                    <li>
-                        <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-                        <p>123 Main Street<br /> Montreal, QC<br /> Canada</p>
-                    </li>
-                    <li>
-                        <span><i class="fa fa-phone" aria-hidden="true"></i></span>
-                        <p><a href="tel:5141234567">514-123-4567</a></p>
-                    </li>
-                    <li>
-                        <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                        <p><a href="mailto:zixi.quan@concordia.ca?subject=SOEN287">online_grocerystore@groceries.ca</a>
-                        </p>
-                    </li>
-                    <li>
-                        <span><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                        <p><a href="..\..\html\contactUsFrom.html">Help us improve your experience</a></p>
-                    </li>
-                </ul>
-            </div>
-            <div class="section about-us">
-                <h3>About Us</h3>
-                <p>
-                    At the start of 2020, the coronavirus pandemic brought on new difficulties for many people with
-                    pre-existing medical conditions. Something as simple as grocery shopping was now a high risk
-                    activity
-                    for those who were more succeptible to serious illnesses cause by the Covid-19 virus. Our goal is to
-                    make grocery shopping safe and affordable for all Canadians so that no one is has to face food
-                    insecurity in these difficult times.
-                </p>
-                <ul class="icons">
-                    <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li><a href="https://www.instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                    <li><a href="https://www.youtube.com/"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </footer>
+    <div style="clear: both"></div>
+    <div style="clear: both"></div>
+    <footer>
+        <div class="section contactInfo">
+            <h3>Contact Info</h3>
+            <ul class="info">
+                <li>
+                    <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                    <p>123 Main Street<br /> Montreal, QC<br /> Canada</p>
+                </li>
+                <li>
+                    <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                    <p><a href="tel:5141234567">514-123-4567</a></p>
+                </li>
+                <li>
+                    <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                    <p><a href="mailto:zixi.quan@concordia.ca?subject=SOEN287">online_grocerystore@groceries.ca</a>
+                    </p>
+                </li>
+                <li>
+                    <span><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                    <p><a href="..\..\html\contactUsFrom.html">Help us improve your experience</a></p>
+                </li>
+            </ul>
+        </div>
+        <div class="section about-us">
+            <h3>About Us</h3>
+            <p>
+                At the start of 2020, the coronavirus pandemic brought on new difficulties for many people with
+                pre-existing medical conditions. Something as simple as grocery shopping was now a high risk
+                activity
+                for those who were more succeptible to serious illnesses cause by the Covid-19 virus. Our goal is to
+                make grocery shopping safe and affordable for all Canadians so that no one is has to face food
+                insecurity in these difficult times.
+            </p>
+            <ul class="icons">
+                <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.youtube.com/"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
 
 </body>
 <script>

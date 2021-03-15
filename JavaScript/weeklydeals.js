@@ -1,5 +1,8 @@
 var slideIndex = 1;
-
+const bananaFirstPrice=0.33;
+const appleFirstPrice=0.89;
+const breadFirstPrice=1.99;
+const broccoliFirstPrice=3.49;
 window.onload = function () {
     showSlides(slideIndex);
 };
@@ -30,11 +33,11 @@ function showSlides(n) {
 Date.prototype.getWeek = function () {
     var date = new Date(this.getTime());
     date.setHours(0, 0, 0, 0);
-    // Thursday in current week decides the year.
+   
     date.setDate(date.getDate() + 3 - (date.getDay() + 6) % 7);
-    // January 4 is always in week 1.
+  
     var week1 = new Date(date.getFullYear(), 0, 4);
-    // Adjust to Thursday in week 1 and count number of weeks from date to week1.
+    
     return 1 + Math.round(((date.getTime() - week1.getTime()) / 86400000
         - 3 + (week1.getDay() + 6) % 7) / 7);
 }
@@ -82,16 +85,40 @@ function weekDeal() {
     }
     console.log(weekOfMonth);
     if (weekOfMonth % 4 == 0) {
-        return 4;
         console.log("Deal week 4");
+        return 4;
+       
     } else if (weekOfMonth % 3 == 0) {
-        return 3;
         console.log("Deal week 3");
+        return 3;
+       
     } else if (weekOfMonth % 2 == 0) {
-        return 2;
         console.log("Deal week 2");
+        return 2;
+        
     } else {
-        return 1;
         console.log("Deal week 1");
+        return 1;
+       
+    }
+}
+function dealSetter(){
+    if (weekDeal() == 1 ) {
+        document.getElementById("text2"  ).innerHTML = "This Weeks Deal " + "<a  href=../html/articles/apple.html ><i> click here</i></a>";
+        document.getElementById("current-promotion").innerHTML = "This week's deal is the apple we currently have an offer of 20% off</br> so the price of apples is now :";
+        document.getElementById("current-price").innerHTML=" ̶0̶.̶8̶9̶/̶u̶n̶ 0.70$"
+       
+    } else if (weekDeal() == 2) {
+        document.getElementById("text3").innerHTML = "This Weeks Deal " + "<a href=../html/articles/Banana.html><i> click here</i></a>";
+        document.getElementById("current-promotion").innerHTML = "This week's deal is the banana they are currently 30% off pick them</br> while we still have stock. The price of bananas is now:";
+        document.getElementById("current-price").innerHTML=" ̶ ̶0̶.̶3̶3̶  0.23$"
+    } else if (weekDeal() == 3 ) {
+        document.getElementById("text4").innerHTML = "This Weeks Deal" + "<a href=../html/articles/bread.html><i> click here</i></a>";
+        document.getElementById("current-promotion").innerHTML = "This week's deal is bread it is currently on sale for 15% off</br>  order our homemade bread. The price of the bread is now :";
+        document.getElementById("current-price").innerHTML=" ̶1̶.̶9̶9̶ 1.69$"
+    } else if (weekDeal() == 4 ) {
+        document.getElementById("text5").innerHTML = "This Weeks Deal" + "<a href=../html/articles/broccoli.html><i> click here</i></a>";
+        document.getElementById("current-promotion").innerHTML = "This week's deal is now the broccoli it is currently on sale for 20% off</br> order this good green vegetable for the price of the bread is now :";
+        document.getElementById("current-price").innerHTML=" ̶13̶.̶4̶9̶/̶u̶n̶ 2.80$"
     }
 }
