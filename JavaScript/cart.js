@@ -49,7 +49,37 @@ function add(){
         </tr>
     `;
     document.getElementById("shopping-list").appendChild(item);
-
-
 }
 
+function increaseQuantity(addClicked) {     //not functional
+    // var row = event.target.parentNode.parentNode.id
+    quantity = document.getElementById("quantity").innerText;
+    // document.getElementById("quantity").innerText= ++quantity;
+    document.getElementById("cartTable").rows[target.parentNode.parentNode.id].cells[4].innerText = ++quantity;
+    var rowId = event.target.parentNode.parentNode.id; 
+    var data = document.getElementById(rowId).querySelectorAll(".row-data");  
+              /*returns array of all elements with  
+              "row-data" class within the row with given id*/ 
+    ++data[4].innerText;
+  
+}
+
+function decreaseQuantity(subtractClicked) {    //not functional
+    quantity = document.getElementById("quantity").innerText;
+    document.getElementById("quantity").innerText= --quantity;
+}
+
+
+function deleteItem() {
+    var table = document.getElementById("cartTable");
+    var tableRows = table.rows.length;
+    var td = event.target.parentNode; 
+    var tr = td.parentNode; 
+    tr.parentNode.removeChild(tr); 
+    if (document.getElementById("cartTable").rows.length == 1){
+        alert("Cart is now empty. Return shopping to refill your cart.");        
+    }
+    for (var i = 1; i<=tableRows; i++){
+            document.getElementById("cartTable").rows[i].cells[0].innerText = i;
+    }
+}

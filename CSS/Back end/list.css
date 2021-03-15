@@ -5,6 +5,10 @@
     margin: 0px auto;
 }
 
+.image {
+    border-radius:10%;
+}
+
 .tg td {
     width: 250px;
     background-color: #fff;
@@ -70,5 +74,4 @@
     font-size:20px;
     font-weight:normal;
     overflow:hidden;
-    /* margin-bottom:200px !important; */
 }

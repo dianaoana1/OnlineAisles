@@ -101,7 +101,7 @@ footer .container h2{
     outline: none;
     box-shadow: none;
 } */
-  
+
 .btn-primary:active{
     background-color:rgb(159, 179, 71, 0.856) !important;
     border-color:rgba(133, 150, 60, 0.856) !important;
@@ -124,6 +124,7 @@ footer .container h2{
 .btn-secondary dropdown-toggle:hover{
     opacity:0.6;
 }
+
 
 .row1{
     text-align: center;
