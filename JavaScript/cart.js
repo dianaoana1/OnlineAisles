@@ -1,3 +1,19 @@
+if(document.readyState == "loading"){
+    document.addEventListener("DOMContentLoader", ready)
+}
+else{
+    ready();
+}
+
+function ready(){
+    var addToCartButtons = document.getElementsByClassName("add-to-cart");
+    for(var i = 0; i < addToCartButtons; i++){
+        var button = addToCartButtons[i];
+        button.addEventListener('click', addToCartClicked);
+    }
+}
+
+/*
 window.onload = function () {
     let button=document.getElementById("add-to-cart");
     button.addEventListener("click",function(e){ 
@@ -9,15 +25,15 @@ var cart =[];
 
 function add(){
     alert("The item has been added to your cart!")
-    var priceItem = document.getElementById("price").substring(
+    var priceItem = parseFloat(document.getElementById("price").substring(
         document.getElementById("price").lastIndexOf("$")+1,
-        document.getElementById("price").lastIndexOf("/")
+        document.getElementById("price").lastIndexOf("/"))
     );
     var item = new Object();
     item.name= document.getElementById("item");
     item.pictureurl= document.getElementById("image").src;
     item.quantity= document.getElementById("quantity").value;
-    item.price= priceItem.value;
+    item.price= priceItem.value  * item.quatity;
     cart.push(item);
 
     var item = document.createElement(li);
@@ -50,6 +66,8 @@ function add(){
     `;
     document.getElementById("shopping-list").appendChild(item);
 }
+}
+*/
 
 function increaseQuantity(addClicked) {     //not functional
     // var row = event.target.parentNode.parentNode.id
@@ -67,6 +85,13 @@ function increaseQuantity(addClicked) {     //not functional
 function decreaseQuantity(subtractClicked) {    //not functional
     quantity = document.getElementById("quantity").innerText;
     document.getElementById("quantity").innerText= --quantity;
+    
+function addToCartClicked(event){
+    var button = event.target;
+    console.log("clicked!");
+    var shopItem = button.parentElement;
+    var itemName = shopItem.getElementsByClassName("item")[0].innerText;
+    console.log(itemName);
 }
 
 
@@ -82,4 +107,5 @@ function deleteItem() {
     for (var i = 1; i<=tableRows; i++){
             document.getElementById("cartTable").rows[i].cells[0].innerText = i;
     }
+}
 }
