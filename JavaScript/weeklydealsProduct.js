@@ -76,23 +76,23 @@ function weekDeal() {
     }
 }
 
-function productPriceSet(name){
- if(weekDeal()==1 && name.localeCompare('apple')==0){
+function productPriceSet(name1,name2){
+ if(weekDeal()==1 && (name1.localeCompare('apple')==0||name2.localeCompare('apple')==0)){
     var adjustedPrice=appleFirstPrice*0.8;
     var rounded=adjustedPrice.toFixed(2);
     var final=rounded=Number(rounded);
    document.getElementById("price_apple").innerHTML="$"+final+"/un";
- }else if(weekDeal()==2&& name.localeCompare('banana')==0){
+ }else if(weekDeal()==2&& (name1.localeCompare('banana')==0 ||name2.localeCompare('banana')==0)){
     var adjustedPrice=bananaFirstPrice*0.7;
     var rounded=adjustedPrice.toFixed(2);
     var final=rounded=Number(rounded);
     document.getElementById("price_banana").innerHTML="$"+final+"/un";
- }else if (weekDeal()==3  && name.localeCompare('bread')==0){
+ }else if (weekDeal()==3  && (name1.localeCompare('bread')==0 ||name2.localeCompare('bread')==0)){
     var adjustedPrice=breadFirstPrice*0.85;
     var rounded=adjustedPrice.toFixed(2);
     var final=rounded=Number(rounded);
     document.getElementById("price_bread").innerHTML="$"+final;
- }else if (weekDeal()==4 && name.localeCompare('broccoli')==0){
+ }else if (weekDeal()==4 && (name1.localeCompare('broccoli')==0 ||name2.localeCompare('apple')==0)){
     var adjustedPrice=appleFirstPrice*0.8;
     var rounded=adjustedPrice.toFixed(2);
     var final=rounded=Number(rounded);
