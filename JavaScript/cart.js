@@ -88,18 +88,7 @@ function decreaseQuantity() {
     if (quantity < 2) {
         answer = confirm("Are you sure you want to remove this item from your cart?");
         if (answer) {
-            var table = document.getElementById("cartTable");
-            var tableRows = table.rows.length;
-            var td = event.target.parentNode;
-            var tr = td.parentNode;
-            tr.parentNode.removeChild(tr);
-            if (document.getElementById("cartTable").rows.length == 1) {
-                alert("Cart is now empty. Return shopping to refill your cart.");
-            }
-            for (var i = 1; i <= tableRows; i++) {
-                //trying to get table to display a row indicating that the cart is empty (not working...)
-                document.getElementById("cartTable").rows[i].cells[0].innerText = i;
-            }
+            deleteItem();
         }
         else {
             var quantity = event.target.parentNode.previousSibling.parentNode.children[4].innerHTML++;
@@ -110,6 +99,7 @@ function decreaseQuantity() {
 
 //deletes item from cart
 function deleteItem() {
+    
     var table = document.getElementById("cartTable");
     var tableRows = table.rows.length;
     var td = event.target.parentNode;
@@ -117,11 +107,12 @@ function deleteItem() {
     tr.parentNode.removeChild(tr);
     if (document.getElementById("cartTable").rows.length == 1) {
         alert("Cart is now empty. Return shopping to refill your cart.");
+        totalCalculators();
     }
     for (var i = 1; i <= tableRows; i++) {
         document.getElementById("cartTable").rows[i].cells[0].innerText = i;
+        totalCalculators();
     }
-    totalCalculators();
 }
 
 /*
