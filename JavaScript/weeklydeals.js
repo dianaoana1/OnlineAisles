@@ -107,7 +107,7 @@ function dealSetter(){
         document.getElementById("text2"  ).innerHTML = "This Weeks Deal " + "<a  href=../html/articles/apple.html ><i> click here</i></a>";
         document.getElementById("current-promotion").innerHTML = "This week's deal is the apple we currently have an offer of 20% off</br> so the price of apples is now :";
         document.getElementById("current-price").innerHTML=" ̶0̶.̶8̶9̶/̶u̶n̶ 0.70$"
-        //We change the values of the prices there 
+       
     } else if (weekDeal() == 2) {
         document.getElementById("text3").innerHTML = "This Weeks Deal " + "<a href=../html/articles/Banana.html><i> click here</i></a>";
         document.getElementById("current-promotion").innerHTML = "This week's deal is the banana they are currently 30% off pick them</br> while we still have stock. The price of bananas is now:";
