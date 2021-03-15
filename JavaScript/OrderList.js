@@ -18,13 +18,11 @@ function deleteSelectedRows() {
     var tableRows = table.rows;
     var checkedOrders = [];
     var checkedOrderNumbers = "";
-
     for (var i = 0; i < tableRows.length; i++) {
         var selectedOrder = tableRows[i].cells[5].firstChild.checked;
         if (selectedOrder)
             checkedOrders.push(i);
     }
-
     for (var j = 0; j < checkedOrders.length; j++) {
         if (checkedOrderNumbers == "")
             checkedOrderNumbers += checkedOrders[j];
@@ -33,7 +31,6 @@ function deleteSelectedRows() {
         else
             checkedOrderNumbers += (", " + checkedOrders[j]);
     }
-
     if (checkedOrderNumbers.length == 1) {
         if (confirm("Are you sure you want to delete order number " + checkedOrderNumbers + "?"))
             for (var k = checkedOrders.length - 1; k >= 0; k--)
@@ -59,13 +56,11 @@ function editSelectedRows() {
     var table = document.getElementById("orderTable");
     var tableRows = table.rows;
     var checkedOrders = [];
-
     for (var i = 0; i < tableRows.length; i++) {
         var selectedOrder = tableRows[i].cells[5].firstChild.checked;
         if (selectedOrder)
             checkedOrders.push(i);
     }
-
     for (var j = 0; j<checkedOrders.length; j++) {
         var selectedRow = checkedOrders[j];
         var row = table.rows[selectedRow].cells
