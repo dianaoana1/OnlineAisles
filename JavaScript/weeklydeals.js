@@ -109,7 +109,7 @@ function dealSetter(){
         var adjustedPrice=appleFirstPrice*0.8;
         var rounded=adjustedPrice.toFixed(2);
         var final=rounded=Number(rounded);
-        document.getElementById("current-price").innerHTML=" ̶0̶.̶8̶9̶/̶u̶n̶ "+finall+"$";
+        document.getElementById("current-price").innerHTML=" ̶0̶.̶8̶9̶/̶u̶n̶ "+final+"$";
        
     } else if (weekDeal() == 2) {
         document.getElementById("text3").innerHTML = "This Weeks Deal " + "<a href=../html/articles/Banana.html><i> click here</i></a>";
