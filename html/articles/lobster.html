@@ -89,15 +89,15 @@
             </div>
         </div>
     </nav>
-    <div class="conatiner">
+    <div class="container">
         <div class="products">
             <div class="products_row">
                 <div class="right-side">
                     <h2>Cooked Lobster</h2>
                     <img src="../../Images/lobster.jpg" width="400" height="400">
                     <h4>$21.35</h4>
-                    <input type="number" value="1">
-                    <a href="" class="button">Add To Cart</a>
+                    <input id = "quantity" type="number" value="1">
+                    <a href="" id="add-to-cart" onclick="add()" class="button">Add To Cart</a>
                 </div>
                 <div class="right-side">
                     <h2>Quick description</h2>
@@ -106,6 +106,25 @@
                         source a nutrients but are high in sodium which would be bad for someone having high blood
                         pressure.
                     </p>
+                    <button class="accordion">Full Product description</button>
+                    <div class="panel">
+                        <p>While lobster may seem like an expensive, decadent treat, eating live-cooked lobsters is not the only way to include this lean, delicious seafood in your diet.
+
+                            Here are some quick tips for eating lobster.
+                            
+                            Use lobster as your main protein source.
+                            Add lobster to pasta or rice dishes.
+                            Mince lobster to top salads.
+                            Make lobster patties or burgers.
+                        <ul id="nutritionList">
+                            <li>nutrition value per 145g</li>
+                            <li>Calories : 129</li>
+                            <li>Carbohydrate : 0g</li>
+                            <li>Fat: 1.25g</li>
+                            <li>Protein: 27.55g</li> 
+                        </ul>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -149,7 +168,22 @@
             </ul>
         </div>
     </footer>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
 
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

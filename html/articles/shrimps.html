@@ -96,8 +96,8 @@
                     <h2>Shrimps</h2>
                     <img src="../../Images/shrimp.jpg" width="400" height="400">
                     <h4>$9.99/350g</h4>
-                    <input type="number" value="1">
-                    <a href="" class="button">Add To Cart</a>
+                    <input id = "quantity" type="number" value="1">
+                    <a href="" id="add-to-cart" onclick="add()" class="button">Add To Cart</a>
                 </div>
                 <div class="right-side">
                     <h2>Quick description</h2>
@@ -106,6 +106,21 @@
                         are wonderfull. On the other hand, they contain a lot of cholesterol preventing us from eating a
                         too high amount of shrimps.
                     </p>
+                    <button class="accordion">Full Product description</button>
+                    <div class="panel">
+                        <p>Shrimps is one of the most commonly consumed types of shellfishé It's quite nutritious and provides high amounts of cert nutrients, such as iodine, that aren't abundant in many other foods.
+                           Farm-raised shrimp may have some negative health effects compared to wild-caught shrimp.
+                        <ul id="nutritionList">
+                            <li>nutrition value per 100g</li>
+                            <li>Calories : 84</li>
+                            <li>Carbohydrate : 0g</li>
+                            <li>cholesterol: 166mg/85g of shrimp</li>
+                            <li>Protein: 18g</li>
+                            <li>vitame b12: 12% of the RDI</li>
+                            <li>Selenium : 48% of the RDI</li>                        
+                        </ul>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -149,7 +164,22 @@
             </ul>
         </div>
     </footer>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
 
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

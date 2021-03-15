@@ -27,6 +27,15 @@ body {
         height:100%;
 	}
 }
+@media screen and (max-width: 600px) {
+	 .quick-links .row
+	{
+        margin-left: 2px;
+        text-align: center;
+		min-width: 100%;
+        height:100%;
+	}
+}
 /* footer */
 footer {
     width: 100vw ;
