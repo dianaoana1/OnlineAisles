@@ -1,17 +1,13 @@
 body {
     width:100vw;
-    background-color:rgb(204, 211, 175, 0.986) !important;
+    background-color:rgb(204, 211, 175, 0.986);
     /* max-height:auto; */
     max-height:65vh;
     overflow:auto;
 }
 
-#megadiv {
-    background-image: url("Images\fruitsandveggies.jpg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+.loginbody{
+    background-image:url("Images\fruitsandveggies.jpg") !important;
 }
 
 .container {
