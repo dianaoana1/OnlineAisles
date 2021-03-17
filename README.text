@@ -1,3 +1,6 @@
-This program was designed to emmulate a grocery store websitesuch as IGA or Metro. Some of the feature is has are user login/ account editing pages, a main page, products and aisles page, a checkout,a page to check the orders placed, and much more. 
+Part 1 : This program was designed to emmulate a grocery store websitesuch as IGA or Metro. Some of the feature is has are user login/ account editing pages, a main page, products and aisles page, a checkout,a page to check the orders placed, and much more. 
 A combination of HTML5 (for the website main frame) and CSS (for the webpage styling) we used. This webpage is static at the moment and needs additional JavaScript code to make it more dynamic.
 The page will be hosted locally by a member of the team on his computer.
+
+Part 2 : In this 2nd part of the project, the website becomes dynamic instead of static. All the relevant buttons of every pages were
+implemented using either javascript or html. All the responsiveness was fixed using css. The page we still be hosted locally on a member's computer.
