@@ -1,4 +1,4 @@
-var addRowCounter=0;
+var addRowCounter = 0;
 
 function addProductRow() {
     var table = document.getElementById("productTable");
@@ -25,11 +25,11 @@ function deleteProductRows() {
 
     for (var j = 0; j < checkedProducts.length; j++) {
         if (checkedProductNumbers == "")
-        checkedProductNumbers += checkedProducts[j];
+            checkedProductNumbers += checkedProducts[j];
         else if (j == checkedProducts.length - 1)
-        checkedProductNumbers += (1+checkedProducts[j]);
+            checkedProductNumbers += (1 + checkedProducts[j]);
         else
-        checkedProductNumbers += (2+checkedProducts[j]);
+            checkedProductNumbers += (2 + checkedProducts[j]);
     }
 
     if (checkedProductNumbers.length == 1) {
@@ -50,55 +50,83 @@ function deleteProductRows() {
                 tableRows[l].cells[7].firstChild.checked = false;
             }
     }
-} 
+}
 
-    /*document.getElementById("delete").addEventListener("click", function() {
-        var tableRef = document.getElementById('productTable');
-        var tableRows = tableRef.rows;
-        var checkedIndexes = [];
-        for (var i = 1; i < tableRows.length; i++) {
-          var checkboxSelected = tableRows[i].cells[5].firstChild.checked;
-          if (checkboxSelected) {
-            checkedIndexes.push(i);
-          }
-        }
-      
-        for (var k = 0; k < checkedIndexes.length; k++) {
-            tableRef.deleteRow(checkedIndexes[k]-k);
-          }
-      });*/
+/*document.getElementById("delete").addEventListener("click", function() {
+    var tableRef = document.getElementById('productTable');
+    var tableRows = tableRef.rows;
+    var checkedIndexes = [];
+    for (var i = 1; i < tableRows.length; i++) {
+      var checkboxSelected = tableRows[i].cells[5].firstChild.checked;
+      if (checkboxSelected) {
+        checkedIndexes.push(i);
+      }
+    }
+  
+    for (var k = 0; k < checkedIndexes.length; k++) {
+        tableRef.deleteRow(checkedIndexes[k]-k);
+      }
+  });*/
 
 
-      function editProductRows() {
-        var table = document.getElementById("productTable");
-        var tableRows = table.rows;
-        var checkedProducts = [];
-    
-        for (var i = 0; i < tableRows.length; i++) {
-            var selectedProduct = tableRows[i].cells[5].firstChild.checked;
-            if (selectedProduct){
-                checkedProducts.push(i);
-            }
-        }
-        for (var j = 0; j<checkedProducts.length; j++) {
-            var selectedRow = checkedProducts[j];
-            var row = table.rows[selectedRow].cells
-            editRow(row);
+function editProductRows() {
+    var table = document.getElementById("productTable");
+    var tableRows = table.rows;
+    var checkedProducts = [];
+
+    for (var i = 0; i < tableRows.length; i++) {
+        var selectedProduct = tableRows[i].cells[5].firstChild.checked;
+        if (selectedProduct) {
+            checkedProducts.push(i);
         }
     }
-    
-    function editRow(row) {
-        var productName = row.item(0).innerHTML;
-        var type = row.item(1).innerHTML;
-        var price = row.item(2).innerText;
-        var quantity = row.item(3).innerText;
-        var description = row.item(4).innerText;
-        
-    
-        row[0].innerHTML = "<textarea>" + productName + "</textarea>";    
-        row[1].innerHTML = "<textarea>" + type + "</textarea>";   
-        row[2].innerHTML = "<textarea>" + price + "</textarea>";   
-        row[3].innerHTML = "<textarea>" + quantity + "</textarea>";   
-        row[4].innerHTML = "<textarea>" + description + "</textarea>";   
-        
+    for (var j = 0; j < checkedProducts.length; j++) {
+        var selectedRow = checkedProducts[j];
+        var row = table.rows[selectedRow].cells
+        editRow(row);
     }
+}
+
+function editRow(row) {
+    var productName = row.item(0).innerHTML;
+    var type = row.item(1).innerHTML;
+    var price = row.item(2).innerText;
+    var quantity = row.item(3).innerText;
+    var description = row.item(4).innerText;
+    row[0].innerHTML = "<textarea>" + productName + "</textarea>";
+    row[1].innerHTML = "<textarea>" + type + "</textarea>";
+    row[2].innerHTML = "<textarea>" + price + "</textarea>";
+    row[3].innerHTML = "<textarea>" + quantity + "</textarea>";
+    row[4].innerHTML = "<textarea>" + description + "</textarea>";
+}
+
+function saveChanges() {
+    var table = document.getElementById("productTable");
+    var tableRows = table.rows;
+    for (var i = 0; i < tableRows.length; i++) {
+        var row = tableRows[i];
+        var productName = row.item(0).innerHTML.select();
+        var type = row.item(1).innerHTML.select();
+        var price = row.item(2).innerHTML.select();
+        var quantity = row.item(3).innerHTML.select();
+        var description = row.item(4).innerHTML.select();
+        if (i%2==0){
+            row = '<tr><td class="tg-even">'+ productName +'</td><td class="tg-even">' + type + '</td><td class="tg-even">'+price+'</td><td class="tg-even">'+ quantity +'</td><td class="tg-even">'+description+'</td><td class="tg-even"><input type="checkbox"></td></tr>';
+        }
+        else{
+            row = '<tr><td class="tg-odd">'+ productName +'</td><td class="tg-odd">' + type + '</td><td class="tg-odd">'+price+'</td><td class="tg-odd">'+ quantity +'</td><td class="tg-odd">'+description+'</td><td class="tg-odd"><input type="checkbox"></td></tr>';
+        }
+    }
+
+    /*for (var i = 0; i < tableRows.length; i++) {
+        var selectedProduct = tableRows[i].cells[5].firstChild.checked;
+        if (selectedProduct) {
+            checkedProducts.push(i);
+        }
+    }
+    for (var j = 0; j < checkedProducts.length; j++) {
+        var selectedRow = checkedProducts[j];
+        var row = table.rows[selectedRow].cells
+        editRow(row);
+    }*/
+}
