@@ -1,60 +1,61 @@
 body {
-    width:100vw;
-    background-color:rgb(204, 211, 175, 0.986);
+    width: 100vw;
+    background-color: rgb(204, 211, 175, 0.986);
     /* max-height:auto; */
-    max-height:65vh;
-    overflow:auto;
+    max-height: 65vh;
+    overflow: auto;
 }
 
-.loginbody{
-    background-image:url("../Images/fruitsandveggies.jpg") !important;
-    background-position:center center;
+.loginbody {
+    background-image: url("../Images/fruitsandveggies.jpg") !important;
+    background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
 }
 
 .container {
-    padding:0px !important;
-    width:100vw;
-    margin-bottom:100px;
-    height:65vh;
-}
-@media screen and (max-width: 600px) {
-	.container
-	{
-		max-width: 100%;
-        height:100%;
-	}
+    padding: 0px !important;
+    width: 100vw;
+    margin-bottom: 100px;
+    height: 65vh;
 }
 
 @media screen and (max-width: 600px) {
-	 .quick-links .row
-	{
+    .container {
+        max-width: 100%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .quick-links .row {
         margin-left: 2px;
         text-align: center;
-		min-width: 100%;
-        height:100%;
-	}
+        min-width: 100%;
+        height: 100%;
+    }
 }
-@media screen and (min-width: 1000px) and (max-width:1400px){
-	.container .aisles
-	{		
-        margin-bottom:400px;
-	}
+
+@media screen and (min-width: 1000px) and (max-width:1400px) {
+    .container .aisles {
+        margin-bottom: 400px;
+    }
 }
+
 /* footer */
+
 footer {
-    width: 100vw ;
+    width: 100vw;
     position: relative;
-    max-height:35vh;
-    overflow:auto;
-    height:auto;
+    max-height: 35vh;
+    overflow: auto;
+    height: auto;
     color: whitesmoke;
-    display:flex;
+    display: flex;
     justify-content: wrap;
     bottom: 0 absolute;
-    background-color:rgb(159, 179, 71) !important;
+    background-color: rgb(159, 179, 71) !important;
     text-align: center;
 }
 
@@ -62,55 +63,59 @@ footer .container .section {
     margin-right: 30px;
 }
 
-footer .container h2{
-    position:relative;
-    color:aliceblue;
-    font-weight:500;
+footer .container h2 {
+    position: relative;
+    color: aliceblue;
+    font-weight: 500;
     margin-bottom: 15px;
 }
 
 /* navbar */
+
 .navbar-dark {
     background-color: rgb(159, 179, 71, 0.856) !important;
 }
 
-.nav-item .Login{
-    background-color:rgb(147, 165, 65, 0.856);
-    border-color:rgb(159, 179, 71, 0.856);
-    padding-left:15px;
+.nav-item .Login {
+    background-color: rgb(147, 165, 65, 0.856);
+    border-color: rgb(159, 179, 71, 0.856);
+    padding-left: 15px;
     max-width: 140px;
     max-height: 37px;
     color: white !important;
 }
 
 .navbar-toggler {
-    border-radius:0;
-    border-color:rgb(159, 179, 71, 0.856) !important;
-}
- .dropdown-menu.show {
-    background-color:rgb(222, 235, 165) !important;
- }
-
- .dropdown-item:hover{
-    background-color:rgba(200, 216, 127, 0.815) !important;
+    border-radius: 0;
+    border-color: rgb(159, 179, 71, 0.856) !important;
 }
 
-.dropdown-item{
-    background-color:rgb(222, 235, 165, 0.815) !important;
-    color:rgb(75, 80, 70);
+.dropdown-menu.show {
+    background-color: rgb(222, 235, 165) !important;
 }
 
- /* primary button */
+.dropdown-item:hover {
+    background-color: rgba(200, 216, 127, 0.815) !important;
+}
+
+.dropdown-item {
+    background-color: rgb(222, 235, 165, 0.815) !important;
+    color: rgb(75, 80, 70);
+}
+
+/* primary button */
+
 .btn-primary {
-    font-weight: bold; 
+    font-weight: bold;
     background-color: rgb(139, 139, 139);
-    border-color:rgb(139, 139, 139);
+    border-color: rgb(139, 139, 139);
 }
 
 .btn-primary:hover {
-    background-color:rgb(158, 156, 156);
-    border-color:rgb(158, 156, 156);
+    background-color: rgb(158, 156, 156);
+    border-color: rgb(158, 156, 156);
 }
+
 /* 
 .btn-primary:focus{
     background-color:rgb(159, 179, 71, 0.856) !important;
@@ -118,241 +123,240 @@ footer .container h2{
     box-shadow: none;
 } */
 
-.btn-primary:active{
-    background-color:rgb(159, 179, 71, 0.856) !important;
-    border-color:rgba(133, 150, 60, 0.856) !important;
+.btn-primary:active {
+    background-color: rgb(159, 179, 71, 0.856) !important;
+    border-color: rgba(133, 150, 60, 0.856) !important;
     outline: none;
     box-shadow: none;
     outline: none;
 }
 
-.btn-primary:active:focus{
-    background-color:rgb(159, 179, 71, 0.856) !important;
+.btn-primary:active:focus {
+    background-color: rgb(159, 179, 71, 0.856) !important;
 }
 
 /* secondary button */
+
 .btn-secondary {
     background-color: rgb(147, 165, 65, 0.856) !important;
-    border-color:rgb(159, 179, 71, 0.856)  !important;
+    border-color: rgb(159, 179, 71, 0.856) !important;
     border-radius: 0;
 }
 
-.btn-secondary dropdown-toggle:hover{
-    opacity:0.6;
+.btn-secondary dropdown-toggle:hover {
+    opacity: 0.6;
 }
 
-
-.row1{
+.row1 {
     text-align: center;
 }
 
-.img-container{
+.img-container {
     text-align: center;
 }
 
 .img-container .text {
-    background-color:rgb(159, 179, 71) !important;
+    background-color: rgb(159, 179, 71) !important;
     padding-top: 15px;
-    padding-bottom:15px;
-    padding-left:50px;
-    padding-right:50px;
-    height:100px auto;
-    max-height:300px;   
+    padding-bottom: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 100px auto;
+    max-height: 300px;
 }
 
-p {font-size:1.5vmin;}
+p {
+    font-size: 1.5vmin;
+}
 
-h1 {font-size:5.9vmin;}
+h1 {
+    font-size: 5.9vmin;
+}
 
-h2 {font-size:3vmin;}
+h2 {
+    font-size: 3vmin;
+}
 
-h3 {font-size:2.5vmin;}
+h3 {
+    font-size: 2.5vmin;
+}
 
-h4 {font-size:2.3vmin;}
+h4 {
+    font-size: 2.3vmin;
+}
 
-h5 {font-size:2.1vmin;}
+h5 {
+    font-size: 2.1vmin;
+}
 
-.row1{
+.row1 {
     text-align: center;
 }
 
 .bg {
     position: relative;
-    margin:0  auto;
+    margin: 0 auto;
 }
 
 .bg .overlay-text {
     position: absolute;
     top: 0;
-    background: rgb(0,0,0);
-    background:rgba(0,0,0,0.5);
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
     color: #f1f1f1;
-    width:100%;
-    padding:15px;
-    text-align:center;
-}
-
-.img-container{
+    width: 100%;
+    padding: 15px;
     text-align: center;
 }
 
-.quick-links{
+.img-container {
     text-align: center;
-    margin:auto;
 }
 
-.shopping-cart-holder:hover{
-    opacity:0.6;
+.quick-links {
+    text-align: center;
+    margin: auto;
 }
 
-#col-veg{
-    background-image:url('../Images/vegetables.jpg') ;
-    width: 15%;
-   
+.shopping-cart-holder:hover {
+    opacity: 0.6;
 }
-#col-fruits{
-    background-image:url('../Images/fruits.jpg') ;
+
+#col-veg {
+    background-image: url('../Images/vegetables.jpg');
     width: 15%;
-   
 }
-#col-meat{
+
+#col-fruits {
+    background-image: url('../Images/fruits.jpg');
+    width: 15%;
+}
+
+#col-meat {
     background-image: url('../Images/meat2.jpg');
     width: 15%;
-   
 }
 
-#col-egg{
+#col-egg {
     background-image: url('../Images/dairy-egg.jpg');
     width: 15%;
-    
 }
 
-#col-sea{
+#col-sea {
     background-image: url('../Images/seafood.jpg');
     width: 15%;
 }
 
-#col-cer{
+#col-cer {
     background-image: url('../Images/other.jpg');
     width: 15%;
 }
 
 .contactInfo .info li {
-    display:flex;
+    display: flex;
 }
 
 .contactInfo .info li span {
     color: whitesmoke;
-    font-size:2.2vw;
+    font-size: 2.2vw;
     margin-right: 16px;
 }
 
 .contactInfo .info li span {
-    color:whitesmoke;
+    color: whitesmoke;
 }
 
-.contactInfo .info li a{
-    color:whitesmoke;
-    text-decoration:none;
+.contactInfo .info li a {
+    color: whitesmoke;
+    text-decoration: none;
 }
 
-.contactInfo .info li a:hover{
-    color:rgb(0, 174, 255);
-    text-decoration:none;
+.contactInfo .info li a:hover {
+    color: rgb(0, 174, 255);
+    text-decoration: none;
 }
 
-.about-us{
-    position:right;
-    margin:40px;
+.about-us {
+    position: right;
+    margin: 40px;
 }
 
 .contactInfo {
-    position:left; 
-    margin:50px auto;
+    position: left;
+    margin: 50px auto;
     text-align: left;
 }
 
 .contactInfo h3 {
     margin-left: 40px;
-    text-align:left;
+    text-align: left;
 }
 
 .icons {
-    display:flex;
-    justify-content:center;
-    margin-left:-26px;
+    display: flex;
+    justify-content: center;
+    margin-left: -26px;
     margin-top: 45px;
 }
 
 .icons li {
-    list-style:none;
+    list-style: none;
 }
 
-.icons li a{
+.icons li a {
     display: inline-block;
     width: 4vw;
     height: 4vw;
     background: rgb(92, 94, 87);
     display: flex;
     justify-content: center;
-    align-items:center;
-    margin-right:10px;
+    align-items: center;
+    margin-right: 10px;
     text-decoration: none;
-    border-radius:4px;
-    
+    border-radius: 4px;
 }
 
 /* .info li a .fa {
     font-size:30vmax;
 } */
 
-.icons li a:hover{
+.icons li a:hover {
     background: rgb(0, 174, 255);
 }
 
-.icons li a .fa{
-    color:whitesmoke;
+.icons li a .fa {
+    color: whitesmoke;
     font-size: 2vw;
 }
 
-
 /*Login page*/
-.login{
-    margin-top:50px;
+
+.login {
+    margin-top: 50px;
     display: inline-block;
     padding: 20px;
     position: relative;
     left: 50%;
     top: 20%;
     transform: translateX(-50%);
-    border: 2px solid  rgba(119, 134, 52, 0.856) !important;
+    border: 2px solid rgba(119, 134, 52, 0.856) !important;
     background-color: rgb(159, 179, 71, 0.756) !important;
     border-radius: 10px;
-    color:  rgba(45, 54, 5, 0.856) !important;
+    color: rgba(45, 54, 5, 0.856) !important;
 }
 
 .login a {
-    color:black !important;
+    color: black !important;
 }
-#current-promotion{
-    color:green;
-    font-size:1.5vw;
+
+#current-promotion {
+    color: green;
+    font-size: 1.5vw;
 }
 
 /* CSS for input boxes*/
-input[type=text]{
-    padding: 2px 10px;
-    width:100%;
-    border-radius: 5px;
-    border: 0px;
-    outline: none;
-}
 
-input[type=text]:hover{
-    box-shadow: 0 0 10px rgba(87, 87, 87, 0.2);
-}
-
-input[type=password]{
+input[type=text] {
     padding: 2px 10px;
     width: 100%;
     border-radius: 5px;
@@ -360,27 +364,77 @@ input[type=password]{
     outline: none;
 }
 
-input[type=password]:hover{
+input[type=text]:hover {
     box-shadow: 0 0 10px rgba(87, 87, 87, 0.2);
 }
 
-.btn-primary{
-    background-color:rgb(107, 124, 32);
+input[type=password] {
+    padding: 2px 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: 0px;
+    outline: none;
 }
 
-select{
+input[type=password]:hover {
+    box-shadow: 0 0 10px rgba(87, 87, 87, 0.2);
+}
+
+.btn-primary {
+    background-color: rgb(107, 124, 32);
+}
+
+select {
     border: 0px;
 }
-.Promotions-container{
+
+.Promotions-container {
     height: 100%;
     width: 80%;
-   
-} 
+}
 
-#current-price{
-    color:red;
+#current-price {
+    color: red;
     text-align: center;
 }
-#on-sale{
+
+#on-sale {
     width: 35%;
+}
+
+#acc-img {
+    width: 100%;
+    max-height: 450px;
+    height: 60vh;
+}
+
+@media screen and (min-width: 1000px) and (max-width:1400px) {
+    #acc-img {
+        height: 60vh;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #acc-img {
+        height: 25vh;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #acc-img {
+        height: 20vh;
+    }
+}
+
+
+@media only screen and (device-width: 1024px), only screen and (max-width: 1024px) {
+    #acc-img {
+        height: 30vh;
+    }
+}
+
+@media only screen and (device-width: 768px), only screen and (max-width: 768px) {
+    #acc-img {
+        height: 25vh;
+    }
 }
