@@ -103,7 +103,7 @@ function editRow(row) {
 function saveChanges() {
     var table = document.getElementById("productTable");
     var tableRows = table.rows;
-    for (var i = 0; i < tableRows.length; i++) {
+    /*for (var i = 0; i < tableRows.length; i++) {
         var row = tableRows[i];
         var productName = row.item(0).innerHTML.select();
         var type = row.item(1).innerHTML.select();
@@ -116,8 +116,21 @@ function saveChanges() {
         else{
             row = '<tr><td class="tg-odd">'+ productName +'</td><td class="tg-odd">' + type + '</td><td class="tg-odd">'+price+'</td><td class="tg-odd">'+ quantity +'</td><td class="tg-odd">'+description+'</td><td class="tg-odd"><input type="checkbox"></td></tr>';
         }
+    }*/
+    for (var i = 0; i < tableRows.length; i++) {
+        var row = tableRows[i];
+        var productName = row.item(0).innerHTML.select();
+        var type = row.item(1).innerHTML.select();
+        var price = row.item(2).innerHTML.select();
+        var quantity = row.item(3).innerHTML.select();
+        var description = row.item(4).innerHTML.select();
+        if (i%2==0){
+            row.parentNode.replaceChild('<tr><td class="tg-even">'+ productName +'</td><td class="tg-even">' + type + '</td><td class="tg-even">'+price+'</td><td class="tg-even">'+ quantity +'</td><td class="tg-even">'+description+'</td><td class="tg-even"><input type="checkbox"></td></tr>', row);
+        }
+        else{
+            row.innerHTML = table.replaceChild(row.innerHTML,'<tr><td class="tg-odd">'+ productName +'</td><td class="tg-odd">' + type + '</td><td class="tg-odd">'+price+'</td><td class="tg-odd">'+ quantity +'</td><td class="tg-odd">'+description+'</td><td class="tg-odd"><input type="checkbox"></td></tr>');
+        }
     }
-
     /*for (var i = 0; i < tableRows.length; i++) {
         var selectedProduct = tableRows[i].cells[5].firstChild.checked;
         if (selectedProduct) {
