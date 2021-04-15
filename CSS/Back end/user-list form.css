@@ -14,6 +14,7 @@
     
     /* The popup form - hidden by default */
     .form-popup {
+      z-index:10;
       margin-left:auto;
       margin-right:auto;
       display: none;
