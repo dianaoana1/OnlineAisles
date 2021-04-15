@@ -110,20 +110,17 @@
        if($_POST["email"]!=$_POST["confirm-email"]) 
        {
         $errorE=TRUE;
-       } ?>
-    
+       } ?> 
    
-
     <?php if ( isset($errorP) ) { ?>
         <p>Sorry, passewords do not match.</p>
         <p>Please enter the same passeword.</p>
-    <?php if ( isset($errorE) ) { ?>
+    <?php} if ( isset($errorE) ) { ?>
         <p>Sorry, emails do not match.</p>
         <p>Please enter the same email.</p>
-    <?php if(isset($missing)){ ?>
+    <?php} if(isset($missing)){ ?>
         <p>Sorry, the form is incomplete.</p>
         <p>Please go back and fill out all the required entries.  Thank you.</p>
-    }
     <?php } else { ?>
         <h1>You have successfully signed up to onlinegrocerystore.ca! <br>Please verify your email</h1>
             <br>
