@@ -98,7 +98,7 @@
         </div>
     </nav>    
     <?php 
-       if (empty($_POST["havecard"])||empty($_POST["Title"])||empty($_POST["FirstName"])||empty($_POST["LastName"])||empty($_POST["Address"])||empty($_POST["City"])||empty($_POST["province"])||empty($_POST["Postal Code"])||empty($_POST["email"])||empty($_POST["confirm-email"])||empty($_POST["password"])||empty($_POST["confirm-password"]))
+       if (empty($_POST["havecard"])||empty($_POST["Title"])||empty($_POST["FirstName"])||empty($_POST["LastName"])||empty($_POST["Address"])||empty($_POST["City"])||empty($_POST["province"])||empty($_POST["Postal Code"])||empty($_POST["email"])||empty($_POST["confirm-email"])||empty($_POST["password"])||empty($_POST["confirm-password"])||empty($_POST["terms"]))
        {    
            $error=TRUE;
            $title="Please Go Back";
