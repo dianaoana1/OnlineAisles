@@ -23,6 +23,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <script type = "text/javascript" src = "..\..\JavaScript\cart.js" async></script>
+    
+    <link rel="icon" 
+    type="image/png" 
+    href="..\..\Images\favicon.png">
 
 </head>
 
@@ -117,8 +121,7 @@
     <?php if ( isset($errorE) ) {?>
         <p>Sorry, emails do not match.</p>
         <p>Please enter the same email.</p>
-    <?php else if(isset($missing)){
-        ?>
+    <?php if(isset($missing)){?>
         <p>Sorry, the form is incomplete.</p>
         <p>Please go back and fill out all the required entries.  Thank you.</p>
     }
@@ -127,3 +130,5 @@
             <br>
             <h3><a href="Main Page.html">Return to main page</a></h3>
     <?php } ?>
+    </body>
+    </html>
