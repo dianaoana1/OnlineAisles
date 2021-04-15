@@ -17,16 +17,11 @@
     <link rel="stylesheet" href="..\../CSS/aisles.css">
 
     <link rel="stylesheet" href="..\..\CSS\Page UI.css">
-    <link rel="icon" 
-    type="image/png" 
-    href="..\..\Images\favicon.png">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-        <script type = "text/javascript" src = "..\..\JavaScript\cart.js" async></script>
-    
-    <link rel="icon" 
-    type="image/png" 
-    href="..\..\Images\favicon.png">
+    <link rel="icon" type="image/png" href="..\..\Images\favicon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script type="text/javascript" src="..\..\JavaScript\cart.js" async></script>
+
+    <link rel="icon" type="image/png" href="..\..\Images\favicon.png">
 
 </head>
 
@@ -40,14 +35,11 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
                     <div class="dropdown show">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aisles</a>
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aisles</a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="../Product links/fruits.html"
-                                target="_self">Fruits</a>
-                                <a class="dropdown-item" href="../Product links/Vegetables.html"
-                                target="_self">Vegetables</a>
+                            <a class="dropdown-item" href="../Product links/fruits.html" target="_self">Fruits</a>
+                            <a class="dropdown-item" href="../Product links/Vegetables.html" target="_self">Vegetables</a>
                             <a class="dropdown-item" href="../Product links/meats and poultry.html" target="_self">
                                 Meats
                                 and Poultry </a>
@@ -62,8 +54,7 @@
                 </li>
                 <li class="nav-item dropdown">
                     <div class="dropdown show">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Back end Pages</a>
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Back end Pages</a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
                             <a class="dropdown-item" href="..\user-list.html" target="_self">User List</a>
@@ -77,8 +68,7 @@
                 <li class="nav-item">
                 <li class="nav-item dropdown">
                     <div class="dropdown show">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#9881;</a>
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#9881;</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
                             <a class="dropdown-item" href="..\Back end\change password.html" target="_blank"> Change
                                 Password</a>
@@ -96,35 +86,35 @@
                 <a class="nav-link shopping-cart" href="..\shopping_cart.html" target="_blank">&#128722; </a>
             </div>
         </div>
-    </nav>    
-    <?php 
-       if (empty($_POST["havecard"])||empty($_POST["Title"])||empty($_POST["FirstName"])||empty($_POST["LastName"])||empty($_POST["Address"])||empty($_POST["City"])||empty($_POST["province"])||empty($_POST["Postal Code"])||empty($_POST["email"])||empty($_POST["confirm-email"])||empty($_POST["password"])||empty($_POST["confirm-password"])||empty($_POST["terms"]))
-       {    
-           $error=TRUE;
-           $title="Please Go Back";
-       } 
-       if($_POST["password"]!=$_POST["confirm-password"]) 
-       {
-        $errorP=TRUE;
-       }
-       if($_POST["email"]!=$_POST["confirm-email"]) 
-       {
-        $errorE=TRUE;
-       } ?> 
-   
-    <?php if ( isset($errorP) ) { ?>
-        <p>Sorry, passewords do not match.</p>
-        <p>Please enter the same passeword.</p>
-    <?php} if ( isset($errorE) ) { ?>
-        <p>Sorry, emails do not match.</p>
-        <p>Please enter the same email.</p>
-    <?php} if(isset($missing)){ ?>
-        <p>Sorry, the form is incomplete.</p>
-        <p>Please go back and fill out all the required entries.  Thank you.</p>
-    <?php } else { ?>
-        <h1>You have successfully signed up to onlinegrocerystore.ca! <br>Please verify your email</h1>
-            <br>
-            <h3><a href="Main Page.html">Return to main page</a></h3>
-    <?php } ?>
+    </nav>
+    <?php
+    if (empty($_POST["havecard"]) || empty($_POST["Title"]) || empty($_POST["FirstName"]) || empty($_POST["LastName"]) || empty($_POST["Address"]) || empty($_POST["City"]) || empty($_POST["province"]) || empty($_POST["Postal Code"]) || empty($_POST["email"]) || empty($_POST["confirm-email"]) || empty($_POST["password"]) || empty($_POST["confirm-password"]) || empty($_POST["terms"])) {
+        $error = TRUE;
+        $title = "Please Go Back";
+    }
+    if ($_POST["password"] != $_POST["confirm-password"]) {
+        $errorP = TRUE;
+    }
+    if ($_POST["email"] != $_POST["confirm-email"]) {
+        $errorE = TRUE;
+    } ?>
+
+    <?php
+    if (isset($errorP)) {
+        echo '<p>Sorry, passewords do not match.</p>
+        <p>Please enter the same passeword.</p>';
+    }
+    if (isset($errorE)) {
+        echo '<p>Sorry, emails do not match.</p>
+        <p>Please enter the same email.</p>';
+    }
+    if (isset($missing)) {
+        echo '<p>Sorry, the form is incomplete.</p>
+        <p>Please go back and fill out all the required entries.  Thank you.</p>';
+    } else {
+        echo '<h1>You have successfully signed up to onlinegrocerystore.ca! <br>Please verify your email</h1><br>
+            <h3><a href="Main Page.html">Return to main page</a></h3>';
+    } ?>
 </body>
+
 </html>
