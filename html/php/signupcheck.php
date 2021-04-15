@@ -96,7 +96,7 @@
                 <a class="nav-link shopping-cart" href="..\shopping_cart.html" target="_blank">&#128722; </a>
             </div>
         </div>
-    </nac>    
+    </nav>    
     <?php 
        if (empty($_POST["havecard"])||empty($_POST["Title"])||empty($_POST["FirstName"])||empty($_POST["LastName"])||empty($_POST["Address"])||empty($_POST["City"])||empty($_POST["province"])||empty($_POST["Postal Code"])||empty($_POST["email"])||empty($_POST["confirm-email"])||empty($_POST["password"])||empty($_POST["confirm-password"]))
        {    
@@ -110,18 +110,17 @@
        if($_POST["email"]!=$_POST["confirm-email"]) 
        {
         $errorE=TRUE;
-       }
-    ?>
+       } ?>
     
-    <h1><?php echo $title; ?></h1>
+   
 
-    <?php if ( isset($errorP) ) {?>
+    <?php if ( isset($errorP) ) { ?>
         <p>Sorry, passewords do not match.</p>
         <p>Please enter the same passeword.</p>
-    <?php if ( isset($errorE) ) {?>
+    <?php if ( isset($errorE) ) { ?>
         <p>Sorry, emails do not match.</p>
         <p>Please enter the same email.</p>
-    <?php if(isset($missing)){?>
+    <?php if(isset($missing)){ ?>
         <p>Sorry, the form is incomplete.</p>
         <p>Please go back and fill out all the required entries.  Thank you.</p>
     }
@@ -130,5 +129,5 @@
             <br>
             <h3><a href="Main Page.html">Return to main page</a></h3>
     <?php } ?>
-    </body>
-    </html>
+</body>
+</html>
