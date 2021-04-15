@@ -118,10 +118,10 @@ function saveChanges() {
     }
 }
 
-function openForm() {
+/*function openForm() {
     document.getElementById("editUserForm").style.display = "block";
-}
+}*/
 
-function closeForm() {
+/*function closeForm() {
     document.getElementById("editUserForm").style.display = "none";
-}
+}*/

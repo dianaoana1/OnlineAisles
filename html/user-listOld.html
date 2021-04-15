@@ -9,16 +9,18 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
+  <link rel="icon" 
+  type="image/png" 
+  href="..\Images\favicon.png">
   <link rel="stylesheet" href="../CSS\Page UI.css">
   <link rel="stylesheet" href="../CSS\Back end\list.css" />
-  <link rel="stylesheet" href="../CSS\Back end\user-list form.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <script src="..\JavaScript\UserList.js"></script>
 </head>
 
 <body>
+
   <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
     <a class="navbar-brand" href="Main Page.html">Online Grocery Store</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -164,33 +166,6 @@
       <a type="text" name="delete-user-button" style="font-weight: bold;" class="btn btn-primary" href="#"
         onclick="deleteSelectedRows()">Delete
         User</a>
-      <a type="submit" name="save-product-button" style="font-weight: bold;" class="btn btn-primary" href = "#" onclick = "saveChanges()">Save Changes</a>
-    </div>
-    <button class="open-button" onclick="openForm()">Open Form</button>
-    
-    <div class="form-popup" id="editUserForm">
-      <form action = "" class = "form-container"> <!--action="/action_page.php"-->                
-        <label for="lastName"><b>Last name</b></label>
-        <input type="text" placeholder="Enter last name" name="lastName" required>
-
-        <label for="firstName"><b>First name</b></label>
-        <input type="text" placeholder="Enter first name" name="firstName" required>
-
-        <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter email" name="email" required>
-    
-        <label for="tel1"><b>Tel.1</b></label>
-        <input type="text" placeholder="Enter phone number" name="tel1" required>
-    
-        <label for="tel2"><b>Tel.2</b></label>
-        <input type="text" placeholder="Enter phone number" name="tel2" required>
-
-        <label for="address"><b>Address</b></label>
-        <input type="text" placeholder="Enter address" name="address" required>
-
-        <button type="submit" class="btn" onclick = "updateTable()">Save</button>
-        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-      </form>
     </div>
   </div>
   <div style="clear: both"></div>
