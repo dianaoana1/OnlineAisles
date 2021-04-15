@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html>
+<body>  
 <?php
   class User{
    private $username;
@@ -71,5 +74,11 @@
    function get_pcode(){
     return $this->pcode;
    }
-
+   function __toString()
+   {
+       return "Hi"+$this->username;
+   }
 }
+?>
+</body>
+<html>
