@@ -37,9 +37,9 @@
             echo $comment."</br>";
         }
         if(!isset($_SESSION)||!usernameExists($username)){
-          header("Location:../html/login.html");
+            echo "<script>alert('The username does not exist/or is not signed on currently');document.location='../html/login.html'</script>";
         }else{
-            header("Location:../html/shopping_cart.html");
+            echo "<script>alert('Thank you for the comment we will make sure to do better have a great day ');document.location='../html/shopping_cart.html'</script>";
         }
 
     }
