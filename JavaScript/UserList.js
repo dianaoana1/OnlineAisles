@@ -1,17 +1,6 @@
 var addedRowCount = 0;
 
 //add users
-/*function addRow() {
-    var table = document.getElementById("userTable");
-    var userId = table.rows.length;
-    if (addedRowCount % 2 == 0)
-        table.insertRow(-1).innerHTML = '<tr><td class="tg-odd">' + userId + '</td><td class="tg-odd"><input type="text" id = "last" required></input></td><td class="tg-odd"><input type="text" id = "first" required></input></td><td class="tg-odd"><input type="text" id = "phone1" required></input></td><td class="tg-odd"><input type="text" id = "phone2" required></input></td><td class="tg-odd"><input type="text" id = "email_add" required></input></td><td class="tg-odd"><input type="text" id = "addr" required></input></td><td class="tg-odd">*unsaved*</td></tr>';
-    else {
-        table.insertRow(-1).innerHTML = '<tr><td class="tg-odd">' + userId + '</td><td class="tg-even"><input type="text" id = "last" required></input></td><td class="tg-even"><input type="text" id = "first" required></input></td><td class="tg-even"><input type="text" id = "phone1" required></input></td><td class="tg-even"><input type="text" id = "phone2" required></input></td><td class="tg-even"><input type="text" id = "email_add" required></input></td><td class="tg-even"><input type="text" id = "addr" required></input></td><td class="tg-even">*unsaved*</td></tr>';
-    }
-    addedRowCount++;
-}*/
-
 function addRow() {
     var table = document.getElementById("userTable");
     var userId = table.rows.length;
@@ -21,8 +10,6 @@ function addRow() {
     var tel1 = document.getElementById("tel1Form").value;
     var tel2 = document.getElementById("tel2Form").value;
     var address = document.getElementById("addressForm").value;
-    // document.write(lastName, firstName, tel1, tel2, email, address);
-
     if (addedRowCount % 2 == 0)
         table.insertRow(-1).innerHTML = '<tr><td class="tg-odd">' + userId + '</td><td class="tg-odd">'+ lastName + '</td><td class="tg-odd">' + firstName + '</td><td class="tg-odd">' + tel1 + '</td><td class="tg-odd">' + tel2 + '</td><td class="tg-odd">' + email + '</td><td class="tg-odd">' + address + '</td><td class="tg-odd"><input type="checkbox"></td></tr>';
     else {

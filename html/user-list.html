@@ -79,7 +79,7 @@
   <br>
   <div class="container" style="max-width: 96%; height:100%;margin-top:60px; margin-bottom:166px ">  
     <div class="user-table" style="overflow:auto;">
-      <table class="tg" id="userTable">
+      <table class="tg" id="userTable" name = "userTable">
         <thead>
           <tr>
             <th class="tg-header">User ID</th>
@@ -168,32 +168,6 @@
         onclick="deleteSelectedRows()">Delete
         User</a>
       <a type="submit" name="save-product-button" style="font-weight: bold;" class="btn btn-primary" href = "#" onclick = "saveChanges()">Save Changes</a>
-    </div>
-    <!--<button class="open-button" onclick="openForm()">Open Form</button>-->
-    
-    <div class="form-popup" id="addUserForm">
-      <form action = "" class = "form-container" method = "POST">      <!--Back end\addUser.php-->           
-        <label for="lastName"><b>Last name</b></label>
-        <input type="text" placeholder="Enter last name" id= "lastNameForm" name="lastName" required/>
-
-        <label for="firstName"><b>First name</b></label>
-        <input type="text" placeholder="Enter first name" id = "firstNameForm"name="firstName" required/>
-
-        <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter email" id = "emailForm" name="email" required/>
-    
-        <label for="tel1"><b>Tel.1</b></label>
-        <input type="text" placeholder="Enter phone number" id = "tel1Form" name="tel1" required/>
-    
-        <label for="tel2"><b>Tel.2</b></label>
-        <input type="text" placeholder="Enter phone number" id = "tel2Form" name="tel2" required/>
-
-        <label for="address"><b>Address</b></label>
-        <input type="text" placeholder="Enter address" id  = "addressForm" name="address" required/>
-
-        <button type="submit" class="btn" onclick = "addRow()">Save</button>
-        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-      </form>
     </div>
   </div>
   <div style="clear: both"></div>
