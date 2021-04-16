@@ -18,9 +18,7 @@ function addRow() {
     addedRowCount++;
 }
 
-
-//delete users
-function deleteSelectedRows() {
+function getUsernames(){
     var table = document.getElementById("userTable");
     var tableRows = table.rows;
     var checkedUsers = [];
@@ -31,7 +29,30 @@ function deleteSelectedRows() {
         if (selectedUser)
             checkedUsers.push(i);
     }
+    var checkedUserIDs = [];
+    for (var j = 0; j < checkedUsers.length; j++) {
+        var selectedRow = checkedUsers[j];
+        var row = table.rows[selectedRow].cells
+        var userID = row.item(0).innerHTML;
+        checkedUserIDs.push(userID);
+    }
+    return checkedUserIDs;
+}
 
+//delete users
+function deleteSelectedRows() {
+    var table = document.getElementById("userTable");
+    var tableRows = table.rows;
+    var checkedUsers = [];
+    var checkedUserNumbers = "";
+    for (var i = 0; i < tableRows.length; i++) {
+        var selectedUser = tableRows[i].cells[7].firstChild.checked;
+        if (selectedUser)
+            checkedUsers.push(i);
+    }
+    if (checkedUsers.length == 0){
+        return;
+    }
     for (var j = 0; j < checkedUsers.length; j++) {
         if (checkedUserNumbers == "")
             checkedUserNumbers += checkedUsers[j];

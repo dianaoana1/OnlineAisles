@@ -1,7 +1,9 @@
 <?php
 function newRow($count, $username, $lastName, $firstName, $email, $tel1, $tel2, $address){
+    $userID = $count+1;
     if ($count%2==0){
         return "<tr>
+        <td class=\"tg-even\">".$userID."</td>
         <td class=\"tg-even\">".$username."</td>
         <td class=\"tg-even\">".$lastName."</td>
         <td class=\"tg-even\">".$firstName."</td>
@@ -14,6 +16,7 @@ function newRow($count, $username, $lastName, $firstName, $email, $tel1, $tel2, 
     }
     else{
           return "<tr>
+            <td class=\"tg-odd\">".$userID."</td>
             <td class=\"tg-odd\">".$username."</td>
             <td class=\"tg-odd\">".$lastName."</td>
             <td class=\"tg-odd\">".$firstName."</td>
