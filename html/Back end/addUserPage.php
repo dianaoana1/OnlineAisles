@@ -23,7 +23,7 @@ $thisPage = htmlspecialchars($_SERVER["PHPH_SELF"]);
         $tel2 = $_POST['tel2'];
         $address = $_POST['address'];
         addUserInfoToFile($username, $lastName, $firstName, $email, $tel1, $tel2, $address);
-        echo ProcessUsers($file);
+        echo ProcessUsersToTable($file);
     } else {
     ?>
         <div class="form-popup" id="addUserForm">

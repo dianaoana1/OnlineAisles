@@ -27,7 +27,7 @@ function newRow($count, $username, $lastName, $firstName, $email, $tel1, $tel2, 
       
 }
 
-function ProcessUsers($file){
+function ProcessUsersToTable($file){
     $result = "";
     $result .= "<table class=\"tg\" id=\"userTable\" name = \"userTable\">
     <thead>
@@ -46,7 +46,8 @@ function ProcessUsers($file){
     while(!feof($file)) {   //reading file line by line
         $count++;
         $line = fgets($file);
-        $result .= newRow($count, $line[0], $line[1], $line[2], $line[3], $line[4], $line[5], $line[6]);    //adding new table rows
+        $lineArr = explode($line, "\t");
+        $result .= newRow($count, $lineArr[0], $lineArr[1], $lineArr[2], $lineArr[3], $lineArr[4], $lineArr[5], $lineArr[6]);    //adding new table rows
     }   
     $result .= "</tbody></table>";
     
