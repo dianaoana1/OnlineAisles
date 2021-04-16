@@ -37,20 +37,30 @@
             echo $comment."</br>";
         }
         if(!isset($_SESSION)||!usernameExists($username)){
-            echo "<script>alert('The username does not exist/or is not signed on currently');document.location='../html/login.html'</script>";
+            echo "<script>alert('The username does not exist/or is not signed on currently');document.location='../html/Signup.html'</script>";
         }else{
             echo "<script>alert('Thank you for the comment we will make sure to do better have a great day ');document.location='../html/shopping_cart.html'</script>";
         }
 
     }
     
-    function usernameExists($username){
-        /*foreach($users as $user){
-         if($user== $username){
-             return true;
-         }
-        }*/
-     return false;
+    function usernameExists($username)
+    {
+        $fullString=readUserFile();
+        if(preg_match($username,$fullString)&& $username==$_SESSION["username"]){
+            return true;
+        }else{
+            return false;
+        }
+    
+    }
+    function readUserFile()
+    {
+        $file =fopen("userFile.txt","r");
+        $fullString =file_get_contents($file);
+        return $fullString;
+
+
     }
     function test_input($data)
     {
