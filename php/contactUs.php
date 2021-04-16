@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE HTML>
 <html>
 
@@ -44,12 +48,15 @@
             fwrite($file,$comment. "\n");
             echo $comment . "</br>";
         }
-        if (!isset($_SESSION)) {
+        if (!isset($_SESSION)||empty($_SESSION["username"])) {
             echo "<script>alert('This user is not signed on currently');document.location='../html/Login.html'</script>";
          } else if (!usernameExists($username)) {
             echo "<script>alert('The username does not exist');document.location='../html/Signup.html'</script>";
         } else {
-            //Add here the methods to write to the file the comments
+            fwrite($file,"User:".$username. "\n");
+            fwrite($file,"Item Name:".$itemname. "\n");
+            fwrite($file,"Order Number:".$order. "\n\n");
+            fwrite($file,$comment. "\n");
             echo "<script>alert('Thank you for the comment we will make sure to do better have a great day ');document.location='../html/shopping_cart.html'</script>";
         }
     }
