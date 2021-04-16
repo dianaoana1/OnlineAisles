@@ -403,38 +403,43 @@ select {
 }
 
 #acc-img {
-    width: 100%;
+    width: 30vw;
     max-height: 450px;
-    height: 60vh;
+    height: 45vh;
+    pointer-events: none;
 }
-
+.nohover{
+    pointer-events: none;
+}
+nohover:hover{
+    opacity: 1;
+}
 @media screen and (min-width: 1000px) and (max-width:1400px) {
     #acc-img {
-        height: 60vh;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    #acc-img {
-        height: 25vh;
+        height: 40vh;
+        width: 35vw;
     }
 }
 
 @media screen and (max-width: 600px) {
     #acc-img {
         height: 20vh;
+        width: 37.5vw;
     }
 }
 
 
+
 @media only screen and (device-width: 1024px), only screen and (max-width: 1024px) {
     #acc-img {
-        height: 30vh;
+        height: 25vh;
+        width: 40vw;
     }
 }
 
 @media only screen and (device-width: 768px), only screen and (max-width: 768px) {
     #acc-img {
         height: 25vh;
+        width: 40vw;
     }
 }
