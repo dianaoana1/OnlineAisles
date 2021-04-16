@@ -79,6 +79,26 @@ $thisPage = htmlspecialchars($_SERVER["PHPH_SELF"]);
     <div class="container" style="max-width: 96%; height:100%;margin-top:60px; margin-bottom:166px ">
         <div class="user-table" style="overflow:auto;">
             <?php
+                //somehow make table auto generate/refresh on its own
+
+                /*function addUserInfoToFile($username, $lastName, $firstName, $email, $tel1, $tel2, $address){
+                    $userInfo =  $username."\t".$lastName."\t".$firstName."\t".$email."\t".$tel1."\t".$tel2."\t".$address;
+                    $fileName = "userInfo.txt";
+                    if (file_exists($fileName)){
+                         $file = fopen($fileName,'a') or die("Unable to open 'userInfo.txt'.");
+                         if (is_readable($file) && is_writeable($file)){
+                            fwrite($file,$userInfo);
+                            fclose($file);
+                         }
+                    }
+                    else{
+                        echo "Unable to open 'userInfo.txt'.";
+                    }
+                }
+                if (empty($file))*/
+            ?>
+
+            <?php
             if (isset($_POST['userInfo'])) {
                 $username = $_POST['username'];
                 $lastName = $_POST['lastName'];
@@ -89,6 +109,15 @@ $thisPage = htmlspecialchars($_SERVER["PHPH_SELF"]);
                 $address = $_POST['address'];
                 addUserInfoToFile($username, $lastName, $firstName, $email, $tel1, $tel2, $address);
                 echo ProcessUsersToTable($file);
+            ?>
+                <div style="position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal">
+                    <a type="text" name="add-user-button" style="font-weight: bold;" class="btn btn-primary" href="#" onclick="openForm()">Add New User</a>
+                    <a type="text" name="edit-user-button" style="font-weight: bold;" class="btn btn-primary" href="#" onclick="editSelectedRows()">Edit User</a>
+                    <a type="text" name="delete-user-button" style="font-weight: bold;" class="btn btn-primary" href="#" onclick="deleteSelectedRows()">Delete
+                        User</a>
+                    <a type="submit" name="save-product-button" style="font-weight: bold;" class="btn btn-primary" href="#" onclick="saveChanges()">Save Changes</a>
+                </div>
+            <?php
             } else {
             ?>
                 <div class="form-popup" id="addUserForm">
@@ -116,14 +145,6 @@ $thisPage = htmlspecialchars($_SERVER["PHPH_SELF"]);
                 </div>
             <?php
             } ?>
-        </div>
-
-        <div style="position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal">
-            <a type="text" name="add-user-button" style="font-weight: bold;" class="btn btn-primary" href="#" onclick="openForm()">Add New User</a>
-            <a type="text" name="edit-user-button" style="font-weight: bold;" class="btn btn-primary" href="#" onclick="editSelectedRows()">Edit User</a>
-            <a type="text" name="delete-user-button" style="font-weight: bold;" class="btn btn-primary" href="#" onclick="deleteSelectedRows()">Delete
-                User</a>
-            <a type="submit" name="save-product-button" style="font-weight: bold;" class="btn btn-primary" href="#" onclick="saveChanges()">Save Changes</a>
         </div>
     </div>
     <div style="clear: both"></div>

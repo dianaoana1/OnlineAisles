@@ -5,7 +5,7 @@
 <?php
 class Item
 {
-    private $itemnumber
+    private $itemnumber;
     private $item;
     private $price;
     private $quantity;
