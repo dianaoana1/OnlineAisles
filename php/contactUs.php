@@ -20,54 +20,52 @@ session_start();
     $user_exists = false;
     $file = fopen("..\TextFiles\logsContactus.txt", "a+");
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (file_get_contents($file) !== "") {
-            fwrite($file, "\n");
-        }
-        fwrite($file, "Start of this comment:\n");
         //username part
         if (!empty($_POST["username"])) {
             $username = test_input($_POST["username"]);
-            fwrite($file, "User:" . $username . "\n");
-            echo $username . "</br>";
+            //fwrite($file, "User:" . $username . "\n");
+            // echo $username . "</br>";
         }
         //itemname part
         if (!empty($_POST["itemName"]) && !checkitemName($_POST["itemName"])) {
             $itemname = test_input($_POST["itemName"]);
-            fwrite($file, "Item Name:" . $itemname . "\n");
-            echo $itemname . "</br>";
+            // fwrite($file, "Item Name:" . $itemname . "\n");
+            //echo $itemname . "</br>";
         }
 
         //ordernumber part
         if (!empty($_POST["orderNumber"]) && checkOrderNum($_POST["orderNumber"])) {
             $order = test_input($_POST["orderNumber"]);
-            fwrite($file, "Order Number:" . $order . "\n\n");
-            echo $order . "</br>";
+            //fwrite($file, "Order Number:" . $order . "\n\n");
+            //echo $order . "</br>";
         }
         //comment part
         if (!empty($_POST["comment"])) {
             $comment = test_input($_POST["comment"]);
-            fwrite($file, $comment . "\n");
-            echo $comment . "</br>";
+            // fwrite($file, $comment . "\n");
+            // echo $comment . "</br>";
         }
-        if (!usernameExists($username)) {
-            echo "<script>alert('The username does not exist');document.location='../html/Signup.html'</script>";
-        } else {
-            if (file_get_contents($file) !== "") {
-                fwrite($file, "\n");
+        if (!empty($_POST["username"]) && !empty($_POST["itemName"]) && !checkitemName($_POST["itemName"]) && !empty($_POST["orderNumber"]) && checkOrderNum($_POST["orderNumber"]) && !empty($_POST["comment"])) {
+            if (!usernameExists($username)) {
+                echo "<script>alert('This username does not exist please register thank you');document.location='../html/Signup.html'</script>";
+            } else {
+                if (file_get_contents($file) == "") {
+                    fwrite($file, "\n");
+                }
+                fwrite($file, "Start of this comment:\n");
+                fwrite($file, "User:" . $username . "\n");
+                fwrite($file, "Item Name:" . $itemname . "\n");
+                fwrite($file, "Order Number:" . $order . "\n\n");
+                fwrite($file, $comment . "\n");
+                echo "<script>alert('Thank you for the comment we will make sure to do better have a great day ');document.location='../html/shopping_cart.html'</script>";
             }
-            fwrite($file, "Start of this comment:\n");
-            fwrite($file, "User:" . $username . "\n");
-            fwrite($file, "Item Name:" . $itemname . "\n");
-            fwrite($file, "Order Number:" . $order . "\n\n");
-            fwrite($file, $comment . "\n");
-            echo "<script>alert('Thank you for the comment we will make sure to do better have a great day ');document.location='../html/shopping_cart.html'</script>";
         }
     }
-
     function usernameExists($username)
     {
-        $fullString = readUserFile();
-        if (preg_match("/.$username./", $fullString)) {
+        echo readUserFile() . "</br>";
+        echo $username . "</br>";
+        if (preg_match("/$username/", readUserFile())) {
             return true;
         } else {
             return false;
@@ -75,8 +73,7 @@ session_start();
     }
     function readUserFile()
     {
-        $file = fopen("..\TextFiles\initialUserDatabase.txt", "r");
-        $fullString = file_get_contents($file);
+        $fullString = file_get_contents("..\TextFiles\initialUserDatabase.txt");
         return $fullString;
     }
     function test_input($data)
