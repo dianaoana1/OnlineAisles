@@ -1,7 +1,8 @@
 <?php
-require 'userInfoFile.php';
-require 'addUserToTable.php';
-$thisPage = htmlspecialchars($_SERVER["PHPH_SELF"]);
+session_start();
+require 'userListFunctions.php';
+$_SESSION['currentPage'] = htmlspecialchars($_SERVER["PHP_SELF"]);
+$_SESSION['file'] = "..\TextFiles\userInfo.txt";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -78,73 +79,13 @@ $thisPage = htmlspecialchars($_SERVER["PHPH_SELF"]);
     <br>
     <div class="container" style="max-width: 96%; height:100%;margin-top:60px; margin-bottom:166px ">
         <div class="user-table" style="overflow:auto;">
-            <?php
-                //somehow make table auto generate/refresh on its own
-
-                /*function addUserInfoToFile($username, $lastName, $firstName, $email, $tel1, $tel2, $address){
-                    $userInfo =  $username."\t".$lastName."\t".$firstName."\t".$email."\t".$tel1."\t".$tel2."\t".$address;
-                    $fileName = "userInfo.txt";
-                    if (file_exists($fileName)){
-                         $file = fopen($fileName,'a') or die("Unable to open 'userInfo.txt'.");
-                         if (is_readable($file) && is_writeable($file)){
-                            fwrite($file,$userInfo);
-                            fclose($file);
-                         }
-                    }
-                    else{
-                        echo "Unable to open 'userInfo.txt'.";
-                    }
-                }
-                if (empty($file))*/
-            ?>
-
-            <?php
-            if (isset($_POST['userInfo'])) {
-                $username = $_POST['username'];
-                $lastName = $_POST['lastName'];
-                $firstName = $_POST['firstName'];
-                $email = $_POST['email'];
-                $tel1 = $_POST['tel1'];
-                $tel2 = $_POST['tel2'];
-                $address = $_POST['address'];
-                addUserInfoToFile($username, $lastName, $firstName, $email, $tel1, $tel2, $address);
-                echo ProcessUsersToTable($file);
-            ?>
-                <div style="position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal">
-                    <a type="text" name="add-user-button" style="font-weight: bold;" class="btn btn-primary" href="#" onclick="openForm()">Add New User</a>
-                    <a type="text" name="edit-user-button" style="font-weight: bold;" class="btn btn-primary" href="#" onclick="editSelectedRows()">Edit User</a>
-                    <a type="text" name="delete-user-button" style="font-weight: bold;" class="btn btn-primary" href="#" onclick="deleteSelectedRows()">Delete
-                        User</a>
-                    <a type="submit" name="save-product-button" style="font-weight: bold;" class="btn btn-primary" href="#" onclick="saveChanges()">Save Changes</a>
-                </div>
-            <?php
-            } else {
-            ?>
-                <div class="form-popup" id="addUserForm">
-                    <form action="<?php echo $thisPage; ?>" class="form-container" method="POST">
-                        <label for="lastName"><b>Last name</b></label>
-                        <input type="text" placeholder="Enter last name" id="lastNameForm" name="lastName" required />
-
-                        <label for="firstName"><b>First name</b></label>
-                        <input type="text" placeholder="Enter first name" id="firstNameForm" name="firstName" required />
-
-                        <label for="email"><b>Email</b></label>
-                        <input type="text" placeholder="Enter email" id="emailForm" name="email" required />
-
-                        <label for="tel1"><b>Tel.1</b></label>
-                        <input type="text" placeholder="Enter phone number" id="tel1Form" name="tel1" required />
-
-                        <label for="tel2"><b>Tel.2</b></label>
-                        <input type="text" placeholder="Enter phone number" id="tel2Form" name="tel2" required />
-
-                        <label for="address"><b>Address</b></label>
-                        <input type="text" placeholder="Enter address" id="addressForm" name="address" required />
-                        <br>
-                        <button type="submit" class="btn btn-primary" name="userInfo">Save</button>
-                    </form>
-                </div>
-            <?php
-            } ?>
+        <?php
+            //generate table
+            echo (ProcessUsersToTable());
+            unset($_SESSION['currentPage']);
+            unset($_SESSION['file']);
+            session_destroy();
+        ?>
         </div>
     </div>
     <div style="clear: both"></div>

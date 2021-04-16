@@ -61,7 +61,6 @@ function deleteSelectedRows() {
         else
             checkedUserNumbers += (", " + checkedUsers[j]);
     }
-
     if (checkedUserNumbers.length == 1) {
         if (confirm("Are you sure you want to delete order number " + checkedUserNumbers + "?"))
             for (var k = checkedUsers.length - 1; k >= 0; k--)

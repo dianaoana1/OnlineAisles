@@ -1,9 +1,9 @@
 <?php
    function addUserInfoToFile($username, $lastName, $firstName, $email, $tel1, $tel2, $address){
         $userInfo =  $username."\t".$lastName."\t".$firstName."\t".$email."\t".$tel1."\t".$tel2."\t".$address;
-        $fileName = "..\TextFiles\userInfo.txt";
-        if (file_exists($fileName)){
-             $file = fopen($fileName,'a') or die("Unable to open 'userInfo.txt'.");
+        $filedir = "..\TextFiles\userInfo.txt";
+        if (file_exists($filedir)){
+             $file = fopen($filedir,'a') or die("Unable to open 'userInfo.txt'.");
              if (is_readable($file) && is_writeable($file)){
                 fwrite($file,$userInfo);
                 fclose($file);
@@ -16,9 +16,9 @@
 
     function editUserInfoFile($username, $lastName, $firstName, $email, $tel1, $tel2, $address){
         $userInfo =  $username."\t".$lastName."\t".$firstName."\t".$email."\t".$tel1."\t".$tel2."\t".$address;
-        $fileName = "..\TextFiles\userInfo.txt";
-        if (file_exists($fileName)){
-             $file = fopen($fileName,'r+') or die("Unable to open 'userInfo.txt'.");
+        $filedir = "..\TextFiles\userInfo.txt";
+        if (file_exists($filedir)){
+             $file = fopen($filedir,'r+') or die("Unable to open 'userInfo.txt'.");
              if (is_readable($file) && is_writeable($file)){
                 while(!feof($file)) {   //reading file line by line
                     $line = fgets($file);
@@ -40,9 +40,9 @@
     }
 
     function deleteUserFromFile($username){
-        $fileName = "..\TextFiles\userInfo.txt";
-        if (file_exists($fileName)){
-             $file = fopen($fileName,'r+') or die("Unable to open 'userInfo.txt'.");
+        $filedir = "..\TextFiles\userInfo.txt";
+        if (file_exists($filedir)){
+             $file = fopen($filedir,'r+') or die("Unable to open 'userInfo.txt'.");
              if (is_readable($file) && is_writeable($file)){
                 while(!feof($file)) {   //reading file line by line
                     $line = fgets($file);
