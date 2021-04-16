@@ -49,6 +49,7 @@
          } else if (!usernameExists($username)) {
             echo "<script>alert('The username does not exist');document.location='../html/Signup.html'</script>";
         } else {
+            //Add here the methods to write to the file the comments
             echo "<script>alert('Thank you for the comment we will make sure to do better have a great day ');document.location='../html/shopping_cart.html'</script>";
         }
     }
