@@ -38,11 +38,18 @@
         }
         if(!isset($_SESSION)||!usernameExists($username)){
           header("Location:../html/login.html");
+        }else{
+            header("Location:../html/shopping_cart.html");
         }
 
     }
     
     function usernameExists($username){
+        /*foreach($users as $user){
+         if($user== $username){
+             return true;
+         }
+        }*/
      return false;
     }
     function test_input($data)
