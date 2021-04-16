@@ -23,27 +23,18 @@ session_start();
         //username part
         if (!empty($_POST["username"])) {
             $username = test_input($_POST["username"]);
-            //fwrite($file, "User:" . $username . "\n");
-            // echo $username . "</br>";
         }
         //itemname part
         if (!empty($_POST["itemName"]) && !checkitemName($_POST["itemName"])) {
             $itemname = test_input($_POST["itemName"]);
-            // fwrite($file, "Item Name:" . $itemname . "\n");
-            //echo $itemname . "</br>";
         }
-
         //ordernumber part
         if (!empty($_POST["orderNumber"]) && checkOrderNum($_POST["orderNumber"])) {
             $order = test_input($_POST["orderNumber"]);
-            //fwrite($file, "Order Number:" . $order . "\n\n");
-            //echo $order . "</br>";
         }
         //comment part
         if (!empty($_POST["comment"])) {
             $comment = test_input($_POST["comment"]);
-            // fwrite($file, $comment . "\n");
-            // echo $comment . "</br>";
         }
         if (!empty($_POST["username"]) && !empty($_POST["itemName"]) && !checkitemName($_POST["itemName"]) && !empty($_POST["orderNumber"]) && checkOrderNum($_POST["orderNumber"]) && !empty($_POST["comment"])) {
             if (!usernameExists($username)) {
