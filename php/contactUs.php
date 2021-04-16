@@ -20,6 +20,9 @@ session_start();
     $user_exists = false;
     $file=fopen("..\TextFiles\logsContactus.txt","a+");
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if(file_get_contents($file)!==""){
+            fwrite($file,"\n");
+        }
         fwrite($file, "Start of this comment:\n");
         //username part
         if (!empty($_POST["username"])) {
@@ -52,7 +55,9 @@ session_start();
          } else if (!usernameExists($username)) {
             echo "<script>alert('The username does not exist');document.location='../html/Signup.html'</script>";
         } else {
-            
+            if(file_get_contents($file)!==""){
+                fwrite($file,"\n");
+            }
             fwrite($file, "Start of this comment:\n");
             fwrite($file,"User:".$username. "\n");
             fwrite($file,"Item Name:".$itemname. "\n");
@@ -73,7 +78,7 @@ session_start();
     }
     function readUserFile()
     {
-        $file = fopen("userFile.txt", "r");
+        $file = fopen("..\TextFiles\initialUserDatabase.txt", "r");
         $fullString = file_get_contents($file);
         return $fullString;
     }
