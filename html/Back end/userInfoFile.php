@@ -1,6 +1,6 @@
 <?php
-   function addUserInfoToFile($userID, $lastName, $firstName, $email, $tel1, $tel2, $address){
-        $userInfo =  $userID.",".$lastName.",".$firstName.",".$email.",".$tel1.",".$tel2.",".$address;
+   function addUserInfoToFile($username, $lastName, $firstName, $email, $tel1, $tel2, $address){
+        $userInfo =  $username.",".$lastName.",".$firstName.",".$email.",".$tel1.",".$tel2.",".$address;
         $fileName = "userInfo.txt";
         if (file_exists($fileName)){
              $file = fopen($fileName,'a') or die("Unable to open 'userInfo.txt'.");
