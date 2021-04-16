@@ -15,12 +15,12 @@ $thisPage = htmlspecialchars($_SERVER["PHPH_SELF"]);
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="..\..\CSS\Page UI.css">
-    <link rel="stylesheet" href="..\..\CSS\Back end\list.css" />
-    <link rel="stylesheet" href="..\..\CSS\Back end\user-list form.css" />
+    <link rel="stylesheet" href="..\CSS\Page UI.css">
+    <link rel="stylesheet" href="..\CSS\Back end\list.css" />
+    <link rel="stylesheet" href="..\CSS\Back end\user-list form.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <script src="..\..\JavaScript\UserList.js"></script>
-    <link rel="icon" type="image/png" href="..\..\Images\favicon.png">
+    <script src="..\JavaScript\UserList.js"></script>
+    <link rel="icon" type="image/png" href="..\Images\favicon.png">
 </head>
 
 <body>

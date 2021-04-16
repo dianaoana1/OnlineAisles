@@ -1,7 +1,7 @@
 <?php
    function addUserInfoToFile($username, $lastName, $firstName, $email, $tel1, $tel2, $address){
         $userInfo =  $username."\t".$lastName."\t".$firstName."\t".$email."\t".$tel1."\t".$tel2."\t".$address;
-        $fileName = "userInfo.txt";
+        $fileName = "..\TextFiles\userInfo.txt";
         if (file_exists($fileName)){
              $file = fopen($fileName,'a') or die("Unable to open 'userInfo.txt'.");
              if (is_readable($file) && is_writeable($file)){
@@ -16,7 +16,7 @@
 
     function editUserInfoFile($username, $lastName, $firstName, $email, $tel1, $tel2, $address){
         $userInfo =  $username."\t".$lastName."\t".$firstName."\t".$email."\t".$tel1."\t".$tel2."\t".$address;
-        $fileName = "userInfo.txt";
+        $fileName = "..\TextFiles\userInfo.txt";
         if (file_exists($fileName)){
              $file = fopen($fileName,'r+') or die("Unable to open 'userInfo.txt'.");
              if (is_readable($file) && is_writeable($file)){
@@ -40,7 +40,7 @@
     }
 
     function deleteUserFromFile($username){
-        $fileName = "userInfo.txt";
+        $fileName = "..\TextFiles\userInfo.txt";
         if (file_exists($fileName)){
              $file = fopen($fileName,'r+') or die("Unable to open 'userInfo.txt'.");
              if (is_readable($file) && is_writeable($file)){
