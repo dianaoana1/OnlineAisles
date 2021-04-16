@@ -19,7 +19,6 @@ session_start();
     $username = $itemname  = $comment = $order = "";
     $user_exists = false;
     $file=fopen("..\TextFiles\logsContactus.txt","a+");
-    fwrite($file2,"a");
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         fwrite($file, "Start of this comment:\n");
         //username part
@@ -53,6 +52,8 @@ session_start();
          } else if (!usernameExists($username)) {
             echo "<script>alert('The username does not exist');document.location='../html/Signup.html'</script>";
         } else {
+            
+            fwrite($file, "Start of this comment:\n");
             fwrite($file,"User:".$username. "\n");
             fwrite($file,"Item Name:".$itemname. "\n");
             fwrite($file,"Order Number:".$order. "\n\n");
