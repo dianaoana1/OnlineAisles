@@ -13,7 +13,7 @@
 
     <?php
     $username = $itemname  = $comment = $order = "";
-
+    $user_exists=false;
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //username part
         if (!empty($_POST["username"])) {
@@ -36,9 +36,22 @@
             $comment = test_input($_POST["comment"]);
             echo $comment."</br>";
         }
+        if(!isset($_SESSION)||!usernameExists($username)){
+            echo "<script>alert('The username does not exist/or is not signed on currently');document.location='../html/login.html'</script>";
+        }else{
+            echo "<script>alert('Thank you for the comment we will make sure to do better have a great day ');document.location='../html/shopping_cart.html'</script>";
+        }
+
     }
-
-
+    
+    function usernameExists($username){
+        /*foreach($users as $user){
+         if($user== $username){
+             return true;
+         }
+        }*/
+     return false;
+    }
     function test_input($data)
     {
         $data = trim($data);
