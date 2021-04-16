@@ -8,7 +8,7 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
 <html lang="en">
 
 <head>
-    <title>Add User Form - Online Grocery Store</title>
+    <title>Users List - Online Grocery Store</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -79,13 +79,40 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
     <br>
     <div class="container" style="max-width: 96%; height:100%;margin-top:60px; margin-bottom:166px ">
         <div class="user-table" style="overflow:auto;">
-        <?php
-            //generate table
-            echo (ProcessUsersToTable());
-            unset($_SESSION['currentPage']);
-            unset($_SESSION['file']);
-            session_destroy();
-        ?>
+            <?php
+            include("userListFunctions.php");
+            // ""==file_get_contents( "..\TextFiles\userInfo.txt")
+            if (!file_get_contents("..\TextFiles\userInfo.txt")) {
+                //generate table
+                // ProcessUsersToTable();
+                // addUser();
+            } else {
+
+                echo ('<table class="tg" id="userTable" name="userTable">
+                <thead>
+                    <tr>
+                        <th class="tg-header">User ID</th>
+                        <th class="tg-header">Username</th>
+                        <th class="tg-header">Last name</th>
+                        <th class="tg-header">First Name</th>
+                        <th class="tg-header">Tel.1</th>
+                        <th class="tg-header">Tel.2</th>
+                        <th class="tg-header">Email</th>
+                        <th class="tg-header">Address</th>
+                        <th class="tg-header">Select User</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="tg-even" colspan="9">No users have been registered yet aside from the admin role</td>
+                    </tr>
+                </tbody>
+                </table>');
+                unset($_SESSION['currentPage']);
+                unset($_SESSION['file']);
+                session_destroy();
+            }
+            ?>
         </div>
     </div>
     <div style="clear: both"></div>

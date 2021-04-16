@@ -2,6 +2,7 @@
 /*function deleteUser(){
 
 }*/
+
 function addUser() {
     if (isset($_POST['userInfo'])) {
         $username = $_POST['username'];
