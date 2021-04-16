@@ -13,54 +13,50 @@
 
     <?php
     $username = $itemname  = $comment = $order = "";
-    $user_exists=false;
+    $user_exists = false;
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //username part
         if (!empty($_POST["username"])) {
             $username = test_input($_POST["username"]);
-            echo $username."</br>";
+            echo $username . "</br>";
         }
         //itemname part
         if (!empty($_POST["itemName"]) && !checkitemName($_POST["itemName"])) {
             $itemname = test_input($_POST["itemName"]);
-            echo $itemname."</br>";
+            echo $itemname . "</br>";
         }
 
         //ordernumber part
         if (!empty($_POST["orderNumber"]) && checkOrderNum($_POST["orderNumber"])) {
             $order = test_input($_POST["orderNumber"]);
-            echo $order."</br>";
+            echo $order . "</br>";
         }
         //comment part
         if (!empty($_POST["comment"])) {
             $comment = test_input($_POST["comment"]);
-            echo $comment."</br>";
+            echo $comment . "</br>";
         }
-        if(!isset($_SESSION)||!usernameExists($username)){
+        if (!isset($_SESSION) || !usernameExists($username)) {
             echo "<script>alert('The username does not exist/or is not signed on currently');document.location='../html/Signup.html'</script>";
-        }else{
+        } else {
             echo "<script>alert('Thank you for the comment we will make sure to do better have a great day ');document.location='../html/shopping_cart.html'</script>";
         }
-
     }
-    
+
     function usernameExists($username)
     {
-        $fullString=readUserFile();
-        if(preg_match($username,$fullString)&& $username==$_SESSION["username"]){
+        $fullString = readUserFile();
+        if (preg_match($username, $fullString) && $username == $_SESSION["username"]) {
             return true;
-        }else{
+        } else {
             return false;
         }
-    
     }
     function readUserFile()
     {
-        $file =fopen("userFile.txt","r");
-        $fullString =file_get_contents($file);
+        $file = fopen("userFile.txt", "r");
+        $fullString = file_get_contents($file);
         return $fullString;
-
-
     }
     function test_input($data)
     {
