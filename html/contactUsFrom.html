@@ -16,7 +16,13 @@
     href="..\Images\favicon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <script type = "text/javascript" src = "..\JavaScript\contactUsForm.js"></script>
+  <!-- <script type = "text/javascript" src = "..\JavaScript\contactUsForm.js"></script>-->
+    <style>
+        .error{
+            color: #FF0000;
+            font-style: italic;
+        }
+    </style>
 </head>
 
 <body style = "background-color:rgb(252, 246, 221) !important;font-size: 100%;">
@@ -30,17 +36,18 @@
     
     <div class = "container" style = "margin-top:50px;text-align: center;">
         <h3 style="color: green;margin:20px">Contact Us Form</h3>
-        <form id = "contactUsForm">
+        <p><span class="error">* required fields</span></p>
+        <form id = "contactUsForm" method="POST" action="..\php\contactUs.php">
             <label>Username : </label>
-            <input type = "text" id = "userNm" name = "username"  style = "max-width: 240px;margin-bottom:10px;"><br>
+            <input type = "text" id = "userNm" name = "username" pattern="[a-zA-Z0-9]{1,20}"  title="Please enter your username"required style = "max-width: 240px;margin-bottom:10px;"><span class="error">* </span><br>
             <label>Item Name : </label>
-            <input type = "text" id = "itemNm" name = "itemName"c style = "max-width: 234px;margin-bottom:10px;"><br>
+            <input type = "text" id = "itemNm" name = "itemName" pattern="[^0-9]{1,}" title="Please enter a valid item name" required style = "max-width: 234px;margin-bottom:10px;"><span class="error">* </span><br>
             <label>Order Number : </label>
-            <input type = "text" id = "orderNum" name = "orderNumber"  style = "max-width: 210px;margin-bottom:20px;"><br>
-            <label style= "margin-left:-160px">Questions/Comments : </label><br>
-            <textarea type = "text" id = "questions" maxlength = "250" placeholder = "Maximum 250 characters" rows="4" cols="43"></textarea>
+            <input type = "text" id = "orderNum" name = "orderNumber" pattern="^#{1}[0-9]{5}[A-Za-z]{2}$" required title="Please enter a valid order in the form of :#12345AB" style = "max-width: 210px;margin-bottom:20px;"><span class="error">* </span><br>
+            <label style= "margin-left:-160px">Questions/Comments : </label><span class="error">* </span><br>
+            <textarea type = "text" id = "questions" maxlength = "250"name="comment" pattern="[A-Za-z][0-9]{1,250}" required title="Please enter a comment"placeholder = "Maximum 250 characters" rows="4" cols="43"></textarea>
             <br/>
-            <input class="btn btn-primary" type="submit" id="submitButton" name="submit" >
+            <input class="btn btn-primary" type="submit" id="submitButton" name="submit" value="Submit" >
         </form>
        
       
