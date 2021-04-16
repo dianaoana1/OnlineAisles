@@ -46,7 +46,7 @@
     function usernameExists($username)
     {
         $fullString = readUserFile();
-        if (preg_match($username, $fullString) && $username == $_SESSION["username"]) {
+        if (preg_match("/.$username./", $fullString) && $username == $_SESSION["username"]) {
             return true;
         } else {
             return false;
