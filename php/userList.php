@@ -85,7 +85,7 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
             if (fileIsEmpty($_SESSION['file'])) {
                 ProcessEmptyTable();
             }
-            else{
+            else {
                 ProcessUsersToTable();
             }
             /*else {

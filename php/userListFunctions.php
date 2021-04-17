@@ -106,29 +106,29 @@ function editUser()
 //adds row to the table being generated
 function newRow($count, $username, $lastName, $firstName, $email, $tel1, $tel2, $address)
 {
-    $userID = $count + 1;
+    $userID = $count;
     if ($count % 2 == 0) {
         return "<tr>
-        <td class=\"tg-even\">" . $userID . "</td>
-        <td class=\"tg-even\">" . $username . "</td>
-        <td class=\"tg-even\">" . $lastName . "</td>
-        <td class=\"tg-even\">" . $firstName . "</td>
-        <td class=\"tg-even\"><a href=" . $tel1 . ">514-123-4567</a></td>
-        <td class=\"tg-even\"><a href=" . $tel2 . ">514-891-0111</a></td>
-        <td class=\"tg-even\"><a href=\"mailto:" . $email . "?subject=Changes to User Profile\">" . $email . "</a></td>
-        <td class=\"tg-even\">" . $address . "</td>
+        <td class=\"tg-even\">".$userID."</td>
+        <td class=\"tg-even\">".$username."</td>
+        <td class=\"tg-even\">".$lastName."</td>
+        <td class=\"tg-even\">".$firstName."</td>
+        <td class=\"tg-even\"><a href=".$tel1.">514-123-4567</a></td>
+        <td class=\"tg-even\"><a href=".$tel2.">514-891-0111</a></td>
+        <td class=\"tg-even\"><a href=\"mailto:".$email."?subject=Changes to User Profile\">".$email."</a></td>
+        <td class=\"tg-even\">".$address."</td>
         <td class=\"tg-even\"><input type=\"checkbox\" class=\"users\" name=\"user\"></td>
     </tr>";
     } else {
         return "<tr>
-            <td class=\"tg-odd\">" . $userID . "</td>
-            <td class=\"tg-odd\">" . $username . "</td>
-            <td class=\"tg-odd\">" . $lastName . "</td>
-            <td class=\"tg-odd\">" . $firstName . "</td>
-            <td class=\"tg-odd\"><a href=" . $tel1 . ">514-123-4567</a></td>
-            <td class=\"tg-odd\"><a href=" . $tel2 . ">514-891-0111</a></td>
-            <td class=\"tg-odd\"><a href=\"mailto:" . $email . "?subject=Changes to User Profile\">" . $email . "</a></td>
-            <td class=\"tg-odd\">" . $address . "</td>
+            <td class=\"tg-odd\">".$userID."</td>
+            <td class=\"tg-odd\">".$username."</td>
+            <td class=\"tg-odd\">".$lastName."</td>
+            <td class=\"tg-odd\">".$firstName."</td>
+            <td class=\"tg-odd\"><a href=".$tel1.">".$tel1."</a></td>
+            <td class=\"tg-odd\"><a href=".$tel2.">".$tel2."</a></td>
+            <td class=\"tg-odd\"><a href=\"mailto:".$email."?subject=Changes to User Profile\">".$email."</a></td>
+            <td class=\"tg-odd\">".$address."</td>
             <td class=\"tg-odd\"><input type=\"checkbox\" class=\"users\" name=\"user\"></td>
         </tr>";
     }
@@ -164,7 +164,7 @@ function ProcessEmptyTable()
 //generates table when users exist
 function ProcessUsersToTable()
 {
-    fopen($_SESSION['file'], "a+");
+    $file = fopen($_SESSION['file'], "a+");
     $result = "";
     $result .= "<table class=\"tg\" id=\"userTable\" name = \"userTable\">
     <thead>
@@ -180,25 +180,32 @@ function ProcessUsersToTable()
     </thead>
     <tbody>";
     $count = 0;
-    while (!feof($_SESSION['file'])) {   //reading file line by line
+    while (!feof($file)) {   //reading file line by line
         $count++;
-        $line = fgets($_SESSION['file']);
+        $line = fgets($file);
+        // $lineArr = explode($line, "\t");
         $lineArr = explode($line, "\t");
+        echo $lineArr[0].$lineArr[1]. $lineArr[2]. $lineArr[3]. $lineArr[4]. $lineArr[5]. $lineArr[6];
         $result .= newRow($count, $lineArr[0], $lineArr[1], $lineArr[2], $lineArr[3], $lineArr[4], $lineArr[5], $lineArr[6]);    //adding new table rows
     }
     $result .= "</tbody></table>
     <div style=\"position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal\">
             <a type=\"text\" name=\"add-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"addUserPage.php\">Add New User</a>
-            <a type=\"text\" name=\"edit-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"userList.php?edit-user-button=true\">Edit User</a>
+            <a type=\"text\" name=\"edit-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"editUser.php\">Edit User</a>
             <a type=\"text\" name=\"delete-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"userList.php?delete-user-button=true\">Delete User</a>
         </div>";
-    fclose($_SESSION['file']);
-    return $result;
+    fclose($file);
+    echo $result;
 }
 
 function addUserInfoToFile($username, $lastName, $firstName, $email, $tel1, $tel2, $address)
 {
-    $userInfo =  $username . "\t" . $lastName . "\t" . $firstName . "\t" . $email . "\t" . $tel1 . "\t" . $tel2 . "\t" . $address;
+    if (fileIsEmpty($_SESSION['file'])){
+        $userInfo = $username . "\t" . $lastName . "\t" . $firstName . "\t" . $email . "\t" . $tel1 . "\t" . $tel2 . "\t" . $address;
+    }
+    else{
+        $userInfo =  "\n".$username . "\t" . $lastName . "\t" . $firstName . "\t" . $email . "\t" . $tel1 . "\t" . $tel2 . "\t" . $address;
+    }
     $filedir = $_SESSION['file'];
     if (file_exists($filedir)) {
         $file = fopen($filedir, 'a') or die("Unable to open 'userInfo.txt'.");
