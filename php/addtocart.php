@@ -29,7 +29,17 @@ if(empty($_SESSION['cart'])){
 
 }
 
-$quantity = $_POST["quantity"]
+$quantity = $_POST["quantity"];
+
+if (isset($_POST['1'])){
+
+} else if (isset($_POST['2'])){
+
+} else if (isset($_POST['3'])){
+
+} else if (isset($_POST['4'])){
+
+}
 
 
 
