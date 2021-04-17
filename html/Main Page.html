@@ -151,16 +151,18 @@
                     </div>
                 </div>
                 <div class="fruit-container" style="text-align: center;">
-                    <h3 style="text-align: center;"> Weekly Promotions:</h3>
+                    <h3 style="text-align: center;"id="promo"> Weekly Promotions:</h3>
                     <div class="container-fluid main-container">
-                        <div class="row dynamic-columns">
-                            <div class="col">
-                                <img src="..\Images\apple.png"  class="nohover"id="acc-img" >
-                                <p style="pointer-events:auto;">The Apple is on sale this week<a href=../html/articles/apple.html><i> click
-                                            here</i></a> </p>
-                            </div>
-                            <div class="col">
-                                <img src="..\Images\banana.jpg" class="nohover"id="acc-img">
+                        <div class="row dynamic-columns" id="row1">
+                                <div class="col" id="col-apple">
+                                    <img src="..\Images\apple.png" class="nohover" id="acc-img">
+                                    <p style="pointer-events:auto;">The Apple is on sale this week<a
+                                            href=../html/articles/apple.html><i> click
+                                                here</i></a> </p>
+                                </div>
+                          
+                            <div class="col" id="col-banana">
+                                <img src="..\Images\banana.jpg" class="nohover" id="acc-img">
                                 <p>The Bananas are on sale this week<a href=../html/articles/banana.html><i> click
                                             here</i></a> </p>
                             </div>
@@ -168,14 +170,14 @@
                     </div>
                     </br>
                     <div class="container-fluid main-container">
-                        <div class="row dynamic-columns">
-                            <div class="col">
-                                <img src="..\Images\bread.jpg"class="nohover" id="acc-img">
+                        <div class="row dynamic-columns" id="row2">
+                            <div class="col" id="col-bread">
+                                <img src="..\Images\bread.jpg" class="nohover" id="acc-img">
                                 <p>The Bread is on sale this week<a href=../html/articles/bread.html><i> click
                                             here</i></a> </p>
                             </div>
-                            <div class="col">
-                                <img src="..\Images\brocco.jpg" class="nohover"id="acc-img">
+                            <div class="col" id="col-broccoli">
+                                <img src="..\Images\brocco.jpg" class="nohover" id="acc-img">
                                 <p>The Bread is on sale this week<a href=../html/articles/broccoli.html><i> click
                                             here</i></a> </p>
                             </div>
@@ -183,7 +185,72 @@
                         </div>
                     </div>
                 </div>
-                <!--
+                <script>
+                   // var idCancer=  document.getElementById("col-banana");
+                    //idCancer.parentNode.removeChild(idCancer);
+                    //document.getElementById("col-banana").style.position="relative";
+                </script>
+              
+            </div>
+            <div id="gif-holder" style="text-align: center;height:100%;width:100%;background-color:rgb(159, 179, 100)">
+                <image src="..\Images\index.gif" style="height:25vh ;width:25vw"></image>
+            </div>
+        </div>
+    </div>
+    <script>
+
+    </script>
+
+
+    <div style="clear: both"></div>
+    <div style="clear: both"></div>
+    <footer id="footer">
+        <div class="section contactInfo">
+            <h3>Contact Info</h3>
+            <ul class="info">
+                <li>
+                    <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                    <p>123 Main Street<br /> Montreal, QC<br /> Canada</p>
+                </li>
+                <li>
+                    <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                    <p><a href="tel:5141234567">514-123-4567</a></p>
+                </li>
+                <li>
+                    <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                    <p><a href="mailto:zixi.quan@concordia.ca?subject=SOEN287">online_grocerystore@groceries.ca</a>
+                    </p>
+                </li>
+                <li>
+                    <span><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                    <p><a href="..\html\contactUsFrom.html">Help us improve your experience</a></p>
+                </li>
+            </ul>
+        </div>
+        <div class="section about-us">
+            <h3>About Us</h3>
+            <p>
+                At the start of 2020, the coronavirus pandemic brought on new difficulties for many people with
+                pre-existing medical conditions. Something as simple as grocery shopping was now a high risk
+                activity
+                for those who were more succeptible to serious illnesses cause by the Covid-19 virus. Our goal is to
+                make grocery shopping safe and affordable for all Canadians so that no one is has to face food
+                insecurity in these difficult times.
+            </p>
+            <ul class="icons">
+                <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.youtube.com/"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+<script>dealSetter()</script>
+<script>dealChecker()</script>
+<!--
+      Old accordion stuff
                 <div class="row" style="width: 100%;">
                     <div class="col-6">
                         <div class="Promotions-container" style="margin-left: 20px;">
@@ -254,63 +321,5 @@
 
 
             -->
-            </div>
-            <div id="gif-holder"
-                style="text-align: center;height:100%;width:100%;background-color:rgb(159, 179, 100)">
-                <image src="..\Images\index.gif" style="height:25vh ;width:25vw"></image>
-            </div>
-        </div>
-    </div>
-    <script>
-
-    </script>
-
-
-    <div style="clear: both"></div>
-    <div style="clear: both"></div>
-    <footer id="footer">
-        <div class="section contactInfo">
-            <h3>Contact Info</h3>
-            <ul class="info">
-                <li>
-                    <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-                    <p>123 Main Street<br /> Montreal, QC<br /> Canada</p>
-                </li>
-                <li>
-                    <span><i class="fa fa-phone" aria-hidden="true"></i></span>
-                    <p><a href="tel:5141234567">514-123-4567</a></p>
-                </li>
-                <li>
-                    <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                    <p><a href="mailto:zixi.quan@concordia.ca?subject=SOEN287">online_grocerystore@groceries.ca</a>
-                    </p>
-                </li>
-                <li>
-                    <span><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                    <p><a href="..\html\contactUsFrom.html">Help us improve your experience</a></p>
-                </li>
-            </ul>
-        </div>
-        <div class="section about-us">
-            <h3>About Us</h3>
-            <p>
-                At the start of 2020, the coronavirus pandemic brought on new difficulties for many people with
-                pre-existing medical conditions. Something as simple as grocery shopping was now a high risk
-                activity
-                for those who were more succeptible to serious illnesses cause by the Covid-19 virus. Our goal is to
-                make grocery shopping safe and affordable for all Canadians so that no one is has to face food
-                insecurity in these difficult times.
-            </p>
-            <ul class="icons">
-                <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                <li><a href="https://www.instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                <li><a href="https://www.youtube.com/"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-                </li>
-            </ul>
-        </div>
-    </footer>
-</body>
-<script>dealSetter()</script>
 
 </html>
