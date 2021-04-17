@@ -1,10 +1,8 @@
 <?php
 session_start();
-require 'userListFunctions.php';
-$thisPage = htmlspecialchars($_SERVER["PHP_SELF"]);
+// require 'userListFunctions.php';
 $_SESSION['currentPage'] = htmlspecialchars($_SERVER["PHP_SELF"]);
 $_SESSION['file'] = "..\TextFiles\userInfo.txt";
-// $_SESSION['timesCalled'] = 0;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -80,21 +78,7 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
     </nav>
     <br>
     <div class="container" style="max-width: 96%; height:100%;margin-top:60px; margin-bottom:166px ">
-        <div class="user-table" style="overflow:auto;">
-            <?php
-            if (fileIsEmpty($_SESSION['file'])) {
-                ProcessEmptyTable();
-            }
-            else{
-                ProcessUsersToTable();
-            }
-            /*else {
-                unset($_SESSION['currentPage']);
-                unset($_SESSION['file']);
-                session_destroy();
-            }*/
-            ?>
-        </div>
+        <?php addUser(); ?>
     </div>
     <div style="clear: both"></div>
     <div style="clear: both"></div>

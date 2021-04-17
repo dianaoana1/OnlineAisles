@@ -83,10 +83,31 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
         <div class="user-table" style="overflow:auto;">
             <?php
             if (fileIsEmpty($_SESSION['file'])) {
-                ProcessEmptyTable();
+                if(isset($_GET['add-user-button'])){ 
+                    // addUser();
+
+                    addUserForm();
+
+                    addUserToTable();
+                }
+                else{
+                    ProcessEmptyTable();
+                }
+                // $_SESSION['timesCalled']++;
             }
-            else{
+            while (!fileIsEmpty($_SESSION['file'])) {
                 ProcessUsersToTable();
+                echo ("def");
+                if (isset($_GET['add-user-button'])) {
+                    // echo (newRow(0, "USRNM", "LAST", "FIRST", "blabla@gmail.com", "514-626-6797", "514-514-6268", "123 main"));
+                    addUser();
+                } else if (isset($_GET['edit-user-button'])) {
+                    editUser();
+                }
+                /*if (isset($_GET['delete-user-button'])) {
+                    deleteUser();
+                }*/    
+                // $_SESSION['timesCalled']++;
             }
             /*else {
                 unset($_SESSION['currentPage']);
