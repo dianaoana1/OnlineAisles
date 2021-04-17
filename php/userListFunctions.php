@@ -4,19 +4,23 @@ session_start();
 
 }*/
 
-function fileIsEmpty($file){
-    $fileOpen = fopen($file,"r");
+function fileIsEmpty($file)
+{
+    $fileOpen = fopen($file, "r");
     while (!feof($fileOpen)) {   //reading file line by line
         $line = fgets($fileOpen);
-        if ($line!=""){
+        if ($line != "") {
             return false;
         }
     }
     return true;
 }
 
-function addUser() {
+function addUser()
+{
+    // echo $_POST['userInfo'];
     if (isset($_POST['userInfo'])) {
+        // echo ("abc");
         $username = $_POST['username'];
         $lastName = $_POST['lastName'];
         $firstName = $_POST['firstName'];
@@ -24,10 +28,9 @@ function addUser() {
         $tel1 = $_POST['tel1'];
         $tel2 = $_POST['tel2'];
         $address = $_POST['address'];
+        
         addUserInfoToFile($username, $lastName, $firstName, $email, $tel1, $tel2, $address);
-        // fopen($_SESSION['file'], "a+");
-        echo ProcessUsersToTable($_SESSION['file']);
-        // fclose($_SESSION['file']);
+        echo ProcessUsersToTable();
     } else {
 ?>
         <div class="form-popup" id="addUserForm">
@@ -57,7 +60,8 @@ function addUser() {
     }
 }
 
-function editUser() {
+function editUser()
+{
     fopen($_SESSION['file'], "a+");
     if (isset($_POST['userInfo'])) {
         $username = $_POST['username'];
@@ -68,8 +72,7 @@ function editUser() {
         $tel2 = $_POST['tel2'];
         $address = $_POST['address'];
         editUserInfoFile($username, $lastName, $firstName, $email, $tel1, $tel2, $address);
-        echo ProcessUsersToTable($_SESSION['file']);
-        fclose($_SESSION['file']);
+        echo ProcessUsersToTable();
     } else {
     ?>
         <div class="form-popup" id="editUserForm">
@@ -129,10 +132,15 @@ function newRow($count, $username, $lastName, $firstName, $email, $tel1, $tel2, 
     }
 }
 //generates table
-function ProcessUsersToTable() {
-    fopen($_SESSION['file'], "a+");
-    $result = "";
-    $result .= "<table class=\"tg\" id=\"userTable\" name = \"userTable\">
+function ProcessUsersToTable()
+{
+    if (fileIsEmpty($_SESSION['file'])) {
+        ProcessEmptyTable();
+    } 
+    else {
+        fopen($_SESSION['file'], "a+");
+        $result = "";
+        $result .= "<table class=\"tg\" id=\"userTable\" name = \"userTable\">
     <thead>
     <th class=\"tg-header\">User ID</th>
     <th class=\"tg-header\">Username</th>
@@ -145,37 +153,39 @@ function ProcessUsersToTable() {
     <th class=\"tg-header\">Select User</th>
     </thead>
     <tbody>";
-    $count = 0;
-    while (!feof($_SESSION['file'])) {   //reading file line by line
-        $count++;
-        $line = fgets($_SESSION['file']);
-        $lineArr = explode($line, "\t");
-        $result .= newRow($count, $lineArr[0], $lineArr[1], $lineArr[2], $lineArr[3], $lineArr[4], $lineArr[5], $lineArr[6]);    //adding new table rows
-    }
-    $result .= "</tbody></table>
+        $count = 0;
+        while (!feof($_SESSION['file'])) {   //reading file line by line
+            $count++;
+            $line = fgets($_SESSION['file']);
+            $lineArr = explode($line, "\t");
+            $result .= newRow($count, $lineArr[0], $lineArr[1], $lineArr[2], $lineArr[3], $lineArr[4], $lineArr[5], $lineArr[6]);    //adding new table rows
+        }
+        $result .= "</tbody></table>
     <div style=\"position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal\">
-            <a type=\"text\" name=\"add-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"userListFunctions.php?add-user-button=true\">Add New User</a>
-            <a type=\"text\" name=\"edit-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"userListFunctions.php?edit-user-button=true\">Edit User</a>
-            <a type=\"text\" name=\"delete-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"userListFunctions.php?delete-user-button=true\">Delete User</a>
+            <a type=\"text\" name=\"add-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"userList.php?add-user-button=true\">Add New User</a>
+            <a type=\"text\" name=\"edit-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"userList.php?edit-user-button=true\">Edit User</a>
+            <a type=\"text\" name=\"delete-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"userList.php?delete-user-button=true\">Delete User</a>
         </div>";
-    fclose($_SESSION['file']);
-    return $result;
+        fclose($_SESSION['file']);
+        return $result;
+    }
 }
 
-function addUserInfoToFile($username, $lastName, $firstName, $email, $tel1, $tel2, $address) {
+function addUserInfoToFile($username, $lastName, $firstName, $email, $tel1, $tel2, $address)
+{
     $userInfo =  $username . "\t" . $lastName . "\t" . $firstName . "\t" . $email . "\t" . $tel1 . "\t" . $tel2 . "\t" . $address;
     $filedir = $_SESSION['file'];
     if (file_exists($filedir)) {
         $file = fopen($filedir, 'a') or die("Unable to open 'userInfo.txt'.");
         fwrite($file, $userInfo);
         fclose($file);
-    } 
-    else {
+    } else {
         echo "Unable to open 'userInfo.txt'.";
     }
 }
 
-function editUserInfoFile($username, $lastName, $firstName, $email, $tel1, $tel2, $address) {
+function editUserInfoFile($username, $lastName, $firstName, $email, $tel1, $tel2, $address)
+{
     $userInfo =  $username . "\t" . $lastName . "\t" . $firstName . "\t" . $email . "\t" . $tel1 . "\t" . $tel2 . "\t" . $address;
     $filedir = $_SESSION['file'];
     if (file_exists($filedir)) {
@@ -183,7 +193,7 @@ function editUserInfoFile($username, $lastName, $firstName, $email, $tel1, $tel2
         while (!feof($file)) {   //reading file line by line
             $line = fgets($file);
             $lineArr = explode($line, "\t");
-            if (strcmp($lineArr[0], $username) == 0) 
+            if (strcmp($lineArr[0], $username) == 0)
                 $editedLine = $userInfo;
         }
         //deleting specific user info line from the file
@@ -191,13 +201,13 @@ function editUserInfoFile($username, $lastName, $firstName, $email, $tel1, $tel2
         $contents = str_replace($editedLine, '', $contents);
         file_put_contents($file, $contents);
         fclose($file);
-    } 
-    else {
+    } else {
         echo "Unable to open 'userInfo.txt'.";
     }
 }
 
-function deleteUserFromFile($username) {
+function deleteUserFromFile($username)
+{
     $filedir = $_SESSION['file'];
     if (file_exists($filedir)) {
         $file = fopen($filedir, 'r+') or die("Unable to open 'userInfo.txt'.");
@@ -220,7 +230,8 @@ function deleteUserFromFile($username) {
     }
 }
 
-function ProcessEmptyTable(){
+function ProcessEmptyTable()
+{
     echo ('<table class="tg" id="userTable" name="userTable">
                 <thead>
                     <tr>
@@ -242,8 +253,6 @@ function ProcessEmptyTable(){
                 </tbody>
                 </table><div style="position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal">
                 <a type="text" name="add-user-button" style="font-weight: bold;" class="btn btn-primary" href="userList.php?add-user-button=true">Add New User</a>
-                <a type="text" name="edit-user-button" style="font-weight: bold;" class="btn btn-primary" href="userList.php?edit-user-button=true">Edit User</a>
-                <a type="text" name="delete-user-button" style="font-weight: bold;" class="btn btn-primary" href="userList.php?delete-user-button=true">Delete User</a>
             </div>');
 }
 ?>

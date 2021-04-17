@@ -4,6 +4,7 @@ require 'userListFunctions.php';
 $thisPage = htmlspecialchars($_SERVER["PHP_SELF"]);
 $_SESSION['currentPage'] = htmlspecialchars($_SERVER["PHP_SELF"]);
 $_SESSION['file'] = "..\TextFiles\userInfo.txt";
+$_SESSION['timesCalled'] = 0;
 // $_SESSION['openFile'] = fopen("..\TextFiles\userInfo.txt", 'a+');
 ?>
 <!DOCTYPE html>
@@ -82,60 +83,30 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
     <div class="container" style="max-width: 96%; height:100%;margin-top:60px; margin-bottom:166px ">
         <div class="user-table" style="overflow:auto;">
             <?php
-            if (isset($_GET['add-user-button'])){
+            $_SESSION['timesCalled']++;
+            if (isset($_GET['add-user-button'])) {
+                // echo (newRow(0, "USRNM", "LAST", "FIRST", "blabla@gmail.com", "514-626-6797", "514-514-6268", "123 main"));
                 addUser();
-            }
-            if (isset($_GET['edit-user-button'])){
+            } else if (isset($_GET['edit-user-button'])) {
                 editUser();
             }
             /*if (isset($_GET['delete-user-button'])) {
                 deleteUser();
-            }*/
-            if (!fileIsEmpty($_SESSION['file'])) {  
-                //generate table
+            }*/ 
+            
+            /*else if ($_SESSION['timesCalled'] == 1) {
                 ProcessUsersToTable();
-                addUser();
-            } else {
-                ProcessEmptyTable();
-                /*echo ('<table class="tg" id="userTable" name="userTable">
-                <thead>
-                    <tr>
-                        <th class="tg-header">User ID</th>
-                        <th class="tg-header">Username</th>
-                        <th class="tg-header">Last name</th>
-                        <th class="tg-header">First Name</th>
-                        <th class="tg-header">Tel.1</th>
-                        <th class="tg-header">Tel.2</th>
-                        <th class="tg-header">Email</th>
-                        <th class="tg-header">Address</th>
-                        <th class="tg-header">Select User</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="tg-even" colspan="9">No users have been registered yet aside from the admin role</td>
-                    </tr>
-                </tbody>
-                </table><div style="position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal">
-                <a type="text" name="add-user-button" style="font-weight: bold;" class="btn btn-primary" href="userList.php?add-user-button=true">Add New User</a>
-                <a type="text" name="edit-user-button" style="font-weight: bold;" class="btn btn-primary" href="userList.php?edit-user-button=true">Edit User</a>
-                <a type="text" name="delete-user-button" style="font-weight: bold;" class="btn btn-primary" href="userList.php?delete-user-button=true">Delete User</a>
-            </div>');*/
-
-            /*if (isset($_GET['add-user-button'])){
-                addUser();
-            }
-            if (isset($_GET['edit-user-button'])){
-                editUser();
-            }
-            if (isset($_GET['delete-user-button'])) {
-                deleteUser();
+                echo ("abc");
             }*/
-                
-                // unset($_SESSION['currentPage']);
-                // unset($_SESSION['file']);
-                // session_destroy();
+            else if (fileIsEmpty($_SESSION['file'])) {
+                ProcessUsersToTable();
+                echo ("def");
             }
+            /*else {
+                unset($_SESSION['currentPage']);
+                unset($_SESSION['file']);
+                session_destroy();
+            }*/
             ?>
         </div>
     </div>
