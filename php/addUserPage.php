@@ -1,6 +1,6 @@
 <?php
 session_start();
-// require 'userListFunctions.php';
+require 'userListFunctions.php';
 $_SESSION['currentPage'] = htmlspecialchars($_SERVER["PHP_SELF"]);
 $_SESSION['file'] = "..\TextFiles\userInfo.txt";
 ?>
