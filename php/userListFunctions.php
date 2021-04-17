@@ -58,7 +58,7 @@ function addUser()
     }
 }
 
-function getUserID()
+/*function getUserID()
 {
     if (isset($_POST['edit-user-button'])) { ?>
     <div>
@@ -77,7 +77,6 @@ function getUserID()
             return $userID;
         }
     }
-    //missing trigger to get to delete user function when enter is pressed
     if (isset($_POST['delete-user-button'])) {
         echo '<form action="<?php echo $_SESSION["currentPage"]; ?>" method="POST">
         <label>Enter the user ID number of the user you would like to delete:</label>
@@ -92,7 +91,8 @@ function getUserID()
             return $userID;
         }
     }
-}
+}*/
+
 function editUser($userID)
 {
     if (!isset($_POST['edit'])) {
@@ -241,8 +241,8 @@ function ProcessUsersToTable()
     $result .= "</tbody></table>
     <div style=\"position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal\">
             <a type=\"text\" name=\"add-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"addUserPage.php\">Add New User</a>
-            <a type=\"text\" name=\"edit-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"usersListed.php\">Edit User</a>
-            <a type=\"text\" name=\"delete-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"usersListed.php\">Delete User</a>
+            <a type=\"text\" name=\"edit-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"editUsersListed.php\">Edit User</a>
+            <a type=\"text\" name=\"delete-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"deleteUsersListed.php\">Delete User</a>
         </div>";
     fclose($file);
     echo $result;
@@ -324,16 +324,16 @@ function editUserInfoFile($username, $lastName, $firstName, $email, $tel1, $tel2
 
 function deleteUserFromFile($userID)
 {
-    $filedir = $_SESSION['file'];
-    if (file_exists($filedir)) {
-        $file = fopen($filedir, 'r+') or die("Unable to open 'userInfo.txt'.");
+    if (file_exists($_SESSION['file'])) {
+        $file = fopen($_SESSION['file'], 'r+') or die("Unable to open 'userInfo.txt'.");
         if (is_readable($file) && is_writeable($file)) {
             $lineCount = 0;
+            // echo $lineCount;
             while (!feof($file)) {   //reading file line by line
                 if ($lineCount == $userID) {
                     $line = fgets($file);
-                    $lineArr = explode("\t", $line);
                     $skippedLine = $line;
+                    // echo $skippedLine;
                 }
                 $lineCount++;
             }
