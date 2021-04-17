@@ -5,8 +5,9 @@ session_start();
 }*/
 
 function fileIsEmpty($file){
-    while (!feof($file)) {   //reading file line by line
-        $line = fgets($file);
+    $fileOpen = fopen($file,"r");
+    while (!feof($fileOpen)) {   //reading file line by line
+        $line = fgets($fileOpen);
         if ($line!=""){
             return false;
         }
@@ -24,9 +25,9 @@ function addUser() {
         $tel2 = $_POST['tel2'];
         $address = $_POST['address'];
         addUserInfoToFile($username, $lastName, $firstName, $email, $tel1, $tel2, $address);
-        fopen($_SESSION['file'], "a+");
+        // fopen($_SESSION['file'], "a+");
         echo ProcessUsersToTable($_SESSION['file']);
-        fclose($_SESSION['file']);
+        // fclose($_SESSION['file']);
     } else {
 ?>
         <div class="form-popup" id="addUserForm">
@@ -219,5 +220,30 @@ function deleteUserFromFile($username) {
     }
 }
 
-
+function ProcessEmptyTable(){
+    echo ('<table class="tg" id="userTable" name="userTable">
+                <thead>
+                    <tr>
+                        <th class="tg-header">User ID</th>
+                        <th class="tg-header">Username</th>
+                        <th class="tg-header">Last name</th>
+                        <th class="tg-header">First Name</th>
+                        <th class="tg-header">Tel.1</th>
+                        <th class="tg-header">Tel.2</th>
+                        <th class="tg-header">Email</th>
+                        <th class="tg-header">Address</th>
+                        <th class="tg-header">Select User</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="tg-even" colspan="9">No users have been registered yet aside from the admin role</td>
+                    </tr>
+                </tbody>
+                </table><div style="position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal">
+                <a type="text" name="add-user-button" style="font-weight: bold;" class="btn btn-primary" href="userList.php?add-user-button=true">Add New User</a>
+                <a type="text" name="edit-user-button" style="font-weight: bold;" class="btn btn-primary" href="userList.php?edit-user-button=true">Edit User</a>
+                <a type="text" name="delete-user-button" style="font-weight: bold;" class="btn btn-primary" href="userList.php?delete-user-button=true">Delete User</a>
+            </div>');
+}
 ?>
