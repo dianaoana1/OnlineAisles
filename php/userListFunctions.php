@@ -18,7 +18,7 @@ function fileIsEmpty($file)
 
 function addUser()
 {
-    if (!isset($_POST['save'])) { ?>
+    if (!isset($_POST['add'])) { ?>
         <div class="form-popup" id="addUserForm">
             <form action="<?php echo $_SESSION['currentPage']; ?>" class="form-container" method="POST">
                 <label for="lastName"><b>Last name</b></label>
@@ -39,7 +39,7 @@ function addUser()
                 <label for="address"><b>Address</b></label>
                 <input type="text" placeholder="Enter address" id="addressForm" name="address" required />
                 <br>
-                <button type="submit" class="btn btn-primary" name="save">Save</button>
+                <button type="submit" class="btn btn-primary" name="add">Add User</button>
             </form>
         </div>
     <?php
@@ -149,7 +149,7 @@ function ProcessEmptyTable()
                     </tr>
                 </tbody>
                 </table><div style="position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal">
-                <a type="text" name="add-user-button" style="font-weight: bold;" class="btn btn-primary" href="userList.php?add-user-button=true">Add New User</a>
+                <a type="text" name="add-user-button" style="font-weight: bold;" class="btn btn-primary" href="addUserPage.php">Add New User</a>
             </div>');
 }
 
@@ -180,7 +180,7 @@ function ProcessUsersToTable()
     }
     $result .= "</tbody></table>
     <div style=\"position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal\">
-            <a type=\"text\" name=\"add-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"userList.php?add-user-button=true\">Add New User</a>
+            <a type=\"text\" name=\"add-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"addUserPage.php\">Add New User</a>
             <a type=\"text\" name=\"edit-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"userList.php?edit-user-button=true\">Edit User</a>
             <a type=\"text\" name=\"delete-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"userList.php?delete-user-button=true\">Delete User</a>
         </div>";

@@ -110,12 +110,12 @@ function editRow(row) {
     var email = row.item(5).innerText;
     var address = row.item(6).innerText;
 
-    row[1].innerHTML = '<input type="text" id = "last" value = ' + lastName + ' required></input>';
-    row[2].innerHTML = '<input type="text" id = "first" value = ' + firstName + ' required></input>';
-    row[3].innerHTML = '<input type="text" id = "phone1" value = ' + tel1 + ' required></input>';
-    row[4].innerHTML = '<input type="text" id = "phone2" value = ' + tel2 + ' required></input>';
-    row[5].innerHTML = '<input type="text" id = "email_add" value = ' + email + ' required></input>';
-    row[6].innerHTML = '<input type="text" id = "addr" value = "' + address + '" required></input>';
+    row[1].innerHTML = '<input type="text" id = "last" value = ' + lastName + ' required/>';
+    row[2].innerHTML = '<input type="text" id = "first" value = ' + firstName + ' required/>';
+    row[3].innerHTML = '<input type="text" id = "phone1" value = ' + tel1 + ' required/>';
+    row[4].innerHTML = '<input type="text" id = "phone2" value = ' + tel2 + ' required/>';
+    row[5].innerHTML = '<input type="text" id = "email_add" value = ' + email + ' required/>';
+    row[6].innerHTML = '<input type="text" id = "addr" value = "' + address + '" required/>';
     row[7].innerHTML = '*unsaved*';
 }
 
