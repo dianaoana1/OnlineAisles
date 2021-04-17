@@ -21,6 +21,9 @@ function addUser()
     if (!isset($_POST['add'])) { ?>
         <div class="form-popup" id="addUserForm">
             <form action="<?php echo $_SESSION['currentPage']; ?>" class="form-container" method="POST">
+                <label for="username"><b>Username</b></label>
+                <input type="text" placeholder="Enter username" id="usernameForm" name="username" required />
+
                 <label for="lastName"><b>Last name</b></label>
                 <input type="text" placeholder="Enter last name" id="lastNameForm" name="lastName" required />
 
@@ -39,19 +42,24 @@ function addUser()
                 <label for="address"><b>Address</b></label>
                 <input type="text" placeholder="Enter address" id="addressForm" name="address" required />
                 <br>
-                <button type="submit" class="btn btn-primary" name="add">Add User</button>
+                <button type="submit" class="btn btn-primary" name="add">Add New User</button>
             </form>
         </div>
     <?php
     }
-    $username = $_POST['username'];
-    $lastName = $_POST['lastName'];
-    $firstName = $_POST['firstName'];
-    $email = $_POST['email'];
-    $tel1 = $_POST['tel1'];
-    $tel2 = $_POST['tel2'];
-    $address = $_POST['address'];
-    addUserInfoToFile($username, $lastName, $firstName, $email, $tel1, $tel2, $address);
+    if (isset($_POST['add'])) {
+        $username = $_POST['username'];
+        $lastName = $_POST['lastName'];
+        $firstName = $_POST['firstName'];
+        $email = $_POST['email'];
+        $tel1 = $_POST['tel1'];
+        $tel2 = $_POST['tel2'];
+        $address = $_POST['address'];
+        // echo ($username.$lastName.$firstName.$email.$tel1.$tel2.$address);
+        addUserInfoToFile($username, $lastName, $firstName, $email, $tel1, $tel2, $address);
+        echo '<a type="text" name="return-to-user-list" style="font-weight: bold;" class="btn btn-primary" href="userList.php">Click here to return to user list</a>';
+        // header('Location: userList.php');
+    }
 }
 
 function editUser()
