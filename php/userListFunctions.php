@@ -92,8 +92,75 @@ function addUser()
         }
     }
 }*/
+function editUser()
+{
+    if (!isset($_POST['edit'])) {
+        if (file_exists($_SESSION['file'])) {
+            $file = fopen($_SESSION['file'], 'r+') or die("Unable to open 'userInfo.txt'.");
+            $lineCount = 0;
+            $userID = $_SESSION['chosenUserID'];
+            while (!feof($file)) {   //reading file line by line
+                if ($lineCount == $userID) {
+                    $line = fgets($file);
+                    $lineArr = explode("\t", $line);
+                    $username = $lineArr[0];
+                    $lastName = $lineArr[1];
+                    $firstName = $lineArr[2];
+                    $email = $lineArr[3];
+                    $tel1 = $lineArr[4];
+                    $tel2 = $lineArr[5];
+                    $address = $lineArr[6];
 
-function editUser($userID)
+                }
+                $lineCount++;
+            }
+        ?>
+            <div class="form-popup" id="editUserForm">
+                <form action="<?php echo $_SESSION['currentPage']; ?>" class="form-container" method="POST">
+                    <h3>Editing User</h3>
+                    <label for="username"><b>Username</b></label>
+                    <input required type="text" placeholder="Enter username" id="usernameForm" name="username" value="<?php echo $username; ?>" />
+
+                    <label for="lastName"><b>Last name</b></label>
+                    <input required type="text" placeholder="Enter last name" id="lastNameForm" name="lastName" value="<?php echo $lastName; ?>" />
+
+                    <label for="firstName"><b>First name</b></label>
+                    <input required type="text" placeholder="Enter first name" id="firstNameForm" name="firstName" value="<?php echo $firstName; ?>" />
+
+                    <label for="email"><b>Email</b></label>
+                    <input required type="text" placeholder="Enter email" id="emailForm" name="email" value="<?php echo $email; ?>" />
+
+                    <label for="tel1"><b>Tel.1</b></label>
+                    <input required type="text" placeholder="Enter phone number" id="tel1Form" name="tel1" value="<?php echo $tel1; ?>" />
+
+                    <label for="tel2"><b>Tel.2</b></label>
+                    <input required type="text" placeholder="Enter phone number" id="tel2Form" name="tel2" value="<?php echo $tel2; ?>" />
+
+                    <label for="address"><b>Address</b></label>
+                    <input required type="text" placeholder="Enter address" id="addressForm" name="address" value="<?php echo $address; ?>" />
+                    <br>
+                    <button type="submit" class="btn btn-primary" name="edit">Save Changes</button>
+                </form>
+            </div>
+<?php
+        } else {
+            echo "Error occured.<br>Unable to open 'userInfo.txt'.";
+        }
+    }
+    if (isset($_POST['edit'])) {
+        $username = $_POST['username'];
+        $lastName = $_POST['lastName'];
+        $firstName = $_POST['firstName'];
+        $email = $_POST['email'];
+        $tel1 = $_POST['tel1'];
+        $tel2 = $_POST['tel2'];
+        $address = $_POST['address'];
+        editUserInfoFile($username, $lastName, $firstName, $email, $tel1, $tel2, $address);
+        header('Location: userList.php');
+    }
+}
+
+/*function editUser($userID)
 {
     if (!isset($_POST['edit'])) {
         if (file_exists($_SESSION['file'])) {
@@ -157,7 +224,7 @@ function editUser($userID)
         editUserInfoFile($username, $lastName, $firstName, $email, $tel1, $tel2, $address);
         header('Location: userList.php');
     }
-}
+}*/
 
 //adds row to the table being generated
 function newRow($count, $username, $lastName, $firstName, $email, $tel1, $tel2, $address)
