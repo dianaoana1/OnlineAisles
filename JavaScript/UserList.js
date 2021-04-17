@@ -35,25 +35,31 @@ function addRow() {
     addedRowCount++;
 }*/
 
-function getUsernames(){
+function getUsername(){
     var table = document.getElementById("userTable");
     var tableRows = table.rows;
-    var checkedUsers = [];
-    var checkedUserNumbers = "";
-
     for (var i = 0; i < tableRows.length; i++) {
         var selectedUser = tableRows[i].cells[7].firstChild.checked;
         if (selectedUser)
-            checkedUsers.push(i);
+            if (confirm("Are you sure you want to delete user number " + checkedUserNumbers + "?"))
+                return selectedUser;
+            else{
+                tableRows[i].cells[7].firstChild.unchecked;
+                return;
+            }
     }
-    var checkedUserIDs = [];
-    for (var j = 0; j < checkedUsers.length; j++) {
-        var selectedRow = checkedUsers[j];
-        var row = table.rows[selectedRow].cells
-        var userID = row.item(0).innerHTML;
-        checkedUserIDs.push(userID);
+}
+
+//delete user
+function deleteUserFromTable(){
+    var table = document.getElementById("userTable");
+    var tableRows = table.rows;
+    for (var i = 0; i < tableRows.length; i++) {
+        var selectedUser = tableRows[i].cells[7].firstChild.checked;
+        if (selectedUser)
+            if (confirm("Are you sure you want to delete user number " + checkedUserNumbers + "?"))
+                table.deleteRow(selectedUser);            
     }
-    return checkedUserIDs;
 }
 
 //delete users
@@ -79,7 +85,7 @@ function deleteSelectedRows() {
             checkedUserNumbers += (", " + checkedUsers[j]);
     }
     if (checkedUserNumbers.length == 1) {
-        if (confirm("Are you sure you want to delete order number " + checkedUserNumbers + "?"))
+        if (confirm("Are you sure you want to delete user number " + checkedUserNumbers + "?"))
             for (var k = checkedUsers.length - 1; k >= 0; k--){
                 table.deleteRow(checkedUsers[k]);
             }
@@ -90,7 +96,7 @@ function deleteSelectedRows() {
             }
     }
     else {
-        if (confirm("Are you sure you want to delete order numbers " + checkedUserNumbers + "?"))
+        if (confirm("Are you sure you want to delete user numbers " + checkedUserNumbers + "?"))
             for (var k = checkedUsers.length - 1; k >= 0; k--)
                 table.deleteRow(checkedUsers[k]);
         else
