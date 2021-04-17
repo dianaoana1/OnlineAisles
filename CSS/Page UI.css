@@ -403,9 +403,9 @@ select {
 }
 
 #acc-img {
-    width: 30vw;
+    width: 20vw;
     max-height: 450px;
-    height: 45vh;
+    height: 20vh;
     pointer-events: none;
 }
 .nohover{
@@ -416,15 +416,15 @@ nohover:hover{
 }
 @media screen and (min-width: 1000px) and (max-width:1400px) {
     #acc-img {
-        height: 40vh;
-        width: 35vw;
+        height: 20vh;
+        width: 20vw;
     }
 }
 
 @media screen and (max-width: 600px) {
     #acc-img {
         height: 20vh;
-        width: 37.5vw;
+        width: 15vw;
     }
 }
 
@@ -432,14 +432,31 @@ nohover:hover{
 
 @media only screen and (device-width: 1024px), only screen and (max-width: 1024px) {
     #acc-img {
-        height: 25vh;
-        width: 40vw;
+        height: 20vh;
+        width: 20vw;
     }
 }
 
 @media only screen and (device-width: 768px), only screen and (max-width: 768px) {
     #acc-img {
-        height: 25vh;
-        width: 40vw;
+        height: 20vh;
+        width: 20vw;
+       
+    }
+    #col-banana{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #col-apple{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #col-bread{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #col-broccoli{
+        padding-right: 0;
+        padding-left: 0;
     }
 }
