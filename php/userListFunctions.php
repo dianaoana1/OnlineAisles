@@ -283,9 +283,8 @@ function addUserInfoToFile($username, $lastName, $firstName, $email, $tel1, $tel
     } else {
         $userInfo =  "\n" . $username . "\t" . $lastName . "\t" . $firstName . "\t" . $email . "\t" . $tel1 . "\t" . $tel2 . "\t" . $address;
     }
-    $filedir = $_SESSION['file'];
-    if (file_exists($filedir)) {
-        $file = fopen($filedir, 'a') or die("Unable to open 'userInfo.txt'.");
+    if (file_exists($_SESSION['file'])) {
+        $file = fopen($_SESSION['file'], 'a') or die("Unable to open 'userInfo.txt'.");
         fwrite($file, $userInfo);
         fclose($file);
     } else {
@@ -296,9 +295,8 @@ function addUserInfoToFile($username, $lastName, $firstName, $email, $tel1, $tel
 function editUserInfoFile($username, $lastName, $firstName, $email, $tel1, $tel2, $address)
 {
     $userInfo =  $username . "\t" . $lastName . "\t" . $firstName . "\t" . $email . "\t" . $tel1 . "\t" . $tel2 . "\t" . $address;
-    $filedir = $_SESSION['file'];
-    if (file_exists($filedir)) {
-        $file = fopen($filedir, 'r+') or die("Unable to open 'userInfo.txt'.");
+    if (file_exists($_SESSION['file'])) {
+        $file = fopen($_SESSION['file'], 'r+') or die("Unable to open 'userInfo.txt'.");
         $countLines = 0;
         while (!feof($file)) {   //reading file line by line
             $line = fgets($file);
