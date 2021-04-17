@@ -459,4 +459,8 @@ nohover:hover{
         padding-right: 0;
         padding-left: 0;
     }
+    
+}
+.initial-price{
+    text-decoration-line: line-through;
 }

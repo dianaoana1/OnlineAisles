@@ -1,53 +1,43 @@
-const bananaFirstPrice = 0.33;
-const appleFirstPrice = 0.89;
-const breadFirstPrice = 1.99;
-const broccoliFirstPrice = 3.49;
+var bananaFirstPrice = 0.33;
+var appleFirstPrice = 0.89;
+var breadFirstPrice = 1.99;
+var broccoliFirstPrice = 3.49;
+
+function firstPriceSetter(){
+    document.getElementById("initial-price-apple").innerHTML = appleFirstPrice;
+    document.getElementById("initial-price-banana").innerHTML = bananaFirstPrice;
+    document.getElementById("initial-price-bread").innerHTML = breadFirstPrice;
+    document.getElementById("initial-price-brocc").innerHTML = broccoliFirstPrice;
+                    
+}
+function newPriceSetter(){
+
+}
 function dealChecker() {
     var currPriceBannana = "<?php echo $bananaprice ?>";
-    var currPriceApple = "<?php echo $bananaprice ?>";
-    var currPriceBread = "<?php echo $bananaprice ?>";
+    var currPriceApple = "<?php echo $appleprice ?>";
+    var currPriceBread = "<?php echo $breadprice ?>";
     var currPriceBroccoli = "<?php echo $bananaprice ?>";
+    var idArr = [];
     if (currPriceBannana == bananaFirstPrice && appleFirstPrice == currPriceApple && currPriceBread == breadFirstPrice && broccoliFirstPrice == currPriceBroccoli) {
+        id3 = document.getElementById("row1");
+        id3.parentNode.removeChild(id3);
+        id4 = document.getElementById("promo");
         document.getElementById("promo").innerHTML = "No deals this Week";
-    } else if (currPriceBannana == bananaFirstPrice && appleFirstPrice == currPriceApple) {
-        var idrow = document.getElementById("row1");
-        idrow.parentNode.removeChild(idrow);
-    } else if (currPriceBread == breadFirstPrice && broccoliFirstPrice == currPriceBroccoli) {
-        var idrow = document.getElementById("row2");
-        idrow.parentNode.removeChild(idrow);
-    }else{
-    if (currPriceBannana == bananaFirstPrice) {
-        bananaChanger();
+    } else {
+        if (currPriceBannana == bananaFirstPrice) {
+            idArr.push(document.getElementById("col-banana"));
+        } if (currPriceApple == appleFirstPrice) {
+            idArr.push(document.getElementById("col-apple"));
+        } if (currPriceBread = breadFirstPrice) {
+            idArr.push(document.getElementById("col-bread"));
+        } if (currPriceBroccoli == broccoliFirstPrice) {
+            idArr.push(document.getElementById("col-broccoli"));
+        }
+        for (var i = 0; i < idArr.length; i++) {
+            if (idArr[i] !== null) {
+                idCancer[i].parentNode.removeChild(idCancer[i]);
+            }
+        }
     }
-    if (appleFirstPrice == currPriceApple) {
-        appleChanger();
-    }
-    if (currPriceBread == breadFirstPrice) {
-        breadChanger();
-    }
-    if (broccoliFirstPrice == currPriceBroccoli) {
-        broccoliChanger();
-    }
-    }
-}
-
-function bananaChanger() {
-    var idBanana = document.getElementById("col-banana");
-    idBanana.parentNode.removeChild(idBanana);
-    document.getElementById("col-apple").style.position = "relative";
-}
-function appleChanger() {
-    var idApple = document.getElementById("col-apple");
-    idApple.parentNode.removeChild(idApple);
-    document.getElementById("col-banana").style.position = "relative";
-}
-function breadChanger() {
-    var idBread = document.getElementById("col-bread");
-    idBread.parentNode.removeChild(idBread);
-    document.getElementById("col-broccoli").style.position = "relative";
-}
-function broccoliChanger() {
-    var idBrocc = document.getElementById("col-broccoli");
-    idBrocc.parentNode.removeChild(idBrocc);
-    document.getElementById("col-bread").style.position = "relative";
 }
