@@ -40,7 +40,7 @@ session_start();
             if (!usernameExists($username)) {
                 echo "<script>alert('This username does not exist please register thank you');document.location='../html/Signup.html'</script>";
             } else {
-                if (file_get_contents($file) == "") {
+                if (file_get_contents($file) !== "") {
                     fwrite($file, "\n");
                 }
                 fwrite($file, "Start of this comment:\n");
