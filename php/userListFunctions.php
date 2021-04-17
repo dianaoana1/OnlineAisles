@@ -21,7 +21,7 @@ function addUser()
     if (!isset($_POST['add'])) { ?>
         <div class="form-popup" id="addUserForm">
             <form action="<?php echo $_SESSION['currentPage']; ?>" class="form-container" method="POST">
-            <h3>Adding User</h3>
+                <h3>Adding User</h3>
                 <label for="username"><b>Username</b></label>
                 <input type="text" placeholder="Enter username" id="usernameForm" name="username" required />
 
@@ -46,7 +46,7 @@ function addUser()
                 <button type="submit" class="btn btn-primary" name="add">Add New User</button>
             </form>
         </div>
-    <?php
+        <?php
     }
     if (isset($_POST['add'])) {
         $username = $_POST['username'];
@@ -61,39 +61,57 @@ function addUser()
     }
 }
 
-function editUser()
+function editUser($username)
 {
-    if (!isset($_POST['add'])) { ?>
-        <div class="form-popup" id="editUserForm">
-            <form action="<?php echo $_SESSION['currentPage']; ?>" class="form-container" method="POST">
-            <h3>Editing User</h3>
-                <label for="username"><b>Username</b></label>
-                <input type="text" placeholder="Enter username" id="usernameForm" name="username" required />
+    if (!isset($_POST['edit'])) {
+        if (file_exists($_SESSION['file'])) {
+            $file = fopen($_SESSION['file'], 'r+') or die("Unable to open 'userInfo.txt'.");
+            while (!feof($file)) {   //reading file line by line
+                $line = fgets($file);
+                $lineArr = explode("\t", $line);
+                if (strcmp($lineArr[0], $username) == 0) {
+                    $lastName = $lineArr[1];
+                    $firstName = $lineArr[2];
+                    $email = $lineArr[3];
+                    $tel1 = $lineArr[4];
+                    $tel2 = $lineArr[5];
+                    $address = $lineArr[6];
+                }
+            }
+        ?>
+            <div class="form-popup" id="editUserForm">
+                <form action="<?php echo $_SESSION['currentPage']; ?>" class="form-container" method="POST">
+                    <h3>Editing User</h3>
+                    <label for="username"><b>Username</b></label>
+                    <input required type="text" placeholder="Enter username" id="usernameForm" name="username" value="<?php echo $username; ?>"/>
 
-                <label for="lastName"><b>Last name</b></label>
-                <input type="text" placeholder="Enter last name" id="lastNameForm" name="lastName" required />
+                    <label for="lastName"><b>Last name</b></label>
+                    <input required type="text" placeholder="Enter last name" id="lastNameForm" name="lastName" value="<?php echo $lastName; ?>"/>
 
-                <label for="firstName"><b>First name</b></label>
-                <input type="text" placeholder="Enter first name" id="firstNameForm" name="firstName" required />
+                    <label for="firstName"><b>First name</b></label>
+                    <input required type="text" placeholder="Enter first name" id="firstNameForm" name="firstName" value="<?php echo $firstName; ?>"/>
 
-                <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter email" id="emailForm" name="email" required />
+                    <label for="email"><b>Email</b></label>
+                    <input required type="text" placeholder="Enter email" id="emailForm" name="email" value="<?php echo $email; ?>" />
 
-                <label for="tel1"><b>Tel.1</b></label>
-                <input type="text" placeholder="Enter phone number" id="tel1Form" name="tel1" required />
+                    <label for="tel1"><b>Tel.1</b></label>
+                    <input required type="text" placeholder="Enter phone number" id="tel1Form" name="tel1" value="<?php echo $tel1; ?>" />
 
-                <label for="tel2"><b>Tel.2</b></label>
-                <input type="text" placeholder="Enter phone number" id="tel2Form" name="tel2" required />
+                    <label for="tel2"><b>Tel.2</b></label>
+                    <input required type="text" placeholder="Enter phone number" id="tel2Form" name="tel2" value="<?php echo $tel2; ?>" />
 
-                <label for="address"><b>Address</b></label>
-                <input type="text" placeholder="Enter address" id="addressForm" name="address" required />
-                <br>
-                <button type="submit" class="btn btn-primary" name="edit">Save Changes</button>
-            </form>
-        </div>
-    <?php
+                    <label for="address"><b>Address</b></label>
+                    <input required type="text" placeholder="Enter address" id="addressForm" name="address" value="<?php echo $address; ?>" />
+                    <br>
+                    <button type="submit" class="btn btn-primary" name="edit">Save Changes</button>
+                </form>
+            </div>
+<?php
+        } else {
+            echo "Error occured.<br>Unable to open 'userInfo.txt'.";
+        }
     }
-    if (isset($_POST['add'])) {
+    if (isset($_POST['edit'])) {
         $username = $_POST['username'];
         $lastName = $_POST['lastName'];
         $firstName = $_POST['firstName'];
@@ -116,8 +134,8 @@ function newRow($count, $username, $lastName, $firstName, $email, $tel1, $tel2, 
         <td class=\"tg-even\">" . $username . "</td>
         <td class=\"tg-even\">" . $lastName . "</td>
         <td class=\"tg-even\">" . $firstName . "</td>
-        <td class=\"tg-even\"><a href=" . $tel1 . ">514-123-4567</a></td>
-        <td class=\"tg-even\"><a href=" . $tel2 . ">514-891-0111</a></td>
+        <td class=\"tg-even\"><a href=" . $tel1 . ">" . $tel1 . "</a></td>
+        <td class=\"tg-even\"><a href=" . $tel2 . ">" . $tel2 . "</a></td>
         <td class=\"tg-even\"><a href=\"mailto:" . $email . "?subject=Changes to User Profile\">" . $email . "</a></td>
         <td class=\"tg-even\">" . $address . "</td>
         <td class=\"tg-even\"><input type=\"checkbox\" class=\"users\" name=\"user\"></td>
@@ -227,13 +245,11 @@ function editUserInfoFile($username, $lastName, $firstName, $email, $tel1, $tel2
             $line = fgets($file);
             $lineArr = explode("\t", $line);
             if (strcmp($lineArr[0], $username) == 0) {
-                if ($countLines == 0){
+                if ($countLines == 0) {
                     $editedLine = $userInfo;
+                } else {
+                    $editedLine = "\n" . $userInfo;
                 }
-                else{
-                    $editedLine = "\n".$userInfo;
-                }
-                
             }
             $countLines++;
         }
