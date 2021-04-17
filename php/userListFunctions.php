@@ -61,15 +61,49 @@ function addUser()
     }
 }
 
-function editUser($username)
+function getUserID()
+{
+    if (isset($_POST['edit-user-button'])) {
+        echo '<form action="" method="POST">
+        <label>Enter the user ID number of the user you would like to edit:</label>
+        <input type="text" placeholder="User ID #" name="userID" required />
+        <div style="position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal">
+            <a type="text" name="enter-button" style="font-weight: bold;" class="btn btn-primary" href="editUserPage.php">Enter</a>
+            <a type="text" name="cancel-button" style="font-weight: bold;" class="btn btn-primary" href="userList.php">Cancel</a>
+        </div>
+    </form>';
+        if (isset($_POST['enter-button'])) {
+            $userID = $_POST['userID'];
+            return $userID;
+        }
+    }
+    //missing trigger to get to delete user function when enter is pressed
+    if (isset($_POST['delete-user-button'])) {
+        echo '<form action="" method="POST">
+        <label>Enter the user ID number of the user you would like to delete:</label>
+        <input type="text" placeholder="User ID #" name="userID" required />
+        <div style="position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal">
+            <a type="text" name="enter-button" style="font-weight: bold;" class="btn btn-primary" href="userList.php">Enter</a>
+            <a type="text" name="cancel-button" style="font-weight: bold;" class="btn btn-primary" href="userList.php">Cancel</a>
+        </div>
+    </form>';
+        if (isset($_POST['enter-button'])) {
+            $userID = $_POST['userID'];
+            return $userID;
+        }
+    }
+}
+function editUser($userID)
 {
     if (!isset($_POST['edit'])) {
         if (file_exists($_SESSION['file'])) {
             $file = fopen($_SESSION['file'], 'r+') or die("Unable to open 'userInfo.txt'.");
+            $lineCount = 0;
             while (!feof($file)) {   //reading file line by line
-                $line = fgets($file);
-                $lineArr = explode("\t", $line);
-                if (strcmp($lineArr[0], $username) == 0) {
+                if ($lineCount == $userID) {
+                    $line = fgets($file);
+                    $lineArr = explode("\t", $line);
+                    $username = $lineArr[0];
                     $lastName = $lineArr[1];
                     $firstName = $lineArr[2];
                     $email = $lineArr[3];
@@ -77,19 +111,20 @@ function editUser($username)
                     $tel2 = $lineArr[5];
                     $address = $lineArr[6];
                 }
+                $lineCount++;
             }
         ?>
             <div class="form-popup" id="editUserForm">
                 <form action="<?php echo $_SESSION['currentPage']; ?>" class="form-container" method="POST">
                     <h3>Editing User</h3>
                     <label for="username"><b>Username</b></label>
-                    <input required type="text" placeholder="Enter username" id="usernameForm" name="username" value="<?php echo $username; ?>"/>
+                    <input required type="text" placeholder="Enter username" id="usernameForm" name="username" value="<?php echo $username; ?>" />
 
                     <label for="lastName"><b>Last name</b></label>
-                    <input required type="text" placeholder="Enter last name" id="lastNameForm" name="lastName" value="<?php echo $lastName; ?>"/>
+                    <input required type="text" placeholder="Enter last name" id="lastNameForm" name="lastName" value="<?php echo $lastName; ?>" />
 
                     <label for="firstName"><b>First name</b></label>
-                    <input required type="text" placeholder="Enter first name" id="firstNameForm" name="firstName" value="<?php echo $firstName; ?>"/>
+                    <input required type="text" placeholder="Enter first name" id="firstNameForm" name="firstName" value="<?php echo $firstName; ?>" />
 
                     <label for="email"><b>Email</b></label>
                     <input required type="text" placeholder="Enter email" id="emailForm" name="email" value="<?php echo $email; ?>" />
@@ -263,18 +298,20 @@ function editUserInfoFile($username, $lastName, $firstName, $email, $tel1, $tel2
     }
 }
 
-function deleteUserFromFile($username)
+function deleteUserFromFile($userID)
 {
     $filedir = $_SESSION['file'];
     if (file_exists($filedir)) {
         $file = fopen($filedir, 'r+') or die("Unable to open 'userInfo.txt'.");
         if (is_readable($file) && is_writeable($file)) {
+            $lineCount = 0;
             while (!feof($file)) {   //reading file line by line
-                $line = fgets($file);
-                $lineArr = explode($line, "\t");
-                if (strcmp($lineArr[0], $username) == 0) {
+                if ($lineCount == $userID) {
+                    $line = fgets($file);
+                    $lineArr = explode("\t", $line);
                     $skippedLine = $line;
                 }
+                $lineCount++;
             }
             //deleting specific user info line from the file
             $contents = file_get_contents($file);

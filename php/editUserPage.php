@@ -78,12 +78,8 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
     </nav>
     <br>
     <div class="container" style="max-width: 96%; height:100%;margin-top:60px; margin-bottom:166px ">
-    <script type = text/JavaScript> var username = getUsername(); </script>
-
-        <?php 
-        // $username = var username;
-        editUser($username); 
-        
+        <?php
+        editUser();
         ?>
     </div>
     <div style="clear: both"></div>
