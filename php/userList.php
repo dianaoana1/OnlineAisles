@@ -1,6 +1,7 @@
 <?php
 session_start();
 require 'userListFunctions.php';
+$thisPage = htmlspecialchars($_SERVER["PHP_SELF"]);
 $_SESSION['currentPage'] = htmlspecialchars($_SERVER["PHP_SELF"]);
 $_SESSION['file'] = "..\TextFiles\userInfo.txt";
 ?>
@@ -91,12 +92,7 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
                 /*if (isset($_GET['delete-user-button'])) {
                     deleteUser();
                 }*/
-                if (isset($_GET['add-user-button'])){
-                    addUser();
-                }
-                if (isset($_GET['edit-user-button'])){
-                    editUser();
-                }
+                
 
                 echo ('<table class="tg" id="userTable" name="userTable">
                 <thead>
@@ -118,13 +114,19 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
                     </tr>
                 </tbody>
                 </table><div style="position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal">
-                <a type="text" name="add-user-button" style="font-weight: bold;" class="btn btn-primary" href="userListFunctions.php?add-user-button=true">Add New User</a>
-                <a type="text" name="edit-user-button" style="font-weight: bold;" class="btn btn-primary" href="userListFunctions.php?edit-user-button=true">Edit User</a>
-                <a type="text" name="delete-user-button" style="font-weight: bold;" class="btn btn-primary" href="userListFunctions.php?delete-user-button=true">Delete User</a>
+                <a type="text" name="add-user-button" style="font-weight: bold;" class="btn btn-primary" href="userList.php?add-user-button=true">Add New User</a>
+                <a type="text" name="edit-user-button" style="font-weight: bold;" class="btn btn-primary" href="userList.php?edit-user-button=true">Edit User</a>
+                <a type="text" name="delete-user-button" style="font-weight: bold;" class="btn btn-primary" href="userList.php?delete-user-button=true">Delete User</a>
             </div>');
-                unset($_SESSION['currentPage']);
-                unset($_SESSION['file']);
-                session_destroy();
+            if (isset($_GET['add-user-button'])){
+                addUser();
+            }
+            if (isset($_GET['edit-user-button'])){
+                editUser();
+            }
+                // unset($_SESSION['currentPage']);
+                // unset($_SESSION['file']);
+                // session_destroy();
             }
             ?>
         </div>

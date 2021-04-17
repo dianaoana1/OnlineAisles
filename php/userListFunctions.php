@@ -1,4 +1,5 @@
 <?php
+session_start();
 /*function deleteUser(){
 
 }*/
@@ -152,9 +153,9 @@ function ProcessUsersToTable() {
     }
     $result .= "</tbody></table>
     <div style=\"position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal\">
-            <a type=\"text\" name=\"add-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"#\" onclick=\"<?php addUser() ?>\">Add New User</a>
-            <a type=\"text\" name=\"edit-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"#\" onclick=\"<?php editUser() ?>\">Edit User</a>
-            <a type=\"text\" name=\"delete-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"#\" onclick=\"<?php deleteUser() ?>\">Delete User</a>
+            <a type=\"text\" name=\"add-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"userListFunctions.php?add-user-button=true\">Add New User</a>
+            <a type=\"text\" name=\"edit-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"userListFunctions.php?edit-user-button=true\">Edit User</a>
+            <a type=\"text\" name=\"delete-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"userListFunctions.php?delete-user-button=true\">Delete User</a>
         </div>";
     fclose($_SESSION['file']);
     return $result;
