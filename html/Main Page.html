@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +18,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <script src="..\.vscode\Page UI.js"></script>
-    <script src="..\JavaScript\weeklydeals.js"></script>
+    <!--<script src="..\JavaScript\weeklydeals.js"></script>-->
+    <script src="..\JavaScript\deal.js"></script>
     <link rel="icon" type="image/png" href="..\Images\favicon.png">
     <script>
         var week;
@@ -159,31 +163,38 @@
                                 <p style="pointer-events:auto;">The Apples are on sale this week<a
                                         href=../html/articles/apple.html><i> click
                                             here</i></a> </p>
+                                            <p><span class="initial-price" id="initial-price-apple">526</span> now for 0</p>
                             </div>
 
                             <div class="col" id="col-banana">
                                 <img src="..\Images\banana.jpg" class="nohover" id="acc-img">
                                 <p>The Bananas are on sale this week<a href=../html/articles/banana.html><i> click
                                             here</i></a> </p>
+                                            <p><span class="initial-price" id="initial-price-banana">526</span> now for 0</p>
                             </div>
                             <div class="col" id="col-bread">
                                 <img src="..\Images\bread.jpg" class="nohover" id="acc-img">
                                 <p>The Bread is on sale this week<a href=../html/articles/bread.html><i> click
                                             here</i></a> </p>
+                                            <p><span class="initial-price" id="initial-price-bread">526</span> now for 0</p>
                             </div>
                             <div class="col" id="col-broccoli">
                                 <img src="..\Images\brocco.jpg" class="nohover" id="acc-img">
                                 <p>The Broccolis are on sale this week<a href=../html/articles/broccoli.html><i> click
                                             here</i></a> </p>
+                                            <p><span class="initial-price" id="initial-price-brocc">526</span> now for 0</p>
                             </div>
                         </div>
                     </div>
                     </br>
-
+                  
                 </div>
             </div>
             <script>
-                //Tests for the method to remove the columns in the weekly deal thing
+               firstPriceSetter();
+               newPriceSetter();
+               dealChecker();
+                  //Tests for the method to remove the columns in the weekly deal thing
               /*
                 var idCancer = [document.getElementById("col-banana")];
                 idCancer.push(document.getElementById("col-apple"));
@@ -192,6 +203,7 @@
                     idCancer[i].parentNode.removeChild(idCancer[i]);
                     }
                 }*/
+               
             </script>
 
         </div>
@@ -251,7 +263,7 @@
     </footer>
 </body>
 <script>dealSetter()</script>
-<script>dealChecker()</script>
+<script></script>
 <!--
       Old accordion stuff
                 <div class="row" style="width: 100%;">
