@@ -82,18 +82,8 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
     <div class="container" style="max-width: 96%; height:100%;margin-top:60px; margin-bottom:166px ">
         <div class="user-table" style="overflow:auto;">
             <?php
-            if (fileIsEmpty($_SESSION['file'])) {
-                ProcessEmptyTable();
-            }
-            else {
-                ProcessUsersToTable();
-                if (isset($_POST['edit-user-button'])){
-                    $_SESSION['chosenUserID'] = getUserID();
-                }
-                else if (isset($_POST['delete-user-button'])){
-                    $_SESSION['chosenUserID'] = getUserID();
-                }
-            }
+            ProcessUserList();
+            $_SESSION['chosenUserID'] = getUserID();
             ?>
         </div>
     </div>

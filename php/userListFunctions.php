@@ -1,8 +1,5 @@
 <?php
 session_start();
-/*function deleteUser(){
-
-}*/
 
 function fileIsEmpty($file)
 {
@@ -46,7 +43,7 @@ function addUser()
                 <button type="submit" class="btn btn-primary" name="add">Add New User</button>
             </form>
         </div>
-        <?php
+    <?php
     }
     if (isset($_POST['add'])) {
         $username = $_POST['username'];
@@ -63,15 +60,18 @@ function addUser()
 
 function getUserID()
 {
-    if (isset($_POST['edit-user-button'])) {
-        echo '<form action="" method="POST">
-        <label>Enter the user ID number of the user you would like to edit:</label>
-        <input type="text" placeholder="User ID #" name="userID" required />
-        <div style="position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal">
-            <a type="text" name="enter-button" style="font-weight: bold;" class="btn btn-primary" href="editUserPage.php">Enter</a>
-            <a type="text" name="cancel-button" style="font-weight: bold;" class="btn btn-primary" href="userList.php">Cancel</a>
-        </div>
-    </form>';
+    if (isset($_POST['edit-user-button'])) { ?>
+    <div>
+        <form action="<?php echo $_SESSION["currentPage"]; ?>" method="POST">
+            <label>Enter the user ID number of the user you would like to edit:</label>
+            <input type="text" placeholder="User ID #" name="userID" required />
+            <div style="position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal">
+                <a type="text" name="enter-button" style="font-weight: bold;" class="btn btn-primary" href="editUserPage.php">Enter</a>
+                <a type="text" name="cancel-button" style="font-weight: bold;" class="btn btn-primary" href="userList.php">Cancel</a>
+            </div>
+        </form>
+    </div>
+        <?php
         if (isset($_POST['enter-button'])) {
             $userID = $_POST['userID'];
             return $userID;
@@ -79,11 +79,11 @@ function getUserID()
     }
     //missing trigger to get to delete user function when enter is pressed
     if (isset($_POST['delete-user-button'])) {
-        echo '<form action="" method="POST">
+        echo '<form action="<?php echo $_SESSION["currentPage"]; ?>" method="POST">
         <label>Enter the user ID number of the user you would like to delete:</label>
         <input type="text" placeholder="User ID #" name="userID" required />
         <div style="position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal">
-            <a type="text" name="enter-button" style="font-weight: bold;" class="btn btn-primary" href="userList.php">Enter</a>
+            <a type="text" name="enter-button" style="font-weight: bold;" class="btn btn-primary" href="deleteUserPage.php">Enter</a>
             <a type="text" name="cancel-button" style="font-weight: bold;" class="btn btn-primary" href="userList.php">Cancel</a>
         </div>
     </form>';
@@ -173,7 +173,6 @@ function newRow($count, $username, $lastName, $firstName, $email, $tel1, $tel2, 
         <td class=\"tg-even\"><a href=" . $tel2 . ">" . $tel2 . "</a></td>
         <td class=\"tg-even\"><a href=\"mailto:" . $email . "?subject=Changes to User Profile\">" . $email . "</a></td>
         <td class=\"tg-even\">" . $address . "</td>
-        <td class=\"tg-even\"><input type=\"checkbox\" class=\"users\" name=\"user\"></td>
     </tr>";
     } else {
         return "<tr>
@@ -185,7 +184,6 @@ function newRow($count, $username, $lastName, $firstName, $email, $tel1, $tel2, 
             <td class=\"tg-odd\"><a href=" . $tel2 . ">" . $tel2 . "</a></td>
             <td class=\"tg-odd\"><a href=\"mailto:" . $email . "?subject=Changes to User Profile\">" . $email . "</a></td>
             <td class=\"tg-odd\">" . $address . "</td>
-            <td class=\"tg-odd\"><input type=\"checkbox\" class=\"users\" name=\"user\"></td>
         </tr>";
     }
 }
@@ -204,12 +202,11 @@ function ProcessEmptyTable()
                         <th class="tg-header">Tel.2</th>
                         <th class="tg-header">Email</th>
                         <th class="tg-header">Address</th>
-                        <th class="tg-header">Select User</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="tg-even" colspan="9">No users have been registered yet aside from the admin role</td>
+                        <td class="tg-even" colspan="8">No users have been registered yet aside from the admin role</td>
                     </tr>
                 </tbody>
                 </table><div style="position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal">
@@ -232,7 +229,6 @@ function ProcessUsersToTable()
     <th class=\"tg-header\">Tel.2</th>
     <th class=\"tg-header\">Email</th>
     <th class=\"tg-header\">Address</th>
-    <th class=\"tg-header\">Select User</th>
     </thead>
     <tbody>";
     $count = 0;
@@ -245,9 +241,37 @@ function ProcessUsersToTable()
     $result .= "</tbody></table>
     <div style=\"position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal\">
             <a type=\"text\" name=\"add-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"addUserPage.php\">Add New User</a>
-            <a type=\"text\" name=\"edit-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"editUserPage.php\">Edit User</a>
-            <a type=\"text\" name=\"delete-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"userList.php?delete-user-button=true\">Delete User</a>
+            <a type=\"text\" name=\"edit-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"usersListed.php\">Edit User</a>
+            <a type=\"text\" name=\"delete-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"usersListed.php\">Delete User</a>
         </div>";
+    fclose($file);
+    echo $result;
+}
+
+function ProcessUserList()
+{
+    $file = fopen($_SESSION['file'], "a+");
+    $result = "";
+    $result .= "<table class=\"tg\" id=\"userTable\" name = \"userTable\">
+    <thead>
+    <th class=\"tg-header\">User ID</th>
+    <th class=\"tg-header\">Username</th>
+    <th class=\"tg-header\">Last name</th>
+    <th class=\"tg-header\">First Name</th>
+    <th class=\"tg-header\">Tel.1</th>
+    <th class=\"tg-header\">Tel.2</th>
+    <th class=\"tg-header\">Email</th>
+    <th class=\"tg-header\">Address</th>
+    </thead>
+    <tbody>";
+    $count = 0;
+    while (!feof($file)) {   //reading file line by line
+        $count++;
+        $line = fgets($file);
+        $lineArr = explode("\t", $line);
+        $result .= newRow($count, $lineArr[0], $lineArr[1], $lineArr[2], $lineArr[3], $lineArr[4], $lineArr[5], $lineArr[6]);    //adding new table rows
+    }
+    $result .= "</tbody></table>";
     fclose($file);
     echo $result;
 }

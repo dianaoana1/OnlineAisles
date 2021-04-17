@@ -79,7 +79,7 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
     <br>
     <div class="container" style="max-width: 96%; height:100%;margin-top:60px; margin-bottom:166px ">
         <?php
-        editUser();
+        editUser($_SESSION['chosenUserID']);
         ?>
     </div>
     <div style="clear: both"></div>
