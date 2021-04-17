@@ -403,7 +403,7 @@ select {
 }
 
 #acc-img {
-    width: 20vw;
+    width: 18vw;
     max-height: 450px;
     height: 20vh;
     pointer-events: none;
