@@ -52,20 +52,29 @@ session_start();
             }
         }
     }
+    //Check every user's username vs the username given in the form
     function usernameExists($username)
     {
-        echo readUserFile() . "</br>";
-        echo $username . "</br>";
-        if (preg_match("/$username/", readUserFile())) {
-            return true;
-        } else {
-            return false;
+        $file=fopen("..\TextFiles\initialUserDatabase.txt","r") or die("RIP");
+        $numLines=count(file("..\TextFiles\initialUserDatabase.txt"));
+        $arr=array();
+        $arr=getUserData($numLines,$file);
+        for($i=0;$i<$numLines;$i++){
+         $lines=explode(" ",$arr[$i]);
+         if($lines[0]==$username){
+             return true;
+         }
         }
+        return false;
     }
-    function readUserFile()
+    // Split the data from each user and create an array from that  
+    function getUserData($numLines,$file)
     {
-        $fullString = file_get_contents("..\TextFiles\initialUserDatabase.txt");
-        return $fullString;
+        $arr=array();       
+        for($i=0;$i<$numLines;$i++){
+        $arr[$i]=fgets($file);
+        }
+        return $arr;
     }
     function test_input($data)
     {
@@ -74,6 +83,7 @@ session_start();
         $data = htmlspecialchars($data);
         return $data;
     }
+
     function  checkitemName($itemname)
     {
         $reg = "/[0-9]/";
@@ -83,6 +93,7 @@ session_start();
             return false;
         }
     }
+
     function checkOrderNum($orderNum)
     {
         $reg = "/^#{1}[0-9]{5}[A-Za-z]{2}$/";
