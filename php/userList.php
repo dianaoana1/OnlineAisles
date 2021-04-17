@@ -88,11 +88,6 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
             else {
                 ProcessUsersToTable();
             }
-            /*else {
-                unset($_SESSION['currentPage']);
-                unset($_SESSION['file']);
-                session_destroy();
-            }*/
             ?>
         </div>
     </div>

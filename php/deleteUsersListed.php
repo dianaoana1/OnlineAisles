@@ -1,8 +1,10 @@
 <?php
 session_start();
 require 'userListFunctions.php';
+$thisPage = htmlspecialchars($_SERVER["PHP_SELF"]);
 $_SESSION['currentPage'] = htmlspecialchars($_SERVER["PHP_SELF"]);
 $_SESSION['file'] = "..\TextFiles\userInfo.txt";
+// $_SESSION['timesCalled'] = 0;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -78,10 +80,28 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
     </nav>
     <br>
     <div class="container" style="max-width: 96%; height:100%;margin-top:60px; margin-bottom:166px ">
-        <?php
-        editUser();
-        // editUser($_SESSION['chosenUserID']);
-        ?>
+        <div>
+            <form action="<?php echo $_SESSION["currentPage"]; ?>" method="POST">
+                <label>Enter the user ID number of the user you would like to delete:</label>
+                <input type="text" placeholder="User ID #" name="userID" required />
+                <div style="position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal">
+                    <!-- <a type="text" name="enter-button" style="font-weight: bold;" class="btn btn-primary" href="deleteUserPage.php">Enter</a> -->
+                    <button type="text" name="enter-button" style="font-weight: bold;" class="btn btn-primary">Enter</button>
+                    <a type="text" name="cancel-button" style="font-weight: bold;" class="btn btn-primary" href="userList.php">Cancel</a>
+                </div>
+            </form>
+        </div>
+        <div class="user-table" style="overflow:auto;">
+            <?php
+            if (isset($_POST['enter-button'])) {
+                $userID = $_POST['userID'];
+                $_SESSION['chosenUserID'] = $userID;
+                deleteUserFromFile($_SESSION['chosenID']);
+                header('Location: userList.php');
+            }
+            ProcessUserList();
+            ?>
+        </div>
     </div>
     <div style="clear: both"></div>
     <div style="clear: both"></div>
