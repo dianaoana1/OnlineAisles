@@ -80,13 +80,23 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
     <div class="container" style="max-width: 96%; height:100%;margin-top:60px; margin-bottom:166px ">
         <div class="user-table" style="overflow:auto;">
             <?php
-            include("userListFunctions.php");
-            // ""==file_get_contents( "..\TextFiles\userInfo.txt")
-            if (!file_get_contents("..\TextFiles\userInfo.txt")) {
+            $file = fopen("..\TextFiles\userInfo.txt", 'r');
+
+            if (!fileIsEmpty($file)) {  
                 //generate table
-                // ProcessUsersToTable();
-                // addUser();
+                ProcessUsersToTable();
+                addUser();
             } else {
+             
+                /*if (isset($_GET['delete-user-button'])) {
+                    deleteUser();
+                }*/
+                if (isset($_GET['add-user-button'])){
+                    addUser();
+                }
+                if (isset($_GET['edit-user-button'])){
+                    editUser();
+                }
 
                 echo ('<table class="tg" id="userTable" name="userTable">
                 <thead>
@@ -107,7 +117,11 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
                         <td class="tg-even" colspan="9">No users have been registered yet aside from the admin role</td>
                     </tr>
                 </tbody>
-                </table>');
+                </table><div style="position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal">
+                <a type="text" name="add-user-button" style="font-weight: bold;" class="btn btn-primary" href="userListFunctions.php?add-user-button=true">Add New User</a>
+                <a type="text" name="edit-user-button" style="font-weight: bold;" class="btn btn-primary" href="userListFunctions.php?edit-user-button=true">Edit User</a>
+                <a type="text" name="delete-user-button" style="font-weight: bold;" class="btn btn-primary" href="userListFunctions.php?delete-user-button=true">Delete User</a>
+            </div>');
                 unset($_SESSION['currentPage']);
                 unset($_SESSION['file']);
                 session_destroy();

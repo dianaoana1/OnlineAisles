@@ -3,6 +3,16 @@
 
 }*/
 
+function fileIsEmpty($file){
+    while (!feof($file)) {   //reading file line by line
+        $line = fgets($file);
+        if ($line!=""){
+            return false;
+        }
+    }
+    return true;
+}
+
 function addUser() {
     if (isset($_POST['userInfo'])) {
         $username = $_POST['username'];
