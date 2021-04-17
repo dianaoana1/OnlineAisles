@@ -21,6 +21,7 @@ function addUser()
     if (!isset($_POST['add'])) { ?>
         <div class="form-popup" id="addUserForm">
             <form action="<?php echo $_SESSION['currentPage']; ?>" class="form-container" method="POST">
+            <h3>Adding User</h3>
                 <label for="username"><b>Username</b></label>
                 <input type="text" placeholder="Enter username" id="usernameForm" name="username" required />
 
@@ -55,30 +56,20 @@ function addUser()
         $tel1 = $_POST['tel1'];
         $tel2 = $_POST['tel2'];
         $address = $_POST['address'];
-        // echo ($username.$lastName.$firstName.$email.$tel1.$tel2.$address);
         addUserInfoToFile($username, $lastName, $firstName, $email, $tel1, $tel2, $address);
-        echo '<a type="text" name="return-to-user-list" style="font-weight: bold;" class="btn btn-primary" href="userList.php">Click here to return to user list</a>';
-        // header('Location: userList.php');
+        header('Location: userList.php');
     }
 }
 
 function editUser()
 {
-    fopen($_SESSION['file'], "a+");
-    if (isset($_POST['save'])) {
-        $username = $_POST['username'];
-        $lastName = $_POST['lastName'];
-        $firstName = $_POST['firstName'];
-        $email = $_POST['email'];
-        $tel1 = $_POST['tel1'];
-        $tel2 = $_POST['tel2'];
-        $address = $_POST['address'];
-        editUserInfoFile($username, $lastName, $firstName, $email, $tel1, $tel2, $address);
-        echo ProcessUsersToTable();
-    } else {
-    ?>
+    if (!isset($_POST['add'])) { ?>
         <div class="form-popup" id="editUserForm">
             <form action="<?php echo $_SESSION['currentPage']; ?>" class="form-container" method="POST">
+            <h3>Editing User</h3>
+                <label for="username"><b>Username</b></label>
+                <input type="text" placeholder="Enter username" id="usernameForm" name="username" required />
+
                 <label for="lastName"><b>Last name</b></label>
                 <input type="text" placeholder="Enter last name" id="lastNameForm" name="lastName" required />
 
@@ -97,38 +88,50 @@ function editUser()
                 <label for="address"><b>Address</b></label>
                 <input type="text" placeholder="Enter address" id="addressForm" name="address" required />
                 <br>
-                <button type="submit" class="btn btn-primary" name="save">Save</button>
+                <button type="submit" class="btn btn-primary" name="edit">Save Changes</button>
             </form>
         </div>
-<?php
+    <?php
+    }
+    if (isset($_POST['add'])) {
+        $username = $_POST['username'];
+        $lastName = $_POST['lastName'];
+        $firstName = $_POST['firstName'];
+        $email = $_POST['email'];
+        $tel1 = $_POST['tel1'];
+        $tel2 = $_POST['tel2'];
+        $address = $_POST['address'];
+        editUserInfoFile($username, $lastName, $firstName, $email, $tel1, $tel2, $address);
+        header('Location: userList.php');
     }
 }
+
 //adds row to the table being generated
 function newRow($count, $username, $lastName, $firstName, $email, $tel1, $tel2, $address)
 {
     $userID = $count;
     if ($count % 2 == 0) {
         return "<tr>
-        <td class=\"tg-even\">".$userID."</td>
-        <td class=\"tg-even\">".$username."</td>
-        <td class=\"tg-even\">".$lastName."</td>
-        <td class=\"tg-even\">".$firstName."</td>
-        <td class=\"tg-even\"><a href=".$tel1.">514-123-4567</a></td>
-        <td class=\"tg-even\"><a href=".$tel2.">514-891-0111</a></td>
-        <td class=\"tg-even\"><a href=\"mailto:".$email."?subject=Changes to User Profile\">".$email."</a></td>
-        <td class=\"tg-even\">".$address."</td>
+        <td class=\"tg-even\">" . $userID . "</td>
+        <td class=\"tg-even\">" . $username . "</td>
+        <td class=\"tg-even\">" . $lastName . "</td>
+        <td class=\"tg-even\">" . $firstName . "</td>
+        <td class=\"tg-even\"><a href=" . $tel1 . ">514-123-4567</a></td>
+        <td class=\"tg-even\"><a href=" . $tel2 . ">514-891-0111</a></td>
+        <td class=\"tg-even\"><a href=\"mailto:" . $email . "?subject=Changes to User Profile\">" . $email . "</a></td>
+        <td class=\"tg-even\">" . $address . "</td>
         <td class=\"tg-even\"><input type=\"checkbox\" class=\"users\" name=\"user\"></td>
     </tr>";
     } else {
         return "<tr>
-            <td class=\"tg-odd\">".$userID."</td>
-            <td class=\"tg-odd\">".$username."</td>
-            <td class=\"tg-odd\">".$lastName."</td>
-            <td class=\"tg-odd\">".$firstName."</td>
-            <td class=\"tg-odd\"><a href=".$tel1.">".$tel1."</a></td>
-            <td class=\"tg-odd\"><a href=".$tel2.">".$tel2."</a></td>
-            <td class=\"tg-odd\"><a href=\"mailto:".$email."?subject=Changes to User Profile\">".$email."</a></td>
-            <td class=\"tg-odd\">".$address."</td>
+            <td class=\"tg-odd\">" . $userID . "</td>
+            <td class=\"tg-odd\">" . $username . "</td>
+            <td class=\"tg-odd\">" . $lastName . "</td>
+            <td class=\"tg-odd\">" . $firstName . "</td>
+            <td class=\"tg-odd\"><a href=" . $tel1 . ">" . $tel1 . "</a></td>
+            <td class=\"tg-odd\"><a href=" . $tel2 . ">" . $tel2 . "</a></td>
+            <td class=\"tg-odd\"><a href=\"mailto:" . $email . "?subject=Changes to User Profile\">" . $email . "</a></td>
+            <td class=\"tg-odd\">" . $address . "</td>
             <td class=\"tg-odd\"><input type=\"checkbox\" class=\"users\" name=\"user\"></td>
         </tr>";
     }
@@ -183,15 +186,13 @@ function ProcessUsersToTable()
     while (!feof($file)) {   //reading file line by line
         $count++;
         $line = fgets($file);
-        // $lineArr = explode($line, "\t");
-        $lineArr = explode($line, "\t");
-        echo $lineArr[0].$lineArr[1]. $lineArr[2]. $lineArr[3]. $lineArr[4]. $lineArr[5]. $lineArr[6];
+        $lineArr = explode("\t", $line);
         $result .= newRow($count, $lineArr[0], $lineArr[1], $lineArr[2], $lineArr[3], $lineArr[4], $lineArr[5], $lineArr[6]);    //adding new table rows
     }
     $result .= "</tbody></table>
     <div style=\"position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal\">
             <a type=\"text\" name=\"add-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"addUserPage.php\">Add New User</a>
-            <a type=\"text\" name=\"edit-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"editUser.php\">Edit User</a>
+            <a type=\"text\" name=\"edit-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"editUserPage.php\">Edit User</a>
             <a type=\"text\" name=\"delete-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"userList.php?delete-user-button=true\">Delete User</a>
         </div>";
     fclose($file);
@@ -200,11 +201,10 @@ function ProcessUsersToTable()
 
 function addUserInfoToFile($username, $lastName, $firstName, $email, $tel1, $tel2, $address)
 {
-    if (fileIsEmpty($_SESSION['file'])){
+    if (fileIsEmpty($_SESSION['file'])) {
         $userInfo = $username . "\t" . $lastName . "\t" . $firstName . "\t" . $email . "\t" . $tel1 . "\t" . $tel2 . "\t" . $address;
-    }
-    else{
-        $userInfo =  "\n".$username . "\t" . $lastName . "\t" . $firstName . "\t" . $email . "\t" . $tel1 . "\t" . $tel2 . "\t" . $address;
+    } else {
+        $userInfo =  "\n" . $username . "\t" . $lastName . "\t" . $firstName . "\t" . $email . "\t" . $tel1 . "\t" . $tel2 . "\t" . $address;
     }
     $filedir = $_SESSION['file'];
     if (file_exists($filedir)) {
@@ -222,11 +222,20 @@ function editUserInfoFile($username, $lastName, $firstName, $email, $tel1, $tel2
     $filedir = $_SESSION['file'];
     if (file_exists($filedir)) {
         $file = fopen($filedir, 'r+') or die("Unable to open 'userInfo.txt'.");
+        $countLines = 0;
         while (!feof($file)) {   //reading file line by line
             $line = fgets($file);
-            $lineArr = explode($line, "\t");
-            if (strcmp($lineArr[0], $username) == 0)
-                $editedLine = $userInfo;
+            $lineArr = explode("\t", $line);
+            if (strcmp($lineArr[0], $username) == 0) {
+                if ($countLines == 0){
+                    $editedLine = $userInfo;
+                }
+                else{
+                    $editedLine = "\n".$userInfo;
+                }
+                
+            }
+            $countLines++;
         }
         //deleting specific user info line from the file
         $contents = file_get_contents($file);
