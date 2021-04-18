@@ -23,6 +23,7 @@ session_start();
         //username part
         if (!empty($_POST["username"])) {
             $username = test_input($_POST["username"]);
+           
         }
         //itemname part
         if (!empty($_POST["itemName"]) && !checkitemName($_POST["itemName"])) {
@@ -36,9 +37,10 @@ session_start();
         if (!empty($_POST["comment"])) {
             $comment = test_input($_POST["comment"]);
         }
+        // In this part we make a final check and if the user is a real one we will write to the log file
         if (!empty($_POST["username"]) && !empty($_POST["itemName"]) && !checkitemName($_POST["itemName"]) && !empty($_POST["orderNumber"]) && checkOrderNum($_POST["orderNumber"]) && !empty($_POST["comment"])) {
             if (!usernameExists($username)) {
-                echo "<script>alert('This username does not exist please register thank you');document.location='../html/Signup.php'</script>";
+               echo "<script>alert('This username does not exist please register thank you');document.location='../html/Signup.php'</script>";
             } else {
                 if (file_get_contents($file) !== "") {
                     fwrite($file, "\n");
@@ -60,7 +62,8 @@ session_start();
         $arr=array();
         $arr=getUserData($numLines,$file);
         for($i=0;$i<$numLines;$i++){
-         $lines=explode(" ",$arr[$i]);
+         $lines=explode("\t",$arr[$i]);
+        
          if($lines[0]==$username){
              return true;
          }
