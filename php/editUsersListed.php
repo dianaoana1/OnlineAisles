@@ -88,7 +88,6 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
                 <input type="text" placeholder="User ID #" name="userID" required />
                 <div style="position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal">
                     <button type="submit" name="enter-button" style="font-weight: bold;" class="btn btn-primary">Enter</button>
-                    <!-- <a type="text" name="enter-button" style="font-weight: bold;" class="btn btn-primary" href="editUserPage.php">Enter</a> -->
                     <a type="submit" name="cancel-button" style="font-weight: bold;" class="btn btn-primary" href="userList.php">Cancel</a>
                 </div>
             </form>
@@ -97,7 +96,7 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
             ProcessUserList();
             }
             if (isset($_POST['enter-button'])){
-                $_SESSION['chosenUserID'] = $userID;
+                $_SESSION['chosenUserID'] = $_POST['userID'];
                 header('Location: editUserPage.php');
             }
             ?>

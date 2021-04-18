@@ -62,63 +62,6 @@ function addUser()
     }
 }
 
-/*function getUserID()
-{
-    if (isset($_POST['edit-user-button'])) { ?>
-    <div>
-        <form action="<?php echo $_SESSION["currentPage"]; ?>" method="POST">
-            <label>Enter the user ID number of the user you would like to edit:</label>
-            <input type="text" placeholder="User ID #" name="userID" required />
-            <div style="position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal">
-                <a type="text" name="enter-button" style="font-weight: bold;" class="btn btn-primary" href="editUserPage.php">Enter</a>
-                <a type="text" name="cancel-button" style="font-weight: bold;" class="btn btn-primary" href="userList.php">Cancel</a>
-            </div>
-        </form>
-    </div>
-        <?php
-        if (isset($_POST['enter-button'])) {
-            $userID = $_POST['userID'];
-            return $userID;
-        }
-    }
-    if (isset($_POST['delete-user-button'])) {
-        echo '<form action="<?php echo $_SESSION["currentPage"]; ?>" method="POST">
-        <label>Enter the user ID number of the user you would like to delete:</label>
-        <input type="text" placeholder="User ID #" name="userID" required />
-        <div style="position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal">
-            <a type="text" name="enter-button" style="font-weight: bold;" class="btn btn-primary" href="deleteUserPage.php">Enter</a>
-            <a type="text" name="cancel-button" style="font-weight: bold;" class="btn btn-primary" href="userList.php">Cancel</a>
-        </div>
-    </form>';
-        if (isset($_POST['enter-button'])) {
-            $userID = $_POST['userID'];
-            return $userID;
-        }
-    }
-}*/
-
-//check username
-/*
-$file=fopen("E:\MAMP\htdocs/287assignment1\TextFiles\initialUserDatabase.txt","r") or die("Not worky ");
- $numLines=count(file("E:\MAMP\htdocs/287assignment1\TextFiles\initialUserDatabase.txt"));
- echo $numLines;
-
- $arr=array();
- for($i=0;$i<$numLines;$i++){
-   $arr[$i]=fgets($file);
- }
-
- print_r($arr);  
- for($i=0;$i<$numLines;$i++){
-     $lines=explode(" ",$arr[$i]);
-     if($lines[0]=="yessir"){
-         echo "YESSIR";
-     }
-
- }
- fclose($file);
-*/
-
 function editUser($userID)
 {
     $thisPage = htmlspecialchars($_SERVER["PHP_SELF"]);
@@ -328,6 +271,17 @@ function addUserInfoToFile($username, $password, $lastName, $firstName, $email, 
     }
 }
 
+function getLastLine(){
+    $file = fopen("..\TextFiles\userInfo.txt", 'r') or die("Unable to open 'userInfo.txt'.");
+    $lineCount = 0;
+    while (!feof($file)) {
+        fgets($file);
+        $lineCount++;
+    }
+    return $lineCount;
+    fclose($file);
+}
+
 function editUserInfoFile($userID, $username, $password, $lastName, $firstName, $email, $tel1, $tel2, $address)
 {
     $userInfo =  $username . "\t" . $password ."\t" . $lastName . "\t" . $firstName . "\t" . $email . "\t" . $tel1 . "\t" . $tel2 . "\t" . $address;
@@ -335,11 +289,18 @@ function editUserInfoFile($userID, $username, $password, $lastName, $firstName, 
     $tempFile = fopen("..\TextFiles\\tempUserInfo.txt", 'w') or die("Unable to open 'tempUserInfo.txt'.");
     $lineCount = 1;
     //copying userInfo.txt to tempUserInfo.txt
+    $lastLine = getLastLine();
+    echo $lastLine;
     while (!feof($file)) {
         $line = fgets($file);
-        // $lineArr = explode("\t", $line);
         if ($lineCount==$userID) {
-            fwrite($tempFile, $userInfo."\n");
+            if ($lineCount == $lastLine){
+                echo $lastLine;
+                fwrite($tempFile, $userInfo);
+            }
+            else{
+                fwrite($tempFile, $userInfo."\n");
+            }
         }
         else{
             fwrite($tempFile, $line);

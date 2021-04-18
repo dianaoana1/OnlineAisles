@@ -85,7 +85,6 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
                 <label>Enter the user ID number of the user you would like to delete:</label>
                 <input type="text" placeholder="User ID #" name="userID" required />
                 <div style="position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal">
-                    <!-- <a type="text" name="enter-button" style="font-weight: bold;" class="btn btn-primary" href="deleteUserPage.php">Enter</a> -->
                     <button type="text" name="enter-button" style="font-weight: bold;" class="btn btn-primary">Enter</button>
                     <a type="text" name="cancel-button" style="font-weight: bold;" class="btn btn-primary" href="userList.php">Cancel</a>
                 </div>
@@ -94,8 +93,6 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
         <div class="user-table" style="overflow:auto;">
             <?php
             if (isset($_POST['enter-button'])) {
-                // $userID = $_POST['userID'];
-                // $_SESSION['chosenUserID'] = $userID;
                 deleteUserFromFile($_POST['userID']);
                 header('Location: userList.php');
             }
