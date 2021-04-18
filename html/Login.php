@@ -175,17 +175,45 @@ if (isset($_POST['logged']))
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-$file = file_get_contents("..\TextFiles\customersAccounts.txt");
-$customer = "$username||$email||$password";
-if(!strstr($file, "$customer"))
-{
-    echo '<script> alert ("Sorry, the information entered is incorrect.\n Please try again.") </script>';
-    //print '<script>alert('Sorry, the information entered is incorrect.\n Please try again.')</script>";
-
+$file = fopen("..\TextFiles\customersAccounts.txt","r") or die("RIP");
+$currLine=usernameExists($username.$email);
+if($currLine==-1){
+//error the email/username doesnt exists
+header("Refresh:0");
+}else if (!isSamePassword($currLine,$password)){
+// password is not the same
+}else {
+// password is the same 
+// $session set the user ....
+// echo '<script>alert("Welcome $username.<br/>You are logged in.")</script>';
 }
-else
-{
-    echo '<script>alert("Welcome $username.<br/>You are logged in.")</script>';
 }
+function usernameExists($username,$email)
+{
+    $file=fopen("..\TextFiles\customersAccounts.txt","r") or die("RIP");
+    $numLines=count(file("..\TextFiles\customersAccounts.txt"));
+    $arr=array();
+    $arr=getUserData($numLines,$file);
+    for($i=0;$i<$numLines;$i++){
+    $lines=explode("\t",$arr[$i]);
+      if($lines[0]==$username || $lines[3]==$email){
+          return $i;
+      }
+    }
+    return -1;
+}  
+function getUserData($numLines,$file)
+{
+    $arr=array();       
+    for($i=0;$i<$numLines;$i++){
+    $arr[$i]=fgets($file);
+    }
+    return $arr;
+}
+function isSamePassword($currLine,$password){
+$numLines=count(file("..\TextFiles\customersAccounts.txt"));
+$arr=array();
+$arr=getUserData($numLines,$arr);
+return strstr($arr[$currLine],$password);
 }
 ?>
