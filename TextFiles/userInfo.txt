@@ -1,1 +1,2 @@
-oumbar  Barry   Oumar   514-123-4567    514-891-0111    online_grocerystore@groceries.ca    123 Main Street, QC, A1B 2C3
+A_SPYRID	Spyridakos	Alexandra	A_SPYRID@encs.concordia.ca	yjskm	2463	3 Rue Oxford
+aspyridakos	Spyridakos	Alexandra	aspyridakos@gmail.com	2786	2463	3 Rue Oxford

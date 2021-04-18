@@ -1,7 +1,20 @@
 <?php
-/*function userIDInFile(){
-    
-}*/
+function userIDInFile($userID){
+    $file = fopen("..\TextFiles\userInfo.txt", 'r') or die("Unable to open 'userInfo.txt'.");
+    $lineCount = 1;
+    while (!feof($file)) {
+        $line = fgets($file);
+        $lineCount++;
+        echo $line."<br>";
+    }
+    if ($userID<=$lineCount){
+        return true;
+    }
+    else{
+        return false;
+    }
+    fclose($file);
+}
 
 function deleteUserFromFile($userID)
 {

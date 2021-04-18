@@ -53,7 +53,7 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
                         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Back end Pages</a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="..\user-list.html" target="_self">User List</a>
+                            <a class="dropdown-item" href="userList.php" target="_self">User List</a>
                             <a class="dropdown-item" href="..\Productlist.html" target="_self"> Product list </a>
                             <a class="dropdown-item" href="..\Back end/Order-list.html" target="_self">Order List </a>
                         </div>

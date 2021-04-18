@@ -58,7 +58,7 @@ session_start();
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Back end Pages</a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="user-list.html" target="_self">User List</a>
+                            <a class="dropdown-item" href="userList.php" target="_self">User List</a>
                             <a class="dropdown-item" href="Productlist.html" target="_self"> Product list </a>
                             <a class="dropdown-item" href="Back end\Order-list.html" target="_self">Order List </a>
                         </div>
@@ -115,27 +115,27 @@ session_start();
                             $totalprice = $quantity * $price;
                             if($_SESSION['cart'][$i].get_quantity() > 0){
                                 echo "
-                                <tr class="cart-row">
-                                    <td class="tg-even">$count</td>
-                                    <td class="tg-even"><img id="image" src="$image" width="60" height="60"></td>
-                                    <td class="tg-even">$item</td>
+                                <tr class=\"cart-row\">
+                                    <td class=\"tg-even\">$count</td>
+                                    <td class=\"tg-even\"><img id=\"image\" src=\"$image\" width=\"60\" height=\"60\"></td>
+                                    <td class=\"tg-even\">$item</td>
 
-                                    <td class="tg-even" style="text-align:right"><input type="button" class="btn btn-primary"
-                                    style=" border-radius:100%; padding: 3px 9px;" onclick="decreaseQuantity()"
+                                    <td class=\"tg-even\" style=\"text-align:right\"><input type=\"button\" class=\"btn btn-primary\"
+                                    style=\" border-radius:100%; padding: 3px 9px;\" onclick=\"decreaseQuantity()\"
                                     value=&#8722; />
                                     </td>
-                                    <td class="tg-even item-quantity">$quantity</td>
-                                    <td class="tg-even" style="text-align:left"><input type="button" class="btn btn-primary"
-                                    style=" border-radius:100%; padding: 3px 9px;" onclick="increaseQuantity()"
+                                    <td class=\"tg-even item-quantity\">$quantity</td>
+                                    <td class=\"tg-even\" style=\"text-align:left\"><input type=\"button\" class=\"btn btn-primary\"
+                                    style=\" border-radius:100%; padding: 3px 9px;\" onclick=\"increaseQuantity()\"
                                     value=&#43; />
                                     </td>
 
-                                    <td class="tg-even item-price">$$price</td>
-                                    <td class="tg-even"><input type="button" class="btn btn-primary"
-                                    style=" border-radius:100%; padding: 3px 10px;" onclick="deleteItem()" value="×" />
+                                    <td class=\"tg-even item-price\">$price</td>
+                                    <td class=\"tg-even\"><input type=\"button\" class=\"btn btn-primary\"
+                                    style=\" border-radius:100%; padding: 3px 10px;\" onclick=\"deleteItem()\" value=\"×\" />
                                     </td>
                                 </tr>
-                                "
+                                ";
                                 $count++;
                             }
                         }

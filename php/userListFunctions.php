@@ -296,61 +296,86 @@ function addUserInfoToFile($username, $lastName, $firstName, $email, $tel1, $tel
 function editUserInfoFile($username, $lastName, $firstName, $email, $tel1, $tel2, $address)
 {
     $userInfo =  $username . "\t" . $lastName . "\t" . $firstName . "\t" . $email . "\t" . $tel1 . "\t" . $tel2 . "\t" . $address;
-    if (file_exists($_SESSION['file'])) {
-        $file = fopen($_SESSION['file'], 'r+') or die("Unable to open 'userInfo.txt'.");
-        $countLines = 0;
-        while (!feof($file)) {   //reading file line by line
-            $line = fgets($file);
-            $lineArr = explode("\t", $line);
-            if (strcmp($lineArr[0], $username) == 0) {
-                if ($countLines == 0) {
-                    $editedLine = $userInfo;
-                } else {
-                    $editedLine = "\n" . $userInfo;
-                }
+    $file = fopen("..\TextFiles\userInfo.txt", 'r') or die("Unable to open 'userInfo.txt'.");
+    $tempFile = fopen("..\TextFiles\\tempUserInfo.txt", 'w') or die("Unable to open 'tempUserInfo.txt'.");
+    $lineCount = 1;
+    //copying userInfo.txt to tempUserInfo.txt
+    while (!feof($file)) {
+        $line = fgets($file);
+        $lineArr = explode("\t", $line);
+        if (strcmp($lineArr[0], $username) == 0) {
+            if ($lineCount == 1) {
+                fwrite($tempFile, $userInfo);
+            } else {
+                fwrite($tempFile, "\n".$userInfo);
             }
-            $countLines++;
         }
-        //deleting specific user info line from the file
-        $contents = file_get_contents($file);
-        $contents = str_replace($editedLine, '', $contents);
-        file_put_contents($file, $contents);
-        fclose($file);
-    } else {
-        echo "Unable to open 'userInfo.txt'.";
+        else{
+            fwrite($tempFile, $line);
+        }
+        $lineCount++;
+        echo $line."<br>";
     }
+    fclose($tempFile);
+    fclose($file);
+    //clearing userInfo.txt
+    $file = fopen("..\TextFiles\userInfo.txt", 'w') or die("Unable to open 'userInfo.txt'.");
+    fclose($file);
+    $file = fopen("..\TextFiles\userInfo.txt", 'a') or die("Unable to open 'userInfo.txt'.");
+    $tempFile = fopen("..\TextFiles\\tempUserInfo.txt", 'r') or die("Unable to open 'tempUserInfo.txt'.");
+    //putting back all user info into userInfo.txt except the deleted user
+    while (!feof($tempFile)) {
+        $line = fgets($tempFile);
+        echo $line."<br>";
+        fwrite($file, $line);
+    }
+    fclose($file);
+    fclose($tempFile);
 }
 
 function deleteUserFromFile($userID)
 {
-    $file = "..\TextFiles\userInfo.txt"; 
-    
-    if (file_exists($file)) {
-        $file = fopen($file, 'r+') or die("Unable to open 'userInfo.txt'.");
-        $tempFile = fopen("..\TextFiles\\tempUserInfo.txt", 'w') or die("Unable to open 'userInfo.txt'.");
-        $lineCount = 0;
-        echo "before deletion<br>";
-        while(!feof($file)){
-            $line = fgets($file);
-            if (!($lineCount == $userID)){
-                fwrite($tempFile, $line);
-            }
-            $lineCount++;
-            echo $line;
+    $file = fopen("..\TextFiles\userInfo.txt", 'r') or die("Unable to open 'userInfo.txt'.");
+    $tempFile = fopen("..\TextFiles\\tempUserInfo.txt", 'w') or die("Unable to open 'tempUserInfo.txt'.");
+    $lineCount = 1;
+    //copying userInfo.txt to tempUserInfo.txt
+    while (!feof($file)) {
+        $line = fgets($file);
+        if ($lineCount!=$userID) {
+            fwrite($tempFile, $line);
         }
-        echo "after deletion";
-        fclose($tempFile);
-        $tempFile = fopen("..\TextFiles\\tempUserInfo.txt", 'r') or die("Unable to open 'userInfo.txt'.");
-        while(!feof($file)){
-            $line = fgets($tempFile,$line);
-            fwrite($file, $line);
-            echo $line;
-        }
-        fclose($file);
-        fclose($tempFile);
+        $lineCount++;
     }
-    else {
-        echo "Unable to open 'userInfo.txt'.";
+    fclose($tempFile);
+    fclose($file);
+    //clearing userInfo.txt
+    $file = fopen("..\TextFiles\userInfo.txt", 'w') or die("Unable to open 'userInfo.txt'.");
+    fclose($file);
+    $file = fopen("..\TextFiles\userInfo.txt", 'a') or die("Unable to open 'userInfo.txt'.");
+    $tempFile = fopen("..\TextFiles\\tempUserInfo.txt", 'r') or die("Unable to open 'tempUserInfo.txt'.");
+    //putting back all user info into userInfo.txt except the deleted user
+    while (!feof($tempFile)) {
+        $line = fgets($tempFile);
+        fwrite($file, $line);
     }
+    fclose($file);
+    fclose($tempFile);
+}
+
+function userIDInFile($userID){
+    $file = fopen("..\TextFiles\userInfo.txt", 'r') or die("Unable to open 'userInfo.txt'.");
+    $lineCount = 1;
+    while (!feof($file)) {
+        $line = fgets($file);
+        $lineCount++;
+        echo $line."<br>";
+    }
+    if ($userID<=$lineCount){
+        return true;
+    }
+    else{
+        return false;
+    }
+    fclose($file);
 }
 ?>
