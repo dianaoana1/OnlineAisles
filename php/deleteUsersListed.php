@@ -96,8 +96,9 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
             if (isset($_POST['enter-button'])) {
                 $userID = $_POST['userID'];
                 $_SESSION['chosenUserID'] = $userID;
-                deleteUserFromFile($_SESSION['chosenID']);
-                header('Location: userList.php');
+                // deleteUserFromFile($_SESSION['chosenID']);
+                deleteUserFromFile(2);
+                // header('Location: userList.php');
             }
             ProcessUserList();
             ?>
