@@ -312,7 +312,7 @@ if(!isset($_SESSION)) {
 
    
     //Checking if a customer is already signed up in the website
-    /*if(!strstr($file, "$username||$email"))
+    /*if(!strstr($file, "$username")&&!strstr($file,"$email"))
     {
         if($email==$emailconfirmation&&$password==$passwordconfirmation){
             //$UsingFile = "..\TextFiles\customersAccounts.txt";
