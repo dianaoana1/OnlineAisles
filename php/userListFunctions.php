@@ -1,6 +1,7 @@
 <?php
-session_start();
-
+if(!isset($_SESSION)) {
+    session_start();
+}
 function fileIsEmpty($file)
 {
     $fileOpen = fopen($file, "r");

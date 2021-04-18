@@ -1,5 +1,7 @@
 <?php
-session_start();
+if(!isset($_SESSION)) {
+    session_start();
+}
 require 'userListFunctions.php';
 $thisPage = htmlspecialchars($_SERVER["PHP_SELF"]);
 $_SESSION['currentPage'] = htmlspecialchars($_SERVER["PHP_SELF"]);
@@ -23,6 +25,14 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <script src="..\JavaScript\UserList.js"></script>
     <link rel="icon" type="image/png" href="..\Images\favicon.png">
+    <style>
+        .notAdmin{
+            text-align: center;
+        }
+        .out-of-order{
+            max-width:70vw;
+        }
+    </style>
 </head>
 
 <body>
@@ -58,7 +68,7 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
                         </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="..\Login.html" target="_blank">Login / Sign up</a>
+                    <a class="nav-link" href="..\html\Login.php" target="_blank">Login / Sign up</a>
                 </li>
                 <li class="nav-item">
                 <li class="nav-item dropdown">
@@ -79,14 +89,27 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
     </nav>
     <br>
     <div class="container" style="max-width: 96%; height:100%;margin-top:60px; margin-bottom:166px ">
-        <div class="user-table" style="overflow:auto;">
+       
             <?php
-            if (fileIsEmpty($_SESSION['file'])) {
-                ProcessEmptyTable();
+            if ($_SESSION['userLoggedIn']!= "admin"){?>
+            <div class = "notAdmin">
+                <h3>Sorry, this page cannot be accessed at this time.</h3><a href = "..\html\Login.php" target="_self"><h5>Log on as an administrator</a> to access full website functionality.</h5>
+                <br>
+                <img src="..\Images\out-of-order.png" class="out-of-order" alt="Cannot display photo">
+            </div>              
+               <?php 
             }
-            else {
-                ProcessUsersToTable();
+            else{?>
+                <div class="user-table" style="overflow:auto;">
+                <?php
+                if (fileIsEmpty($_SESSION['file'])) {
+                    ProcessEmptyTable();
+                }
+                else {
+                    ProcessUsersToTable();
+                }
             }
+           
             ?>
         </div>
     </div>

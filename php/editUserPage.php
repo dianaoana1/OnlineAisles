@@ -1,5 +1,7 @@
 <?php
-session_start();
+if(!isset($_SESSION)) {
+    session_start();
+}
 require 'userListFunctions.php';
 $_SESSION['currentPage'] = htmlspecialchars($_SERVER["PHP_SELF"]);
 $_SESSION['file'] = "..\TextFiles\userInfo.txt";
@@ -57,7 +59,7 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
                         </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="..\Login.html" target="_blank">Login / Sign up</a>
+                    <a class="nav-link" href="..\Login.php" target="_blank">Login / Sign up</a>
                 </li>
                 <li class="nav-item">
                 <li class="nav-item dropdown">

@@ -82,7 +82,7 @@ ini_set('display_errors', 1);
                         </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Login.html">Login / Sign up</a>
+                    <a class="nav-link" href="Login.php">Login / Sign up</a>
                 </li>
                 <li class="nav-item">
                 <li class="nav-item dropdown">
@@ -169,6 +169,7 @@ if (isset($_POST['logged']))
 {
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $_SESSION['userLoggedIn'] = $username;
 
 $file = fopen("..\TextFiles\customersAccounts.txt","r") or die("RIP");
 $currLine=usernameExists($username.$email);
