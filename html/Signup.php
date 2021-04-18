@@ -1,3 +1,9 @@
+<?php
+
+if(!isset($_SESSION)) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -18,6 +24,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <style>
+        .error{
+            color: red;
+            font-style: italic;
+        }
+    </style>
 </head>
 
 <body>
@@ -86,16 +98,17 @@
         <div class="container" style="height: 100%;width: 100%;">
             <p id="signin-button">Already have an onlinegorcerystore.ca account? <em><a href=Login.html>Sign in</a></em>
             </p>
-            <p id="mendatoryfield">* mentadory field</p>
-            <form class="sign-up-form" method = "post" action="../php/signupcheck.php">
+            <!--<p id="mendatoryfield">* mentadory field</p>-->
+            <p><span class="error">* mentadory fields</span></p>
+            <form class="sign-up-form" method = "post" action="Signup.php">
                 <div class="card">
                     <h2>
-                        *Do you have an OGS membership card?
+                    <span class="error">* </span>Do you have an OGS membership card?
                     </h2>
                     <div class="card-form">
                         <div class="row">
                             <div class="col-md">
-                                <input type="radio" name="havecard" value="Yes" /> <b>I already have a card</b>
+                                <input type="radio" name="havecard" required value="Yes" /> <b>I already have a card</b>
                                 <p>and I would like to create an onlinegorcerystore.ca profile to access my personalized
                                     offers.</p>
                             </div>
@@ -118,8 +131,8 @@
                     <h2>Personal Information</h2>
                     <div class="personal-info-form">
                         <div class="row">
-                            <div class="col"><label for="Title">*TITLE</label><br>
-                                <select id="Title" name="Title">
+                            <div class="col"><label for="Title"><span class="error">* </span>TITLE</label><br>
+                                <select id="Title" name="Title" required>
                                     <option value="Select">Select your title</option>
                                     <option value="Mr.">Mr.</option>
                                     <option value="Mrs.">Mrs.</option>
@@ -130,22 +143,18 @@
                         </div>
                         <div class="row">
                             <div class="col-md">
-                                <label for="FirstName">*FIRST NAME</label><br>
-                                <input type="text" id="FirstName" name="FirstName">
+                                <label for="FirstName"><span class="error">* </span>FIRST NAME</label><br>
+                                <input type="text" id="FirstName" name="FirstName" required>
                             </div>
                             <div class="col-md">
-                                <label for="LastName">*LAST NAME</label><br>
+                                <label for="LastName"><span class="error" required>* </span>LAST NAME</label><br>
                                 <input type="text" id="LastName" name="LastName">
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md">
-                                <input type="checkbox" id="CorporateClient" name="CorporateClient">
-                                <label for="CorporateClient">Corporate Client</label>
-                            </div>
-                            <div class="col-md">
-                                <label for="CompanyName">COMPANY NAME</label><br>
-                                <input type="text" id="CompanyName" name="CompanyName">
+                                <div class="col-md">
+                                <label for="UserName"><span class="error">* </span>USER NAME</label><br>
+                                <input type="text" id="UserName" name="UserName" required>
                             </div>
                         </div>
                     </div>
@@ -156,14 +165,14 @@
                     <div class="contact-info-form">
                         <div class="row">
                             <div class="col-md">
-                                <label for="Address">*ADDRESS LINE 1 (No, Street)</label><br>
-                                <input type="text" id="Address" name="Address">
+                                <label for="Address"><span class="error">* </span>ADDRESS LINE 1 (No, Street)</label><br>
+                                <input type="text" id="Address" name="Address" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md">
                                 <label for="Address">ADDRESS LINE 2 (No, Street)</label><br>
-                                <input type="text" id="Address" name="Address">
+                                <input type="text" id="Address" name="Address2">
                             </div>
                         </div>
                         <div class="row">
@@ -174,12 +183,12 @@
                         </div>
                         <div class="row">
                             <div class="col-md">
-                                <label for="City">*CITY</label><br>
-                                <input type="text" id="City" name="City">
+                                <label for="City"><span class="error">* </span>CITY</label><br>
+                                <input type="text" id="City" name="City" required>
                             </div>
                             <div class="col-md">
-                                <label for="province">*PROVINCE</label><br>
-                                <select id="province" name="province">
+                                <label for="province"><span class="error">* </span>PROVINCE</label><br>
+                                <select id="province" name="province" required>
                                     <option value="select">Select your province</option>
                                     <option value="Alberta">Alberta</option>
                                     <option value="British Columbia">British Columbia</option>
@@ -199,8 +208,8 @@
                         </div>
                         <div class="row">
                             <div class="col-md">
-                                <label for="Postal Code">*POSTAL CODE</label><br>
-                                <input type="text" class="Postal Code" name="Postal Code">
+                                <label for="Postal Code"><span class="error">* </span>POSTAL CODE</label><br>
+                                <input type="text" class="Postal Code" name="PostalCode" required>
                             </div>
                             <div class="col-md">
                                 <label for="telephone">PHONE NUMBER</label><br>
@@ -209,33 +218,33 @@
                         </div>
                         <div class="row">
                             <div class="col-md">
-                                <label for="email">*EMAIL</label><br>
-                                <input type="text" class="email" name="email">
+                                <label for="email"><span class="error">* </span>EMAIL</label><br>
+                                <input type="text" class="email" name="email" required>
                             </div>
                             <div class="col-md">
-                                <label for="confirm-email">*CONFIRM EMAIL</label><br>
-                                <input type="text" class="confirm-email" name="confirm-email">
+                                <label for="confirm-email"><span class="error">* </span>CONFIRM EMAIL</label><br>
+                                <input type="text" class="confirm-email" name="confirm-email" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md">
-                                <label for="password">*PASSWORD</label><br>
-                                <input type="password" class="password" name="password">
+                                <label for="password"><span class="error">* </span>PASSWORD</label><br>
+                                <input type="password" class="password" name="password" required>
                             </div>
                             <div class="col-md">
-                                <label for="confirm-password">*CONFIRM PASSWORD</label><br>
-                                <input type="password" class="confirm-password" name="confirm-password">
+                                <label for="confirm-password"><span class="error">* </span>CONFIRM PASSWORD</label><br>
+                                <input type="password" class="confirm-password" name="confirm-password" required>
                             </div>
                         </div>
                     </div>
                 </div>
                 <br>
-                <input type="checkbox" class="terms" name="terms">
-                <label for="terms">I accept the Online Grocery Store terms and conditions.</label><br>
+                <input type="checkbox" class="terms" name="terms" required>
+                <label for="terms">I accept the Online Grocery Store terms and conditions.<span class="error">* </span>-</label><br>
                 <input type="checkbox" class="newsletter" name="newsletter">
                 <label for="newsletter">I wish to receive our newsletter by email to stay up to date with our latest
                     offers.</label><br>
-                <input class="btn btn-primary" type="submit" value="Register">
+                <input class="btn btn-primary" type="submit" value="Register" name="Registered">
                 <input class="btn btn-primary" type="reset" value="Reset">
 
             </form>
@@ -283,5 +292,101 @@
         </div>
     </footer>
 </body>
-
 </html>
+<?php   
+   if(isset($_POST['Registered'])){
+       $firstname = $_POST['FirstName'];
+       $lastname = $_POST['LastName'];
+       $username = $_POST['UserName'];
+       $Address = $_POST['Address'];
+       $city = $_POST['City'];
+       $province = $_POST['province'];
+       $postalcode = $_POST['PostalCode'];
+       $email = $_POST['email'];
+       $emailconfirmation = $_POST['confirm-email'];
+       $password = $_POST['password'];
+       $passwordconfirmation = $_POST['confirm-password'];
+    
+    //$file=file_get_contents("..\TextFiles\customersAccounts.txt");`
+    //    $customer = "$username&&$email";
+
+   
+    //Checking if a customer is already signed up in the website
+    /*if(!strstr($file, "$username||$email"))
+    {
+        if($email==$emailconfirmation&&$password==$passwordconfirmation){
+            //$UsingFile = "..\TextFiles\customersAccounts.txt";
+            //$pw = fopen($UsingFile, 'a') or die("can't find or open the file");
+            fwrite($pw, "First name : " . $firstname . "\t");
+            fwrite($pw, "Last name : " . $lastname . "\t");
+            fwrite($pw, "Username : " . $username . "\t");
+            fwrite($pw, "Address : " . $Address . "\t");
+            fwrite($pw, "City : " . $City . "\t");
+            fwrite($pw, "province : " . $province . "\t");
+            fwrite($pw, "email : " . $email . "\t");
+            fwrite($pw, "password : " . $password . "\n\n");
+            echo "<script>alert('Your information was proprely saved.')</script>";
+            fclose($pw);
+        }
+        else
+        {
+            echo "<script>alert('Sorry check again either the email or password confirmation do not correspond.')</script>";
+
+        }
+    }   
+    else
+    {
+        echo "<script>alert('Sorry, some information is already in the database. Please create a new account.')</script>";
+    }
+    } */
+    
+    $file=fopen("..\TextFiles\customersAccounts.txt","r") or die("RIP");
+    $numLines=count(file("..\TextFiles\customersAccounts.txt"));
+        $arr=array();
+        $arr=getUserData($numLines,$file);
+    for($i=0;$i<$numLines;$i++){
+        $lines=explode("\t",$arr[$i]);
+        echo"hi";
+        if($lines[11]==$username||$lines[21]==$email||$lines[24]==$password){
+            echo"hi";
+            echo '<script> alert ("Sorry, the information entered is incorrect.\n Please try again.") </script>';
+
+            echo "<script>alert('Sorry, some information is already in the database. Please create a new account.')</script>";
+            
+            
+        }
+        else
+        {
+        if($email==$emailconfirmation&&$password==$passwordconfirmation){
+            //$UsingFile = "..\TextFiles\customersAccounts.txt";
+            //$pw = fopen($UsingFile, 'a') or die("can't find or open the file");
+            fwrite($pw, "First name : " . $firstname . "\t");
+            fwrite($pw, "Last name : " . $lastname . "\t");
+            fwrite($pw, "Username : " . $username . "\t");
+            fwrite($pw, "Address : " . $Address . "\t");
+            fwrite($pw, "City : " . $City . "\t");
+            fwrite($pw, "province : " . $province . "\t");
+            fwrite($pw, "email : " . $email . "\t");
+            fwrite($pw, "password : " . $password . "\n\n");
+            echo "<script>alert('Your information was proprely saved.')</script>";
+            //fclose($pw);
+        }
+        else
+        {
+            echo "<script>alert('Sorry check again either the email or password confirmation do not correspond.')</script>";
+        }
+        }
+        }
+        fclose($file);
+    }
+
+
+
+
+
+   
+
+
+
+
+?>

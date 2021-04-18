@@ -1,3 +1,8 @@
+<?php
+if(!isset($_SESSION)) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -101,7 +106,7 @@
     <div id="megadiv" style = background-image:url(..\Images\fruitsandveggies.jpg)>
     <div class= "container">
         <div class="login" >
-            <form action="loginConfirmation.html"  >
+            <form method="post"  action="Login.php" >
                 <label for="username"><b>Email or Username</b></label><br>
                 <input type="text" id="username"><br><br>
                 <label for="password"><b>Password</b></label><br>
@@ -109,11 +114,11 @@
                 <p>
                     <a class="forgot-pass" href="Back end\verification code.html">Forgot password?</a>
                 </p>
-                <input class="btn btn-primary" type="submit" value="Login">
+                <input class="btn btn-primary" type="submit" value="Login" name="logged">
                 <input class="btn btn-primary" type="reset" value="Reset">
             </form>
             <br>
-            <p>Don't have an account? Sign up <em><a href="Signup.html" target="_blank">here</a></em></p>
+            <p>Don't have an account? Sign up <em><a href="Signup.php" target="_blank">here</a></em></p>
         </div>
     </div>
     </div>
@@ -156,3 +161,31 @@
 </body>
 
 </html>
+<?PHP
+
+if (isset($_POST['logged']))
+{
+    $firstname = $_POST['FirstName'];
+    $lastname = $_POST['LastName'];
+    $username = $_POST['UserName'];
+    $Address = $_POST['Address'];
+    $city = $_POST['City'];
+    $province = $_POST['province'];
+    $postalcode = $_POST['PostalCode'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+$file = file_get_contents("..\TextFiles\customersAccounts.txt");
+$customer = "$username||$email||$password";
+if(!strstr($file, "$customer"))
+{
+    echo '<script> alert ("Sorry, the information entered is incorrect.\n Please try again.") </script>';
+    //print '<script>alert('Sorry, the information entered is incorrect.\n Please try again.')</script>";
+
+}
+else
+{
+    echo '<script>alert("Welcome $username.<br/>You are logged in.")</script>';
+}
+}
+?>

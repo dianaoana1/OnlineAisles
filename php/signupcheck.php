@@ -88,10 +88,10 @@
         </div>
     </nav>
     <?php
-    if (empty($_POST["havecard"]) || empty($_POST["Title"]) || empty($_POST["FirstName"]) || empty($_POST["LastName"]) || empty($_POST["Address"]) || empty($_POST["City"]) || empty($_POST["province"]) || empty($_POST["Postal Code"]) || empty($_POST["email"]) || empty($_POST["confirm-email"]) || empty($_POST["password"]) || empty($_POST["confirm-password"]) || empty($_POST["terms"])) {
-        $error = TRUE;
+    //$missing=FALSE;
+    if (empty($_POST["havecard"]) || empty($_POST["Title"]) || empty($_POST["FirstName"]) || empty($_POST["LastName"]) || empty($_POST["UserName"]) || empty($_POST["Address"]) || empty($_POST["City"]) || empty($_POST["province"]) || empty($_POST["PostalCode"]) || empty($_POST["email"]) || empty($_POST["confirm-email"]) || empty($_POST["password"]) || empty($_POST["confirm-password"]) || empty($_POST["terms"])) {
+        $missing = TRUE;
         $title = "Please Go Back";
-    }
     if ($_POST["password"] != $_POST["confirm-password"]) {
         $errorP = TRUE;
     }
@@ -100,21 +100,61 @@
     } ?>
 
     <?php
-    if (isset($errorP)) {
-        echo '<p>Sorry, passewords do not match.</p>
-        <p>Please enter the same passeword.</p>';
-    }
-    if (isset($errorE)) {
-        echo '<p>Sorry, emails do not match.</p>
-        <p>Please enter the same email.</p>';
-    }
+    
     if (isset($missing)) {
         echo '<p>Sorry, the form is incomplete.</p>
         <p>Please go back and fill out all the required entries.  Thank you.</p>';
-    } else {
+    }
+    else if (isset($errorP)) {
+        echo '<p>Sorry, passewords do not match.</p>
+        <p>Please enter the same passeword.</p>';
+    }
+    else if (isset($errorE)) {
+        echo '<p>Sorry, emails do not match.</p>
+        <p>Please enter the same email.</p>';
+        
+    }
+     else {
         echo '<h1>You have successfully signed up to onlinegrocerystore.ca! <br>Please verify your email</h1><br>
             <h3><a href="Main Page.html">Return to main page</a></h3>';
     } ?>
+ <div style="clear: both"></div>
+    <div style="clear: both"></div>
+        <footer>
+            <div class="section contactInfo">
+                <h3>Contact Info</h3>
+                <ul class="info">
+                    <li>
+                        <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                        <p>123 Main Street<br/> Montreal, QC<br/> Canada</p>
+                    </li>
+                    <li>
+                        <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                        <p><a href="tel:5141234567">514-123-4567</a></p>
+                    </li>
+                    <li>
+                        <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                        <p><a href="mailto:zixi.quan@concordia.ca?subject=SOEN287">online_grocerystore@groceries.ca</a></p>
+                    </li>
+                    <li>
+                        <span><i class = "fa fa-smile-o" aria-hidden = "true"></i></span>
+                        <p><a href = "..\html\contactUsFrom.html">Help us improve your experience</a></p>
+                    </li>
+                </ul> 
+            </div>
+            <div class="section about-us">
+                <h3>About Us</h3>
+                <p>
+                    At the start of 2020, the coronavirus pandemic brought on new difficulties for many people with pre-existing medical conditions. Something as simple as grocery shopping was now a high risk activity for those who were more succeptible to serious illnesses cause by the Covid-19 virus. Our goal is to make grocery shopping safe and affordable for all Canadians so that no one is has to face food insecurity in these difficult times.  
+                </p>
+                <ul class="icons">
+                    <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.youtube.com/"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </footer>
 </body>
 
 </html>
