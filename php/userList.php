@@ -28,7 +28,7 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
 
 <body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
-        <a class="navbar-brand" href="..\Main Page.html">Online Grocery Store</a>
+        <a class="navbar-brand" href="..\..\html\Main Page.html">Online Grocery Store</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -39,13 +39,13 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
                         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aisles</a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="..\Product links/fruits.html" target="_self">Fruits</a>
-                            <a class="dropdown-item" href="..\Product links/Vegetables.html" target="_self">Vegetables</a>
-                            <a class="dropdown-item" href="..\Product links/meats and poultry.html" target="_self"> Meats and Poultry
+                            <a class="dropdown-item" href="..\html\Product links/fruits.html" target="_self">Fruits</a>
+                            <a class="dropdown-item" href="..\html\Product links/Vegetables.html" target="_self">Vegetables</a>
+                            <a class="dropdown-item" href="..\html\Product links/meats and poultry.html" target="_self"> Meats and Poultry
                             </a>
-                            <a class="dropdown-item" href="..\Product links/seafood.html" target="_self">Seafood </a>
-                            <a class="dropdown-item" href="..\Product links/dairy and eggs.html" target="_self">Dairy and Eggs </a>
-                            <a class="dropdown-item" href="..\Product links/cereal products.html" target="_self">Cereal Products </a>
+                            <a class="dropdown-item" href="..\html\Product links/seafood.html" target="_self">Seafood </a>
+                            <a class="dropdown-item" href="..\html\Product links/dairy and eggs.html" target="_self">Dairy and Eggs </a>
+                            <a class="dropdown-item" href="..\html\Product links/cereal products.html" target="_self">Cereal Products </a>
                         </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -54,8 +54,8 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
 
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
                             <a class="dropdown-item" href="userList.php" target="_self">User List</a>
-                            <a class="dropdown-item" href="..\Productlist.html" target="_self"> Product list </a>
-                            <a class="dropdown-item" href="..\Back end/Order-list.html" target="_self">Order List </a>
+                            <a class="dropdown-item" href="..\html\Productlist.html" target="_self"> Product list </a>
+                            <a class="dropdown-item" href="..\html\Back end\Order-list.html" target="_self">Order List </a>
                         </div>
                 </li>
                 <li class="nav-item">
@@ -66,15 +66,15 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
                     <div class="dropdown show">
                         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#9881;</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="change password.html" target="_blank"> Change Password</a>
-                            <a class="dropdown-item" href="account-info.html" target="_self"> Account Info</a></a>
-                            <a class="dropdown-item" href="delete-user.html" target="_blank">Delete Account</a>
+                            <a class="dropdown-item" href="..\html\Back end\change password.html" target="_blank"> Change Password</a>
+                            <a class="dropdown-item" href="..\html\Back end\account-info.html" target="_self"> Account Info</a></a>
+                            <a class="dropdown-item" href="..\html\Back end\delete-user.html" target="_blank">Delete Account</a>
                         </div>
                 </li>
                 </li>
             </ul>
             <div class="shopping-cart-holder">
-                <a class="nav-link shopping-cart" href="..\shopping_cart.html" target="_blank">&#128722; </a>
+                <a class="nav-link shopping-cart" href="..\..\html\shopping_cart.html" target="_blank">&#128722; </a>
             </div>
         </div>
     </nav>
