@@ -63,7 +63,7 @@ session_start();
         $arr=getUserData($numLines,$file);
         for($i=0;$i<$numLines;$i++){
          $lines=explode("\t",$arr[$i]);
-        
+          
          if($lines[0]==$username){
              return true;
          }
