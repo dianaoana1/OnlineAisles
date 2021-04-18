@@ -20,22 +20,22 @@ function addUser()
             <form action="<?php echo $_SESSION['currentPage']; ?>" class="form-container" method="POST">
                 <h3>Adding User</h3>
                 <label for="username"><b>Username</b></label>
-                <input type="text" placeholder="Enter username" id="usernameForm" name="username" required />
+                <input type="text" pattern="[a-zA-Z0-9]{1,20}" placeholder="Enter username" id="usernameForm" name="username" required />
 
                 <label for="lastName"><b>Last name</b></label>
-                <input type="text" placeholder="Enter last name" id="lastNameForm" name="lastName" required />
+                <input type="text" pattern="[a-zA-Z]{1,20}" placeholder="Enter last name" id="lastNameForm" name="lastName" required />
 
                 <label for="firstName"><b>First name</b></label>
-                <input type="text" placeholder="Enter first name" id="firstNameForm" name="firstName" required />
+                <input type="text" pattern="[a-zA-Z]{1,20}" placeholder="Enter first name" id="firstNameForm" name="firstName" required />
 
                 <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter email" id="emailForm" name="email" required />
+                <input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter email" id="emailForm" name="email" required />
 
                 <label for="tel1"><b>Tel.1</b></label>
-                <input type="text" placeholder="Enter phone number" id="tel1Form" name="tel1" required />
+                <input type="text" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Enter phone number" id="tel1Form" name="tel1" required />
 
                 <label for="tel2"><b>Tel.2</b></label>
-                <input type="text" placeholder="Enter phone number" id="tel2Form" name="tel2" required />
+                <input type="text" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Enter phone number" id="tel2Form" name="tel2" required />
 
                 <label for="address"><b>Address</b></label>
                 <input type="text" placeholder="Enter address" id="addressForm" name="address" required />
@@ -92,6 +92,34 @@ function addUser()
         }
     }
 }*/
+
+//check username
+/*
+$file=fopen("E:\MAMP\htdocs/287assignment1\TextFiles\initialUserDatabase.txt","r") or die("Not worky ");
+ $numLines=count(file("E:\MAMP\htdocs/287assignment1\TextFiles\initialUserDatabase.txt"));
+ echo $numLines;
+
+ $arr=array();
+ for($i=0;$i<$numLines;$i++){
+   $arr[$i]=fgets($file);
+ }
+
+ print_r($arr);  
+ for($i=0;$i<$numLines;$i++){
+     $lines=explode(" ",$arr[$i]);
+     if($lines[0]=="yessir"){
+         echo "YESSIR";
+     }
+
+ }
+ fclose($file);
+*/
+
+//check email input
+/*$email = test_input($_POST["email"]);
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+  $emailErr = "Invalid email format";
+}*/
 function editUser($userID)
 {
     $thisPage = htmlspecialchars($_SERVER["PHP_SELF"]);
@@ -117,22 +145,22 @@ function editUser($userID)
             <form action="<?php echo $thisPage; ?>" class="form-container" method="POST">
                 <h3>Editing User</h3>
                 <label for="username"><b>Username</b></label>
-                <input required type="text" placeholder="Enter username" id="usernameForm" name="username" value="<?php echo $username; ?>" />
+                <input required type="text" pattern="[a-zA-Z0-9]{1,20}" placeholder="Enter username" id="usernameForm" name="username" value="<?php echo $username; ?>" />
 
                 <label for="lastName"><b>Last name</b></label>
-                <input required type="text" placeholder="Enter last name" id="lastNameForm" name="lastName" value="<?php echo $lastName; ?>" />
+                <input required type="text" pattern="[a-zA-Z]{1,20}" placeholder="Enter last name" id="lastNameForm" name="lastName" value="<?php echo $lastName; ?>" />
 
                 <label for="firstName"><b>First name</b></label>
-                <input required type="text" placeholder="Enter first name" id="firstNameForm" name="firstName" value="<?php echo $firstName; ?>" />
+                <input required type="text" pattern="[a-zA-Z]{1,20}" placeholder="Enter first name" id="firstNameForm" name="firstName" value="<?php echo $firstName; ?>" />
 
                 <label for="email"><b>Email</b></label>
-                <input required type="text" placeholder="Enter email" id="emailForm" name="email" value="<?php echo $email; ?>" />
+                <input required type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter email" id="emailForm" name="email" value="<?php echo $email; ?>" />
 
                 <label for="tel1"><b>Tel.1</b></label>
-                <input required type="text" placeholder="Enter phone number" id="tel1Form" name="tel1" value="<?php echo $tel1; ?>" />
+                <input required type="text" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Enter phone number" id="tel1Form" name="tel1" value="<?php echo $tel1; ?>" />
 
                 <label for="tel2"><b>Tel.2</b></label>
-                <input required type="text" placeholder="Enter phone number" id="tel2Form" name="tel2" value="<?php echo $tel2; ?>" />
+                <input required type="text" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Enter phone number" id="tel2Form" name="tel2" value="<?php echo $tel2; ?>" />
 
                 <label for="address"><b>Address</b></label>
                 <input required type="text" placeholder="Enter address" id="addressForm" name="address" value="<?php echo $address; ?>" />
