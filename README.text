@@ -4,3 +4,7 @@ The page will be hosted locally by a member of the team on his computer.
 
 Part 2 : In this 2nd part of the project, the website becomes dynamic instead of static. All the relevant buttons of every pages were
 implemented using either javascript or html. All the responsiveness was fixed using css. The page we still be hosted locally on a member's computer.
+
+Part 3: In this 3rd part of the project we will take the last 2 parts to create a website that is functional on the backend as well as the
+fronted some features to have admin rights are implemented and allow the admin to affect the values of the users the orders and the products.
+These values will interact with the pages and let the user know the current values at all time. 
