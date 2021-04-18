@@ -1,3 +1,6 @@
+
+
+
 var bananaFirstPrice = 0.33;
 var appleFirstPrice = 0.89;
 var breadFirstPrice = 1.99;
@@ -14,10 +17,10 @@ function newPriceSetter(){
 
 }
 function dealChecker() {
-    var currPriceBannana = "<?php echo $bananaprice ?>";
+   /* var currPriceBannana = "<?php echo $bananaprice ?>";
     var currPriceApple = "<?php echo $appleprice ?>";
     var currPriceBread = "<?php echo $breadprice ?>";
-    var currPriceBroccoli = "<?php echo $bananaprice ?>";
+    var currPriceBroccoli = "<?php echo $bananaprice ?>";*/
     var idArr = [];
     if (currPriceBannana == bananaFirstPrice && appleFirstPrice == currPriceApple && currPriceBread == breadFirstPrice && broccoliFirstPrice == currPriceBroccoli) {
         id3 = document.getElementById("row1");
