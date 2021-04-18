@@ -1,2 +1,3 @@
 A_SPYRID	Spyridakos	Alexandra	vlakies@gmail.com	2786	247563	3 Rue Oxford
-aspyridakos@gmail.com	Spyridakos	Alexandra	aspyridakos@gmail.com	yjskm	htea	3 Rue Oxford
+aspyridakos@gmail.com	Spyridakos	Alexandra	aspyridakos@gmail.com	2786	247563	3 Rue Oxford
+A_SPYRID	Spyridakos	Alexandra	aspyridakos@gmail.com	yjskm	247563	3 Rue Oxford

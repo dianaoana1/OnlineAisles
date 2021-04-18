@@ -87,13 +87,12 @@ function editUser($userID)
     $thisPage = htmlspecialchars($_SERVER["PHP_SELF"]);
     if (!isset($_POST['edit'])) {
         $file = fopen("..\TextFiles\userInfo.txt", 'r') or die("Unable to open 'userInfo.txt'.");
-        $lineCount = 0;
+        $lineCount = 1;
         while (!feof($file)) {   //reading file line by line
             $line = fgets($file);
             if ($lineCount == $userID) {
                 $lineArr = explode("\t", $line);
                 $username = $lineArr[0];
-                echo $username;
                 $lastName = $lineArr[1];
                 $firstName = $lineArr[2];
                 $email = $lineArr[3];
@@ -101,38 +100,10 @@ function editUser($userID)
                 $tel2 = $lineArr[5];
                 $address = $lineArr[6];
             }
-            echo $lineCount;
             $lineCount++;
         }
 ?>
-<div class="form-popup" id="editUserForm">
-            <form action="<?php echo $thisPage; ?>" class="form-container" method="POST">
-                <h3>Editing User</h3>
-                <label for="username"><b>Username</b></label>
-                <input required type="text" id="usernameForm" name="username" value="<?php echo $username; ?>" />
-
-                <label for="lastName"><b>Last name</b></label>
-                <input required type="text"  id="lastNameForm" name="lastName" value="<?php echo $lastName; ?>" />
-
-                <label for="firstName"><b>First name</b></label>
-                <input required type="text" id="firstNameForm" name="firstName" value="<?php echo $firstName; ?>" />
-
-                <label for="email"><b>Email</b></label>
-                <input required type="text"  id="emailForm" name="email" value="<?php echo $email; ?>" />
-
-                <label for="tel1"><b>Tel.1</b></label>
-                <input required type="text"  id="tel1Form" name="tel1" value="<?php echo $tel1; ?>" />
-
-                <label for="tel2"><b>Tel.2</b></label>
-                <input required type="text"  id="tel2Form" name="tel2" value="<?php echo $tel2; ?>" />
-
-                <label for="address"><b>Address</b></label>
-                <input required type="text"  id="addressForm" name="address" value="<?php echo $address; ?>" />
-                <br>
-                <button type="submit" class="btn btn-primary" name="edit">Save Changes</button>
-            </form>
-        </div>
-        <!--<div class="form-popup" id="editUserForm">
+        <div class="form-popup" id="editUserForm">
             <form action="<?php echo $thisPage; ?>" class="form-container" method="POST">
                 <h3>Editing User</h3>
                 <label for="username"><b>Username</b></label>
@@ -158,7 +129,7 @@ function editUser($userID)
                 <br>
                 <button type="submit" class="btn btn-primary" name="edit">Save Changes</button>
             </form>
-        </div>-->
+        </div>
 <?php
     } else {
         echo "Error occured.<br>Unable to open 'userInfo.txt'.";
