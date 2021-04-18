@@ -210,7 +210,7 @@ function ProcessEmptyTable()
                         <td class="tg-even" colspan="8">No users have been registered yet aside from the admin role</td>
                     </tr>
                 </tbody>
-                </table><div style="position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal">
+                </table></div><div style="position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal">
                 <a type="text" name="add-user-button" style="font-weight: bold;" class="btn btn-primary" href="addUserPage.php">Add New User</a>
             </div>');
 }
@@ -239,7 +239,7 @@ function ProcessUsersToTable()
         $lineArr = explode("\t", $line);
         $result .= newRow($count, $lineArr[0], $lineArr[1], $lineArr[2], $lineArr[3], $lineArr[4], $lineArr[5], $lineArr[6]);    //adding new table rows
     }
-    $result .= "</tbody></table>
+    $result .= "</tbody></table></div>
     <div style=\"position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal\">
             <a type=\"text\" name=\"add-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"addUserPage.php\">Add New User</a>
             <a type=\"text\" name=\"edit-user-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"editUsersListed.php\">Edit User</a>
