@@ -2,8 +2,6 @@
 if(!isset($_SESSION)) {
     session_start();
 }
-error_reporting(~0);
-ini_set('display_errors', 1);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -167,7 +165,14 @@ ini_set('display_errors', 1);
 
 if (isset($_POST['logged']))
 {
-    $username = $_POST['username'];
+    $firstname = $_POST['FirstName'];
+    $lastname = $_POST['LastName'];
+    $username = $_POST['UserName'];
+    $Address = $_POST['Address'];
+    $city = $_POST['City'];
+    $province = $_POST['province'];
+    $postalcode = $_POST['PostalCode'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
 
 $file = fopen("..\TextFiles\customersAccounts.txt","r") or die("RIP");
@@ -183,7 +188,7 @@ header("Refresh:0");
 // echo '<script>alert("Welcome $username.<br/>You are logged in.")</script>';
 }
 }
-function usernameExists($username)
+function usernameExists($username,$email)
 {
     $file=fopen("..\TextFiles\customersAccounts.txt","r") or die("RIP");
     $numLines=count(file("..\TextFiles\customersAccounts.txt"));
@@ -191,7 +196,7 @@ function usernameExists($username)
     $arr=getUserData($numLines,$file);
     for($i=0;$i<$numLines;$i++){
     $lines=explode("\t",$arr[$i]);
-      if($lines[0]==$username || $lines[3]==$username){
+      if($lines[0]==$username || $lines[3]==$email){
           return $i;
       }
     }
