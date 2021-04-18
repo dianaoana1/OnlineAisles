@@ -1,14 +1,11 @@
-oumbar      Barry       Oumar       514-123-4567    514-891-0111    online_grocerystore@groceries.ca    123 Main Street, QC, A1B 2C3
-mattb       Beaulieu    Matthew     514-123-4567    514-891-0111    online_grocerystore@groceries.ca	123 Main Street, QC, A1B 2C3
-dianMer     Merlusca    Diana       514-123-4567    514-891-0111    online_grocerystore@groceries.ca    123 Main Street, QC, A1B 2C3	
-aspyri      Spyridakos  Alexandra   514-123-4567    514-891-0111    online_grocerystore@groceries.ca    123 Main Street, QC, A1B 2C3	
-ziyiw       Wang        Ziyi        514-123-4567    514-891-0111    online_grocerystore@groceries.ca    123 Main Street, QC, A1B 2C3
-
 oumbar  Barry   Oumar   514-123-4567    514-891-0111    online_grocerystore@groceries.ca    123 Main Street, QC, A1B 2C3
 mattb   Beaulieu    Matthew 514-123-4567    514-891-0111    online_grocerystore@groceries.ca    123 Main Street, QC, A1B 2C3
 dianMer Merlusca    Diana   514-123-4567    514-891-0111    online_grocerystore@groceries.ca    123 Main Street, QC, A1B 2C3	
 aspyri  Spyridakos  Alexandra   514-123-4567    514-891-0111    online_grocerystore@groceries.ca    123 Main Street, QC, A1B 2C3	
 ziyiw   Wang    Ziyi    514-123-4567    514-891-0111    online_grocerystore@groceries.ca    123 Main Street, QC, A1B 2C3
 
-A_SPYRID	Spyridakos	Alexandra	aspyridakos@gmail.com	2786	46	3 Rue Oxford
-aspyridakos	Spyridakos	Alexandra	A_SPYRID@encs.concordia.ca	9679	446	3 Ruevgiykb
+***Use text below for file testing***
+
+aspyridakos	abc	Spyridakos	Alexandra	absdk@gmail.com	514-514-5145	514-514-5146	123 Main
+user2	pass2	bobo	javascript	bobo@gmail.com	514-656-8979	514-656-8975	124 first ave
+oumbar	ezpassword	Barry	Oumar	obarry@yahoo.com	438-797-1832	514-135-4863	2 concordia st

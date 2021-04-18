@@ -184,7 +184,7 @@ function editUser($userID)
         $tel1 = $_POST['tel1'];
         $tel2 = $_POST['tel2'];
         $address = $_POST['address'];
-        editUserInfoFile($username, $password, $lastName, $firstName, $email, $tel1, $tel2, $address);
+        editUserInfoFile($userID, $username, $password, $lastName, $firstName, $email, $tel1, $tel2, $address);
         header('Location: userList.php');
     }
 }
@@ -328,7 +328,7 @@ function addUserInfoToFile($username, $password, $lastName, $firstName, $email, 
     }
 }
 
-function editUserInfoFile($username, $password, $lastName, $firstName, $email, $tel1, $tel2, $address)
+function editUserInfoFile($userID, $username, $password, $lastName, $firstName, $email, $tel1, $tel2, $address)
 {
     $userInfo =  $username . "\t" . $password ."\t" . $lastName . "\t" . $firstName . "\t" . $email . "\t" . $tel1 . "\t" . $tel2 . "\t" . $address;
     $file = fopen("..\TextFiles\userInfo.txt", 'r') or die("Unable to open 'userInfo.txt'.");
@@ -337,8 +337,8 @@ function editUserInfoFile($username, $password, $lastName, $firstName, $email, $
     //copying userInfo.txt to tempUserInfo.txt
     while (!feof($file)) {
         $line = fgets($file);
-        $lineArr = explode("\t", $line);
-        if (strcmp($lineArr[0], $username) == 0) {
+        // $lineArr = explode("\t", $line);
+        if ($lineCount==$userID) {
             fwrite($tempFile, $userInfo."\n");
         }
         else{
