@@ -304,17 +304,12 @@ function editUserInfoFile($username, $lastName, $firstName, $email, $tel1, $tel2
         $line = fgets($file);
         $lineArr = explode("\t", $line);
         if (strcmp($lineArr[0], $username) == 0) {
-            if ($lineCount == 1) {
-                fwrite($tempFile, $userInfo);
-            } else {
-                fwrite($tempFile, "\n".$userInfo);
-            }
+            fwrite($tempFile, $userInfo."\n");
         }
         else{
             fwrite($tempFile, $line);
         }
         $lineCount++;
-        echo $line."<br>";
     }
     fclose($tempFile);
     fclose($file);
@@ -323,10 +318,9 @@ function editUserInfoFile($username, $lastName, $firstName, $email, $tel1, $tel2
     fclose($file);
     $file = fopen("..\TextFiles\userInfo.txt", 'a') or die("Unable to open 'userInfo.txt'.");
     $tempFile = fopen("..\TextFiles\\tempUserInfo.txt", 'r') or die("Unable to open 'tempUserInfo.txt'.");
-    //putting back all user info into userInfo.txt except the deleted user
+    //putting back all user info into userInfo.txt
     while (!feof($tempFile)) {
         $line = fgets($tempFile);
-        echo $line."<br>";
         fwrite($file, $line);
     }
     fclose($file);

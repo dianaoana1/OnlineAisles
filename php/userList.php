@@ -4,7 +4,6 @@ require 'userListFunctions.php';
 $thisPage = htmlspecialchars($_SERVER["PHP_SELF"]);
 $_SESSION['currentPage'] = htmlspecialchars($_SERVER["PHP_SELF"]);
 $_SESSION['file'] = "..\TextFiles\userInfo.txt";
-// $_SESSION['timesCalled'] = 0;
 ?>
 <!DOCTYPE html>
 <html lang="en">
