@@ -307,16 +307,16 @@ if(!isset($_SESSION)) {
        $password = $_POST['password'];
        $passwordconfirmation = $_POST['confirm-password'];
     
-    //$file=file_get_contents("..\TextFiles\customersAccounts.txt");`
+    $file=file_get_contents("..\TextFiles\customersAccounts.txt");
     //    $customer = "$username&&$email";
 
    
     //Checking if a customer is already signed up in the website
-    /*if(!strstr($file, "$username")&&!strstr($file,"$email"))
+    if(!strstr($file, "$email")&&!strstr($file,"$username"))
     {
         if($email==$emailconfirmation&&$password==$passwordconfirmation){
-            //$UsingFile = "..\TextFiles\customersAccounts.txt";
-            //$pw = fopen($UsingFile, 'a') or die("can't find or open the file");
+            $UsingFile = "..\TextFiles\customersAccounts.txt";
+            $pw = fopen($UsingFile, 'a') or die("can't find or open the file");
             fwrite($pw, "First name : " . $firstname . "\t");
             fwrite($pw, "Last name : " . $lastname . "\t");
             fwrite($pw, "Username : " . $username . "\t");
@@ -336,11 +336,11 @@ if(!isset($_SESSION)) {
     }   
     else
     {
-        echo "<script>alert('Sorry, some information is already in the database. Please create a new account.')</script>";
+        echo "<script>alert('Sorry, the email or username is already in the database. Please create a new account.')</script>";
     }
-    } */
+    } 
     
-    $file=fopen("..\TextFiles\customersAccounts.txt","r") or die("RIP");
+    /*$file=fopen("..\TextFiles\customersAccounts.txt","r") or die("RIP");
     $numLines=count(file("..\TextFiles\customersAccounts.txt"));
         $arr=array();
         $arr=getUserData($numLines,$file);
@@ -378,7 +378,7 @@ if(!isset($_SESSION)) {
         }
         }
         fclose($file);
-    }
+    }*/
 
 
 
