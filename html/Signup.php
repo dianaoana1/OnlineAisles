@@ -317,14 +317,14 @@ if(!isset($_SESSION)) {
         if($email==$emailconfirmation&&$password==$passwordconfirmation){
             $UsingFile = "..\TextFiles\customersAccounts.txt";
             $pw = fopen($UsingFile, 'a') or die("can't find or open the file");
-            fwrite($pw, "First name : " . $firstname . "\t");
-            fwrite($pw, "Last name : " . $lastname . "\t");
-            fwrite($pw, "Username : " . $username . "\t");
-            fwrite($pw, "Address : " . $Address . "\t");
-            fwrite($pw, "City : " . $City . "\t");
-            fwrite($pw, "province : " . $province . "\t");
-            fwrite($pw, "email : " . $email . "\t");
-            fwrite($pw, "password : " . $password . "\n\n");
+            fwrite($pw,  $firstname . "\t");
+            fwrite($pw, $lastname . "\t");
+            fwrite($pw, $username . "\t");
+            fwrite($pw, $Address . "\t");
+            fwrite($pw, $City . "\t");
+            fwrite($pw, $province . "\t");
+            fwrite($pw, $email . "\t");
+            fwrite($pw, $password . "\n\n");
             echo "<script>alert('Your information was proprely saved.')</script>";
             fclose($pw);
         }

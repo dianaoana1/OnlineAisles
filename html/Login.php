@@ -1,7 +1,6 @@
 <?php
-if(!isset($_SESSION)) {
-    session_start();
-}
+ session_start();
+
 error_reporting(~0);
 ini_set('display_errors', 1);
 ?>
@@ -108,11 +107,11 @@ ini_set('display_errors', 1);
     <div id="megadiv" style = background-image:url(..\Images\fruitsandveggies.jpg)>
     <div class= "container">
         <div class="login" >
-            <form method="post"  action="Login.php" >
+            <form method="post"  action="../php/loginConfirmation.php" >
                 <label for="username"><b>Email or Username</b></label><br>
-                <input type="text" id="username"><br><br>
+                <input type="text" id="username" name="UserName"> <br><br>
                 <label for="password"><b>Password</b></label><br>
-                <input type="password" id="password"><br>
+                <input type="password" id="password" name="password"><br>
                 <p>
                     <a class="forgot-pass" href="Back end\verification code.html">Forgot password?</a>
                 </p>
@@ -163,53 +162,3 @@ ini_set('display_errors', 1);
 </body>
 
 </html>
-<?PHP
-
-if (isset($_POST['logged']))
-{
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $_SESSION['userLoggedIn'] = $username;
-
-$file = fopen("..\TextFiles\customersAccounts.txt","r") or die("RIP");
-$currLine=usernameExists($username.$email);
-if($currLine==-1){
-//error the email/username doesnt exists
-header("Refresh:0");
-}else if (!isSamePassword($currLine,$password)){
-// password is not the same
-}else {
-// password is the same 
-// $session set the user ....
-// echo '<script>alert("Welcome $username.<br/>You are logged in.")</script>';
-}
-}
-function usernameExists($username)
-{
-    $file=fopen("..\TextFiles\customersAccounts.txt","r") or die("RIP");
-    $numLines=count(file("..\TextFiles\customersAccounts.txt"));
-    $arr=array();
-    $arr=getUserData($numLines,$file);
-    for($i=0;$i<$numLines;$i++){
-    $lines=explode("\t",$arr[$i]);
-      if($lines[0]==$username || $lines[3]==$username){
-          return $i;
-      }
-    }
-    return -1;
-}  
-function getUserData($numLines,$file)
-{
-    $arr=array();       
-    for($i=0;$i<$numLines;$i++){
-    $arr[$i]=fgets($file);
-    }
-    return $arr;
-}
-function isSamePassword($currLine,$password){
-$numLines=count(file("..\TextFiles\customersAccounts.txt"));
-$arr=array();
-$arr=getUserData($numLines,$arr);
-return strstr($arr[$currLine],$password);
-}
-?>
