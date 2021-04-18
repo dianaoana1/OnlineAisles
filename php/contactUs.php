@@ -38,7 +38,7 @@ session_start();
         }
         if (!empty($_POST["username"]) && !empty($_POST["itemName"]) && !checkitemName($_POST["itemName"]) && !empty($_POST["orderNumber"]) && checkOrderNum($_POST["orderNumber"]) && !empty($_POST["comment"])) {
             if (!usernameExists($username)) {
-                echo "<script>alert('This username does not exist please register thank you');document.location='../html/Signup.html'</script>";
+                echo "<script>alert('This username does not exist please register thank you');document.location='../html/Signup.php'</script>";
             } else {
                 if (file_get_contents($file) !== "") {
                     fwrite($file, "\n");
