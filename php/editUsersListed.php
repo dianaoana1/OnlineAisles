@@ -81,11 +81,12 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
     <br>
     <div class="container" style="max-width: 96%; height:100%;margin-top:60px; margin-bottom:166px ">
             <?php 
+            $pattern = "[1-".getLastLine()."]";
             if (!isset($_POST['enter-button'])) {?>
             <div>
                 <form action="<?php echo $_SESSION["currentPage"]; ?>" method="POST">
                 <label>Enter the user ID number of the user you would like to edit:</label>
-                <input type="text" placeholder="User ID #" name="userID" required />
+                <input type="text" title="User ID must be within range of 1-<?php echo getLastLine(); ?>" pattern=<?php echo $pattern?> placeholder="User ID #" name="userID" required />
                 <div style="position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal">
                     <button type="submit" name="enter-button" style="font-weight: bold;" class="btn btn-primary">Enter</button>
                     <a type="submit" name="cancel-button" style="font-weight: bold;" class="btn btn-primary" href="userList.php">Cancel</a>
