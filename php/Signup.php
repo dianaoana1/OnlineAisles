@@ -205,15 +205,20 @@ if(!isset($_SESSION)) {
                                     <option value="Saskatchewan">Saskatchewan</option>
                                     <option value="Yukon">Yukon</option>
                                 </select>
+                                
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md">
                                 <label for="Postal Code"><span class="error">* </span>POSTAL CODE</label><br>
-                                <input type="text" class="Postal Code" name="PostalCode" required>
+                                <input type="text" id="Postal Code" name="PostalCode" required>
                             </div>
                             <div class="col-md">
-                                <label for="telephone">PHONE NUMBER</label><br>
+                                <label for="cellphone"><span class="error">* </span>CELLPHONE NUMBER</label><br>
+                                <input type="text" class="Cellphone" name="Cellphone" required>
+                            </div>
+                            <div class="col-md">
+                                <label for="telephone">PHONE NUMBER (HOME)</label><br>
                                 <input type="text" class="telephone" name="telephone">
                             </div>
                         </div>
@@ -303,29 +308,31 @@ if(!isset($_SESSION)) {
        $city = $_POST['City'];
        $province = $_POST['province'];
        $postalcode = $_POST['PostalCode'];
+       $cellphone = $_POST['Cellphone'];
+       $telephone = $_POST['telephone'];
        $email = $_POST['email'];
        $emailconfirmation = $_POST['confirm-email'];
        $password = $_POST['password'];
        $passwordconfirmation = $_POST['confirm-password'];
     
     $file=file_get_contents("..\TextFiles\customersAccounts.txt");
-    //    $customer = "$username&&$email";
 
-   
+    //$username, $password, $lastName, $firstName, $email, $tel1, $tel2, $address
     //Checking if a customer is already signed up in the website
-    if(!strstr($file, "$email")&&!strstr($file,"$username"))
+    if(!strstr($file, $email)&&!strstr($file,$username))
     {
         if($email==$emailconfirmation&&$password==$passwordconfirmation){
             $UsingFile = "..\TextFiles\customersAccounts.txt";
             $pw = fopen($UsingFile, 'a') or die("can't find or open the file");
-            fwrite($pw,  $firstname . "\t");
-            fwrite($pw, $lastname . "\t");
             fwrite($pw, $username . "\t");
-            fwrite($pw, $Address . "\t");
-            fwrite($pw, $City . "\t");
-            fwrite($pw, $province . "\t");
+            fwrite($pw, $password . "\t");
+            fwrite($pw, $lastname . "\t");
+            fwrite($pw, $firstname . "\t");
             fwrite($pw, $email . "\t");
-            fwrite($pw, $password . "\n\n");
+            fwrite($pw, $cellphone . "\t");
+            fwrite($pw, $telephone . "\t");
+            fwrite($pw, $Address . ", " . $city);
+            fwrite($pw, " " . $province . "\n");
             echo "<script>alert('Your information was proprely saved.')</script>";
             fclose($pw);
         }
