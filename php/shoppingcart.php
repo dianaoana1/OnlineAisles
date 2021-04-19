@@ -136,6 +136,7 @@ ini_set('display_errors', 1);
                                 if((int)$lineArr[3] > 0){
                                     $image = $lineArr[4];
                                     (int)$quantity = $lineArr[3];
+                                    array_push($qtyarr, $quantity);
                                     $item = $lineArr[1];
                                     (float)$price = $lineArr[2];
                                     echo "
@@ -163,6 +164,11 @@ ini_set('display_errors', 1);
                                     $count++;
                                 }
                             }
+                        }
+
+                        if(isset($_POST['decrease'])){
+                            $item = $_POST['decrease'];
+                            echo "hello";
                         }
 
                         ?>
