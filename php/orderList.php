@@ -3,6 +3,9 @@ if(!isset($_SESSION)) {
     session_start();
 }
 require_once('orderListFunctions.php');
+$thisPage = htmlspecialchars($_SERVER["PHP_SELF"]);
+$_SESSION['currentPage'] = htmlspecialchars($_SERVER["PHP_SELF"]);
+$_SESSION['file'] = "..\TextFiles\orderInfo.txt";
 ?>
 
 <!DOCTYPE html>
@@ -96,7 +99,7 @@ require_once('orderListFunctions.php');
                <?php 
             }
             else{?>
-                <div class="user-table" style="overflow:auto;">
+                <div class="order-table" style="overflow:auto;">
                 <?php
                 if (fileIsEmpty($_SESSION['file'])) {
                     ProcessEmptyOrderTable();
