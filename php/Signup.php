@@ -3,6 +3,7 @@
 if(!isset($_SESSION)) {
     session_start();
 }
+require ("userListFunctions.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -97,7 +98,7 @@ if(!isset($_SESSION)) {
         </nav>
         <br>
         <div class="container" style="height: 100%;width: 100%;">
-            <p id="signin-button">Already have an onlinegorcerystore.ca account? <em><a href=Login.html>Sign in</a></em>
+            <p id="signin-button">Already have an onlinegorcerystore.ca account? <em><a href=.../php/Login.php>Sign in</a></em>
             </p>
             <!--<p id="mendatoryfield">* mentadory field</p>-->
             <p><span class="error">* mentadory fields</span></p>
@@ -324,7 +325,12 @@ if(!isset($_SESSION)) {
         if($email==$emailconfirmation&&$password==$passwordconfirmation){
             $UsingFile = "..\TextFiles\customersAccounts.txt";
             $pw = fopen($UsingFile, 'a') or die("can't find or open the file");
-            fwrite($pw, $username . "\t");
+            if (fileIsEmpty($UsingFile)){
+                fwrite($pw, $username . "\t");
+            }
+            else{
+                fwrite($pw, "\n".$username . "\t");
+            }
             fwrite($pw, $password . "\t");
             fwrite($pw, $lastname . "\t");
             fwrite($pw, $firstname . "\t");
@@ -332,7 +338,7 @@ if(!isset($_SESSION)) {
             fwrite($pw, $cellphone . "\t");
             fwrite($pw, $telephone . "\t");
             fwrite($pw, $Address . ", " . $city);
-            fwrite($pw, ", " . $province . "\n");
+            fwrite($pw, ", " . $province);
             echo "<script>alert('Your information was proprely saved.')</script>";
             fclose($pw);
         }
