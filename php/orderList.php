@@ -26,10 +26,7 @@ require 'orderListFunctions.php';
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <script src="..\JavaScript\OrderList.js"></script>
     <style>
-        html,body{
-            margin: 0;
-            height: 100%;
-        }
+        
      
         .notAdmin{
             text-align: center;

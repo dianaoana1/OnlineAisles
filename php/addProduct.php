@@ -1,6 +1,6 @@
 <?php
 if(!empty($_POST['submit'])) {
-    $fp=fopen("../productDatabase.txt","a");
+    $fp=fopen("../TextFiles/productDatabase.txt","a") or die("rip");
     fwrite($fp,"\r\n".$_POST['name']."*".$_POST['type']."*".$_POST['price']."*".$_POST['quantity']."*".$_POST['description']); 
     fclose($fp);
     echo "<script>location.href='productList.php';</script>";

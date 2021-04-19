@@ -86,7 +86,19 @@ if(!isset($_SESSION)) {
             </div>
         </div>
     </nav>
-    <div class = "container"style="max-width: 100%; height:80%;margin-top:60px;">
+   
+          
+        <?php
+            if ($_SESSION['userLoggedIn']!= "admin"){?>
+            <div class = "notAdmin">
+                <h3>Sorry, this page cannot be accessed at this time.</h3><a href = "Login.php" target="_self"><h5>Log on as an administrator</a> to access full website functionality.</h5>
+                <br>
+                <img src="..\Images\out-of-order.png" class="out-of-order" alt="Cannot display photo">
+            </div>              
+               <?php 
+            }
+            else{?>
+             <div class = "container"style="max-width: 100%; height:80%;margin-top:60px;">
         <table class="tg" id="productTable">
         <thead>
           <tr>
@@ -100,10 +112,8 @@ if(!isset($_SESSION)) {
           </tr>
         </thead>
         <tbody>
-          
-        
         <?php
-        $product=file("..\TextFiles/productDatabase.txt");//you had linked the product database thats outside of the textFiles im not so sure if thats the one you want
+        $product=file("..\TextFiles/productDatabase.txt");
         foreach ($product as $k=>$p) {
             $line=explode("*",$p);
         ?>
@@ -120,8 +130,16 @@ if(!isset($_SESSION)) {
             <a type="text" name="delete-product-button" style="font-weight: bold;" class="btn btn-primary" href = "deleteProduct.php?id=<?php echo $k;?>" >Remove Selected Products</a>
             </td>
           </tr>
+         
         <?php
         }
+        ?>
+        <div class = "list-buttons">
+        <a type="text" name="add-product-button" style="font-weight: bold;" class="btn btn-primary" href ="addProduct.php" >Add New Product</a>
+        </div>
+         
+        <?php 
+            }
         ?> 
 
         </tbody>
@@ -130,9 +148,7 @@ if(!isset($_SESSION)) {
         
 
 
-        <div class = "list-buttons">
-          <a type="text" name="add-product-button" style="font-weight: bold;" class="btn btn-primary" href ="addProduct.php" >Add New Product</a>
-        </div>
+        
       </div>
         <br/>
         <br/>
