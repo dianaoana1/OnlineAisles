@@ -33,7 +33,7 @@ function increaseQuantity() {
 }
 
 //decrement button
-function decreaseQuantity() {
+function decreaseQuantity(array) {
     var quantity = event.target.parentNode.previousSibling.parentNode.children[4].innerHTML--;
     if (quantity < 2) {
         answer = confirm("Are you sure you want to remove this item from your cart?");
@@ -45,6 +45,7 @@ function decreaseQuantity() {
         }
     }
     totalCalculators();
+    return event.target.parentNode.previousSibling.parentNode.children[2].innerHTML;
 }
 
 //deletes item from cart
@@ -94,7 +95,7 @@ function subTotalCalculator() {
     var table = document.getElementById("cartTable");
     var tableRows = table.rows;
     for (var i = 1; i < tableRows.length; i++) {
-        var price = tableRows[i].cells[6].innerText;
+        var price = parseFloat(tableRows[i].cells[6].innerText);
         var quantity = tableRows[i].cells[4].innerText;
         total_per_item = parseFloat(price.substring(1)) * quantity;
         subTotal += total_per_item;
