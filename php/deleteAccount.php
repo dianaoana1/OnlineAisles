@@ -33,16 +33,15 @@ function deleteAccount($username)
             }
             fclose($file);
             fclose($tempFile);?>
+            window.location.replace("../html/Main Page.html");
     }
     else{
         alert("Account deletion cancelled. Returning to main page.");
+        window.location.replace("../html/Main Page.html");
     }
-    window.location.replace("../html/Main Page.html");
     </script>
     <?php
-    
 }
-
 deleteAccount($_SESSION['userLoggedIn']);
 
 ?>
