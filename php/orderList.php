@@ -2,7 +2,7 @@
 if(!isset($_SESSION)) {
     session_start();
 }
-require 'orderListFunctions.php';
+require_once('orderListFunctions.php');
 ?>
 
 <!DOCTYPE html>
