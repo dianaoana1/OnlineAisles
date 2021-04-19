@@ -103,12 +103,26 @@ require 'orderListFunctions.php';
         </div>
     </nav>
     <div class = "container" style="max-width: 96%; height:100%;margin-top:60px; margin-bottom:327px ">
-        <div class="list-buttons">
-            <a type="text" name="edit-order-button" style="font-weight: bold;" class="btn btn-primary"
-            href="Order-list.html">Save Changes</a>
-        </div>
         <div class="order-table" style="overflow-x:auto;">
-            
+        <?php
+            if ($_SESSION['userLoggedIn']!= "admin"){?>
+            <div class = "notAdmin">
+                <h3>Sorry, this page cannot be accessed at this time.</h3><a href = "Login.php" target="_self"><h5>Log on as an administrator</a> to access full website functionality.</h5>
+                <br>
+                <img src="..\Images\out-of-order.png" class="out-of-order" alt="Cannot display photo">
+            </div>              
+               <?php 
+            }
+            else{?>
+                <div class="user-table" style="overflow:auto;">
+                <?php
+                if (fileIsEmpty($_SESSION['file'])) {
+                    ProcessEmptyTable();
+                }
+                else {
+                    ProcessUsersToTable();
+                }
+            }?>
 
             <!--<table class="tg" id="orderTable">
                 <thead>
