@@ -1,6 +1,8 @@
 <?php
 session_start();
 include_once 'addtocart.php';
+error_reporting(~0);
+ini_set('display_errors', 1);
 ?>
 
 <!DOCTYPE html>
