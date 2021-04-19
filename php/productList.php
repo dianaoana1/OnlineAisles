@@ -17,6 +17,14 @@
     <link rel ="stylesheet" href = "..\CSS\Back end\list.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <script src="..\JavaScript\ProductList.js"></script>
+    <style>
+        .notAdmin{
+            text-align: center;
+        }
+        .out-of-order{
+            max-width:70vw;
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
@@ -93,7 +101,7 @@
         <tbody>
           
         <?php
-        $product=file("../productDatabase.txt");
+        $product=file("..\TextFiles/productDatabase.txt");//you had linked the product database thats outside of the textFiles im not so sure if thats the one you want
         foreach ($product as $k=>$p) {
             $line=explode("*",$p);
         ?>
