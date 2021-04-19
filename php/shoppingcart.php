@@ -131,18 +131,18 @@ ini_set('display_errors', 1);
                                         <td class=\"tg-even\">$item</td>
     
                                         <td class=\"tg-even\" style=\"text-align:right\"><input type=\"button\" class=\"btn btn-primary\"
-                                        style=\" border-radius:100%; padding: 3px 9px;\" onclick=\"decreaseQuantity()\"
+                                        style=\" border-radius:100%; padding: 3px 9px;\" name=\"decrease\" onclick=\"decreaseQuantity()\"
                                         value=&#8722; />
                                         </td>
                                         <td class=\"tg-even item-quantity\">$quantity</td>
                                         <td class=\"tg-even\" style=\"text-align:left\"><input type=\"button\" class=\"btn btn-primary\"
-                                        style=\" border-radius:100%; padding: 3px 9px;\" onclick=\"increaseQuantity()\"
+                                        style=\" border-radius:100%; padding: 3px 9px;\" name=\"increase\" onclick=\"increaseQuantity()\"
                                         value=&#43; />
                                         </td>
     
                                         <td class=\"tg-even item-price\">$totalprice</td>
                                         <td class=\"tg-even\"><input type=\"button\" class=\"btn btn-primary\"
-                                        style=\" border-radius:100%; padding: 3px 10px;\" onclick=\"deleteItem()\" value=\"×\" />
+                                        style=\" border-radius:100%; padding: 3px 10px;\" name=\"delete\" onclick=\"deleteItem()\" value=\"×\" />
                                         </td>
                                     </tr>
                                     ";

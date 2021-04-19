@@ -7,6 +7,8 @@
 include_once 'productClass.php';
 session_start();
 
+//TODO: get prices from data file. Dont hardcode
+
 if(empty($_SESSION['cart'])){
 
     //creating objects for every item
@@ -35,6 +37,8 @@ if(empty($_SESSION['cart'])){
 }
 
 $quantity = $_POST["quantity"];
+
+// TODO: before writing to the file and changing qty, check if the quantities are all the same in file and array. if they are, ignore, if they arent, update the quantities in array
 
 if (isset($_POST['1'])){
     $_SESSION['cart'][0] -> set_quantity($_SESSION['cart'][0] -> get_quantity() + $quantity);
@@ -82,6 +86,7 @@ $_SESSION['productcart'] = "..\TextFiles\productCart.txt";
 $file = $_SESSION['productcart'];
 
 $filedirect = fopen($file, "w+") or die("cannot open file");
+
 
 for($i = 0; $i < 19; $i++){
     $productInfo = $_SESSION['cart'][$i] -> get_itemnumber() ."\t". $_SESSION['cart'][$i] -> get_item() . "\t" . $_SESSION['cart'][$i] -> get_price() . "\t" . $_SESSION['cart'][$i] -> get_quantity() . "\t" . $_SESSION['cart'][$i] -> get_image() . "\n";
