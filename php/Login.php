@@ -47,7 +47,7 @@ ini_set('display_errors', 1);
 
 <body class="loginbody">
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <a class="navbar-brand" href="Main Page.html">Online Grocery Store</a>
+        <a class="navbar-brand" href="..\html\Main Page.html">Online Aisles</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -58,14 +58,14 @@ ini_set('display_errors', 1);
                         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aisles</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="Product links/fruits.html" target="_self">Fruits</a>
-                            <a class="dropdown-item" href="Product links/Vegetables.html" target="_self">Vegetables</a>
-                            <a class="dropdown-item" href="Product links/meats and poultry.html" target="_self">
+                            <a class="dropdown-item" href="..\html\Product links/fruits.html" target="_self">Fruits</a>
+                            <a class="dropdown-item" href="..\html\Product links/Vegetables.html" target="_self">Vegetables</a>
+                            <a class="dropdown-item" href="..\html\Product links/meats and poultry.html" target="_self">
                                 Meats and Poultry </a>
-                            <a class="dropdown-item" href="Product links/seafood.html" target="_self">Seafood </a>
-                            <a class="dropdown-item" href="Product links/dairy and eggs.html" target="_self">Dairy
+                            <a class="dropdown-item" href="..\html\Product links/seafood.html" target="_self">Seafood </a>
+                            <a class="dropdown-item" href="..\html\Product links/dairy and eggs.html" target="_self">Dairy
                                 and Eggs </a>
-                            <a class="dropdown-item" href="Product links/cereal products.html" target="_self">Cereal
+                            <a class="dropdown-item" href="..\html\Product links/cereal products.html" target="_self">Cereal
                                 Products </a>
                         </div>
                 </li>
@@ -76,8 +76,8 @@ ini_set('display_errors', 1);
 
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
                             <a class="dropdown-item" href="..\php\userList.php" target="_self">User List</a>
-                            <a class="dropdown-item" href="Productlist.html" target="_self"> Product list </a>
-                            <a class="dropdown-item" href="Back end\Order-list.html" target="_self">Order List </a>
+                            <a class="dropdown-item" href="..\php\productList.php" target="_self"> Product list </a>
+                            <a class="dropdown-item" href="..\php\orderlist.php" target="_self">Order List </a>
                         </div>
                 </li>
                 <li class="nav-item">
