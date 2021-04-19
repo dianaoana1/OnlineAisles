@@ -1,5 +1,6 @@
 <?php
 session_start();
+include_once 'addtocart.php';
 ?>
 
 <!DOCTYPE html>
