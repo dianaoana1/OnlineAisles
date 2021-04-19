@@ -63,8 +63,8 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
 
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
                             <a class="dropdown-item" href="userList.php" target="_self">User List</a>
-                            <a class="dropdown-item" href="..\html\Productlist.html" target="_self"> Product list </a>
-                            <a class="dropdown-item" href="..\html\Back end\Order-list.html" target="_self">Order List </a>
+                            <a class="dropdown-item" href="productList.php" target="_self"> Product list </a>
+                            <a class="dropdown-item" href="orderList.php" target="_self">Order List </a>
                         </div>
                 </li>
                 <li class="nav-item">
