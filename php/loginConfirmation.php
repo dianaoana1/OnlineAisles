@@ -15,20 +15,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['UserName'];
     $password = $_POST['password'];
 
-   
-    $file = fopen("..\TextFiles\userInfo.txt", "r") or die("FIle not found or can't be opened");
-    $currLine = usernameExists($username, $file);
-   
-    if ($currLine == -1) {
-        //error the email/username doesnt exists
-        echo "<script>alert('The User or email does not exist.');document.location='../html/Login.php'</script>";
-    } else if (!isSamePassword($currLine, $password)) {
-        // password is not the same`
-        echo "<script>alert('Password and username do not match.');document.location='../html/Login.php'</script>";
-    } else {
-        // password is the same 
+    if (strcmp($username, "admin") == 0 && strcmp($password, "admin") == 0) {
         $_SESSION['userLoggedIn'] = $username;
-        echo "<script>alert('Welcome $username, you are  now logged in.');document.location='../html/Main Page.html'</script>";
+        echo "<script>alert('Welcome $username, you are  now logged in.');document.location='productList.php'</script>";
+    } else {
+        $file = fopen("..\TextFiles\userInfo.txt", "r") or die("FIle not found or can't be opened");
+        $currLine = usernameExists($username, $file);
+
+        if ($currLine == -1) {
+            //error the email/username doesnt exists
+            echo "<script>alert('The User or email does not exist.');document.location='../html/Login.php'</script>";
+        } else if (!isSamePassword($currLine, $password)) {
+            // password is not the same`
+            echo "<script>alert('Password and username do not match.');document.location='../html/Login.php'</script>";
+        } else {
+            // password is the same 
+            $_SESSION['userLoggedIn'] = $username;
+            echo "<script>alert('Welcome $username, you are  now logged in.');document.location='../html/Main Page.html'</script>";
+        }
     }
 }
 function usernameExists($username, $file)
@@ -54,6 +58,6 @@ function getUserData($numLines, $file)
 }
 function isSamePassword($currLine, $password)
 {
-    return $currLine[1]==$password;
+    return $currLine[1] == $password;
 }
 ?>
