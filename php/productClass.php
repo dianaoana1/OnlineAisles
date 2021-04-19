@@ -1,11 +1,11 @@
 <?php
 class Item
 {
-    $itemnumber;
-    $item;
-    $price;
-    $quantity;
-    $image;
+    protected $itemnumber;
+    protected $item;
+    protected $price;
+    protected $quantity;
+    protected $image;
 
     function __construct($itemnumber, $item, $price, $quantity, $image)
     {
@@ -16,7 +16,7 @@ class Item
         $this->image = $image;
     }
 
-    function set_itemnumber($itemnumber)
+    public function set_itemnumber($itemnumber)
     {
         $this->itemnumber = $itemnumber;
     }
@@ -46,12 +46,12 @@ class Item
         return $this->price;
     }
 
-    function set_quantity($quantity)
+    public function set_quantity($quantity)
     {
         $this->quantity = $quantity;
     }
 
-    function get_quantity()
+    public function get_quantity()
     {
         return $this->quantity;
     }

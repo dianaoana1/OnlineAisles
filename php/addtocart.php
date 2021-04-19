@@ -3,13 +3,17 @@
 //include_once 'php\productClass.php';
 // creating array of objects
 
-session_start();
-include 'productClass.php';
 
+include_once 'productClass.php';
+session_start();
+error_reporting(~0);
+ini_set('display_errors', 1);
+
+$apple = new Item(1, "apple", 0.89, 0, "../../Images/apple.png");
 if(empty($_SESSION['cart'])){
 
-    // creating objects for every item
-    $apple = new item(1, "apple", 0.89, 0, "../../Images/apple.png");
+    //creating objects for every item
+    $apple = new Item(1, "apple", 0.89, 0, "../../Images/apple.png");
     $banana = new item(2, "banana", 0.33, 0, "../../Images/banana.jpg");
     $bread = new item(3, "bread", 1.69, 0, "../../Images/bread.jpg");
     $broccoli = new item(4, "broccoli", 3,49, 0, "../../Images/brocco.jpg");
@@ -36,44 +40,47 @@ if(empty($_SESSION['cart'])){
 $quantity = $_POST["quantity"];
 
 if (isset($_POST['1'])){
-    $_SESSION['cart'][0].set_quantity($_SESSION['cart'][0].get_quantity() + $quantity);
-} else if (isset($_POST['2'])){
-    $_SESSION['cart'][1].set_quantity($_SESSION['cart'][1].get_quantity() + $quantity);
-} else if (isset($_POST['3'])){
-    $_SESSION['cart'][2].set_quantity($_SESSION['cart'][2].get_quantity() + $quantity);
-} else if (isset($_POST['4'])){
-    $_SESSION['cart'][3].set_quantity($_SESSION['cart'][3].get_quantity() + $quantity);
-} else if (isset($_POST['5'])){
-    $_SESSION['cart'][4].set_quantity($_SESSION['cart'][4].get_quantity() + $quantity);
-} else if (isset($_POST['6'])){
-    $_SESSION['cart'][5].set_quantity($_SESSION['cart'][5].get_quantity() + $quantity);
-} else if (isset($_POST['7'])){
-    $_SESSION['cart'][6].set_quantity($_SESSION['cart'][6].get_quantity() + $quantity);
-} else if (isset($_POST['8'])){
-    $_SESSION['cart'][7].set_quantity($_SESSION['cart'][7].get_quantity() + $quantity);
-} else if (isset($_POST['9'])){
-    $_SESSION['cart'][8].set_quantity($_SESSION['cart'][8].get_quantity() + $quantity);
-} else if (isset($_POST['10'])){
-    $_SESSION['cart'][9].set_quantity($_SESSION['cart'][9].get_quantity() + $quantity);
-} else if (isset($_POST['11'])){
-    $_SESSION['cart'][10].set_quantity($_SESSION['cart'][10].get_quantity() + $quantity);
-} else if (isset($_POST['12'])){
-    $_SESSION['cart'][11].set_quantity($_SESSION['cart'][11].get_quantity() + $quantity);
-} else if (isset($_POST['13'])){
-    $_SESSION['cart'][12].set_quantity($_SESSION['cart'][12].get_quantity() + $quantity);
-} else if (isset($_POST['14'])){
-    $_SESSION['cart'][13].set_quantity($_SESSION['cart'][13].get_quantity() + $quantity);
-} else if (isset($_POST['15'])){
-    $_SESSION['cart'][14].set_quantity($_SESSION['cart'][14].get_quantity() + $quantity);
-} else if (isset($_POST['16'])){
-    $_SESSION['cart'][15].set_quantity($_SESSION['cart'][15].get_quantity() + $quantity);
-} else if (isset($_POST['17'])){
-    $_SESSION['cart'][16].set_quantity($_SESSION['cart'][16].get_quantity() + $quantity);
-} else if (isset($_POST['18'])){
-    $_SESSION['cart'][17].set_quantity($_SESSION['cart'][17].get_quantity() + $quantity);
-} else{
-    $_SESSION['cart'][18].set_quantity($_SESSION['cart'][18].get_quantity() + $quantity);
-}
+    $_SESSION['cart'][0] -> set_quantity($_SESSION['cart'][0] -> get_quantity() + $quantity);
+} 
+//else if (isset($_POST['2'])){
+//     $_SESSION['cart'][1].set_quantity($_SESSION['cart'][1].get_quantity() + $quantity);
+// } else if (isset($_POST['3'])){
+//     $_SESSION['cart'][2].set_quantity($_SESSION['cart'][2].get_quantity() + $quantity);
+// } else if (isset($_POST['4'])){
+//     $_SESSION['cart'][3].set_quantity($_SESSION['cart'][3].get_quantity() + $quantity);
+// } else if (isset($_POST['5'])){
+//     $_SESSION['cart'][4].set_quantity($_SESSION['cart'][4].get_quantity() + $quantity);
+// } else if (isset($_POST['6'])){
+//     $_SESSION['cart'][5].set_quantity($_SESSION['cart'][5].get_quantity() + $quantity);
+// } else if (isset($_POST['7'])){
+//     $_SESSION['cart'][6].set_quantity($_SESSION['cart'][6].get_quantity() + $quantity);
+// } else if (isset($_POST['8'])){
+//     $_SESSION['cart'][7].set_quantity($_SESSION['cart'][7].get_quantity() + $quantity);
+// } else if (isset($_POST['9'])){
+//     $_SESSION['cart'][8].set_quantity($_SESSION['cart'][8].get_quantity() + $quantity);
+// } else if (isset($_POST['10'])){
+//     $_SESSION['cart'][9].set_quantity($_SESSION['cart'][9].get_quantity() + $quantity);
+// } else if (isset($_POST['11'])){
+//     $_SESSION['cart'][10].set_quantity($_SESSION['cart'][10].get_quantity() + $quantity);
+// } else if (isset($_POST['12'])){
+//     $_SESSION['cart'][11].set_quantity($_SESSION['cart'][11].get_quantity() + $quantity);
+// } else if (isset($_POST['13'])){
+//     $_SESSION['cart'][12].set_quantity($_SESSION['cart'][12].get_quantity() + $quantity);
+// } else if (isset($_POST['14'])){
+//     $_SESSION['cart'][13].set_quantity($_SESSION['cart'][13].get_quantity() + $quantity);
+// } else if (isset($_POST['15'])){
+//     $_SESSION['cart'][14].set_quantity($_SESSION['cart'][14].get_quantity() + $quantity);
+// } else if (isset($_POST['16'])){
+//     $_SESSION['cart'][15].set_quantity($_SESSION['cart'][15].get_quantity() + $quantity);
+// } else if (isset($_POST['17'])){
+//     $_SESSION['cart'][16].set_quantity($_SESSION['cart'][16].get_quantity() + $quantity);
+// } else if (isset($_POST['18'])){
+//     $_SESSION['cart'][17].set_quantity($_SESSION['cart'][17].get_quantity() + $quantity);
+// } else{
+//     $_SESSION['cart'][18].set_quantity($_SESSION['cart'][18].get_quantity() + $quantity);
+// }
+
+echo "hi<br>";
 
 ?>
 <!DOCTYPE html>
