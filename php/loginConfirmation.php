@@ -24,14 +24,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($currLine == -1) {
             //error the email/username doesnt exists
-            echo "<script>alert('The User or email does not exist.');document.location='../html/Login.php'</script>";
+            echo "<script>alert('The User or email does not exist.');document.location='Login.php'</script>";
         } else if (!isSamePassword($currLine, $password)) {
             // password is not the same`
-            echo "<script>alert('Password and username do not match.');document.location='../html/Login.php'</script>";
+            echo "<script>alert('Password and username do not match.');document.location='Login.php'</script>";
         } else {
             // password is the same 
             $_SESSION['userLoggedIn'] = $username;
-            echo "<script>alert('Welcome $username, you are  now logged in.');document.location='../html/Main Page.html'</script>";
+            echo "<script>alert('Welcome $username, you are  now logged in.');document.location='Main Page.php'</script>";
         }
     }
 }
