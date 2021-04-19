@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html>
-
-<body>
 <?php
 class Item
 {
