@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +27,7 @@
 
 <body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
-        <a class="navbar-brand" href="..\Main Page.html">Online Grocery Store</a>
+        <a class="navbar-brand" href="..\Main Page.html">Online Aisles</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -59,7 +63,7 @@
                         </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="..\Login.php">Login / Sign up</a>
+                    <a class="nav-link" href="..\..\php\Login.php">Login / Sign up</a>
                 </li>
                 <li class="nav-item">
                 <li class="nav-item dropdown">
@@ -89,7 +93,7 @@
             <p>
                 WARNING: Once an account has been deleted, change cannot be reverted.
             </p>
-            <a type="text" name="yes-button" class="btn btn-primary" style="color: white !important;">YES</a>
+            <a type="text" name="yes-button" class="btn btn-primary" href = "..\..\php\deleteAccount.php" style="color: white !important;">YES</a>
             <a type="text" name="no-button" class="btn btn-primary" href = "..\Main Page.html" style="color: white !important;">NO</a>
             </p>
         </div>

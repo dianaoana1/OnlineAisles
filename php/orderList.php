@@ -1,8 +1,15 @@
+<?php
+if(!isset($_SESSION)) {
+    session_start();
+}
+require 'orderListFunctions.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Home - Online Grocery Store</title>
+    <title>Home - Online Aisles</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -27,7 +34,7 @@
 
 <body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
-        <a class="navbar-brand" href="..\Main Page.html">Online Grocery Store</a>
+        <a class="navbar-brand" href="..\Main Page.html">Online Aisles</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -62,12 +69,20 @@
 
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
                             <a class="dropdown-item" href="..\..\php\userList.php" target="_self">User List</a>
-                            <a class="dropdown-item" href="..\Productlist.html" target="_self"> Product list </a>
+                            <a class="dropdown-item" href="..\..\php\productList.php" target="_self"> Product list </a>
                             <a class="dropdown-item" href="Order-list.html" target="_self">Order List </a>
                         </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="..\Login.html" target="_blank">Login / Sign up</a>
+                <?php
+                    if (isset($_SESSION['userLoggedIn'])){?>
+                        <a class="nav-link" href="logout.php" target="_blank">Logout</a><?php
+                    }
+                    else{?>
+                        <a class="nav-link" href="Login.php" target="_blank">Login / Sign up</a>
+                    <?php
+                    }
+                    ?>
                 </li>
                 <li class="nav-item">
                 <li class="nav-item dropdown">
@@ -93,7 +108,9 @@
             href="Order-list.html">Save Changes</a>
         </div>
         <div class="order-table" style="overflow-x:auto;">
-            <table class="tg" id="orderTable">
+            
+
+            <!--<table class="tg" id="orderTable">
                 <thead>
                     <tr>
                         <th class="tg-header">Order Number</th>
@@ -159,29 +176,18 @@
                 </tbody>
             </table>
         </div>
-
         <div class="list-buttons">
-            <!-- <a type="text" id="add-button" style="font-weight: bold;" class="btn btn-primary" href="add-order.html"
-                onclick="addRow()">Add
-                New Order</a> -->
-
             <a type="text" id="add-button" style="font-weight: bold;" class="btn btn-primary" href="#"
                 onclick="addRow()">Add
                 New Order</a>
 
-            <!-- <button id="add-button" style="font-weight: bold;color:whitesmoke;" class="btn btn-primary"
-                onclick="addRow();">Add New Order</button> -->
-
             <a type="text" id="edit-button" style="font-weight: bold;" class="btn btn-primary"
                 href="#" onclick = "editSelectedRows()">Edit Order</a>
-
-            <!-- <a type="text" id="edit-button" style="font-weight: bold;" class="btn btn-primary"
-                href="edit-order.html" onclick = "editSelectedRows()">Edit Order</a> -->
 
             <a type="text" id="delete-button" style="font-weight: bold;" class="btn btn-primary" href="#"
                 onclick="deleteSelectedRows()">Delete
                 Order</a>
-        </div>
+        </div>-->
     </div>
     <div style="clear: both"></div>
     <div style="clear: both"></div>

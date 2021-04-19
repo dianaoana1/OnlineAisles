@@ -1,11 +1,12 @@
-
-
+<?php
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Home - Online Grocery Store</title>
+    <title>Home - Online Aisles</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -31,7 +32,7 @@
 <body>
     <div id="mega-container">
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-            <a class="navbar-brand" href="Main Page.html">Online Grocery Store</a>
+            <a class="navbar-brand" href="Main Page.php">Online Aisles</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -43,18 +44,18 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aisles</a>
 
                             <div class="dropdown-menu" aria-labelledby="dropdown03">
-                                <a class="dropdown-item" href="Product links/fruits.html" target="_self">Fruits
+                                <a class="dropdown-item" href="..\html\Product links/fruits.html" target="_self">Fruits
                                 </a>
-                                <a class="dropdown-item" href="Product links/meats and poultry.html" target="_self">
+                                <a class="dropdown-item" href="..\html\Product links/meats and poultry.html" target="_self">
                                     Meats
                                     and Poultry </a>
-                                <a class="dropdown-item" href="Product links/seafood.html" target="_self">Seafood </a>
-                                <a class="dropdown-item" href="Product links/dairy and eggs.html" target="_self">Dairy
+                                <a class="dropdown-item" href="..\html\Product links/seafood.html" target="_self">Seafood </a>
+                                <a class="dropdown-item" href="..\html\Product links/dairy and eggs.html" target="_self">Dairy
                                     and
                                     Eggs </a>
-                                <a class="dropdown-item" href="Product links/cereal products.html" target="_self">Cereal
+                                <a class="dropdown-item" href="..\html\Product links/cereal products.html" target="_self">Cereal
                                     Products </a>
-                                <a class="dropdown-item" href="Product links/Vegetables.html" target="_self">Vegetables
+                                <a class="dropdown-item" href="..\html\Product links/Vegetables.html" target="_self">Vegetables
                                 </a>
                             </div>
                         </div>
@@ -66,12 +67,20 @@
 
                             <div class="dropdown-menu" aria-labelledby="dropdown03">
                                 <a class="dropdown-item" href="userList.php" target="_self">User List</a>
-                                <a class="dropdown-item" href="Productlist.html" target="_self"> Product list </a>
-                                <a class="dropdown-item" href="Back end/Order-list.html" target="_self">Order List </a>
+                                <a class="dropdown-item" href="productList.php" target="_self"> Product list </a>
+                                <a class="dropdown-item" href="orderList.php" target="_self">Order List </a>
                             </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link Login" href="Login.php">Login / Sign up</a>
+                    <?php
+                    if (isset($_SESSION['userLoggedIn'])){?>
+                        <a class="nav-link" href="logout.php" target="_blank">Logout</a><?php
+                    }
+                    else{?>
+                        <a class="nav-link" href="Login.php" target="_blank">Login / Sign up</a>
+                    <?php
+                    }
+                    ?>
                     </li>
                     <li class="nav-item">
                     <li class="nav-item-dropdown">
@@ -79,19 +88,19 @@
                             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#9881;</a>
                             <div class="dropdown-menu" aria-labelledby="dropdown03">
-                                <a class="dropdown-item" href="Back end\change password.html"> Change
+                                <a class="dropdown-item" href="..\html\Back end\change password.html"> Change
                                     Password</a>
-                                <a class="dropdown-item" href="Back end\account-info.html" target="_self"> Account
+                                <a class="dropdown-item" href="..\html\Back end\account-info.html" target="_self"> Account
                                     Info</a></a>
-                                <a class="dropdown-item" href="Back end\delete-user.html">Delete Account</a>
-                                <a class="dropdown-item" href="logout.html">Log Out</a>
+                                <a class="dropdown-item" href="..\html\Back end\delete-user.php">Delete Account</a>
+                                <a class="dropdown-item" href="..\html\logout.html">Log Out</a>
                             </div>
                         </div>
                     </li>
                     </li>
                 </ul>
                 <div class="shopping-cart-holder">
-                    <a class="nav-link-shopping-cart" href="shopping_cart.html" target="_self">&#128722; </a>
+                    <a class="nav-link-shopping-cart" href="..\html\shopping_cart.html" target="_self">&#128722; </a>
                 </div>
             </div>
         </nav>
@@ -101,9 +110,9 @@
                 <div class="bg">
                     <img src="..\Images\crops.jpg" alt="Crops" width="100%">
                     <!--https://www.google.com/url?sa=i&url=https%3A%2F%2Ffarm-advisory.eu%2Fen%2F&psig=AOvVaw3D46mh3g8TE0I6zFbuL6eU&ust=1615056545189000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPja0dLome8CFQAAAAAdAAAAABAD-->
-                    <!-- <img src="..\Images\grocery store.jpg" alt="shopping cart picture" width="100%"> https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.zerotothree.org%2Fresources%2F2225-got-math-20-tips-for-making-your-trip-to-the-grocery-store-count&psig=AOvVaw0n5vjWS-6vEW48RzSxtzGd&ust=1615054877836000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIDJ2b7ime8CFQAAAAAdAAAAABBQ -->
+                    <!-- <img src="..\Images\Aisles.jpg" alt="shopping cart picture" width="100%"> https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.zerotothree.org%2Fresources%2F2225-got-math-20-tips-for-making-your-trip-to-the-grocery-store-count&psig=AOvVaw0n5vjWS-6vEW48RzSxtzGd&ust=1615054877836000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIDJ2b7ime8CFQAAAAAdAAAAABBQ -->
                     <div class="overlay-text">
-                        <h2>Welcome to the <em>Online Grocery Store</em> !</h2>
+                        <h2>Welcome to the <em>Online Aisles</em> !</h2>
                         <h5>Our grocery store has fresh food with free shipping on all orders </h5>
                     </div>
                 </div>
@@ -111,7 +120,7 @@
                 <div class="img-container">
                     <div class="text">
                         <h4 style="color:rgb(59, 50, 28);">Our motto is that the customer always comes first </h4>
-                        <p style="color:rgb(73, 61, 34); font-weight: bold">The online grocery store has been opened
+                        <p style="color:rgb(73, 61, 34); font-weight: bold">Online Aisles has been opened
                             since
                             2020 is one of the fastest growing companies in Canada</p>
                     </div>
@@ -125,28 +134,28 @@
                         <h3 style="text-align: center;"> Quick links:</h3>
                         <div class="row" style="width: 100%;text-align: center !important;">
                             <p class="col" id="col-fruits">
-                                <a class="nav-link" href="Product links/fruits.html" target="_self">
+                                <a class="nav-link" href="..\html\Product links/fruits.html" target="_self">
                                     Fruits</a>
                             </p>
                             <p class="col" id="col-veg">
-                                <a class="nav-link" href="Product links/Vegetables.html" target="_self">
+                                <a class="nav-link" href="..\html\Product links/Vegetables.html" target="_self">
 
                                     Vegetables</a>
                             </p>
                             <p class="col" id="col-egg">
-                                <a class="nav-link" href="Product links/dairy and eggs.html" target="_self">Dairy and
+                                <a class="nav-link" href="..\html\Product links/dairy and eggs.html" target="_self">Dairy and
                                     Eggs</a>
                             </p>
                             <p class="col" id="col-meat">
-                                <a class="nav-link" href="Product links/meats and poultry.html" target="_self">Meat and
+                                <a class="nav-link" href="..\html\Product links/meats and poultry.html" target="_self">Meat and
                                     Poultry</a>
                             </p>
                             <p class="col" id="col-sea">
-                                <a class="nav-link" href="Product links/seafood.html" target="_self">Fish and
+                                <a class="nav-link" href="..\html\Product links/seafood.html" target="_self">Fish and
                                     Seafood</a>
                             </p>
                             <p class="col" id="col-cer">
-                                <a class="nav-link" href="Product links/cereal products.html" target="_self">Cereal
+                                <a class="nav-link" href="..\html\Product links/cereal products.html" target="_self">Cereal
                                     Products</a>
                             </p>
 
@@ -337,5 +346,6 @@
 
 
             -->
+            <!--Need to somehow get all the currPrice of the items in there as php and then call the function in js to affect the elements-->
 
 </html>
