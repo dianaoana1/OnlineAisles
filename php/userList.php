@@ -76,25 +76,13 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
                         <a class="nav-link" href="Login.php" target="_blank">Login / Sign up</a>
                     <?php
                     }
-                    ?>
-                    
+                    ?>     
                 </li>
                 <li class="nav-item">
-                <li class="nav-item dropdown">
-                    <div class="dropdown show">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#9881;</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown03">
-                        <a class="dropdown-item" href="..\html\Back end\change password.html" target="_blank"> Change
-                                Password</a>
-                            <a class="dropdown-item" href="..\html\Back end\account-info.html" target="_self"> Account
-                                Info</a></a>
-                            <a class="dropdown-item" href="..\html\Back end\delete-user.html" target="_blank">Delete Account</a>
-                        </div>
-                </li>
                 </li>
             </ul>
             <div class="shopping-cart-holder">
-                <a class="nav-link shopping-cart" href="..\..\html\shopping_cart.html" target="_blank">&#128722; </a>
+                <a class="nav-link shopping-cart" href="shoppingcart.php" target="_blank">&#128722; </a>
             </div>
         </div>
     </nav>
@@ -140,7 +128,7 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
                 </li>
                 <li>
                     <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                    <p><a href="mailto:zixi.quan@concordia.ca?subject=SOEN287">online_grocerystore@groceries.ca</a></p>
+                    <p><a href="mailto:online_grocerystore@groceries.ca?subject=Customer Feedback">online_grocerystore@groceries.ca</a></p>
                 </li>
                 <li>
                     <span><i class="fa fa-smile-o" aria-hidden="true"></i></span>
