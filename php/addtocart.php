@@ -1,5 +1,6 @@
 <?php
 session_start();
+include_once 'productClass.php'
 // creating array of objects
 
 if(empty($_SESSION['cart'])){
@@ -71,8 +72,4 @@ if (isset($_POST['1'])){
     $_SESSION['cart'][18].set_quantity($_SESSION['cart'][18].get_quantity() + $quantity);
 }
 
-
-
 ?>
-
-<p>
