@@ -42,43 +42,43 @@ if (isset($_POST['1'])){
     $newqty = $_SESSION['cart'][0] -> get_quantity();
     echo "$newqty";
 } 
-//else if (isset($_POST['2'])){
-//     $_SESSION['cart'][1].set_quantity($_SESSION['cart'][1].get_quantity() + $quantity);
-// } else if (isset($_POST['3'])){
-//     $_SESSION['cart'][2].set_quantity($_SESSION['cart'][2].get_quantity() + $quantity);
-// } else if (isset($_POST['4'])){
-//     $_SESSION['cart'][3].set_quantity($_SESSION['cart'][3].get_quantity() + $quantity);
-// } else if (isset($_POST['5'])){
-//     $_SESSION['cart'][4].set_quantity($_SESSION['cart'][4].get_quantity() + $quantity);
-// } else if (isset($_POST['6'])){
-//     $_SESSION['cart'][5].set_quantity($_SESSION['cart'][5].get_quantity() + $quantity);
-// } else if (isset($_POST['7'])){
-//     $_SESSION['cart'][6].set_quantity($_SESSION['cart'][6].get_quantity() + $quantity);
-// } else if (isset($_POST['8'])){
-//     $_SESSION['cart'][7].set_quantity($_SESSION['cart'][7].get_quantity() + $quantity);
-// } else if (isset($_POST['9'])){
-//     $_SESSION['cart'][8].set_quantity($_SESSION['cart'][8].get_quantity() + $quantity);
-// } else if (isset($_POST['10'])){
-//     $_SESSION['cart'][9].set_quantity($_SESSION['cart'][9].get_quantity() + $quantity);
-// } else if (isset($_POST['11'])){
-//     $_SESSION['cart'][10].set_quantity($_SESSION['cart'][10].get_quantity() + $quantity);
-// } else if (isset($_POST['12'])){
-//     $_SESSION['cart'][11].set_quantity($_SESSION['cart'][11].get_quantity() + $quantity);
-// } else if (isset($_POST['13'])){
-//     $_SESSION['cart'][12].set_quantity($_SESSION['cart'][12].get_quantity() + $quantity);
-// } else if (isset($_POST['14'])){
-//     $_SESSION['cart'][13].set_quantity($_SESSION['cart'][13].get_quantity() + $quantity);
-// } else if (isset($_POST['15'])){
-//     $_SESSION['cart'][14].set_quantity($_SESSION['cart'][14].get_quantity() + $quantity);
-// } else if (isset($_POST['16'])){
-//     $_SESSION['cart'][15].set_quantity($_SESSION['cart'][15].get_quantity() + $quantity);
-// } else if (isset($_POST['17'])){
-//     $_SESSION['cart'][16].set_quantity($_SESSION['cart'][16].get_quantity() + $quantity);
-// } else if (isset($_POST['18'])){
-//     $_SESSION['cart'][17].set_quantity($_SESSION['cart'][17].get_quantity() + $quantity);
-// } else{
-//     $_SESSION['cart'][18].set_quantity($_SESSION['cart'][18].get_quantity() + $quantity);
-// }
+else if (isset($_POST['2'])){
+    $_SESSION['cart'][1] -> set_quantity($_SESSION['cart'][1] -> get_quantity() + $quantity);
+} else if (isset($_POST['3'])){
+    $_SESSION['cart'][2] -> set_quantity($_SESSION['cart'][2] -> get_quantity() + $quantity);
+} else if (isset($_POST['4'])){
+    $_SESSION['cart'][3] -> set_quantity($_SESSION['cart'][3] ->get_quantity() + $quantity);
+} else if (isset($_POST['5'])){
+    $_SESSION['cart'][4] -> set_quantity($_SESSION['cart'][4] -> get_quantity() + $quantity);
+} else if (isset($_POST['6'])){
+    $_SESSION['cart'][5] -> set_quantity($_SESSION['cart'][5] -> get_quantity() + $quantity);
+} else if (isset($_POST['7'])){
+    $_SESSION['cart'][6] -> set_quantity($_SESSION['cart'][6] -> get_quantity() + $quantity);
+} else if (isset($_POST['8'])){
+    $_SESSION['cart'][7] -> set_quantity($_SESSION['cart'][7] -> get_quantity() + $quantity);
+} else if (isset($_POST['9'])){
+    $_SESSION['cart'][8] -> set_quantity($_SESSION['cart'][8] -> get_quantity() + $quantity);
+} else if (isset($_POST['10'])){
+    $_SESSION['cart'][9] -> set_quantity($_SESSION['cart'][9] -> get_quantity() + $quantity);
+} else if (isset($_POST['11'])){
+    $_SESSION['cart'][10] -> set_quantity($_SESSION['cart'][10] -> get_quantity() + $quantity);
+} else if (isset($_POST['12'])){
+    $_SESSION['cart'][11] -> set_quantity($_SESSION['cart'][11] -> get_quantity() + $quantity);
+} else if (isset($_POST['13'])){
+    $_SESSION['cart'][12] -> set_quantity($_SESSION['cart'][12] -> get_quantity() + $quantity);
+} else if (isset($_POST['14'])){
+    $_SESSION['cart'][13] -> set_quantity($_SESSION['cart'][13] -> get_quantity() + $quantity);
+} else if (isset($_POST['15'])){
+    $_SESSION['cart'][14] -> set_quantity($_SESSION['cart'][14] -> get_quantity() + $quantity);
+} else if (isset($_POST['16'])){
+    $_SESSION['cart'][15] -> set_quantity($_SESSION['cart'][15] -> get_quantity() + $quantity);
+} else if (isset($_POST['17'])){
+    $_SESSION['cart'][16] -> set_quantity($_SESSION['cart'][16] -> get_quantity() + $quantity);
+} else if (isset($_POST['18'])){
+    $_SESSION['cart'][17] -> set_quantity($_SESSION['cart'][17] -> get_quantity() + $quantity);
+} else{
+    $_SESSION['cart'][18] -> set_quantity($_SESSION['cart'][18] -> get_quantity() + $quantity);
+}
 $_SESSION['productcart'] = "..\TextFiles\productCart.txt";
 $file = $_SESSION['productcart'];
 

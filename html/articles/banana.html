@@ -97,7 +97,7 @@
             </ul>
             <div class="shopping-cart-holder">
 
-                <a class="nav-link shopping-cart" href="..\shopping_cart.html" target="_blank">&#128722; </a>
+                <a class="nav-link shopping-cart" href="../../php/shoppingcart.php" target="_blank">&#128722; </a>
             </div>
         </div>
     </nav>
@@ -105,12 +105,14 @@
         <div class="products" style="height:100%">
             <div class="products_row">
                 <div class="right-side" >
-                    <h2 class ="item">Bananas</h2>
-                    <img class="image" src="../../Images/banana.jpg">
-                    <h4 class="price_banana">$0.33/un</h4>
-                    <script>productPriceSet('banana')</script>
-                    <input class="quatity" name="quantity"type="number" value="1">
-                    <a href="" id="add-to-cart" onclick="add()" name = "2" class="button add-to-cart">Add To Cart</a>
+                    <form action="../../php/addtocart.php" method = "POST">
+                        <h2 class ="item">Bananas</h2>
+                        <img class="image" src="../../Images/banana.jpg">
+                        <h4 class="price_banana">$0.33/un</h4>
+                        <script>productPriceSet('banana')</script>
+                        <input class="quatity" name="quantity"type="number" value="1">
+                        <input type="submit" id="add-to-cart" name = "2" class="button add-to-cart" value = "Add to Cart">
+                    </form>
                 </div>
                 <div class="right-side">
                     <h2>Quick description</h2>

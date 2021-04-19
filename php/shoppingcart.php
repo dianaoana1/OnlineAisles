@@ -114,14 +114,15 @@ ini_set('display_errors', 1);
                         <?php
                         if(isset($_SESSION['cart'])){
                             $count = 1;
-                            for($i=0; $i < 18; $i++){
-                                $s = (int)serialize($_SESSION['cart'][$i]);
-                                echo "<br>$s";
-                                if($s -> get_quantity() > 0){
-                                    $image = $_SESSION['cart'][$i] -> get_image();
-                                    $quantity = $_SESSION['cart'][$i] -> get_quantity();
-                                    $item = $_SESSION['cart'][$i] -> get_quantity();
-                                    $price = $_SESSION['cart'][$i] -> get_price();
+                            $file = fopen($_SESSION['productcart'], "r") or die("cannot read file productCart.txt");
+                            while(!feof($file)){
+                                $line = fgets($file);
+                                $lineArr = explode("\t",$line);
+                                if((int)$lineArr[3] > 0){
+                                    $image = $lineArr[4];
+                                    (int)$quantity = $lineArr[3];
+                                    $item = $lineArr[1];
+                                    (float)$price = $lineArr[2];
                                     $totalprice = $quantity * $price;
                                     echo "
                                     <tr class=\"cart-row\">
@@ -139,7 +140,7 @@ ini_set('display_errors', 1);
                                         value=&#43; />
                                         </td>
     
-                                        <td class=\"tg-even item-price\">$price</td>
+                                        <td class=\"tg-even item-price\">$totalprice</td>
                                         <td class=\"tg-even\"><input type=\"button\" class=\"btn btn-primary\"
                                         style=\" border-radius:100%; padding: 3px 10px;\" onclick=\"deleteItem()\" value=\"×\" />
                                         </td>
