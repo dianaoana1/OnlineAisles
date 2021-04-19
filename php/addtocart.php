@@ -88,8 +88,14 @@ $filedirect = fopen($file, "w+") or die("cannot open file");
 
 
 for($i = 0; $i < 19; $i++){
-    $productInfo = $_SESSION['cart'][$i] -> get_itemnumber() ."\t". $_SESSION['cart'][$i] -> get_item() . "\t" . $_SESSION['cart'][$i] -> get_price() . "\t" . $_SESSION['cart'][$i] -> get_quantity() . "\t" . $_SESSION['cart'][$i] -> get_image() . "\n";
-    fwrite($filedirect, $productInfo);
+    if($i != 18){
+        $productInfo = $_SESSION['cart'][$i] -> get_itemnumber() ."\t". $_SESSION['cart'][$i] -> get_item() . "\t" . $_SESSION['cart'][$i] -> get_price() . "\t" . $_SESSION['cart'][$i] -> get_quantity() . "\t" . $_SESSION['cart'][$i] -> get_image() . "\n";
+        fwrite($filedirect, $productInfo);
+    }
+    else {
+        $productInfo = $_SESSION['cart'][$i] -> get_itemnumber() ."\t". $_SESSION['cart'][$i] -> get_item() . "\t" . $_SESSION['cart'][$i] -> get_price() . "\t" . $_SESSION['cart'][$i] -> get_quantity() . "\t" . $_SESSION['cart'][$i] -> get_image();
+        fwrite($filedirect, $productInfo);
+    }
 }
 fclose($filedirect);
 

@@ -126,6 +126,7 @@ ini_set('display_errors', 1);
                 <tbody class="item-list">
                     <tr class="cart-row">
                         <?php
+                        $qtyarr = array();
                         if(isset($_SESSION['cart'])){
                             $count = 1;
                             $file = fopen($_SESSION['productcart'], "r") or die("cannot read file productCart.txt");
@@ -162,10 +163,6 @@ ini_set('display_errors', 1);
                                     $count++;
                                 }
                             }
-                        }
-
-                        if(isset($_POST['decrease'])){
-                            
                         }
 
                         ?>
