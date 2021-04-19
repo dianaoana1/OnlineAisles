@@ -97,7 +97,7 @@ if(!isset($_SESSION)) {
         </nav>
         <br>
         <div class="container" style="height: 100%;width: 100%;">
-            <p id="signin-button">Already have an onlinegorcerystore.ca account? <em><a href=Login.html>Sign in</a></em>
+            <p id="signin-button">Already have an onlinegorcerystore.ca account? <em><a href=.../php/Login.php>Sign in</a></em>
             </p>
             <!--<p id="mendatoryfield">* mentadory field</p>-->
             <p><span class="error">* mentadory fields</span></p>
