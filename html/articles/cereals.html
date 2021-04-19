@@ -96,11 +96,13 @@
         <div class="products">
             <div class="products_row">
                 <div class="right-side">
+                    <form action="../../php/addtocart.php" method = "POST">
                     <h2>Cereals</h2>
                     <img src="../../Images/cereal.jpg" width="400" height="400">
                     <h4 id="price_cereals">$4.99</h4>
                     <input type="number" name="quantity" value="1">
-                    <a onclick="add()" href="" name = "6" class="button">Add To Cart</a>
+                    <input type="submit" name = "6" class="button" value="Add to cart">
+                    </form>
                 </div>
                 <div class="right-side">
                     <h2>Quick description</h2>

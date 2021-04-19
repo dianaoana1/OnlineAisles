@@ -7,11 +7,10 @@
 include_once 'productClass.php';
 session_start();
 
-$apple = new Item(1, "apple", 0.89, 0, "../../Images/apple.png");
 if(empty($_SESSION['cart'])){
 
     //creating objects for every item
-    $apple = new Item(1, "apple", 0.89, 0, "../../Images/apple.png");
+    $apple = new Item(1, "apple", 0.89, 0, "../Images/apple.png");
     $banana = new item(2, "banana", 0.33, 0, "../../Images/banana.jpg");
     $bread = new item(3, "bread", 1.69, 0, "../../Images/bread.jpg");
     $broccoli = new item(4, "broccoli", 3.49, 0, "../../Images/brocco.jpg");

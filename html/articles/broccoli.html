@@ -100,12 +100,14 @@
             <div class="products">
                 <div class="products_row">
                     <div class="right-side">
+                        <form action="../../php/addtocart.php" method = "POST">
                         <h2>Broccoli</h2>
                         <img src="../../Images/brocco.jpg" width="400" height="400">
                         <h4 id="price_broccoli">$3.49/un</h4>
                         <script>productPriceSet('broccoli')</script>
                         <input type="number" name="quantity" value="1">
-                        <a onclick="add()" href="" name = "4"class="button">Add To Cart</a>
+                        <input type="submit" name = "4" class="button" value="Add to cart">
+                        </form>
                     </div>
                     <div class="right-side">
                         <h2>Quick description</h2>
