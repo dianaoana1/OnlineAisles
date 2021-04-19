@@ -1,3 +1,21 @@
+<?php
+session_start();
+
+require_once("../../php/getProductPricesProducts.php");
+$apple="Apple";
+$banana="Banana";
+$pear="Pear";
+$AppleCurrPrice=getPrice($apple);
+$BananaCurrPrice=getPrice($banana);
+$pearCurrPrice=getPrice($pear);
+
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +23,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meat and poultry</title>
+    <title>Fruits</title>
 
     <meta charset="utf-8">
 
@@ -14,21 +32,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="..\..\/CSS/aisles.css">
+    <link rel="stylesheet" href="../../CSS/aisles.css">
+    <script tyep="text/css" src="../../JavaScript\weeklydealsProduct.js"></script>
+    <link rel="stylesheet" href="../../CSS\Page UI.css">
     <link rel="icon" 
     type="image/png" 
     href="..\..\Images\favicon.png">
-
-    <link rel="stylesheet" href="..\..\CSS\Page UI.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
+    
 
 </head>
 
 <body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
-        <a class="navbar-brand" href="..\Main Page.html">Online Aisles</a>
+        <a class="navbar-brand" href="../Main Page.html">Online Aisles</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -61,7 +79,7 @@
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
                             <a class="dropdown-item" href="..\..\php\userList.php" target="_self">User List</a>
                             <a class="dropdown-item" href="..\..\php\productList.php" target="_self"> Product list </a>
-                            <a class="dropdown-item" href="..\back end\Order-list.html" _self">Order List </a>
+                            <a class="dropdown-item" href="..\back end\Order-list.html" target="_self">Order List </a>
                         </div>
                 </li>
                 <li class="nav-item">
@@ -90,47 +108,51 @@
             </div>
         </div>
     </nav>
-    <div class="container"style="max-width: 100%; height:100%;" >
+    <div class="container"style="max-width: 100%; height:100%;">
     <div class="aisles">
-        <div class="Categories">
-            <h4>MEATS AND POULTRY</h4>
+    <div class=Categories id="fruits"  >
+            <h1 style="background-image: url(../../Images/fruits.jpg);">FRUITS</h1>
         </div>
         <div class="format" style="margin-bottom: 200px;">
-            <a class="contour" style="text-decoration:none;" href="../articles/chicken.html"
+            <a class="contour" style="text-decoration:none;" href="../articles/banana.html"
                 title="Click for a full description">
                 <div class="article_image">
-                    <img src="..\../Images/chicken.jpg" alt="chicken picture">
+                    <img src="../../Images/banana.jpg" alt="banana picture">
                 </div>
                 <div class="article_text">
-                    <div>Whole Chicken</div>
-                    <div>$12.54</div>
+                    <div>Banana</div>
+                    <div id="price_banana">$<?php echo $BananaCurrPrice?>/un</div>
                 </div>
             </a>
 
-            <a class="contour" style="text-decoration:none;" href="../articles/ground-beef.html"
+            <a class="contour" style="text-decoration:none;" href="../articles/apple.html"
                 title="Click for a full description">
                 <div class="article_image">
-                    <img src="..\../Images/ground-beef.jpg" alt="Ground beef picture">
+                    <img src="../../Images/apple.png" alt="apple picture">
                 </div>
                 <div class="article_text">
-                    <div>Ground beef</div>
-                    <div>$1.54/100g</div>
+                    <div>Apple</div>
+                    <div id="price_apple">$<?php echo $AppleCurrPrice?>/un</div>
                 </div>
             </a>
 
-            <a class="contour" style="text-decoration:none;" href="../articles/sausages.html"
+            <a class="contour" style="text-decoration:none;" href="../articles/pear.html"
                 title="Click for a full description">
                 <div class="article_image">
-                    <img src="..\../Images/sausages.jpg" alt="Sausages picture">
+                    <img src="../../Images/pear.jpg" alt="pear picture">
                 </div>
                 <div class="article_text">
-                    <div>Pack of two sausages</div>
-                    <div>$3.75</div>
+                    <div>Pear</div>
+                    <div id="price_pear">$<?php echo $pearCurrPrice?>/un</div>
                 </div>
             </a>
+
+            
         </div>
-    </div>    
     </div>
+    </div>
+    </div>
+    <script>productPriceSet('banana','apple')</script>
     <div style="clear: both"></div>
     <div style="clear: both"></div>
     <footer>
@@ -172,7 +194,6 @@
             </ul>
         </div>
     </footer>
-
 </body>
 
 </html>

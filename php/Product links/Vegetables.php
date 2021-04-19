@@ -1,3 +1,21 @@
+<?php
+session_start();
+
+require_once("../../php/getProductPricesProducts.php");
+$broccoli="Broccoli";
+$carrots="Carrots";
+$mushrooms="Mushrooms";
+$broccoliCurrPrice=getPrice($broccoli);
+$carrotsCurrPrice=getPrice($carrots);
+$mushroomsCurrPrice=getPrice($mushrooms);
+
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +23,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fruits</title>
+    <title>Vegetables</title>
 
     <meta charset="utf-8">
 
@@ -15,15 +33,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../../CSS/aisles.css">
-    <script tyep="text/css" src="../../JavaScript\weeklydealsProduct.js"></script>
+     <script tyep="text/css" src="../../JavaScript\weeklydealsProduct.js"></script>
     <link rel="stylesheet" href="../../CSS\Page UI.css">
     <link rel="icon" 
     type="image/png" 
     href="..\..\Images\favicon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    
-
 </head>
 
 <body>
@@ -40,16 +56,17 @@
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aisles</a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="fruits.html" target="_self">Fruits</a>
+                            <a class="dropdown-item" href="fruits.html" target="_self">Fruits
+                            </a>
                             <a class="dropdown-item" href="Vegetables.html" target="_self">Vegetables </a>
-                            <a class="dropdown-item" href="meats and poultry.html" target="_self"> Meats
-                                and Poultry </a>
-                            <a class="dropdown-item" href="seafood.html" target="_self">Seafood </a>
-                            <a class="dropdown-item" href="dairy and eggs.html" target="_self">Dairy and
-                                Eggs </a>
-                            <a class="dropdown-item" href="cereal products.html" target="_self">Cereal
-                                Products </a>
-                                
+                        <a class="dropdown-item" href="meats and poultry.html" target="_self"> Meats
+                            and Poultry </a>
+                        <a class="dropdown-item" href="seafood.html" target="_self">Seafood </a>
+                        <a class="dropdown-item" href="dairy and eggs.html" target="_self">Dairy and
+                            Eggs </a>
+                        <a class="dropdown-item" href="cereal products.html" target="_self">Cereal
+                            Products </a>
+                           
                         </div>
                     </div>
                 </li>
@@ -92,49 +109,45 @@
     </nav>
     <div class="container"style="max-width: 100%; height:100%;">
     <div class="aisles">
-    <div class=Categories id="fruits"  >
-            <h1 style="background-image: url(../../Images/fruits.jpg);">FRUITS</h1>
+        <div class=Categories>
+            <h1>VEGETABLES</h1>
         </div>
         <div class="format" style="margin-bottom: 200px;">
-            <a class="contour" style="text-decoration:none;" href="../articles/banana.html"
+           
+            <a class="contour" style="text-decoration:none;" href="../articles/broccoli.html"
                 title="Click for a full description">
                 <div class="article_image">
-                    <img src="../../Images/banana.jpg" alt="banana picture">
+                    <img src="../../Images/Brocco.jpg" alt="broccoli picture">
                 </div>
                 <div class="article_text">
-                    <div>Banana</div>
-                    <div id="price_banana">$0.33/un</div>
+                    <div>Broccoli</div>
+                    <div id="price_broccoli">$<?php echo $broccoliCurrPrice?>/un</div>
                 </div>
             </a>
 
-            <a class="contour" style="text-decoration:none;" href="../articles/apple.html"
-                title="Click for a full description">
+            <a class="contour" style="text-decoration:none;" href="../Articles/carrots.html">
                 <div class="article_image">
-                    <img src="../../Images/apple.png" alt="apple picture">
+                    <img src="../../Images/carrots.jpg" alt="carrots picture">
                 </div>
                 <div class="article_text">
-                    <div>Apple</div>
-                    <div id="price_apple">$0.89/un</div>
+                    <div>Carrots</div>
+                    <div id="price_carrot">$<?php echo $carrotsCurrPrice?>/un</div>
                 </div>
             </a>
 
-            <a class="contour" style="text-decoration:none;" href="../articles/pear.html"
-                title="Click for a full description">
+            <a class="contour" style="text-decoration:none;" href="../Articles/mushrooms.html">
                 <div class="article_image">
-                    <img src="../../Images/pear.jpg" alt="pear picture">
+                    <img src="../../Images/mushrooms.jpg" alt="mushrooms picture">
                 </div>
                 <div class="article_text">
-                    <div>Pear</div>
-                    <div id="price_pear">$1.05/un</div>
+                    <div>Mushrooms</div>
+                    <div id="price_mushrooms">$<?php echo $mushroomsCurrPrice?></div>
                 </div>
             </a>
-
-            
         </div>
     </div>
     </div>
-    </div>
-    <script>productPriceSet('banana','apple')</script>
+    <script>productPriceSet('broccoli','')</script>
     <div style="clear: both"></div>
     <div style="clear: both"></div>
     <footer>

@@ -2,14 +2,14 @@
 session_start();
 
 require_once("../../php/getProductPricesProducts.php");
-$fusilli="Fusilli";
-$bread="Slice Bread";
-$cereal="Cereals";
-$rice="Rice";
-$riceCurrPrice=getPrice($rice);
-$breadCurrPrice=getPrice($bread);
-$cerealCurrPrice=getPrice($cereal);
-$fusilliCurrPrice=getPrice($fusilli);
+
+$milk="Milk";
+$eggs="Eggs";
+$cheese="Cheese";
+$milkCurrPrice=getPrice($milk);
+$eggsCurrPrice=getPrice($eggs);
+$cheeseCurrPrice=getPrice($cheese);
+
 
 
 ?>
@@ -120,7 +120,7 @@ $fusilliCurrPrice=getPrice($fusilli);
                 </div>
                 <div class="article_text">
                     <div>2L of milk</div>
-                    <div>$4.99</div>
+                    <div>$<?php echo $milkCurrPrice?></div>
                 </div>
             </a>
 
@@ -131,7 +131,7 @@ $fusilliCurrPrice=getPrice($fusilli);
                 </div>
                 <div class="article_text">
                     <div>Dozen eggs</div>
-                    <div>$2.99</div>
+                    <div>$<?php echo $eggsCurrPrice?></div>
                 </div>
             </a>
 
@@ -142,7 +142,7 @@ $fusilliCurrPrice=getPrice($fusilli);
                 </div>
                 <div class="article_text">
                     <div>Cheese</div>
-                    <div>$6.09/500g</div>
+                    <div>$<?php echo $cheeseCurrPrice?>/500g</div>
                 </div>
             </a>
         </div>

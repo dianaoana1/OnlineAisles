@@ -1,3 +1,20 @@
+<?php
+session_start();
+
+require_once("../../php/getProductPricesProducts.php");
+$lobster="Lobster";
+$salmon="Salmon";
+$shrimp="Shrimps";
+$salmonCurrPrice=getPrice($salmon);
+$lobsterCurrPrice=getPrice($lobster);
+$shrimpCurrPrice=getPrice($shrimp);
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -100,7 +117,7 @@
                 </div>
                 <div class="article_text">
                     <div>Salmon</div>
-                    <div>$6.83/200g</div>
+                    <div>$<?php echo $salmonCurrPrice?>/200g</div>
                 </div>
             </a>
 
@@ -111,7 +128,7 @@
                 </div>
                 <div class="article_text">
                     <div>Cooked lobster</div>
-                    <div>$21.35</div>
+                    <div>$<?php echo $lobsterCurrPrice?></div>
                 </div>
             </a>
 
@@ -122,7 +139,7 @@
                 </div>
                 <div class="article_text">
                     <div>Bag of shrimps</div>
-                    <div>$9.99/350g</div>
+                    <div>$<?php echo $shrimpCurrPrice?>/350g</div>
                 </div>
             </a>
 
