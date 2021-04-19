@@ -117,10 +117,10 @@ require 'orderListFunctions.php';
                 <div class="user-table" style="overflow:auto;">
                 <?php
                 if (fileIsEmpty($_SESSION['file'])) {
-                    ProcessEmptyTable();
+                    ProcessEmptyOrderTable();
                 }
                 else {
-                    ProcessUsersToTable();
+                    ProcessOrdersToTable();
                 }
             }?>
 
