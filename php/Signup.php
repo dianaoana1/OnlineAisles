@@ -190,7 +190,7 @@ if(!isset($_SESSION)) {
                             <div class="col-md">
                                 <label for="province"><span class="error">* </span>PROVINCE</label><br>
                                 <select id="province" name="province" required>
-                                    <option value="select">Select your province</option>
+                                    <option >Select your province</option>
                                     <option value="Alberta">Alberta</option>
                                     <option value="British Columbia">British Columbia</option>
                                     <option value="Manitoba">Manitoba</option>
@@ -332,7 +332,7 @@ if(!isset($_SESSION)) {
             fwrite($pw, $cellphone . "\t");
             fwrite($pw, $telephone . "\t");
             fwrite($pw, $Address . ", " . $city);
-            fwrite($pw, " " . $province . "\n");
+            fwrite($pw, ", " . $province . "\n");
             echo "<script>alert('Your information was proprely saved.')</script>";
             fclose($pw);
         }
