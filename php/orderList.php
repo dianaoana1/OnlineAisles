@@ -19,62 +19,62 @@ require 'orderListFunctions.php';
     <link rel="icon" 
     type="image/png" 
     href="..\..\Images\favicon.png">
-    <link rel="stylesheet" href="../..\CSS\Page UI.css">
-    <link rel="stylesheet" href="../..\CSS\Back end\list.css">
+    <link rel="stylesheet" href="..\CSS\Page UI.css">
+    <link rel="stylesheet" href="..\CSS\Back end\list.css" />
+    <link rel="stylesheet" href="..\CSS\Back end\user-list form.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <script src="..\..\JavaScript\OrderList.js"></script>
+    <script src="..\JavaScript\OrderList.js"></script>
     <style>
         html,body{
             margin: 0;
             height: 100%;
         }
+     
+        .notAdmin{
+            text-align: center;
+        }
+        .out-of-order{
+            max-width:70vw;
+        }
+  
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
-        <a class="navbar-brand" href="..\Main Page.html">Online Aisles</a>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark ">
+        <a class="navbar-brand" href="Main Page.php">Online Aisles</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
-
-
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
                     <div class="dropdown show">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aisles</a>
-
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aisles</a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="..\Product links/fruits.html"
-                                target="_self">Fruits</a>
-                            <a class="dropdown-item" href="..\Product links/Vegetables.html"
-                                target="_self">Vegetables</a>
-                            <a class="dropdown-item" href="..\Product links/meats and poultry.html" target="_self">
-                                Meats and Poultry </a>
-                            <a class="dropdown-item" href="..\Product links/seafood.html" target="_self">Seafood </a>
-                            <a class="dropdown-item" href="..\Product links/dairy and eggs.html" target="_self">Dairy
-                                and Eggs </a>
-                            <a class="dropdown-item" href="..\Product links/cereal products.html" target="_self">Cereal
-                                Products </a>
+                            <a class="dropdown-item" href="..\php\Product Links/fruits.php" target="_self">Fruits</a>
+                            <a class="dropdown-item" href="..\php\Product Links/Vegetables.php" target="_self">Vegetables</a>
+                            <a class="dropdown-item" href="..\php\Product Links/Meats and poultry.php" target="_self"> Meats and Poultry
+                            </a>
+                            <a class="dropdown-item" href="..\php\Product Links/seafood.php" target="_self">Seafood </a>
+                            <a class="dropdown-item" href="..\php\Product Links/dairy and eggs.php" target="_self">Dairy and Eggs </a>
+                            <a class="dropdown-item" href="..\php\Product Links/cereal products.php" target="_self">Cereal Products </a>
                         </div>
                 </li>
                 <li class="nav-item dropdown">
                     <div class="dropdown show">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Back end Pages</a>
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Back end Pages</a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="..\..\php\userList.php" target="_self">User List</a>
-                            <a class="dropdown-item" href="..\..\php\productList.php" target="_self"> Product list </a>
-                            <a class="dropdown-item" href="Order-list.html" target="_self">Order List </a>
+                            <a class="dropdown-item" href="userList.php" target="_self">User List</a>
+                            <a class="dropdown-item" href="productList.php" target="_self"> Product list </a>
+                            <a class="dropdown-item" href="orderList.php" target="_self">Order List </a>
                         </div>
                 </li>
                 <li class="nav-item">
-                <?php
+                    <?php
                     if (isset($_SESSION['userLoggedIn'])){?>
                         <a class="nav-link" href="logout.php" target="_blank">Logout</a><?php
                     }
@@ -82,23 +82,13 @@ require 'orderListFunctions.php';
                         <a class="nav-link" href="Login.php" target="_blank">Login / Sign up</a>
                     <?php
                     }
-                    ?>
+                    ?>     
                 </li>
                 <li class="nav-item">
-                <li class="nav-item dropdown">
-                    <div class="dropdown show">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#9881;</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="change password.html" target="_self"> Change Password</a>
-                            <a class="dropdown-item" href="account-info.html" target="_self"> Account Info</a></a>
-                            <a class="dropdown-item" href="delete-user.html" target="_self">Delete Account</a>
-                        </div>
-                </li>
                 </li>
             </ul>
             <div class="shopping-cart-holder">
-                <a class="nav-link shopping-cart" href="..\shopping_cart.html" target="_blank">&#128722; </a>
+                <a class="nav-link shopping-cart" href="shoppingcart.php" target="_blank">&#128722; </a>
             </div>
         </div>
     </nav>
@@ -219,7 +209,7 @@ require 'orderListFunctions.php';
                 </li>
                 <li>
                     <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                    <p><a href="mailto:zixi.quan@concordia.ca?subject=SOEN287">online_grocerystore@groceries.ca</a></p>
+                    <p><a href="mailto:online_grocerystore@groceries.ca?subject=Customer Feedback">online_grocerystore@groceries.ca</a></p>
                 </li>
                 <li>
                     <span><i class="fa fa-smile-o" aria-hidden="true"></i></span>
@@ -230,11 +220,10 @@ require 'orderListFunctions.php';
         <div class="section about-us">
             <h3>About Us</h3>
             <p>
-                At the start of 2020, the coronavirus pandemic brought on new difficulties for many people with
-                pre-existing medical conditions. Something as simple as grocery shopping was now a high risk activity
-                for those who were more succeptible to serious illnesses cause by the Covid-19 virus. Our goal is to
-                make grocery shopping safe and affordable for all Canadians so that no one is has to face food
-                insecurity in these difficult times.
+                At the start of 2020, the coronavirus pandemic brought on new difficulties for many people with pre-existing
+                medical conditions. Something as simple as grocery shopping was now a high risk activity for those who were more
+                succeptible to serious illnesses cause by the Covid-19 virus. Our goal is to make grocery shopping safe and
+                affordable for all Canadians so that no one is has to face food insecurity in these difficult times.
             </p>
             <ul class="icons">
                 <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>

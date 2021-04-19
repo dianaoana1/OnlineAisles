@@ -1,5 +1,7 @@
 <?php
-session_start();
+if(!isset($_SESSION)) {
+    session_start();
+}
 
 require_once("../../php/getProductPricesProducts.php");
 $chicken="Whole Chicken";
@@ -83,7 +85,15 @@ $sausagesCurrPrice=getPrice($sausages);
                         </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="..\..\php\Login.php" target="_blank">Login / Sign up</a>
+                <?php
+                    if (isset($_SESSION['userLoggedIn'])){?>
+                        <a class="nav-link" href="logout.php" target="_blank">Logout</a><?php
+                    }
+                    else{?>
+                        <a class="nav-link" href="Login.php" target="_blank">Login / Sign up</a>
+                    <?php
+                    }
+                    ?>   
                 </li>
                 <li class="nav-item">
                 <li class="nav-item dropdown">

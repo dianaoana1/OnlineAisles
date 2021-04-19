@@ -1,6 +1,7 @@
 <?php
-session_start();
-
+if(!isset($_SESSION)) {
+    session_start();
+}
 require_once("../../php/getProductPricesProducts.php");
 
 $milk="Milk";
@@ -59,7 +60,7 @@ $cheeseCurrPrice=getPrice($cheese);
                             <a class="dropdown-item" href="Vegetables.php" target="_self">Vegetables </a>
                             <a class="dropdown-item" href="meats and poultry.php" target="_self"> Meats
                                 and Poultry </a>
-                            <a class="dropdown-item" href="seafood.html" target="_self">Seafood </a>
+                            <a class="dropdown-item" href="seafood.php" target="_self">Seafood </a>
                             <a class="dropdown-item" href="dairy and eggs.php" target="_self">Dairy and
                                 Eggs </a>
                             <a class="dropdown-item" href="cereal products.php" target="_self">Cereal
@@ -81,7 +82,15 @@ $cheeseCurrPrice=getPrice($cheese);
                         </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="..\..\php\Login.php" target="_blank">Login / Sign up</a>
+                <?php
+                    if (isset($_SESSION['userLoggedIn'])){?>
+                        <a class="nav-link" href="logout.php" target="_blank">Logout</a><?php
+                    }
+                    else{?>
+                        <a class="nav-link" href="Login.php" target="_blank">Login / Sign up</a>
+                    <?php
+                    }
+                    ?>   
                 </li>
                 <li class="nav-item">
                 <li class="nav-item dropdown">

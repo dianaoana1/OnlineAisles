@@ -48,13 +48,13 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
                         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aisles</a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="..\html\Product links/fruits.html" target="_self">Fruits</a>
-                            <a class="dropdown-item" href="..\html\Product links/Vegetables.html" target="_self">Vegetables</a>
-                            <a class="dropdown-item" href="..\html\Product links/meats and poultry.html" target="_self"> Meats and Poultry
+                            <a class="dropdown-item" href="..\php\Product Links/fruits.php" target="_self">Fruits</a>
+                            <a class="dropdown-item" href="..\php\Product Links/Vegetables.php" target="_self">Vegetables</a>
+                            <a class="dropdown-item" href="..\php\Product Links/Meats and poultry.php" target="_self"> Meats and Poultry
                             </a>
-                            <a class="dropdown-item" href="..\html\Product links/seafood.html" target="_self">Seafood </a>
-                            <a class="dropdown-item" href="..\html\Product links/dairy and eggs.html" target="_self">Dairy and Eggs </a>
-                            <a class="dropdown-item" href="..\html\Product links/cereal products.html" target="_self">Cereal Products </a>
+                            <a class="dropdown-item" href="..\php\Product Links/seafood.php" target="_self">Seafood </a>
+                            <a class="dropdown-item" href="..\php\Product Links/dairy and eggs.php" target="_self">Dairy and Eggs </a>
+                            <a class="dropdown-item" href="..\php\Product Links/cereal products.php" target="_self">Cereal Products </a>
                         </div>
                 </li>
                 <li class="nav-item dropdown">
