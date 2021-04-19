@@ -71,7 +71,7 @@
                         <a class="nav-link" href="Login.php" target="_blank">Login / Sign up</a>
                     <?php
                     }
-                    ?>
+                ?>
                 </li>
                 <li class="nav-item">
                 <li class="nav-item dropdown">
@@ -100,6 +100,7 @@
     if (empty($_POST["havecard"]) || empty($_POST["Title"]) || empty($_POST["FirstName"]) || empty($_POST["LastName"]) || empty($_POST["UserName"]) || empty($_POST["Address"]) || empty($_POST["City"]) || empty($_POST["province"]) || empty($_POST["PostalCode"]) || empty($_POST["email"]) || empty($_POST["confirm-email"]) || empty($_POST["password"]) || empty($_POST["confirm-password"]) || empty($_POST["terms"])) {
         $missing = TRUE;
         $title = "Please Go Back";
+    }
     if ($_POST["password"] != $_POST["confirm-password"]) {
         $errorP = TRUE;
     }
