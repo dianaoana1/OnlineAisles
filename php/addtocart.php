@@ -1,7 +1,10 @@
 <?php
-session_start();
-include_once 'php\productClass.php';
+
+//include_once 'php\productClass.php';
 // creating array of objects
+
+session_start();
+include 'productClass.php';
 
 if(empty($_SESSION['cart'])){
 
@@ -75,7 +78,9 @@ if (isset($_POST['1'])){
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
+<head>
+    <title>Success!</title>
+</head>
 <body>
 <p>Item successfully added to cart!</p>
 </body>

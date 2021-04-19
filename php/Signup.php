@@ -3,6 +3,7 @@
 if(!isset($_SESSION)) {
     session_start();
 }
+require ("userListFunctions.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -324,7 +325,12 @@ if(!isset($_SESSION)) {
         if($email==$emailconfirmation&&$password==$passwordconfirmation){
             $UsingFile = "..\TextFiles\customersAccounts.txt";
             $pw = fopen($UsingFile, 'a') or die("can't find or open the file");
-            fwrite($pw, $username . "\t");
+            if (fileIsEmpty($UsingFile)){
+                fwrite($pw, $username . "\t");
+            }
+            else{
+                fwrite($pw, "\n".$username . "\t");
+            }
             fwrite($pw, $password . "\t");
             fwrite($pw, $lastname . "\t");
             fwrite($pw, $firstname . "\t");
@@ -332,7 +338,7 @@ if(!isset($_SESSION)) {
             fwrite($pw, $cellphone . "\t");
             fwrite($pw, $telephone . "\t");
             fwrite($pw, $Address . ", " . $city);
-            fwrite($pw, ", " . $province . "\n");
+            fwrite($pw, ", " . $province);
             echo "<script>alert('Your information was proprely saved.')</script>";
             fclose($pw);
         }
