@@ -104,6 +104,7 @@ $cheeseCurrPrice=getPrice($cheese);
                                 Info</a></a>
                             <a class="dropdown-item" href="..\..\html\Back end\delete-user.php" target="_blank">Delete
                                 Account</a>
+                                <a class="dropdown-item" href="..\..\html\logout.html">Log Out</a>
                         </div>
                     </div>
                 </li>
