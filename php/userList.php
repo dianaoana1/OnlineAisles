@@ -73,7 +73,7 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
                         <a class="nav-link" href="logout.php" target="_blank">Logout</a><?php
                     }
                     else{?>
-                        <a class="nav-link" href="..\html\Login.php" target="_blank">Login / Sign up</a>
+                        <a class="nav-link" href="Login.php" target="_blank">Login / Sign up</a>
                     <?php
                     }
                     ?>
@@ -102,7 +102,7 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
             <?php
             if ($_SESSION['userLoggedIn']!= "admin"){?>
             <div class = "notAdmin">
-                <h3>Sorry, this page cannot be accessed at this time.</h3><a href = "..\html\Login.php" target="_self"><h5>Log on as an administrator</a> to access full website functionality.</h5>
+                <h3>Sorry, this page cannot be accessed at this time.</h3><a href = "Login.php" target="_self"><h5>Log on as an administrator</a> to access full website functionality.</h5>
                 <br>
                 <img src="..\Images\out-of-order.png" class="out-of-order" alt="Cannot display photo">
             </div>              
