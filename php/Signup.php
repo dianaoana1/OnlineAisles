@@ -190,8 +190,8 @@ require ("userListFunctions.php");
                             </div>
                             <div class="col-md">
                                 <label for="province"><span class="error">* </span>PROVINCE</label><br>
-                                <select id="province" name="province" required>
-                                    <option >Select your province</option>
+                                <select required id="province" name="province" >
+                                    <option selected disabled value ="">Select your province</option>
                                     <option value="Alberta">Alberta</option>
                                     <option value="British Columbia">British Columbia</option>
                                     <option value="Manitoba">Manitoba</option>
@@ -316,14 +316,13 @@ require ("userListFunctions.php");
        $password = $_POST['password'];
        $passwordconfirmation = $_POST['confirm-password'];
     
-    $file=file_get_contents("..\TextFiles\customersAccounts.txt");
+    $file=file_get_contents("..\TextFiles\userInfo.txt");
 
-    //$username, $password, $lastName, $firstName, $email, $tel1, $tel2, $address
     //Checking if a customer is already signed up in the website
     if(!strstr($file, $email)&&!strstr($file,$username))
     {
         if($email==$emailconfirmation&&$password==$passwordconfirmation){
-            $UsingFile = "..\TextFiles\customersAccounts.txt";
+            $UsingFile = "..\TextFiles\userInfo.txt";
             $pw = fopen($UsingFile, 'a') or die("can't find or open the file");
             if (fileIsEmpty($UsingFile)){
                 fwrite($pw, $username . "\t");
@@ -354,53 +353,5 @@ require ("userListFunctions.php");
     }
     } 
     
-    /*$file=fopen("..\TextFiles\customersAccounts.txt","r") or die("RIP");
-    $numLines=count(file("..\TextFiles\customersAccounts.txt"));
-        $arr=array();
-        $arr=getUserData($numLines,$file);
-    for($i=0;$i<$numLines;$i++){
-        $lines=explode("\t",$arr[$i]);
-        echo"hi";
-        if($lines[11]==$username||$lines[21]==$email||$lines[24]==$password){
-            echo"hi";
-            echo '<script> alert ("Sorry, the information entered is incorrect.\n Please try again.") </script>';
-
-            echo "<script>alert('Sorry, some information is already in the database. Please create a new account.')</script>";
-            
-            
-        }
-        else
-        {
-        if($email==$emailconfirmation&&$password==$passwordconfirmation){
-            //$UsingFile = "..\TextFiles\customersAccounts.txt";
-            //$pw = fopen($UsingFile, 'a') or die("can't find or open the file");
-            fwrite($pw, "First name : " . $firstname . "\t");
-            fwrite($pw, "Last name : " . $lastname . "\t");
-            fwrite($pw, "Username : " . $username . "\t");
-            fwrite($pw, "Address : " . $Address . "\t");
-            fwrite($pw, "City : " . $City . "\t");
-            fwrite($pw, "province : " . $province . "\t");
-            fwrite($pw, "email : " . $email . "\t");
-            fwrite($pw, "password : " . $password . "\n\n");
-            echo "<script>alert('Your information was proprely saved.')</script>";
-            //fclose($pw);
-        }
-        else
-        {
-            echo "<script>alert('Sorry check again either the email or password confirmation do not correspond.')</script>";
-        }
-        }
-        }
-        fclose($file);
-    }*/
-
-
-
-
-
-   
-
-
-
-
+    
 ?>
