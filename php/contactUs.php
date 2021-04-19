@@ -40,7 +40,7 @@ session_start();
         // In this part we make a final check and if the user is a real one we will write to the log file
         if (!empty($_POST["username"]) && !empty($_POST["itemName"]) && !checkitemName($_POST["itemName"]) && !empty($_POST["orderNumber"]) && checkOrderNum($_POST["orderNumber"]) && !empty($_POST["comment"])) {
             if (!usernameExists($username)) {
-               echo "<script>alert('This username does not exist please register thank you');document.location='../html/Signup.php'</script>";
+               echo "<script>alert('This username does not exist please register thank you');document.location='../php/Signup.php'</script>";
             } else {
                 if (file_get_contents($file) !== "") {
                     fwrite($file, "\n");
@@ -50,7 +50,7 @@ session_start();
                 fwrite($file, "Item Name:" . $itemname . "\n");
                 fwrite($file, "Order Number:" . $order . "\n\n");
                 fwrite($file, $comment . "\n");
-                echo "<script>alert('Thank you for the comment we will make sure to do better have a great day ');document.location='../html/shopping_cart.html'</script>";
+                echo "<script>alert('Thank you for the comment we will make sure to do better have a great day ');document.location='../php/shoppingcart.php'</script>";
             }
         }
     }

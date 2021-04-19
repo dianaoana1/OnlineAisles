@@ -403,7 +403,7 @@ select {
 }
 
 #acc-img {
-    width: 18vw;
+    width: 17vw;
     max-height: 450px;
     height: 20vh;
     pointer-events: none;
@@ -439,7 +439,7 @@ nohover:hover{
 
 @media only screen and (device-width: 768px), only screen and (max-width: 768px) {
     #acc-img {
-        height: 20vh;
+        height: 18vh;
         width: 20vw;
        
     }

@@ -1,4 +1,3 @@
--logout from each page
 -verify the last links in php pages
 -add admin rights to userlistphp
 -get values for p2 from the database

@@ -177,30 +177,30 @@ $broccoli="Broccoli";
                 <div class="fruit-container" style="text-align: center;">
                     <h3 style="text-align: center;" id="promo"> Weekly Promotions:</h3>
                     <div class="container-fluid main-container">
-                        <div class="row dynamic-columns" id="row1">
+                        <div class="row dynamic-columns" id="row1" >
                             <div class="col" id="col-apple">
                                 <img src="..\Images\apple.png" class="nohover" id="acc-img">
-                                <p style="pointer-events:auto;">The Apples are on sale this week<a
-                                        href=../html/articles/apple.html><i> click
+                                <p >The Apples are on sale this week<a 
+                                        href=../php/articles/apple.php><i> click
                                             here</i></a> </p>
                                             <p><span class="initial-price" id="initial-price-apple">526</span> now for <?php echo $AppleCurrPrice?></p>
                             </div>
 
                             <div class="col" id="col-banana">
                                 <img src="..\Images\banana.jpg" class="nohover" id="acc-img">
-                                <p>The Bananas are on sale this week<a href=../html/articles/banana.html><i> click
+                                <p>The Bananas are on sale this week<a href=../php/articles/banana.php><i> click
                                             here</i></a> </p>
                                             <p><span class="initial-price" id="initial-price-banana">526</span> now for <?php echo $BananaCurrPrice?></p>
                             </div>
                             <div class="col" id="col-bread">
                                 <img src="..\Images\bread.jpg" class="nohover" id="acc-img">
-                                <p>The Bread is on sale this week<a href=../html/articles/bread.html><i> click
+                                <p>The Bread is on sale this week<a href=../php/articles/bread.php><i> click
                                             here</i></a> </p>
                                             <p><span class="initial-price" id="initial-price-bread">526</span> now for <?php echo $BreadCurrPrice?></p>
                             </div>
                             <div class="col" id="col-broccoli">
                                 <img src="..\Images\brocco.jpg" class="nohover" id="acc-img">
-                                <p>The Broccolis are on sale this week<a href=../html/articles/broccoli.html><i> click
+                                <p>The Broccolis are on sale this week<a href=../php/articles/broccoli.php><i> click
                                             here</i></a> </p>
                                             <p><span class="initial-price" id="initial-price-brocc">526</span> now for <?php echo $BroccoliCurrPrice?></p>
                             </div>
