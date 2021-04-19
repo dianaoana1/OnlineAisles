@@ -155,7 +155,7 @@ ini_set('display_errors', 1);
                                         value=&#43; />
                                         </td>
     
-                                        <td class=\"tg-even item-price\">$price</td>
+                                        <td id = \"price\" class=\"tg-even item-price\">$price</td>
                                         <td class=\"tg-even\"><input type=\"button\" class=\"btn btn-primary\"
                                         style=\" border-radius:100%; padding: 3px 10px;\" name=\"delete\" onclick=\"deleteItem()\" value=\"×\" />
                                         </td>
