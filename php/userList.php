@@ -11,7 +11,7 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
 <html lang="en">
 
 <head>
-    <title>Users List - Online Grocery Store</title>
+    <title>Users List - Online Aisles</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -37,7 +37,7 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
 
 <body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
-        <a class="navbar-brand" href="..\..\html\Main Page.html">Online Grocery Store</a>
+        <a class="navbar-brand" href="..\..\html\Main Page.html">Online Aisles</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -73,7 +73,7 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
                         <a class="nav-link" href="logout.php" target="_blank">Logout</a><?php
                     }
                     else{?>
-                        <a class="nav-link" href="..\html\Login.php" target="_blank">Login / Sign up</a>
+                        <a class="nav-link" href="Login.php" target="_blank">Login / Sign up</a>
                     <?php
                     }
                     ?>
@@ -102,7 +102,7 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
             <?php
             if ($_SESSION['userLoggedIn']!= "admin"){?>
             <div class = "notAdmin">
-                <h3>Sorry, this page cannot be accessed at this time.</h3><a href = "..\html\Login.php" target="_self"><h5>Log on as an administrator</a> to access full website functionality.</h5>
+                <h3>Sorry, this page cannot be accessed at this time.</h3><a href = "Login.php" target="_self"><h5>Log on as an administrator</a> to access full website functionality.</h5>
                 <br>
                 <img src="..\Images\out-of-order.png" class="out-of-order" alt="Cannot display photo">
             </div>              
