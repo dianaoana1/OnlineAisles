@@ -61,7 +61,16 @@
                   </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Login.php" target="_blank">Login / Sign up</a>
+                    <?php
+                    if (isset($_SESSION['userLoggedIn'])){?>
+                        <a class="nav-link" href="logout.php" target="_blank">Logout</a><?php
+                    }
+                    else{?>
+                        <a class="nav-link" href="Login.php" target="_blank">Login / Sign up</a>
+                    <?php
+                    }
+                    ?>
+                    
                 </li>
                 <li class="nav-item">
                 <li class="nav-item dropdown">
@@ -100,6 +109,7 @@
         </thead>
         <tbody>
           
+        
         <?php
         $product=file("..\TextFiles/productDatabase.txt");//you had linked the product database thats outside of the textFiles im not so sure if thats the one you want
         foreach ($product as $k=>$p) {
@@ -124,6 +134,9 @@
 
         </tbody>
         </table>
+
+        
+
 
         <div class = "list-buttons">
           <a type="text" name="add-product-button" style="font-weight: bold;" class="btn btn-primary" href ="addProduct.php" >Add New Product</a>
