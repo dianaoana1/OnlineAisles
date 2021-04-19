@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -89,7 +93,7 @@
             <p>
                 WARNING: Once an account has been deleted, change cannot be reverted.
             </p>
-            <a type="text" name="yes-button" class="btn btn-primary" style="color: white !important;">YES</a>
+            <a type="text" name="yes-button" class="btn btn-primary" href = "..\..\php\deleteAccount.php" style="color: white !important;">YES</a>
             <a type="text" name="no-button" class="btn btn-primary" href = "..\Main Page.html" style="color: white !important;">NO</a>
             </p>
         </div>
