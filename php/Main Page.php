@@ -110,7 +110,7 @@ $broccoli="Broccoli";
                     </li>
                 </ul>
                 <div class="shopping-cart-holder">
-                    <a class="nav-link-shopping-cart" href="..\html\shopping_cart.html" target="_self">&#128722; </a>
+                    <a class="nav-link-shopping-cart" href="shoppingcart.php" target="_self">&#128722; </a>
                 </div>
             </div>
         </nav>
