@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,13 +57,13 @@
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Back end Pages</a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="..\user-list.html" target="_self">User List</a>
+                            <a class="dropdown-item" href="..\php\userList.php" target="_self">User List</a>
                             <a class="dropdown-item" href="..\Productlist.html" target="_self"> Product list </a>
                             <a class="dropdown-item" href="..\Back end\Order-list.html" target="_self">Order List </a>
                         </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="..\Login.php">Login / Sign up</a>
+                    <a class="nav-link" href="..\html\Login.php">Login / Sign up</a>
                 </li>
                 <li class="nav-item">
                 <li class="nav-item dropdown">
@@ -89,7 +93,7 @@
             <p>
                 WARNING: Once an account has been deleted, change cannot be reverted.
             </p>
-            <a type="text" name="yes-button" class="btn btn-primary" style="color: white !important;">YES</a>
+            <a type="text" name="yes-button" class="btn btn-primary" href = "..\..\php\deleteAccount.php" style="color: white !important;">YES</a>
             <a type="text" name="no-button" class="btn btn-primary" href = "..\Main Page.html" style="color: white !important;">NO</a>
             </p>
         </div>
