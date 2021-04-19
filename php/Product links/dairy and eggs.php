@@ -77,7 +77,7 @@ $cheeseCurrPrice=getPrice($cheese);
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
                             <a class="dropdown-item" href="..\..\php\userList.php" target="_self">User List</a>
                             <a class="dropdown-item" href="..\..\php\productList.php" target="_self"> Product list </a>
-                            <a class="dropdown-item" href="..\back end\Order-list.html" target ="_self">Order List </a>
+                            <a class="dropdown-item" href="..\..\php\orderList.php" target ="_self">Order List </a>
                         </div>
                 </li>
                 <li class="nav-item">
@@ -113,7 +113,7 @@ $cheeseCurrPrice=getPrice($cheese);
             <h3>DAIRY AND EGGS</h3>
         </div>
         <div class="format" style="margin-bottom: 200px;">
-            <a class="contour" style="text-decoration:none;" href="../articles/milk.html"
+            <a class="contour" style="text-decoration:none;" href="../articles/milk.php"
                 title="Click for a full description">
                 <div class="article_image">
                     <img src="..\../Images/milk.jpg" alt="milk picture">
@@ -124,7 +124,7 @@ $cheeseCurrPrice=getPrice($cheese);
                 </div>
             </a>
 
-            <a class="contour" style="text-decoration:none;" href="../articles/eggs.html"
+            <a class="contour" style="text-decoration:none;" href="../articles/eggs.php"
                 title="Click for a full description">
                 <div class="article_image">
                     <img src="..\../Images/eggs.jpeg" alt="eggs picture">
@@ -135,7 +135,7 @@ $cheeseCurrPrice=getPrice($cheese);
                 </div>
             </a>
 
-            <a class="contour" style="text-decoration:none;" href="../articles/cheese.html"
+            <a class="contour" style="text-decoration:none;" href="../articles/cheese.php"
                 title="Click for a full description">
                 <div class="article_image">
                     <img src="..\../Images/cheese.jpg" alt="Cheese picture">

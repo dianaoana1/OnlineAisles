@@ -78,7 +78,7 @@ $mushroomsCurrPrice=getPrice($mushrooms);
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
                             <a class="dropdown-item" href="..\..\php\userList.php" target="_self">User List</a>
                             <a class="dropdown-item" href="..\..\php\productList.php" target="_self"> Product list </a>
-                            <a class="dropdown-item" href="..\back end\Order-list.html" target="_self">Order List </a>
+                            <a class="dropdown-item" href="..\..\php\orderList.php" target="_self">Order List </a>
                         </div>
                 </li>
                 <li class="nav-item">
@@ -114,7 +114,7 @@ $mushroomsCurrPrice=getPrice($mushrooms);
         </div>
         <div class="format" style="margin-bottom: 200px;">
            
-            <a class="contour" style="text-decoration:none;" href="../articles/broccoli.html"
+            <a class="contour" style="text-decoration:none;" href="../articles/broccoli.php"
                 title="Click for a full description">
                 <div class="article_image">
                     <img src="../../Images/Brocco.jpg" alt="broccoli picture">
@@ -125,7 +125,7 @@ $mushroomsCurrPrice=getPrice($mushrooms);
                 </div>
             </a>
 
-            <a class="contour" style="text-decoration:none;" href="../Articles/carrots.html">
+            <a class="contour" style="text-decoration:none;" href="../articles/carrots.php">
                 <div class="article_image">
                     <img src="../../Images/carrots.jpg" alt="carrots picture">
                 </div>
@@ -135,7 +135,7 @@ $mushroomsCurrPrice=getPrice($mushrooms);
                 </div>
             </a>
 
-            <a class="contour" style="text-decoration:none;" href="../Articles/mushrooms.html">
+            <a class="contour" style="text-decoration:none;" href="../articles/mushrooms.php">
                 <div class="article_image">
                     <img src="../../Images/mushrooms.jpg" alt="mushrooms picture">
                 </div>

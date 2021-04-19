@@ -62,7 +62,7 @@ $sausagesCurrPrice=getPrice($sausages);
                             <a class="dropdown-item" href="Vegetables.php" target="_self">Vegetables </a>
                             <a class="dropdown-item" href="meats and poultry.php" target="_self"> Meats
                                 and Poultry </a>
-                            <a class="dropdown-item" href="seafood.html" target="_self">Seafood </a>
+                            <a class="dropdown-item" href="seafood.php" target="_self">Seafood </a>
                             <a class="dropdown-item" href="dairy and eggs.php" target="_self">Dairy and
                                 Eggs </a>
                             <a class="dropdown-item" href="cereal products.php" target="_self">Cereal
@@ -79,7 +79,7 @@ $sausagesCurrPrice=getPrice($sausages);
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
                             <a class="dropdown-item" href="..\..\php\userList.php" target="_self">User List</a>
                             <a class="dropdown-item" href="..\..\php\productList.php" target="_self"> Product list </a>
-                            <a class="dropdown-item" href="..\back end\Order-list.html" _self">Order List </a>
+                            <a class="dropdown-item" href="..\..\php\orderList.php" taget="_self">Order List </a>
                         </div>
                 </li>
                 <li class="nav-item">
@@ -114,7 +114,7 @@ $sausagesCurrPrice=getPrice($sausages);
             <h4>MEATS AND POULTRY</h4>
         </div>
         <div class="format" style="margin-bottom: 200px;">
-            <a class="contour" style="text-decoration:none;" href="../articles/chicken.html"
+            <a class="contour" style="text-decoration:none;" href="../articles/chicken.php"
                 title="Click for a full description">
                 <div class="article_image">
                     <img src="..\../Images/chicken.jpg" alt="chicken picture">
@@ -125,7 +125,7 @@ $sausagesCurrPrice=getPrice($sausages);
                 </div>
             </a>
 
-            <a class="contour" style="text-decoration:none;" href="../articles/ground-beef.html"
+            <a class="contour" style="text-decoration:none;" href="../articles/ground-beef.php"
                 title="Click for a full description">
                 <div class="article_image">
                     <img src="..\../Images/ground-beef.jpg" alt="Ground beef picture">
@@ -136,7 +136,7 @@ $sausagesCurrPrice=getPrice($sausages);
                 </div>
             </a>
 
-            <a class="contour" style="text-decoration:none;" href="../articles/sausages.html"
+            <a class="contour" style="text-decoration:none;" href="../articles/sausages.php"
                 title="Click for a full description">
                 <div class="article_image">
                     <img src="..\../Images/sausages.jpg" alt="Sausages picture">

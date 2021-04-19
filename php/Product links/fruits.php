@@ -79,7 +79,7 @@ $pearCurrPrice=getPrice($pear);
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
                             <a class="dropdown-item" href="..\..\php\userList.php" target="_self">User List</a>
                             <a class="dropdown-item" href="..\..\php\productList.php" target="_self"> Product list </a>
-                            <a class="dropdown-item" href="..\back end\Order-list.html" target="_self">Order List </a>
+                            <a class="dropdown-item" href="..\..\php\orderList.php" target="_self">Order List </a>
                         </div>
                 </li>
                 <li class="nav-item">
@@ -114,7 +114,7 @@ $pearCurrPrice=getPrice($pear);
             <h1 style="background-image: url(../../Images/fruits.jpg);">FRUITS</h1>
         </div>
         <div class="format" style="margin-bottom: 200px;">
-            <a class="contour" style="text-decoration:none;" href="../articles/banana.html"
+            <a class="contour" style="text-decoration:none;" href="../articles/banana.php"
                 title="Click for a full description">
                 <div class="article_image">
                     <img src="../../Images/banana.jpg" alt="banana picture">
@@ -125,7 +125,7 @@ $pearCurrPrice=getPrice($pear);
                 </div>
             </a>
 
-            <a class="contour" style="text-decoration:none;" href="../articles/apple.html"
+            <a class="contour" style="text-decoration:none;" href="../articles/apple.php"
                 title="Click for a full description">
                 <div class="article_image">
                     <img src="../../Images/apple.png" alt="apple picture">
@@ -136,7 +136,7 @@ $pearCurrPrice=getPrice($pear);
                 </div>
             </a>
 
-            <a class="contour" style="text-decoration:none;" href="../articles/pear.html"
+            <a class="contour" style="text-decoration:none;" href="../articles/pear.php"
                 title="Click for a full description">
                 <div class="article_image">
                     <img src="../../Images/pear.jpg" alt="pear picture">

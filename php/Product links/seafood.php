@@ -74,7 +74,7 @@ $shrimpCurrPrice=getPrice($shrimp);
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
                             <a class="dropdown-item" href="..\..\php\userList.php" target="_self">User List</a>
                             <a class="dropdown-item" href="..\..\php\productList.php" target="_self"> Product list </a>
-                            <a class="dropdown-item" href="..\back end\Order-list.html" target="_self">Order List </a>
+                            <a class="dropdown-item" href="..\..\php\orderList.php" target="_self">Order List </a>
                         </div>
                 </li>
                 <li class="nav-item">
@@ -110,7 +110,7 @@ $shrimpCurrPrice=getPrice($shrimp);
             <h5>SEAFOOD</h5>
         </div>
         <div class="format" style="margin-bottom: 200px;">
-            <a class="contour" style="text-decoration:none;" href="../articles/salmon.html"
+            <a class="contour" style="text-decoration:none;" href="../articles/salmon.php"
                 title="Click for a full description">
                 <div class="article_image">
                     <img src="..\../Images/salmon.jpg" alt="salcon picture">
@@ -121,7 +121,7 @@ $shrimpCurrPrice=getPrice($shrimp);
                 </div>
             </a>
 
-            <a class="contour" style="text-decoration:none;" href="../articles/lobster.html"
+            <a class="contour" style="text-decoration:none;" href="../articles/lobster.php"
                 title="Click for a full description">
                 <div class="article_image">
                     <img src="..\../Images/lobster.jpg" alt="Cooked lobster picture">
@@ -132,7 +132,7 @@ $shrimpCurrPrice=getPrice($shrimp);
                 </div>
             </a>
 
-            <a class="contour" style="text-decoration:none;" href="../articles/shrimps.html"
+            <a class="contour" style="text-decoration:none;" href="../articles/shrimps.php"
                 title="Click for a full description">
                 <div class="article_image">
                     <img src="..\../Images/shrimp.jpg" alt="Shrimps picture">
