@@ -1,3 +1,12 @@
+<?php 
+session_start();
+require_once("../../php/getProductPricesProducts.php");
+$product="Rice";
+$productCurrPrice=getPrice($product);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +14,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salmon</title>
+    <title>Rice</title>
 
     <meta charset="utf-8">
 
@@ -23,6 +32,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <script type = "text/javascript" src = "..\..\JavaScript\cart.js" async></script>
+
 
 </head>
 
@@ -42,7 +52,7 @@
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
                             <a class="dropdown-item" href="../Product links/fruits.html"
                                 target="_self">Fruits</a>
-                                <a class="dropdown-item" href="../Product links/Vegetables.html"
+                            <a class="dropdown-item" href="../Product links/Vegetables.html"
                                 target="_self">Vegetables</a>
                             <a class="dropdown-item" href="../Product links/meats and poultry.html" target="_self">
                                 Meats
@@ -51,7 +61,8 @@
                             <a class="dropdown-item" href="../Product links/dairy and eggs.html" target="_self">Dairy
                                 and
                                 Eggs </a>
-                            <a class="dropdown-item" href="../Product links/cereal products.html" target="_self">Cereal
+                            <a class="dropdown-item" href="../Product links/cereal products.html.html"
+                                target="_self">Cereal
                                 Products </a>
                         </div>
                     </div>
@@ -64,7 +75,7 @@
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
                             <a class="dropdown-item" href="..\..\php\userList.php" target="_self">User List</a>
                             <a class="dropdown-item" href="..\..\php\productList.php" target="_self"> Product list </a>
-                            <a class="dropdown-item" href="..\back end\Order-list.html" _self">Order List </a>
+                            <a class="dropdown-item" href="..\back end\Order-list.html">Order List </a>
                         </div>
                 </li>
                 <li class="nav-item">
@@ -89,7 +100,7 @@
             </ul>
             <div class="shopping-cart-holder">
 
-                <a class="nav-link shopping-cart" href="../../php/shoppingcart.php" target="_blank">&#128722; </a>
+                <a onclick="add()" class="nav-link shopping-cart" href="../../php/shoppingcart.php" target="_blank">&#128722; </a>
             </div>
         </div>
     </nav>
@@ -98,41 +109,39 @@
             <div class="products_row">
                 <div class="right-side">
                     <form action="../../php/addtocart.php" method = "POST">
-                    <h2>Salmon</h2>
-                    <img src="../../Images/salmon.jpg" width="400" height="400">
-                    <h4 id="price_salmon">$6.83/200g</h4>
-                    <input id = "quantity" type="number" name="quantity" value="1">
-                    <input type="submit" id="add-to-cart" name="17" class="button" value="Add to cart">
+                    <h2>Rice</h2>
+                    <img src="../../Images/rice.png" width="400" height="400">
+                    <h4 id="price_pear">$<?php echo $productCurrPrice?></h4>
+                    <input type="number" name="quantity" value="1">
+                    <input type="submit" name = "16" class="button" value="Add to cart">
                     </form>
                 </div>
                 <div class="right-side">
                     <h2>Quick description</h2>
                     <p>
-                        The human body cannot produce everything we need. For instance, omega-3s that are essential
-                        fatty acids can only be absorbed from food such as fish. Salmon is one of the best source of
-                        omega-3s.
+                        Rice is rich in many vitamins such as niacin,thiamine, riboflavin and others. It also contains
+                        minerals and is high in carb, but white rice being refined has less carbs but has a higher
+                        glycemic index than brown rice.
                     </p>
                     <button class="accordion">Full Product description</button>
                     <div class="panel">
-                        <p>In Norway – a major producer of farmed and wild salmon – farmed and wild salmon differ only slightly in terms of food quality and safety, with farmed salmon having lower content of environmental contaminants, and wild salmon having higher content of omega-3 fatty acids.
-                            Salmon flesh is generally orange to red, although there are some examples of white-fleshed wild salmon. The natural color of salmon results from carotenoid pigments, largely astaxanthin and canthaxanthin in the flesh.Wild salmon get these carotenoids from eating krill and other tiny shellfish. 
-                        <ul id="nutritionList">
-                            <li>nutrition value per 100g</li>
-                            <li>Calories : 142</li>
-                            <li>Carbohydrate : 0g</li>
-                            <li>Fat: 6.34g</li>
-                            <li>omega-3: 2018mg</li>
-                            <li>Protein: 19.84g</li>
-                            <li>vitame b12: 133% daily value</li>
-                            <li>69% water</li>                            
-                        </ul>
-                        </p>
+                        <p> Mostly popular in  Asian and African countries, rice has become the most consumed staple food. It is mostly produced in locations of low labour costs and high rainfall.
+                            There exists many different types of rice, of many different colours, but white rice is the post popular amongst the world population.
+                            <h6>per serving size: 100g</h6>
+                             <ul id="nutritionList">
+                             <li> Calories: 130</li>
+                             <li> Protein: 2.7 grams</li>
+                             <li> Total fat: 0.3 grams</li>
+                             <li> Sugar: 0.1 grams</li>
+                             <li> Fiber: 1.4 grams</li>
+                             <li> Sodium: 1 milligrams</li>
+                             </ul></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    </div>
     <footer>
         <div class="section contactInfo">
             <h3>Contact Info</h3>
@@ -172,22 +181,23 @@
             </ul>
         </div>
     </footer>
-    <script>
-        var acc = document.getElementsByClassName("accordion");
-        var i;
-
-        for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function () {
-                this.classList.toggle("active");
-                var panel = this.nextElementSibling;
-                if (panel.style.display === "block") {
-                    panel.style.display = "none";
-                } else {
-                    panel.style.display = "block";
-                }
-            });
-        }
-    </script>
 </body>
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    }
+
+</script>
 
 </html>

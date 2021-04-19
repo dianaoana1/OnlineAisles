@@ -1,3 +1,12 @@
+<?php 
+session_start();
+require_once("../../php/getProductPricesProducts.php");
+$product="Pear";
+$productCurrPrice=getPrice($product);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +14,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Broccoli</title>
+    <title>Pear</title>
 
     <meta charset="utf-8">
 
@@ -15,8 +24,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="..\../CSS/aisles.css">
-    <script src="..\..\JavaScript\ItemDetails.js"></script>
-    <script type="text/javascript" src="..\..\JavaScript\weeklydealsProduct.js"></script>
+
     <link rel="stylesheet" href="..\..\CSS\Page UI.css">
     <link rel="icon" 
     type="image/png" 
@@ -28,7 +36,6 @@
 </head>
 
 <body>
-
     <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
         <a class="navbar-brand" href="..\Main Page.html">Online Aisles</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -42,19 +49,20 @@
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aisles</a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="../Product links/fruits.html" target="_self">Fruits</a>
-                            <a class="dropdown-item" href="../Product links/Vegetables.html"
-                                target="_self">Vegetables</a>
+                            <a class="dropdown-item" href="../Product links/fruits.html"
+                                target="_self">Fruits
+                                </a>
+                            <a class="dropdown-item" href="../Product links/Vegetables.html" target="_self">Vegetables </a>
                             <a class="dropdown-item" href="../Product links/meats and poultry.html" target="_self">
                                 Meats
                                 and Poultry </a>
-                            <a class="dropdown-item" href="../Product links/seafood.html" target="_self">Seafood
-                            </a>
+                            <a class="dropdown-item" href="../Product links/seafood.html" target="_self">Seafood </a>
                             <a class="dropdown-item" href="../Product links/dairy and eggs.html" target="_self">Dairy
                                 and
                                 Eggs </a>
                             <a class="dropdown-item" href="../Product links/cereal products.html" target="_self">Cereal
                                 Products </a>
+                            
                         </div>
                     </div>
                 </li>
@@ -82,8 +90,8 @@
                                 Password</a>
                             <a class="dropdown-item" href="..\Back end\account-info.html" target="_self"> Account
                                 Info</a></a>
-                            <a class="dropdown-item" href="..\back end\Order-list.html" target="_self">Order List
-                            </a>
+                            <a class="dropdown-item" href="..\Back end\delete-user.html" target="_blank">Delete
+                                Account</a>
                         </div>
                     </div>
                 </li>
@@ -95,55 +103,46 @@
             </div>
         </div>
     </nav>
-    <div class="mega-container" >
-        <div class="container" >
-            <div class="products">
-                <div class="products_row">
-                    <div class="right-side">
-                        <form action="../../php/addtocart.php" method = "POST">
-                        <h2>Broccoli</h2>
-                        <img src="../../Images/brocco.jpg" width="400" height="400">
-                        <h4 id="price_broccoli">$3.49/un</h4>
-                        <script>productPriceSet('broccoli')</script>
-                        <input type="number" name="quantity" value="1">
-                        <input type="submit" name = "4" class="button" value="Add to cart">
-                        </form>
-                    </div>
-                    <div class="right-side">
-                        <h2>Quick description</h2>
-                        <p>
-                            This melting pot of vitamins (A,C,E,K) contains also a good amount of fiber,protein,
-                            potassium,
-                            magnesium and calcium. If you'd have to stick with one vegetable broccoli would be the right
-                            choice!
+    <div class="container">
+        <div class="products">
+            <div class="products_row">
+                <div class="right-side">
+                    <form action="../../php/addtocart.php" method = "POST">
+                    <h2>Pear</h2>
+                    <img src="../../Images/pear.jpg">
+                    <h4 id="price_pear">$<?php echo $productCurrPrice?>/un</h4>
+                    <input id = "quantity" type="number" name="quantity" value="1">
+                    <input type="submit" id="add-to-cart" name = "15" class="button" value="Add to cart">
+                    </form>
+                </div>
+                <div class="right-side">
+                    <h2>Quick description</h2>
+                    <p>
+                        Belly-fat killers, pear are helpfull in weight loss and beneficit gut and heart health. And
+                        remember to eat the peel which contains most nutrients!
+                    </p>
+                    <button class="accordion">Full Product description</button>
+                    <div class="panel">
+                        <p> The pear tree and shrub are a species of genus Pyrus , in the family Rosaceae, bearing the pomaceous fruit of the same name. Several species of pears are valued for their edible fruit and juices, while others are cultivated as trees.
+                            The tree is medium-sized and native to coastal and mildly temperate regions of Europe, North Africa, and Asia.                           
+                            About 3000 known varieties of pears are grown worldwide, which vary in both shape and taste. The fruit is consumed fresh, canned, as juice, or dried.
+                        <ul id="nutritionList">
+                            <li>nutrition value per 100g</li>
+                            <li>Mostly water : 84g</li>
+                            <li>Sugars : 9.75g</li>
+                            <li>Fat: 0.14 g</li>
+                            <li>Protein: 0.36g</li>
+                            <li>phosphorous: 12mg</li>                           
+                            <li>Vitamin C: 4.3mg</li>
+                            <li>Potassium: 116mg</li>                           
+                        </ul>
                         </p>
-                        <button class="accordion">Full Product description</button>
-                        <div class="panel">
-                            <p>Broccoli is an edible green plant in the cabbage family whose large flowering head,stalk
-                                and small associated leaves are eaten as a vegetable.
-                                Broccoli has large flower heads usually dark green in color arranged in a tree-like
-                                structure branching out from a thick stalk which is usually light green.
-                                Broccoli is very low in calories providing only 31 calories per cup of 91 grams. The
-                                nutrition facts for 1 cup of 91 gram of raw broccoli are:
-                            <ul id="nutritionList">
-                                <li>Calories: 31</li>
-                                <li>Water: 89%</li>
-                                <li>Protein: 2.5 grams</li>
-                                <li> Carbs: 6 grams</li>
-                                <li>Sugar: 1.5 grams</li>
-                                <li> Fiber: 2.4 grams</li>
-                                <li>Vitamin C: 140% of the DV</li>
-                                </p>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
-    <div style="clear: both"></div>
-    <div style="clear: both"></div>
-    <footer position=absolute bottom=0>
+    <footer>
         <div class="section contactInfo">
             <h3>Contact Info</h3>
             <ul class="info">
@@ -182,24 +181,22 @@
             </ul>
         </div>
     </footer>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
 
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
-<script>
-    var acc = document.getElementsByClassName("accordion");
-    var i;
-
-    for (i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function () {
-            this.classList.toggle("active");
-            var panel = this.nextElementSibling;
-            if (panel.style.display === "block") {
-                panel.style.display = "none";
-            } else {
-                panel.style.display = "block";
-            }
-        });
-    }
-
-</script>
 
 </html>

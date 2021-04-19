@@ -1,3 +1,18 @@
+<?php 
+session_start();
+require_once("../../php/getProductPricesProducts.php");
+$product="Ground Beef";
+$productCurrPrice=getPrice($product);
+
+
+
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +20,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eggs</title>
+    <title>Ground Beef</title>
 
     <meta charset="utf-8">
 
@@ -22,7 +37,9 @@
     href="..\..\Images\favicon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-        <script type = "text/javascript" src = "..\..\JavaScript\cart.js" async></script>
+
+    <script src="..\..\JavaScript\product_descriptions.js"></script>
+    <script type = "text/javascript" src = "..\..\JavaScript\cart.js" async></script>
 
 </head>
 
@@ -42,7 +59,7 @@
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
                             <a class="dropdown-item" href="../Product links/fruits.html"
                                 target="_self">Fruits</a>
-                                <a class="dropdown-item" href="../Product links/Vegetables.html"
+                            <a class="dropdown-item" href="../Product links/Vegetables.html"
                                 target="_self">Vegetables</a>
                             <a class="dropdown-item" href="../Product links/meats and poultry.html" target="_self">
                                 Meats
@@ -98,36 +115,31 @@
             <div class="products_row">
                 <div class="right-side">
                     <form action="../../php/addtocart.php" method = "POST">
-                    <h2>Dozen of eggs</h2>
-                    <img src="../../Images/eggs.jpeg" width="400" height="400">
-                    <h4 id="price_eggs">$2.99</h4>
-                    <input id = "quantity" type="number" name="quantity" value="1">
-                    <input type="submit" id="add-to-cart" name = "9" class="button" value="Add to cart">
+                    <h2>Ground beef</h2>
+                    <img src="../../Images/ground-beef.jpg" width="400" height="400">
+                    <h4 id="price_beef">$<?php echo $productCurrPrice?>/100g</h4>
+                    <input type="number" name="quantity" value="1">
+                    <input type="submit" id="add-to-cart" name = "10" class="button" value="Add to cart">
                     </form>
                 </div>
                 <div class="right-side">
                     <h2>Quick description</h2>
                     <p>
-                         Eggs are one of the best source of protein and can be 
-                         eaten everyday (3max). They are filling, rich and full
-                         of "good" cholesterol, you already know what is on
-                          your breakfast table tomorrow!
+                        Ground beef being red meat is one of the most nutrious foods (full of vitamins minerals and
+                        other good things) but being grounded makes it more expose to bacteria. It can also have a good
+                        amount of fat, so it should be eaten in moderation!
                     </p>
                     <button class="accordion">Full Product description</button>
-                    <div class="panel">
-                        <p>The native eggs refer to the eggs laid by the native chickens raised in the farm, and the beverage eggs, or foreign eggs, 
-                            refer to the eggs laid by the chickens raised by the chicken farms or professional chicken farmers with synthetic feed. 
-                            The soil egg does not contain any synthetic antibiotics, hormones, and pigments. Compared with ordinary eggs, the protein 
-                            content is thicker, the protein content is increased by 5%-6%, the fat is reduced by 3%, the cholesterol is reduced by 19.8%, 
-                            and the taste is delicious, tender and tasteless. . Native eggs are rich in nutrients and are an important ingredient in women's 
-                            beauty diet. One egg a day is not redundant. If the blood cholesterol does not exceed the standard, there is no need to deliberately
-                             discard the egg yolk. Eggs are the food with the highest protein quality. Eggs contain high-quality protein with the highest 
-                             physiological utilization among natural foods.
+                    <div class="panel" style = "padding:10px;">
+                        <p> <strong>Canadian AAA Medium Ground Beef</strong>
+                            <br/>Great for burgers, spaghetti and meat-sauce, or even moussaka.
+                            <br/>
+                        <h6 style="position:left; text-align:left; margin-left:23px">Nutrition Facts:</h6>
                         <ul id="nutritionList">
-                            <li>Calories : 70</li>
-                            <li>Fat: 4.5 g</li>
-                            <li>Sodium: 65 mg</li>
-                            <li>Protein: 6 g</li>                           
+                            <li>Calories: 270</li>
+                            <li>Saturated Fat: 7 grams</li>
+                            <li>Protein: 26 grams</li>
+                            <li>Fat: 18 grams</li>
                         </ul>
                         </p>
                     </div>
@@ -135,7 +147,7 @@
             </div>
         </div>
     </div>
-
+    </div>
     <footer>
         <div class="section contactInfo">
             <h3>Contact Info</h3>
@@ -191,6 +203,7 @@
             });
         }
     </script>
+
 </body>
 
 </html>

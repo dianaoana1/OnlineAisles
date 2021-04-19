@@ -1,3 +1,17 @@
+<?php 
+session_start();
+require_once("../../php/getProductPricesProducts.php");
+$product="Eggs";
+$productCurrPrice=getPrice($product);
+
+
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +19,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rice</title>
+    <title>Eggs</title>
 
     <meta charset="utf-8">
 
@@ -23,7 +37,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <script type = "text/javascript" src = "..\..\JavaScript\cart.js" async></script>
-
 
 </head>
 
@@ -43,7 +56,7 @@
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
                             <a class="dropdown-item" href="../Product links/fruits.html"
                                 target="_self">Fruits</a>
-                            <a class="dropdown-item" href="../Product links/Vegetables.html"
+                                <a class="dropdown-item" href="../Product links/Vegetables.html"
                                 target="_self">Vegetables</a>
                             <a class="dropdown-item" href="../Product links/meats and poultry.html" target="_self">
                                 Meats
@@ -52,8 +65,7 @@
                             <a class="dropdown-item" href="../Product links/dairy and eggs.html" target="_self">Dairy
                                 and
                                 Eggs </a>
-                            <a class="dropdown-item" href="../Product links/cereal products.html.html"
-                                target="_self">Cereal
+                            <a class="dropdown-item" href="../Product links/cereal products.html" target="_self">Cereal
                                 Products </a>
                         </div>
                     </div>
@@ -66,7 +78,7 @@
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
                             <a class="dropdown-item" href="..\..\php\userList.php" target="_self">User List</a>
                             <a class="dropdown-item" href="..\..\php\productList.php" target="_self"> Product list </a>
-                            <a class="dropdown-item" href="..\back end\Order-list.html">Order List </a>
+                            <a class="dropdown-item" href="..\back end\Order-list.html" _self">Order List </a>
                         </div>
                 </li>
                 <li class="nav-item">
@@ -91,7 +103,7 @@
             </ul>
             <div class="shopping-cart-holder">
 
-                <a onclick="add()" class="nav-link shopping-cart" href="../../php/shoppingcart.php" target="_blank">&#128722; </a>
+                <a class="nav-link shopping-cart" href="../../php/shoppingcart.php" target="_blank">&#128722; </a>
             </div>
         </div>
     </nav>
@@ -100,39 +112,44 @@
             <div class="products_row">
                 <div class="right-side">
                     <form action="../../php/addtocart.php" method = "POST">
-                    <h2>Rice</h2>
-                    <img src="../../Images/rice.png" width="400" height="400">
-                    <h4 id="price_pear">$19.99</h4>
-                    <input type="number" name="quantity" value="1">
-                    <input type="submit" name = "16" class="button" value="Add to cart">
+                    <h2>Dozen of eggs</h2>
+                    <img src="../../Images/eggs.jpeg" width="400" height="400">
+                    <h4 id="price_eggs">$<?php echo $productCurrPrice?>/dozen</h4>
+                    <input id = "quantity" type="number" name="quantity" value="1">
+                    <input type="submit" id="add-to-cart" name = "9" class="button" value="Add to cart">
                     </form>
                 </div>
                 <div class="right-side">
                     <h2>Quick description</h2>
                     <p>
-                        Rice is rich in many vitamins such as niacin,thiamine, riboflavin and others. It also contains
-                        minerals and is high in carb, but white rice being refined has less carbs but has a higher
-                        glycemic index than brown rice.
+                         Eggs are one of the best source of protein and can be 
+                         eaten everyday (3max). They are filling, rich and full
+                         of "good" cholesterol, you already know what is on
+                          your breakfast table tomorrow!
                     </p>
                     <button class="accordion">Full Product description</button>
                     <div class="panel">
-                        <p> Mostly popular in  Asian and African countries, rice has become the most consumed staple food. It is mostly produced in locations of low labour costs and high rainfall.
-                            There exists many different types of rice, of many different colours, but white rice is the post popular amongst the world population.
-                            <h6>per serving size: 100g</h6>
-                             <ul id="nutritionList">
-                             <li> Calories: 130</li>
-                             <li> Protein: 2.7 grams</li>
-                             <li> Total fat: 0.3 grams</li>
-                             <li> Sugar: 0.1 grams</li>
-                             <li> Fiber: 1.4 grams</li>
-                             <li> Sodium: 1 milligrams</li>
-                             </ul></p>
+                        <p>The native eggs refer to the eggs laid by the native chickens raised in the farm, and the beverage eggs, or foreign eggs, 
+                            refer to the eggs laid by the chickens raised by the chicken farms or professional chicken farmers with synthetic feed. 
+                            The soil egg does not contain any synthetic antibiotics, hormones, and pigments. Compared with ordinary eggs, the protein 
+                            content is thicker, the protein content is increased by 5%-6%, the fat is reduced by 3%, the cholesterol is reduced by 19.8%, 
+                            and the taste is delicious, tender and tasteless. . Native eggs are rich in nutrients and are an important ingredient in women's 
+                            beauty diet. One egg a day is not redundant. If the blood cholesterol does not exceed the standard, there is no need to deliberately
+                             discard the egg yolk. Eggs are the food with the highest protein quality. Eggs contain high-quality protein with the highest 
+                             physiological utilization among natural foods.
+                        <ul id="nutritionList">
+                            <li>Calories : 70</li>
+                            <li>Fat: 4.5 g</li>
+                            <li>Sodium: 65 mg</li>
+                            <li>Protein: 6 g</li>                           
+                        </ul>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
+
     <footer>
         <div class="section contactInfo">
             <h3>Contact Info</h3>
@@ -172,23 +189,22 @@
             </ul>
         </div>
     </footer>
-</body>
-<script>
-    var acc = document.getElementsByClassName("accordion");
-    var i;
-    
-    for (i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-          panel.style.display = "none";
-        } else {
-          panel.style.display = "block";
-        }
-      });
-    }
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
 
-</script>
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
 
 </html>

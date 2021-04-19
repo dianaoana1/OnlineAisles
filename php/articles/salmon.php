@@ -1,3 +1,13 @@
+<?php 
+session_start();
+require_once("../../php/getProductPricesProducts.php");
+$product="Salmon";
+$productCurrPrice=getPrice($product);
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +15,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cereals</title>
+    <title>Salmon</title>
 
     <meta charset="utf-8">
 
@@ -40,8 +50,9 @@
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aisles</a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="../Product links/fruits.html" target="_self">Fruits</a>
-                            <a class="dropdown-item" href="../Product links/Vegetables.html"
+                            <a class="dropdown-item" href="../Product links/fruits.html"
+                                target="_self">Fruits</a>
+                                <a class="dropdown-item" href="../Product links/Vegetables.html"
                                 target="_self">Vegetables</a>
                             <a class="dropdown-item" href="../Product links/meats and poultry.html" target="_self">
                                 Meats
@@ -97,33 +108,35 @@
             <div class="products_row">
                 <div class="right-side">
                     <form action="../../php/addtocart.php" method = "POST">
-                    <h2>Cereals</h2>
-                    <img src="../../Images/cereal.jpg" width="400" height="400">
-                    <h4 id="price_cereals">$4.99</h4>
-                    <input type="number" name="quantity" value="1">
-                    <input type="submit" name = "6" class="button" value="Add to cart">
+                    <h2>Salmon</h2>
+                    <img src="../../Images/salmon.jpg" width="400" height="400">
+                    <h4 id="price_salmon">$<?php echo $productCurrPrice?>/200g</h4>
+                    <input id = "quantity" type="number" name="quantity" value="1">
+                    <input type="submit" id="add-to-cart" name="17" class="button" value="Add to cart">
                     </form>
                 </div>
                 <div class="right-side">
                     <h2>Quick description</h2>
                     <p>
-                        The majority of cereal nowadays are loaded with sugars making them bad for your health. It can
-                        cause several disease such as type 2 diabetes, obesity and other.
+                        The human body cannot produce everything we need. For instance, omega-3s that are essential
+                        fatty acids can only be absorbed from food such as fish. Salmon is one of the best source of
+                        omega-3s.
                     </p>
                     <button class="accordion">Full Product description</button>
                     <div class="panel">
-                        <p> Corn Flakes cereals are a children's favourite! Made in 1894, this particular cereal is made from toasted corn. It was initially intended to be a healthy cereal alternative for patients
-                            of the Battle Creek Sanitarium. However, given its rise in popularity, William Kellogg, the founder of this brand along with his brother John Kellogg, wanted to increase the 
-                            suger content in order to sell the product to a larger audiance.
-                            <h6>per serving size: 100g</h6>
-                             <ul id="nutritionList">
-                             <li>Calories: 357</li>
-                             <li>Protein: 8 grams</li>
-                             <li> Total fat: 0.4 grams</li>
-                             <li> Sugar: 10 grams</li>
-                             <li> Fiber: 3.3 grams</li>
-                             <li> Sodium: 729 milligrams</li>
-                             </ul></p>
+                        <p>In Norway – a major producer of farmed and wild salmon – farmed and wild salmon differ only slightly in terms of food quality and safety, with farmed salmon having lower content of environmental contaminants, and wild salmon having higher content of omega-3 fatty acids.
+                            Salmon flesh is generally orange to red, although there are some examples of white-fleshed wild salmon. The natural color of salmon results from carotenoid pigments, largely astaxanthin and canthaxanthin in the flesh.Wild salmon get these carotenoids from eating krill and other tiny shellfish. 
+                        <ul id="nutritionList">
+                            <li>nutrition value per 100g</li>
+                            <li>Calories : 142</li>
+                            <li>Carbohydrate : 0g</li>
+                            <li>Fat: 6.34g</li>
+                            <li>omega-3: 2018mg</li>
+                            <li>Protein: 19.84g</li>
+                            <li>vitame b12: 133% daily value</li>
+                            <li>69% water</li>                            
+                        </ul>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -169,22 +182,22 @@
             </ul>
         </div>
     </footer>
-</body>
-<script>
-    var acc = document.getElementsByClassName("accordion");
-    var i;
-    
-    for (i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-          panel.style.display = "none";
-        } else {
-          panel.style.display = "block";
-        }
-      });
-    }
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
 
-</script>
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+
 </html>

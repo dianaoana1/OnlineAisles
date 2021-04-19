@@ -1,3 +1,19 @@
+<?php 
+
+session_start();
+
+require_once("../../php/getProductPricesProducts.php");
+$product="Carrots";
+$productCurrPrice=getPrice($product);
+
+
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +21,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lobster</title>
+    <title>Carrots</title>
 
     <meta charset="utf-8">
 
@@ -15,11 +31,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="..\../CSS/aisles.css">
-
-    <link rel="stylesheet" href="..\..\CSS\Page UI.css">
     <link rel="icon" 
     type="image/png" 
     href="..\..\Images\favicon.png">
+
+    <link rel="stylesheet" href="..\..\CSS\Page UI.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <script type = "text/javascript" src = "..\..\JavaScript\cart.js" async></script>
@@ -40,10 +56,9 @@
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aisles</a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="../Product links/fruits.html"
-                                target="_self">Fruits</a>
-                                <a class="dropdown-item" href="../Product links/Vegetables.html"
-                                target="_self">Vegetables</a>
+                            <a class="dropdown-item" href="../Product links/fruits.html" target="_self">Fruits</a>
+                            <a class="dropdown-item" href="../Product links/Vegetables.html"
+                                target="_self">]Vegetables</a>
                             <a class="dropdown-item" href="../Product links/meats and poultry.html" target="_self">
                                 Meats
                                 and Poultry </a>
@@ -98,43 +113,40 @@
             <div class="products_row">
                 <div class="right-side">
                     <form action="../../php/addtocart.php" method = "POST">
-                    <h2>Cooked Lobster</h2>
-                    <img src="../../Images/lobster.jpg" width="400" height="400">
-                    <h4 id="price_lobster">$21.35</h4>
-                    <input id = "quantity" type="number" name="quantity" value="1">
-                    <input type="submit" id="add-to-cart" name = "11" class="button" value="Add to cart">
+                    <h2>Carrots</h2>
+                    <img src="../../Images/carrots.jpg" width="400" height="400">
+                    <h4 id="price_carrots">$<?php echo $productCurrPrice?>/un</h4>
+                    <input type="number" name="quantity" value="1">
+                    <input type="submit" name = "5" class="button" value="Add to cart">
                     </form>
                 </div>
                 <div class="right-side">
                     <h2>Quick description</h2>
                     <p>
-                        Lobster is a good source of magnesium as well as phosphorous (kidney function). They are a good
-                        source a nutrients but are high in sodium which would be bad for someone having high blood
-                        pressure.
+                        They might not help you get rid of your glasses, but carrots are indeed protected your eyes by
+                        being a good source of antioxidants lutein and beta carotene. They also improve the overall
+                        health.
                     </p>
                     <button class="accordion">Full Product description</button>
                     <div class="panel">
-                        <p>While lobster may seem like an expensive, decadent treat, eating live-cooked lobsters is not the only way to include this lean, delicious seafood in your diet.
-
-                            Here are some quick tips for eating lobster.
-                            
-                            Use lobster as your main protein source.
-                            Add lobster to pasta or rice dishes.
-                            Mince lobster to top salads.
-                            Make lobster patties or burgers.
+                        <p>The carrot is a root vegetable usually orange in color. They are a domesticated form of the
+                            wild carrot.
+                            The plant originated in Persia and was originally cultivated for its leaves adn seeds.A
+                            serving of 100 grams of carrots has:
                         <ul id="nutritionList">
-                            <li>nutrition value per 145g</li>
-                            <li>Calories : 129</li>
-                            <li>Carbohydrate : 0g</li>
-                            <li>Fat: 1.25g</li>
-                            <li>Protein: 27.55g</li> 
-                        </ul>
-                        </p>
+                            <li>Calories: 41</li>
+                            <li>Water: 88%</li>
+                            <li>Fat: 0.2 grams</li>
+                            <li>Sugar: 4.7 grams</li>
+                            <li>Fiber: 2.8 grams</li>
+                            <li>The carrot is also a good source of vitamin A</li>
+                            </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <footer>
         <div class="section contactInfo">
             <h3>Contact Info</h3>
@@ -174,22 +186,24 @@
             </ul>
         </div>
     </footer>
-    <script>
-        var acc = document.getElementsByClassName("accordion");
-        var i;
 
-        for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function () {
-                this.classList.toggle("active");
-                var panel = this.nextElementSibling;
-                if (panel.style.display === "block") {
-                    panel.style.display = "none";
-                } else {
-                    panel.style.display = "block";
-                }
-            });
-        }
-    </script>
 </body>
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+
+</script>
 
 </html>

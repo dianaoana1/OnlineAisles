@@ -1,3 +1,12 @@
+<?php 
+session_start();
+require_once("../../php/getProductPricesProducts.php");
+$product="Shrimps";
+$productCurrPrice=getPrice($product);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +14,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Milk</title>
+    <title>Shrimp</title>
 
     <meta charset="utf-8">
 
@@ -64,7 +73,7 @@
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
                             <a class="dropdown-item" href="..\..\php\userList.php" target="_self">User List</a>
                             <a class="dropdown-item" href="..\..\php\productList.php" target="_self"> Product list </a>
-                            <a class="dropdown-item" href="..\back end\Order-list.html" _self">Order List </a>
+                            <a class="dropdown-item" href="..\back end\Order-list.html">Order List </a>
                         </div>
                 </li>
                 <li class="nav-item">
@@ -98,30 +107,32 @@
             <div class="products_row">
                 <div class="right-side">
                     <form action="../../php/addtocart.php" method = "POST">
-                    <h2>Milk</h2>
-                    <img src="../../Images/milk.jpg" width="400" height="400">
-                    <h4 id="price_milk">$4.99/2L</h4>
-                    <input id = "quantity" type="number" name="quantity" value="1">
-                    <input type="submit" id="add-to-cart" name = "12" class="button" value = "Add to cart">
+                    <h2>Shrimps</h2>
+                    <img src="../../Images/shrimp.jpg" width="400" height="400">
+                    <h4 id="price_shrimps">$<?php echo $productCurrPrice?>/350g</h4>
+                    <input id = "quantity" name="quantity" type="number" value="1">
+                    <input type="submit" id="add-to-cart" name="19" class="button" value="Add to cart">
                     </form>
                 </div>
                 <div class="right-side">
                     <h2>Quick description</h2>
                     <p>
-                        The fat content of reduced-fat milk is generally 2%, and the fat content of low-fat milk is generally 1%. It tastes smoother. Compared with whole milk, low-fat or reduced-fat milk has lower fat content, which is more suitable for middle-aged and elderly people with high blood fat or who want to control blood fat or lose weight.
+                        Lowering your blood pressure, rich source of proteine, good for brain and hearth health, shrimps
+                        are wonderfull. On the other hand, they contain a lot of cholesterol preventing us from eating a
+                        too high amount of shrimps.
                     </p>
                     <button class="accordion">Full Product description</button>
                     <div class="panel">
-                        <p>The good: This food is a good source of Protein, Vitamin B12 and Phosphorus, and a very good source of Vitamin D, Riboflavin and Calcium.
-
-                            The bad: This food is high in Saturated Fat, and a large portion of the calories in this food come from sugars.
-                            
-                           
+                        <p>Shrimps is one of the most commonly consumed types of shellfishé It's quite nutritious and provides high amounts of cert nutrients, such as iodine, that aren't abundant in many other foods.
+                           Farm-raised shrimp may have some negative health effects compared to wild-caught shrimp.
                         <ul id="nutritionList">
-                            <li>Calories : 130</li>
-                            <li>Fat: 5 g</li>
-                            <li>Sodium: 130 mg</li>
-                            <li>Protein: 9 g</li>                           
+                            <li>nutrition value per 100g</li>
+                            <li>Calories : 84</li>
+                            <li>Carbohydrate : 0g</li>
+                            <li>cholesterol: 166mg/85g of shrimp</li>
+                            <li>Protein: 18g</li>
+                            <li>vitame b12: 12% of the RDI</li>
+                            <li>Selenium : 48% of the RDI</li>                        
                         </ul>
                         </p>
                     </div>
@@ -129,7 +140,6 @@
             </div>
         </div>
     </div>
-
     <footer>
         <div class="section contactInfo">
             <h3>Contact Info</h3>

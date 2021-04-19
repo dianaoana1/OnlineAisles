@@ -1,3 +1,22 @@
+<?php 
+
+session_start();
+
+require_once("../../php/getProductPricesProducts.php");
+$product="Cereals";
+$productCurrPrice=getPrice($product);
+
+
+
+
+
+?>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +24,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ground Beef</title>
+    <title>Cereals</title>
 
     <meta charset="utf-8">
 
@@ -22,9 +41,7 @@
     href="..\..\Images\favicon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
-    <script src="..\..\JavaScript\product_descriptions.js"></script>
-    <script type = "text/javascript" src = "..\..\JavaScript\cart.js" async></script>
+        <script type = "text/javascript" src = "..\..\JavaScript\cart.js" async></script>
 
 </head>
 
@@ -42,8 +59,7 @@
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aisles</a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="../Product links/fruits.html"
-                                target="_self">Fruits</a>
+                            <a class="dropdown-item" href="../Product links/fruits.html" target="_self">Fruits</a>
                             <a class="dropdown-item" href="../Product links/Vegetables.html"
                                 target="_self">Vegetables</a>
                             <a class="dropdown-item" href="../Product links/meats and poultry.html" target="_self">
@@ -100,39 +116,39 @@
             <div class="products_row">
                 <div class="right-side">
                     <form action="../../php/addtocart.php" method = "POST">
-                    <h2>Ground beef</h2>
-                    <img src="../../Images/ground-beef.jpg" width="400" height="400">
-                    <h4 id="price_beef">$1.54/100g</h4>
+                    <h2>Cereals</h2>
+                    <img src="../../Images/cereal.jpg" width="400" height="400">
+                    <h4 id="price_cereals">$<?php echo $productCurrPrice?></h4>
                     <input type="number" name="quantity" value="1">
-                    <input type="submit" id="add-to-cart" name = "10" class="button" value="Add to cart">
+                    <input type="submit" name = "6" class="button" value="Add to cart">
                     </form>
                 </div>
                 <div class="right-side">
                     <h2>Quick description</h2>
                     <p>
-                        Ground beef being red meat is one of the most nutrious foods (full of vitamins minerals and
-                        other good things) but being grounded makes it more expose to bacteria. It can also have a good
-                        amount of fat, so it should be eaten in moderation!
+                        The majority of cereal nowadays are loaded with sugars making them bad for your health. It can
+                        cause several disease such as type 2 diabetes, obesity and other.
                     </p>
                     <button class="accordion">Full Product description</button>
-                    <div class="panel" style = "padding:10px;">
-                        <p> <strong>Canadian AAA Medium Ground Beef</strong>
-                            <br/>Great for burgers, spaghetti and meat-sauce, or even moussaka.
-                            <br/>
-                        <h6 style="position:left; text-align:left; margin-left:23px">Nutrition Facts:</h6>
-                        <ul id="nutritionList">
-                            <li>Calories: 270</li>
-                            <li>Saturated Fat: 7 grams</li>
-                            <li>Protein: 26 grams</li>
-                            <li>Fat: 18 grams</li>
-                        </ul>
-                        </p>
+                    <div class="panel">
+                        <p> Corn Flakes cereals are a children's favourite! Made in 1894, this particular cereal is made from toasted corn. It was initially intended to be a healthy cereal alternative for patients
+                            of the Battle Creek Sanitarium. However, given its rise in popularity, William Kellogg, the founder of this brand along with his brother John Kellogg, wanted to increase the 
+                            suger content in order to sell the product to a larger audiance.
+                            <h6>per serving size: 100g</h6>
+                             <ul id="nutritionList">
+                             <li>Calories: 357</li>
+                             <li>Protein: 8 grams</li>
+                             <li> Total fat: 0.4 grams</li>
+                             <li> Sugar: 10 grams</li>
+                             <li> Fiber: 3.3 grams</li>
+                             <li> Sodium: 729 milligrams</li>
+                             </ul></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
+
     <footer>
         <div class="section contactInfo">
             <h3>Contact Info</h3>
@@ -172,23 +188,22 @@
             </ul>
         </div>
     </footer>
-    <script>
-        var acc = document.getElementsByClassName("accordion");
-        var i;
-
-        for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function () {
-                this.classList.toggle("active");
-                var panel = this.nextElementSibling;
-                if (panel.style.display === "block") {
-                    panel.style.display = "none";
-                } else {
-                    panel.style.display = "block";
-                }
-            });
-        }
-    </script>
-
 </body>
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    }
 
+</script>
 </html>

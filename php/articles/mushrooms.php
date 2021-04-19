@@ -1,3 +1,12 @@
+
+<?php 
+session_start();
+require_once("../../php/getProductPricesProducts.php");
+$product="Mushrooms";
+$productCurrPrice=getPrice($product);
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +14,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apple</title>
+    <title>Mushrooms</title>
 
     <meta charset="utf-8">
 
@@ -15,17 +24,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="..\../CSS/aisles.css">
+
+    <link rel="stylesheet" href="..\..\CSS\Page UI.css">
     <link rel="icon" 
     type="image/png" 
     href="..\..\Images\favicon.png">
-    <link rel="stylesheet" href="..\..\CSS\Page UI.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <script type = "text/javascript" src = "..\..\JavaScript\cart.js" async></script>
-    <script type="text/javascript" srx="..\..\JavaScript\weeklydeals.js"></script>
-    <style>
-    
-    </style>
+        <script type = "text/javascript" src = "..\..\JavaScript\cart.js" async></script>
+
+
 </head>
 
 <body>
@@ -43,9 +51,10 @@
 
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
                             <a class="dropdown-item" href="../Product links/fruits.html"
-                                target="_self">Fruits
-                                </a>
-                            <a class="dropdown-item" href="../Product links/Vegetables.html" target="_self">Vegetables </a>
+                                target="_self">Fruits</a>
+                                <a class="dropdown-item" href="../Product links/Vegetables.html"
+                                target="_self">Vegetables</a>
+
                             <a class="dropdown-item" href="../Product links/meats and poultry.html" target="_self">
                                 Meats
                                 and Poultry </a>
@@ -55,7 +64,6 @@
                                 Eggs </a>
                             <a class="dropdown-item" href="../Product links/cereal products.html" target="_self">Cereal
                                 Products </a>
-                            
                         </div>
                     </div>
                 </li>
@@ -96,45 +104,45 @@
             </div>
         </div>
     </nav>
-    <div class="container" >
+    <div class="container">
         <div class="products">
             <div class="products_row">
                 <div class="right-side">
                     <form action="../../php/addtocart.php" method = "POST">
-                        <h2 class = "item" name="item">Apple</h2>
-                        <img class = "image" name="image" src="../../Images/apple.png"  >
-                        <h4 class = "price_apple" name="price">$0.89/un</h4>
-                        <script>productPriceSet('apple')</script>
-                        <input class = "quantity" name="quantity" type="number" value="1">
-                        <input type="submit" class="button add-to-cart" name ="1" value="Add to Cart">
+                    <h2>Mushrooms</h2>
+                    <img src="../../Images/mushrooms.jpg" width="400" height="400">
+                    <h4 id="price_mushrooms">$<?php echo $productCurrPrice?>/un</h4>
+                    <input type="number" name="quantity" value="1">
+                    <input type="submit" name ="13" class="button" value="Add to cart">
                     </form>
                 </div>
                 <div class="right-side">
                     <h2>Quick description</h2>
                     <p>
-                        Apples are perfect for a quick and filling snack. Being high in fiber and water it leaves the
-                        impression of being satiated and refreshed.
+                        Mushrooms are not considered as a superfood for nothing. They lower the risk of developping
+                        desease such as alzheimer,cancer and diabetes. And on top of that they actually taste good!
                     </p>
                     <button class="accordion">Full Product description</button>
                     <div class="panel">
-                        <p>An apple is an edible fruit produced by an apple tree (Malus domestica). Apple trees are cultivated 
-                           worldwide and are the most widely grown species in the genus Malus.ere are the nutrition facts for one raw, unpeeled, medium-sized apple (100 grams):
-                             <ul id="nutritionList">
-                                <li>Calories: 52</li>
-                             <li>Water: 86%</li>
-                             <li>Protein: 0.3 grams</li>
-                             <li> Carbs: 13.8 grams</li>
-                             <li> Sugar: 10.4 grams</li>
-                             <li> Fiber: 2.4 grams</li>
-                             <li>Fat: 0.2 grams</li>
-                             </ul></p>
+                        <p>A mushroom or toadstool is the fleshy, spore bearing fruiting body of a fungus, typically produced above ground,on soil,or on its food source.
+                            The standard for the name is the cultivated whit button mushroom.One cup 96 grams provides:
+                        <ul id="nutritionList">
+                            <li>Calories: 21</li>
+                            <li>Carbs: 3 grams</li>
+                            <li>Fiber: 1 gram</li>
+                            <li>Protein: 3 grams</li>
+                            <li>Fat: 0 grams</li>
+                            <li>Vitamin D: 33% of the Daily Value (DV)</li>
+                            <li>Selenium: 16% of the DV</li>
+                            <li>Phosphorus: 12% of the DV</li>
+                            <li>Folate: 4% of the DV</li>
+
+                            </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div style="clear: both"></div>
-    <div style="clear: both"></div>
     <footer>
         <div class="section contactInfo">
             <h3>Contact Info</h3>
@@ -174,21 +182,22 @@
             </ul>
         </div>
     </footer>
+
 </body>
 <script>
     var acc = document.getElementsByClassName("accordion");
     var i;
-    
+
     for (i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-          panel.style.display = "none";
-        } else {
-          panel.style.display = "block";
-        }
-      });
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
     }
 
 </script>

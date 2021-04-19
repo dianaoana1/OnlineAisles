@@ -1,3 +1,11 @@
+<?php 
+session_start();
+require_once("../../php/getProductPricesProducts.php");
+$product="Milk";
+$productCurrPrice=getPrice($product);
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +13,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pasta</title>
+    <title>Milk</title>
 
     <meta charset="utf-8">
 
@@ -23,7 +31,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <script type = "text/javascript" src = "..\..\JavaScript\cart.js" async></script>
-
 
 </head>
 
@@ -43,7 +50,7 @@
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
                             <a class="dropdown-item" href="../Product links/fruits.html"
                                 target="_self">Fruits</a>
-                            <a class="dropdown-item" href="../Product links/Vegetables.html"
+                                <a class="dropdown-item" href="../Product links/Vegetables.html"
                                 target="_self">Vegetables</a>
                             <a class="dropdown-item" href="../Product links/meats and poultry.html" target="_self">
                                 Meats
@@ -99,38 +106,38 @@
             <div class="products_row">
                 <div class="right-side">
                     <form action="../../php/addtocart.php" method = "POST">
-                    <h2>Fusilli</h2>
-                    <img src="../../Images/pasta.jpg" width="400" height="400">
-                    <h4 id="price_fusilli">$2.49</h4>
-                    <input type="number" name="quantity" value="1">
-                    <input type="submit" name ="14" class="button" value="Add to cart">
+                    <h2>Milk</h2>
+                    <img src="../../Images/milk.jpg" width="400" height="400">
+                    <h4 id="price_milk">$<?php echo $productCurrPrice?>/2L</h4>
+                    <input id = "quantity" type="number" name="quantity" value="1">
+                    <input type="submit" id="add-to-cart" name = "12" class="button" value = "Add to cart">
                     </form>
                 </div>
                 <div class="right-side">
                     <h2>Quick description</h2>
                     <p>
-                        Wondering how to have energy for any physical activites? Pasta can be the answer to that
-                        question as it is a good source of energy. It can also contain fiber (more if it is whole grain)
-                        which are good for the digestive system.
+                        The fat content of reduced-fat milk is generally 2%, and the fat content of low-fat milk is generally 1%. It tastes smoother. Compared with whole milk, low-fat or reduced-fat milk has lower fat content, which is more suitable for middle-aged and elderly people with high blood fat or who want to control blood fat or lose weight.
                     </p>
                     <button class="accordion">Full Product description</button>
                     <div class="panel">
-                        <p>Fusilli, also commonly known as rotini, is a type of pasta most recognizable by their signature helical or corkscrew shape. They are generally created by
-                            rolling thin strips of pasta around a thin rod, which gives them their well-known shape.
-                            <h6>per serving size: 30g</h6>
-                             <ul id="nutritionList">
-                             <li>Calories: 110</li>
-                             <li>Protein: 18 grams</li>
-                             <li> Total fat: 1.5 grams</li>
-                             <li> Sugar: 0 grams</li>
-                             <li> Fiber: 2 grams</li>
-                             <li> Sodium: 300 milligrams</li>
-                             </ul></p>
+                        <p>The good: This food is a good source of Protein, Vitamin B12 and Phosphorus, and a very good source of Vitamin D, Riboflavin and Calcium.
+
+                            The bad: This food is high in Saturated Fat, and a large portion of the calories in this food come from sugars.
+                            
+                           
+                        <ul id="nutritionList">
+                            <li>Calories : 130</li>
+                            <li>Fat: 5 g</li>
+                            <li>Sodium: 130 mg</li>
+                            <li>Protein: 9 g</li>                           
+                        </ul>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <footer>
         <div class="section contactInfo">
             <h3>Contact Info</h3>
@@ -170,23 +177,22 @@
             </ul>
         </div>
     </footer>
-</body>
-<script>
-    var acc = document.getElementsByClassName("accordion");
-    var i;
-    
-    for (i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-          panel.style.display = "none";
-        } else {
-          panel.style.display = "block";
-        }
-      });
-    }
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
 
-</script>
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
 
 </html>

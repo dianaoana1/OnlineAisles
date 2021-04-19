@@ -1,3 +1,22 @@
+<?php 
+
+session_start();
+
+require_once("../../php/getProductPricesProducts.php");
+$product="Cheese";
+$productCurrPrice=getPrice($product);
+
+
+
+
+
+?>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -100,7 +119,7 @@
                     <form action="../../php/addtocart.php" method = "POST">
                     <h2>Cheese</h2>
                     <img src="../../Images/cheese.jpg" width="350" height="350">
-                    <h4 id="price_cheese">$6.09/500g</h4>
+                    <h4 id="price_cheese">$<?php echo $productCurrPrice?>/500g</h4>
                     <input id = "quantity" type="number" name="quantity" value="1">
                     <input type="submit" id="add-to-cart" name = "7" class="button" value="Add to cart">
                     </form>
