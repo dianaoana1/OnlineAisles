@@ -27,7 +27,7 @@ session_start();
 
 <body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
-        <a class="navbar-brand" href="..\Main Page.html">Online Aisles</a>
+        <a class="navbar-brand" href="..\..\php\Main Page.php">Online Aisles</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -39,15 +39,15 @@ session_start();
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aisles</a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="..\Product links/fruits.html" target="_self">Fruits</a>
-                            <a class="dropdown-item" href="..\Product links/Vegetables.html"
+                            <a class="dropdown-item" href="..\..\php\Product Links\fruits.php" target="_self">Fruits</a>
+                            <a class="dropdown-item" href="..\..\php\Product Links\Vegetables.php"
                                 target="_self">Vegetables</a>
-                            <a class="dropdown-item" href="..\Product links/meats and poultry.html" target="_self">
+                            <a class="dropdown-item" href="..\..\php\Product Links\Meats And Poultry.php" target="_self">
                                 Meats and Poultry </a>
-                            <a class="dropdown-item" href="..\Product links/seafood.html" target="_self">Seafood </a>
-                            <a class="dropdown-item" href="..\Product links/dairy and eggs.html" target="_self">Dairy
+                            <a class="dropdown-item" href="..\..\php\Product Links\seafood.php" target="_self">Seafood </a>
+                            <a class="dropdown-item" href="..\..\php\Product Links\dairy and eggs.php" target="_self">Dairy
                                 and Eggs </a>
-                            <a class="dropdown-item" href="..\Product links/cereal products.html" target="_self">Cereal
+                            <a class="dropdown-item" href="..\..\php\Product Links\cereal products.php" target="_self">Cereal
                                 Products </a>
                         </div>
                 </li>
@@ -57,9 +57,9 @@ session_start();
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Back end Pages</a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="..\user-list.html" target="_self">User List</a>
-                            <a class="dropdown-item" href="..\Productlist.html" target="_self"> Product list </a>
-                            <a class="dropdown-item" href="..\Back end\Order-list.html" target="_self">Order List </a>
+                            <a class="dropdown-item" href="..\..\php\userList.php" target="_self">User List</a>
+                            <a class="dropdown-item" href="..\..\php\productList.php" target="_self"> Product list </a>
+                            <a class="dropdown-item" href="..\..\php\orderList.php" target="_self">Order List </a>
                         </div>
                 </li>
                 <li class="nav-item">
@@ -73,13 +73,13 @@ session_start();
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
                             <a class="dropdown-item" href="change password.html"> Change Password</a>
                             <a class="dropdown-item" href="account-info.html"> Account Info</a></a>
-                            <a class="dropdown-item" href="delete-user.html">Delete Account</a>
+                            <a class="dropdown-item" href="delete-user.php">Delete Account</a>
                         </div>
                 </li>
                 </li>
             </ul>
             <div class="shopping-cart-holder">
-                <a class="nav-link shopping-cart" href="..\shopping_cart.html">&#128722; </a>
+                <a class="nav-link shopping-cart" href="..\..\php\shoppingcart.php">&#128722; </a>
             </div>
         </div>
     </nav>

@@ -32,66 +32,80 @@ ini_set('display_errors', 1);
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
-        <a class="navbar-brand" href="Main Page.html">Online Grocery Store</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <a class="navbar-brand" href="Main Page.php">Online Aisles</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <div class="dropdown show">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aisles</a>
 
-
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-                    <div class="dropdown show">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aisles</a>
-
-                        <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="Product links/fruits.html" target="_self">Fruits</a>
-                            <a class="dropdown-item" href="Product links/Vegetables.html" target="_self">Vegetables</a>
-                            <a class="dropdown-item" href="Product links/meats and poultry.html" target="_self"> Meats
-                                and Poultry </a>
-                            <a class="dropdown-item" href="Product links/seafood.html" target="_self">Seafood </a>
-                            <a class="dropdown-item" href="Product links/dairy and eggs.html" target="_self">Dairy and
-                                Eggs </a>
-                            <a class="dropdown-item" href="Product links/cereal products.html" target="_self">Cereal
-                                Products </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown03">
+                                <a class="dropdown-item" href="..\php\Product links/fruits.php" target="_self">Fruits
+                                </a>
+                                <a class="dropdown-item" href="..\php\Product links/meats and poultry.php" target="_self">
+                                    Meats
+                                    and Poultry </a>
+                                <a class="dropdown-item" href="..\php\Product links/seafood.php" target="_self">Seafood </a>
+                                <a class="dropdown-item" href="..\php\Product links/dairy and eggs.php" target="_self">Dairy
+                                    and
+                                    Eggs </a>
+                                <a class="dropdown-item" href="..\php\Product links/cereal products.php" target="_self">Cereal
+                                    Products </a>
+                                <a class="dropdown-item" href="..\php\Product links/Vegetables.php" target="_self">Vegetables
+                                </a>
+                            </div>
                         </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <div class="dropdown show">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Back end Pages</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <div class="dropdown show">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Back end Pages</a>
 
-                        <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="userList.php" target="_self">User List</a>
-                            <a class="dropdown-item" href="Productlist.html" target="_self"> Product list </a>
-                            <a class="dropdown-item" href="Back end\Order-list.html" target="_self">Order List </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown03">
+                                <a class="dropdown-item" href="userList.php" target="_self">User List</a>
+                                <a class="dropdown-item" href="productList.php" target="_self"> Product list </a>
+                                <a class="dropdown-item" href="orderList.php" target="_self">Order List </a>
+                            </div>
+                    </li>
+                    <li class="nav-item">
+                    <?php
+                    if (isset($_SESSION['userLoggedIn'])){?>
+                        <a class="nav-link" href="logout.php" target="_blank">Logout</a><?php
+                    }
+                    else{?>
+                        <a class="nav-link" href="Login.php" target="_blank">Login / Sign up</a>
+                    <?php
+                    }
+                    ?>
+                    </li>
+                    <li class="nav-item">
+                    <li class="nav-item-dropdown">
+                        <div class="dropdown show">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#9881;</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown03">
+                                <a class="dropdown-item" href="..\html\Back end\change password.html"> Change
+                                    Password</a>
+                                <a class="dropdown-item" href="..\html\Back end\account-info.html" target="_self"> Account
+                                    Info</a></a>
+                                <a class="dropdown-item" href="..\html\Back end\delete-user.php">Delete Account</a>
+                                <a class="dropdown-item" href="..\html\logout.html">Log Out</a>
+                            </div>
                         </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Login.html" target="_self">Login / Sign up</a>
-                </li>
-                <li class="nav-item">
-                <li class="nav-item dropdown">
-                    <div class="dropdown show">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#9881;</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="Back end\change password.html" target="_self"> Change
-                                Password</a>
-                            <a class="dropdown-item" href="Back end\account-info.html" target="_self"> Account
-                                Info</a></a>
-                            <a class="dropdown-item" href="Back end\delete-user.html" target="_self">Delete Account</a>
-                        </div>
-                </li>
-                </li>
-            </ul>
-            <div class="shopping-cart-holder">
-                <a class="nav-link shopping-cart" href="shopping_cart.html">&#128722; </a>
+                    </li>
+                    </li>
+                </ul>
+                <div class="shopping-cart-holder">
+                    <a class="nav-link-shopping-cart" href="shoppingcart.php" target="_self">&#128722; </a>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+
     <!-- <div id="mega-container" style="max-width100%;height:100%"> -->
     <div class="container" style="margin-bottom: 100px;">
         <div class="cart-table" style = "overflow:auto; margin:50px; position:left absolute; max-width:75%">

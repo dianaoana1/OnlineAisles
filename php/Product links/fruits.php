@@ -104,7 +104,7 @@ $pearCurrPrice=getPrice($pear);
             </ul>
             <div class="shopping-cart-holder">
 
-                <a class="nav-link shopping-cart" href="..\shopping_cart.php" target="_blank">&#128722; </a>
+                <a class="nav-link shopping-cart" href="..\shoppingcart.php" target="_blank">&#128722; </a>
             </div>
         </div>
     </nav>
