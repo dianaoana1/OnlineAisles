@@ -212,7 +212,7 @@ ini_set('display_errors', 1);
         </div>
     </div>
 
-    <footer style="position:absolute;">
+    <footer id="footer">
         <div class="section contactInfo">
             <h3>Contact Info</h3>
             <ul class="info">
