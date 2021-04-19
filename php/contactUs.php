@@ -57,8 +57,8 @@ session_start();
     //Check every user's username vs the username given in the form
     function usernameExists($username)
     {
-        $file=fopen("..\TextFiles\initialUserDatabase.txt","r") or die("RIP");
-        $numLines=count(file("..\TextFiles\initialUserDatabase.txt"));
+        $file=fopen("..\TextFiles\userInfo.txt","r") or die("RIP");
+        $numLines=count(file("..\TextFiles\userInfo.txt"));
         $arr=array();
         $arr=getUserData($numLines,$file);
         for($i=0;$i<$numLines;$i++){
