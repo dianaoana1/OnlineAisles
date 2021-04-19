@@ -16,30 +16,30 @@ function firstPriceSetter(){
 function newPriceSetter(){
 
 }
-function dealChecker() {
-   /* var currPriceBannana = "<?php echo $bananaprice ?>";
-    var currPriceApple = "<?php echo $appleprice ?>";
-    var currPriceBread = "<?php echo $breadprice ?>";
-    var currPriceBroccoli = "<?php echo $bananaprice ?>";*/
+function dealChecker(currPriceApple,currPriceBannana,currPriceBread,currPriceBroccoli) {
+    currPriceApple=parseFloat(currPriceApple);
+    currPriceBannana=parseFloat(currPriceBannana);
+    currPriceBread=parseFloat(currPriceBread);
+    currPriceBroccoli=parseFloat(currPriceBroccoli);
     var idArr = [];
-    if (currPriceBannana == bananaFirstPrice && appleFirstPrice == currPriceApple && currPriceBread == breadFirstPrice && broccoliFirstPrice == currPriceBroccoli) {
+    if (currPriceBannana >= bananaFirstPrice && appleFirstPrice >= currPriceApple && currPriceBread >= breadFirstPrice && broccoliFirstPrice >= currPriceBroccoli) {
         id3 = document.getElementById("row1");
         id3.parentNode.removeChild(id3);
         id4 = document.getElementById("promo");
         document.getElementById("promo").innerHTML = "No deals this Week";
     } else {
-        if (currPriceBannana == bananaFirstPrice) {
+        if (currPriceBannana >= bananaFirstPrice) {
             idArr.push(document.getElementById("col-banana"));
-        } if (currPriceApple == appleFirstPrice) {
+        } if (currPriceApple >= appleFirstPrice) {
             idArr.push(document.getElementById("col-apple"));
-        } if (currPriceBread = breadFirstPrice) {
+        } if (currPriceBread >= breadFirstPrice) {
             idArr.push(document.getElementById("col-bread"));
-        } if (currPriceBroccoli == broccoliFirstPrice) {
+        } if (currPriceBroccoli >= broccoliFirstPrice) {
             idArr.push(document.getElementById("col-broccoli"));
         }
         for (var i = 0; i < idArr.length; i++) {
             if (idArr[i] !== null) {
-                idCancer[i].parentNode.removeChild(idCancer[i]);
+                idArr[i].parentNode.removeChild(idArr[i]);
             }
         }
     }

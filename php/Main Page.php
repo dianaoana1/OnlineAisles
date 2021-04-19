@@ -1,5 +1,15 @@
 <?php
 session_start();
+require_once("getProductPrices.php");
+$apple="Apple";
+$banana="Banana";
+$bread="Slice Bread";
+$broccoli="Broccoli";
+ $AppleCurrPrice=getPrice($apple);
+ $BreadCurrPrice=getPrice($bread);
+ $BroccoliCurrPrice=getPrice($broccoli);
+ $BananaCurrPrice=getPrice($banana);
+
 ?>
 
 <!DOCTYPE html>
@@ -173,26 +183,26 @@ session_start();
                                 <p style="pointer-events:auto;">The Apples are on sale this week<a
                                         href=../html/articles/apple.html><i> click
                                             here</i></a> </p>
-                                            <p><span class="initial-price" id="initial-price-apple">526</span> now for 0</p>
+                                            <p><span class="initial-price" id="initial-price-apple">526</span> now for <?php echo $AppleCurrPrice?></p>
                             </div>
 
                             <div class="col" id="col-banana">
                                 <img src="..\Images\banana.jpg" class="nohover" id="acc-img">
                                 <p>The Bananas are on sale this week<a href=../html/articles/banana.html><i> click
                                             here</i></a> </p>
-                                            <p><span class="initial-price" id="initial-price-banana">526</span> now for 0</p>
+                                            <p><span class="initial-price" id="initial-price-banana">526</span> now for <?php echo $BananaCurrPrice?></p>
                             </div>
                             <div class="col" id="col-bread">
                                 <img src="..\Images\bread.jpg" class="nohover" id="acc-img">
                                 <p>The Bread is on sale this week<a href=../html/articles/bread.html><i> click
                                             here</i></a> </p>
-                                            <p><span class="initial-price" id="initial-price-bread">526</span> now for 0</p>
+                                            <p><span class="initial-price" id="initial-price-bread">526</span> now for <?php echo $BreadCurrPrice?></p>
                             </div>
                             <div class="col" id="col-broccoli">
                                 <img src="..\Images\brocco.jpg" class="nohover" id="acc-img">
                                 <p>The Broccolis are on sale this week<a href=../html/articles/broccoli.html><i> click
                                             here</i></a> </p>
-                                            <p><span class="initial-price" id="initial-price-brocc">526</span> now for 0</p>
+                                            <p><span class="initial-price" id="initial-price-brocc">526</span> now for <?php echo $BroccoliCurrPrice?></p>
                             </div>
                         </div>
                     </div>
@@ -203,7 +213,7 @@ session_start();
             <script>
                firstPriceSetter();
                newPriceSetter();
-               dealChecker();
+               dealChecker(<?php echo $AppleCurrPrice?>,<?php echo $BananaCurrPrice?>,<?php echo $BreadCurrPrice?>,<?php echo $BroccoliCurrPrice?>);
                   //Tests for the method to remove the columns in the weekly deal thing
               /*
                 var idCancer = [document.getElementById("col-banana")];
