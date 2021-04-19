@@ -55,14 +55,14 @@ $cheeseCurrPrice=getPrice($cheese);
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aisles</a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="fruits.html" target="_self">Fruits</a>
-                            <a class="dropdown-item" href="Vegetables.html" target="_self">Vegetables </a>
-                            <a class="dropdown-item" href="meats and poultry.html" target="_self"> Meats
+                            <a class="dropdown-item" href="fruits.php" target="_self">Fruits</a>
+                            <a class="dropdown-item" href="Vegetables.php" target="_self">Vegetables </a>
+                            <a class="dropdown-item" href="meats and poultry.php" target="_self"> Meats
                                 and Poultry </a>
                             <a class="dropdown-item" href="seafood.html" target="_self">Seafood </a>
-                            <a class="dropdown-item" href="dairy and eggs.html" target="_self">Dairy and
+                            <a class="dropdown-item" href="dairy and eggs.php" target="_self">Dairy and
                                 Eggs </a>
-                            <a class="dropdown-item" href="cereal products.html" target="_self">Cereal
+                            <a class="dropdown-item" href="cereal products.php" target="_self">Cereal
                                 Products </a>
                                 
 

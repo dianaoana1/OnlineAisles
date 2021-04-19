@@ -46,7 +46,7 @@ $sausagesCurrPrice=getPrice($sausages);
 
 <body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
-        <a class="navbar-brand" href="..\Main Page.html">Online Aisles</a>
+        <a class="navbar-brand" href="..\Main Page.php">Online Aisles</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -58,14 +58,14 @@ $sausagesCurrPrice=getPrice($sausages);
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aisles</a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="fruits.html" target="_self">Fruits</a>
-                            <a class="dropdown-item" href="Vegetables.html" target="_self">Vegetables </a>
-                            <a class="dropdown-item" href="meats and poultry.html" target="_self"> Meats
+                            <a class="dropdown-item" href="fruits.php" target="_self">Fruits</a>
+                            <a class="dropdown-item" href="Vegetables.php" target="_self">Vegetables </a>
+                            <a class="dropdown-item" href="meats and poultry.php" target="_self"> Meats
                                 and Poultry </a>
                             <a class="dropdown-item" href="seafood.html" target="_self">Seafood </a>
-                            <a class="dropdown-item" href="dairy and eggs.html" target="_self">Dairy and
+                            <a class="dropdown-item" href="dairy and eggs.php" target="_self">Dairy and
                                 Eggs </a>
-                            <a class="dropdown-item" href="cereal products.html" target="_self">Cereal
+                            <a class="dropdown-item" href="cereal products.php" target="_self">Cereal
                                 Products </a>
                                 
                         </div>
