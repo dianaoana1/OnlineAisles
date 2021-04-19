@@ -21,27 +21,27 @@ class Item
         $this->itemnumber = $itemnumber;
     }
 
-    function get_itemnumber()
+    public function get_itemnumber()
     {
         return $this->itemnumber;
     }
 
-    function set_item($item)
+    public function set_item($item)
     {
         $this->item = $item;
     }
 
-    function get_item()
+    public function get_item()
     {
         return $this->item;
     }
 
-    function set_price($price)
+    public function set_price($price)
     {
         $this->price = $price;
     }
 
-    function get_price()
+    public function get_price()
     {
         return $this->price;
     }
@@ -53,15 +53,15 @@ class Item
 
     public function get_quantity()
     {
-        return $this->quantity;
+        return (int) $this->quantity;
     }
 
-    function set_image($image)
+    public function set_image($image)
     {
         $this->image = $image;
     }
 
-    function get_image()
+    public function get_image()
     {
         return $this->image;
     }

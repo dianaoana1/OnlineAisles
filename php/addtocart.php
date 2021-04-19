@@ -6,8 +6,6 @@
 
 include_once 'productClass.php';
 session_start();
-error_reporting(~0);
-ini_set('display_errors', 1);
 
 $apple = new Item(1, "apple", 0.89, 0, "../../Images/apple.png");
 if(empty($_SESSION['cart'])){
@@ -16,7 +14,7 @@ if(empty($_SESSION['cart'])){
     $apple = new Item(1, "apple", 0.89, 0, "../../Images/apple.png");
     $banana = new item(2, "banana", 0.33, 0, "../../Images/banana.jpg");
     $bread = new item(3, "bread", 1.69, 0, "../../Images/bread.jpg");
-    $broccoli = new item(4, "broccoli", 3,49, 0, "../../Images/brocco.jpg");
+    $broccoli = new item(4, "broccoli", 3.49, 0, "../../Images/brocco.jpg");
     $carrots = new item(5, "carrots", 2.99, 0, "../../Images/carrots.jpg");
     $cereals = new item(6, "cereals", 4.99, 0, "../../Images/cereal.jpg");
     $cheese = new item(7, "cheese", 6.09, 0, "../../Images/cheese.jpg");
@@ -41,6 +39,8 @@ $quantity = $_POST["quantity"];
 
 if (isset($_POST['1'])){
     $_SESSION['cart'][0] -> set_quantity($_SESSION['cart'][0] -> get_quantity() + $quantity);
+    $newqty = $_SESSION['cart'][0] -> get_quantity();
+    echo "$newqty";
 } 
 //else if (isset($_POST['2'])){
 //     $_SESSION['cart'][1].set_quantity($_SESSION['cart'][1].get_quantity() + $quantity);
@@ -79,6 +79,17 @@ if (isset($_POST['1'])){
 // } else{
 //     $_SESSION['cart'][18].set_quantity($_SESSION['cart'][18].get_quantity() + $quantity);
 // }
+$_SESSION['productcart'] = "..\TextFiles\productCart.txt";
+$file = $_SESSION['productcart'];
+
+$filedirect = fopen($file, "w+") or die("cannot open file");
+
+for($i = 0; $i < 19; $i++){
+    $productInfo = $_SESSION['cart'][$i] -> get_itemnumber() ."\t". $_SESSION['cart'][$i] -> get_item() . "\t" . $_SESSION['cart'][$i] -> get_price() . "\t" . $_SESSION['cart'][$i] -> get_quantity() . "\t" . $_SESSION['cart'][$i] -> get_image() . "\n";
+    fwrite($filedirect, $productInfo);
+}
+fclose($filedirect);
+
 
 echo "hi<br>";
 

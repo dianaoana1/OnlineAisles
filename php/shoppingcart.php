@@ -1,7 +1,8 @@
 <?php
 
-include_once 'php\addtocart.php';
 include_once 'php\productClass.php';
+include_once 'php\addtocart.php';
+
 session_start();
 error_reporting(~0);
 ini_set('display_errors', 1);
@@ -114,7 +115,9 @@ ini_set('display_errors', 1);
                         if(isset($_SESSION['cart'])){
                             $count = 1;
                             for($i=0; $i < 18; $i++){
-                                if($_SESSION['cart'][$i] -> get_quantity() > 0){
+                                $s = (int)serialize($_SESSION['cart'][$i]);
+                                echo "<br>$s";
+                                if($s -> get_quantity() > 0){
                                     $image = $_SESSION['cart'][$i] -> get_image();
                                     $quantity = $_SESSION['cart'][$i] -> get_quantity();
                                     $item = $_SESSION['cart'][$i] -> get_quantity();
