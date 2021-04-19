@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once 'productClass.php'
+include_once 'php\productClass.php';
 // creating array of objects
 
 if(empty($_SESSION['cart'])){
@@ -73,3 +73,5 @@ if (isset($_POST['1'])){
 }
 
 ?>
+
+<p>Item successfully added to cart!</p>
