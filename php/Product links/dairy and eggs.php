@@ -1,3 +1,20 @@
+<?php
+session_start();
+
+require_once("../../php/getProductPricesProducts.php");
+$fusilli="Fusilli";
+$bread="Slice Bread";
+$cereal="Cereals";
+$rice="Rice";
+$riceCurrPrice=getPrice($rice);
+$breadCurrPrice=getPrice($bread);
+$cerealCurrPrice=getPrice($cereal);
+$fusilliCurrPrice=getPrice($fusilli);
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +22,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cereal products</title>
+    <title>Dairy and eggs</title>
 
     <meta charset="utf-8">
 
@@ -15,13 +32,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="..\../CSS/aisles.css">
-    <script tyep="text/css" src="../../JavaScript\weeklydealsProduct.js"></script>
-    <link rel="stylesheet" href="..\..\CSS\Page UI.css">
     <link rel="icon" 
     type="image/png" 
     href="..\..\Images\favicon.png">
+    <link rel="stylesheet" href="..\..\CSS\Page UI.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -48,6 +65,7 @@
                             <a class="dropdown-item" href="cereal products.html" target="_self">Cereal
                                 Products </a>
                                 
+
                         </div>
                     </div>
                 </li>
@@ -59,7 +77,7 @@
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
                             <a class="dropdown-item" href="..\..\php\userList.php" target="_self">User List</a>
                             <a class="dropdown-item" href="..\..\php\productList.php" target="_self"> Product list </a>
-                            <a class="dropdown-item" href="..\back end\Order-list.html" target="_self">Order List </a>
+                            <a class="dropdown-item" href="..\back end\Order-list.html" target ="_self">Order List </a>
                         </div>
                 </li>
                 <li class="nav-item">
@@ -88,60 +106,48 @@
             </div>
         </div>
     </nav>
-
     <div class="container" style="max-width: 100%; height:100%;">
-    <div class="aisles">
-        <div class="Categories">
-            <h2>CEREAL PRODUCTS</h2>
+        <div class="aisles">
+        <div class="Categories" style="max-width: 100%; height:100%;">
+        
+            <h3>DAIRY AND EGGS</h3>
         </div>
         <div class="format" style="margin-bottom: 200px;">
-            <a class="contour" style="text-decoration:none;" href="../articles/pasta.html"
+            <a class="contour" style="text-decoration:none;" href="../articles/milk.html"
                 title="Click for a full description">
                 <div class="article_image">
-                    <img src="..\../Images/pasta.jpg" alt="Pasta picture">
+                    <img src="..\../Images/milk.jpg" alt="milk picture">
                 </div>
                 <div class="article_text">
-                    <div>Fusilli</div>
-                    <div id="price_fusilli">$2.49</div>
+                    <div>2L of milk</div>
+                    <div>$4.99</div>
                 </div>
             </a>
 
-            <a class="contour" style="text-decoration:none;" href="../articles/bread.html"
+            <a class="contour" style="text-decoration:none;" href="../articles/eggs.html"
                 title="Click for a full description">
                 <div class="article_image">
-                    <img src="..\../Images/bread.jpg" alt="Sliced bread picture">
+                    <img src="..\../Images/eggs.jpeg" alt="eggs picture">
                 </div>
                 <div class="article_text">
-                    <div>Sliced bread</div>
-                    <div id="price_bread">$1.99</div>
+                    <div>Dozen eggs</div>
+                    <div>$2.99</div>
                 </div>
             </a>
 
-            <a class="contour" style="text-decoration:none;" href="../articles/cereals.html"
+            <a class="contour" style="text-decoration:none;" href="../articles/cheese.html"
                 title="Click for a full description">
                 <div class="article_image">
-                    <img src="..\../Images/cereal.jpg" alt="Cereal picture">
+                    <img src="..\../Images/cheese.jpg" alt="Cheese picture">
                 </div>
                 <div class="article_text">
-                    <div>Cereal</div>
-                    <div id="price_cereal">$4.99</div>
-                </div>
-            </a>
-
-            <a class="contour" style="text-decoration:none;" href="../articles/rice.html"
-                title="Click for a full description">
-                <div class="article_image">
-                    <img src="..\../Images/rice.png" alt="Bag of rice picture">
-                </div>
-                <div class="article_text">
-                    <div>Rice</div>
-                    <div id="price_rice">$19.99</div>
+                    <div>Cheese</div>
+                    <div>$6.09/500g</div>
                 </div>
             </a>
         </div>
+        </div>
     </div>
-    </div>
-    <script>productPriceSet('bread','')</script>
     <div style="clear: both"></div>
     <div style="clear: both"></div>
     <footer>
@@ -183,6 +189,7 @@
             </ul>
         </div>
     </footer>
+
 </body>
 
 </html>
