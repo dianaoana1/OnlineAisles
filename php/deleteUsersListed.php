@@ -83,18 +83,19 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
         </div>
     </nav>
     <br>
-    <div class="container" style="max-width: 96%; height:100%;margin-top:60px; margin-bottom:166px ">
+    <div class="container" style="max-width: 96%; height:100%;margin-top:40px; margin-bottom:166px ">
         <?php $pattern = "[1-".getLastLine()."]"; ?>
         <div>
-            <form action="<?php echo $_SESSION["currentPage"]; ?>" method="POST">
-                <label>Enter the user ID number of the user you would like to delete:</label>
-                <input type="text" title="User ID must be within range of 1-<?php echo getLastLine(); ?>"pattern=<?php echo $pattern?> placeholder="User ID #" name="userID" required />
+            <form action="<?php echo $_SESSION["currentPage"]; ?>" method="POST" style="position:center fixed; text-align:center;">
+                <label><h5>Enter the user ID number of the user <br>you would like to delete:</h5></label><br>
+                <input style="width:85px;" type="text" title="User ID must be within range of 1-<?php echo getLastLine(); ?>"pattern=<?php echo $pattern?> placeholder="User ID #" name="userID" required />
                 <div style="position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal">
                     <button type="text" name="enter-button" style="font-weight: bold;" class="btn btn-primary">Enter</button>
                     <a type="text" name="cancel-button" style="font-weight: bold;" class="btn btn-primary" href="userList.php">Cancel</a>
                 </div>
             </form>
         </div>
+        <br>
         <div class="user-table" style="overflow:auto;">
             <?php
             if (isset($_POST['enter-button'])) {

@@ -189,6 +189,7 @@ function ProcessEmptyTable()
                 </tbody>
                 </table></div><div style="position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal">
                 <a type="text" name="add-user-button" style="font-weight: bold;" class="btn btn-primary" href="addUserPage.php">Add New User</a>
+            </div><div style="margin-bottom:517px;">
             </div>');
 }
 
