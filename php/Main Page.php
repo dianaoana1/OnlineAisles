@@ -1,5 +1,6 @@
-
-
+<?php
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -65,13 +66,21 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Back end Pages</a>
 
                             <div class="dropdown-menu" aria-labelledby="dropdown03">
-                                <a class="dropdown-item" href="..\php\userList.php" target="_self">User List</a>
-                                <a class="dropdown-item" href="..\php\productList.php" target="_self"> Product list </a>
-                                <a class="dropdown-item" href="Back end/Order-list.html" target="_self">Order List </a>
+                                <a class="dropdown-item" href="userList.php" target="_self">User List</a>
+                                <a class="dropdown-item" href="productList.php" target="_self"> Product list </a>
+                                <a class="dropdown-item" href="orderList.php" target="_self">Order List </a>
                             </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link Login" href="..\php\Login.php">Login / Sign up</a>
+                    <?php
+                    if (isset($_SESSION['userLoggedIn'])){?>
+                        <a class="nav-link" href="logout.php" target="_blank">Logout</a><?php
+                    }
+                    else{?>
+                        <a class="nav-link" href="Login.php" target="_blank">Login / Sign up</a>
+                    <?php
+                    }
+                    ?>
                     </li>
                     <li class="nav-item">
                     <li class="nav-item-dropdown">
@@ -79,19 +88,19 @@
                             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#9881;</a>
                             <div class="dropdown-menu" aria-labelledby="dropdown03">
-                                <a class="dropdown-item" href="Back end\change password.html"> Change
+                                <a class="dropdown-item" href="..\html\Back end\change password.html"> Change
                                     Password</a>
-                                <a class="dropdown-item" href="Back end\account-info.html" target="_self"> Account
+                                <a class="dropdown-item" href="..\html\Back end\account-info.html" target="_self"> Account
                                     Info</a></a>
-                                <a class="dropdown-item" href="Back end\delete-user.html">Delete Account</a>
-                                <a class="dropdown-item" href="logout.html">Log Out</a>
+                                <a class="dropdown-item" href="..\html\Back end\delete-user.php">Delete Account</a>
+                                <a class="dropdown-item" href="..\html\logout.html">Log Out</a>
                             </div>
                         </div>
                     </li>
                     </li>
                 </ul>
                 <div class="shopping-cart-holder">
-                    <a class="nav-link-shopping-cart" href="shopping_cart.html" target="_self">&#128722; </a>
+                    <a class="nav-link-shopping-cart" href="..\html\shopping_cart.html" target="_self">&#128722; </a>
                 </div>
             </div>
         </nav>
@@ -125,28 +134,28 @@
                         <h3 style="text-align: center;"> Quick links:</h3>
                         <div class="row" style="width: 100%;text-align: center !important;">
                             <p class="col" id="col-fruits">
-                                <a class="nav-link" href="Product links/fruits.html" target="_self">
+                                <a class="nav-link" href="..\html\Product links/fruits.html" target="_self">
                                     Fruits</a>
                             </p>
                             <p class="col" id="col-veg">
-                                <a class="nav-link" href="Product links/Vegetables.html" target="_self">
+                                <a class="nav-link" href="..\html\Product links/Vegetables.html" target="_self">
 
                                     Vegetables</a>
                             </p>
                             <p class="col" id="col-egg">
-                                <a class="nav-link" href="Product links/dairy and eggs.html" target="_self">Dairy and
+                                <a class="nav-link" href="..\html\Product links/dairy and eggs.html" target="_self">Dairy and
                                     Eggs</a>
                             </p>
                             <p class="col" id="col-meat">
-                                <a class="nav-link" href="Product links/meats and poultry.html" target="_self">Meat and
+                                <a class="nav-link" href="..\html\Product links/meats and poultry.html" target="_self">Meat and
                                     Poultry</a>
                             </p>
                             <p class="col" id="col-sea">
-                                <a class="nav-link" href="Product links/seafood.html" target="_self">Fish and
+                                <a class="nav-link" href="..\html\Product links/seafood.html" target="_self">Fish and
                                     Seafood</a>
                             </p>
                             <p class="col" id="col-cer">
-                                <a class="nav-link" href="Product links/cereal products.html" target="_self">Cereal
+                                <a class="nav-link" href="..\html\Product links/cereal products.html" target="_self">Cereal
                                     Products</a>
                             </p>
 
