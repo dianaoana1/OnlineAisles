@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lobster</title>
+    <title>Sign up</title>
 
     <meta charset="utf-8">
 
@@ -63,7 +63,15 @@
                         </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="..\Login.html" target="_blank">Login / Sign up</a>
+                <?php
+                    if (isset($_SESSION['userLoggedIn'])){?>
+                        <a class="nav-link" href="logout.php" target="_blank">Logout</a><?php
+                    }
+                    else{?>
+                        <a class="nav-link" href="Login.php" target="_blank">Login / Sign up</a>
+                    <?php
+                    }
+                ?>
                 </li>
                 <li class="nav-item">
                 <li class="nav-item dropdown">
@@ -92,6 +100,7 @@
     if (empty($_POST["havecard"]) || empty($_POST["Title"]) || empty($_POST["FirstName"]) || empty($_POST["LastName"]) || empty($_POST["UserName"]) || empty($_POST["Address"]) || empty($_POST["City"]) || empty($_POST["province"]) || empty($_POST["PostalCode"]) || empty($_POST["email"]) || empty($_POST["confirm-email"]) || empty($_POST["password"]) || empty($_POST["confirm-password"]) || empty($_POST["terms"])) {
         $missing = TRUE;
         $title = "Please Go Back";
+    }
     if ($_POST["password"] != $_POST["confirm-password"]) {
         $errorP = TRUE;
     }
