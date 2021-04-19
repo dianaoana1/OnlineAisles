@@ -26,7 +26,7 @@ if(empty($_SESSION['cart'])){
     $sausages = new item(18, "sausages", 3.75, 0, "../../Images/sausages.jpg");
     $shrimps = new item(19, "shrimps", 9.99, 0, "../../Images/shrimp.jpg");
 
-    $_SESSION['cart'] = [$apple, $banana, $bread, $broccoli, $carrots, $cereals, $cheese, $chicken, $eggs, $groundbeef, $lobster, $milk, $mushrooms, $pasta, $pear, $rice, $salmon, $sausages, $shrimps];
+    $_SESSION['cart'] = array($apple, $banana, $bread, $broccoli, $carrots, $cereals, $cheese, $chicken, $eggs, $groundbeef, $lobster, $milk, $mushrooms, $pasta, $pear, $rice, $salmon, $sausages, $shrimps);
 
 }
 
@@ -73,5 +73,10 @@ if (isset($_POST['1'])){
 }
 
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<body>
 <p>Item successfully added to cart!</p>
+</body>
+</html>
