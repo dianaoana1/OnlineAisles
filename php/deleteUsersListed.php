@@ -68,9 +68,11 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
                     <div class="dropdown show">
                         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#9881;</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="change password.html" target="_blank"> Change Password</a>
-                            <a class="dropdown-item" href="account-info.html" target="_self"> Account Info</a></a>
-                            <a class="dropdown-item" href="delete-user.html" target="_blank">Delete Account</a>
+                        <a class="dropdown-item" href="..\html\Back end\change password.html" target="_blank"> Change
+                                Password</a>
+                            <a class="dropdown-item" href="..\html\Back end\account-info.html" target="_self"> Account
+                                Info</a></a>
+                            <a class="dropdown-item" href="..\html\Back end\delete-user.html" target="_blank">Delete Account</a>
                         </div>
                 </li>
                 </li>
