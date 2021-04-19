@@ -14,7 +14,7 @@ function deleteAccount($username)
             while (!feof($file)) {
                 $line = fgets($file);
                 $lineArr = explode("\t", $line);
-            if (strcmp($username,$lineArr[0])==0) {
+            if (strcmp($username,$lineArr[0])!==0) {
                     fwrite($tempFile, $line);
                 }
                 $lineCount++;
@@ -33,11 +33,11 @@ function deleteAccount($username)
             }
             fclose($file);
             fclose($tempFile);?>
-            window.location.replace("../html/Main Page.html");
+            window.location.replace("Main Page.php");
     }
     else{
         alert("Account deletion cancelled. Returning to main page.");
-        window.location.replace("../html/Main Page.html");
+        window.location.replace("Main Page.php");
     }
     </script>
     <?php

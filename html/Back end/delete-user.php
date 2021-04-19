@@ -65,10 +65,10 @@ session_start();
                 <li class="nav-item">
                 <?php
                     if (isset($_SESSION['userLoggedIn'])){?>
-                        <a class="nav-link" href="logout.php" target="_blank">Logout</a><?php
+                        <a class="nav-link" href="..\..\php\logout.php" target="_blank">Logout</a><?php
                     }
                     else{?>
-                        <a class="nav-link" href="Login.php" target="_blank">Login / Sign up</a>
+                        <a class="nav-link" href="..\..\php\Login.php" target="_blank">Login / Sign up</a>
                     <?php
                     }
                     ?>
@@ -82,6 +82,7 @@ session_start();
                             <a class="dropdown-item" href="change password.html"> Change Password</a>
                             <a class="dropdown-item" href="account-info.html"> Account Info</a></a>
                             <a class="dropdown-item" href="delete-user.php">Delete Account</a>
+                            <a class="dropdown-item" href="..\logout.html">Log Out</a>
                         </div>
                 </li>
                 </li>
@@ -102,7 +103,7 @@ session_start();
                 WARNING: Once an account has been deleted, change cannot be reverted.
             </p>
             <a type="text" name="yes-button" class="btn btn-primary" href = "..\..\php\deleteAccount.php" style="color: white !important;">YES</a>
-            <a type="text" name="no-button" class="btn btn-primary" href = "..\Main Page.html" style="color: white !important;">NO</a>
+            <a type="text" name="no-button" class="btn btn-primary" href = "..\..\php\Main Page.php" style="color: white !important;">NO</a>
             </p>
         </div>
     </div>
