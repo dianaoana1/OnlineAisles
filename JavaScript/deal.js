@@ -22,7 +22,7 @@ function dealChecker(currPriceApple,currPriceBannana,currPriceBread,currPriceBro
     currPriceBread=parseFloat(currPriceBread);
     currPriceBroccoli=parseFloat(currPriceBroccoli);
     var idArr = [];
-    if (currPriceBannana >= bananaFirstPrice && appleFirstPrice >= currPriceApple && currPriceBread >= breadFirstPrice && broccoliFirstPrice >= currPriceBroccoli) {
+    if (currPriceBannana >= bananaFirstPrice && currPriceApple >= appleFirstPrice  && currPriceBread >= breadFirstPrice && currPriceBroccoli >= broccoliFirstPrice) {
         id3 = document.getElementById("row1");
         id3.parentNode.removeChild(id3);
         id4 = document.getElementById("promo");
