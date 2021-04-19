@@ -43,8 +43,6 @@ $quantity = $_POST["quantity"];
 
 if (isset($_POST['1'])){
     $_SESSION['cart'][0] -> set_quantity($_SESSION['cart'][0] -> get_quantity() + $quantity);
-    $newqty = $_SESSION['cart'][0] -> get_quantity();
-    echo "$newqty";
 } 
 else if (isset($_POST['2'])){
     $_SESSION['cart'][1] -> set_quantity($_SESSION['cart'][1] -> get_quantity() + $quantity);
@@ -94,9 +92,7 @@ for($i = 0; $i < 19; $i++){
     fwrite($filedirect, $productInfo);
 }
 fclose($filedirect);
-
-
-echo "hi<br>";
+header('Location: ' . $_SERVER['HTTP_REFERER']);
 
 ?>
 <!DOCTYPE html>
@@ -105,6 +101,7 @@ echo "hi<br>";
     <title>Success!</title>
 </head>
 <body>
-<p>Item successfully added to cart!</p>
+<h2>Item successfully added to cart!</h2>
+<h2><a>Continue shopping?</a> or view <a href="shoppingcart.php">shopping cart?</a>
 </body>
 </html>

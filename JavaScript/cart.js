@@ -13,6 +13,10 @@ function ready() {
     }
 }
 
+function add() {
+    alert('Item successfully added to cart!');
+}
+
 
 function addToCartClicked(event) {
     var button = event.target;

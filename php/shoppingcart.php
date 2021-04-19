@@ -123,7 +123,6 @@ ini_set('display_errors', 1);
                                     (int)$quantity = $lineArr[3];
                                     $item = $lineArr[1];
                                     (float)$price = $lineArr[2];
-                                    $totalprice = $quantity * $price;
                                     echo "
                                     <tr class=\"cart-row\">
                                         <td class=\"tg-even\">$count</td>
@@ -140,7 +139,7 @@ ini_set('display_errors', 1);
                                         value=&#43; />
                                         </td>
     
-                                        <td class=\"tg-even item-price\">$totalprice</td>
+                                        <td class=\"tg-even item-price\">$price</td>
                                         <td class=\"tg-even\"><input type=\"button\" class=\"btn btn-primary\"
                                         style=\" border-radius:100%; padding: 3px 10px;\" name=\"delete\" onclick=\"deleteItem()\" value=\"×\" />
                                         </td>
