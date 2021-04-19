@@ -50,10 +50,53 @@ function addOrderToFile($username, $itemNum, $quantity)
     }
 }
 function ProcessEmptyOrderTable(){
-
+    echo('<table class="tg" id="orderTable">
+    <thead>
+        <tr>
+            <th class="tg-header">Order Number</th>
+            <th class="tg-header">User</th>
+            <th class="tg-header">Total number of Products</th>
+            <th class="tg-header">Sub-total</th>
+            <th class="tg-header">No of products</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="tg-even" colspan="5">No orders yet</td>
+            </tr>
+        </tbody>
+        </table></div><div style="position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal">
+        <a type="text" name="add-order-button" style="font-weight: bold;" class="btn btn-primary" href="addOrder.php">Add new order</a>
+    </div><div style="margin-bottom:517px;">
+    </div>');
 }
 
 function ProcessOrdersToTable(){
+    $file = fopen($_SESSION['file'], "a+");
+    $result = "";
+    $result .= "<table class=\"tg\" id=\"userTable\" name = \"userTable\">
+    <thead>
+    <th class="tg-header">Order Number</th>
+    <th class="tg-header">User</th>
+    <th class="tg-header">Total number of Products</th>
+    <th class="tg-header">Sub-total</th>
+    <th class="tg-header">No of products</th>
+    <tbody>";
+    $count = 0;
+    while (!feof($file)) {   //reading file line by line
+        $count++;
+        $line = fgets($file);
+        $lineArr = explode("\t", $line);
+        $result .= newRow($count, $lineArr[0], $lineArr[1], $lineArr[2], $lineArr[3]);    //adding new table rows
+    }
+    $result .= "</tbody></table></div>
+    <div style=\"position:center; text-align:center; margin:15px;font-family:Arial, sans-serif;font-size:20px;font-weight:normal\">
+            <a type=\"text\" name=\"add-order-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"addOrder.php\">Add New Order</a>
+            <a type=\"text\" name=\"edit-order-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"editOrder.php\">Edit User</a>
+            <a type=\"text\" name=\"delete-order-button\" style=\"font-weight: bold;\" class=\"btn btn-primary\" href=\"deleteOrder.php\">Delete User</a>
+        </div>";
+    fclose($file);
+    echo $result;
 
 }
 ?>
