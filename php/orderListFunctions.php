@@ -55,9 +55,9 @@ function ProcessEmptyOrderTable(){
         <tr>
             <th class="tg-header">Order Number</th>
             <th class="tg-header">User</th>
-            <th class="tg-header">Total number of Products</th>
-            <th class="tg-header">Sub-total</th>
-            <th class="tg-header">No of products</th>
+            <th class="tg-header">Item Number</th>
+            <th class="tg-header">Quantity</th>
+            <th class="tg-header">Address</th>
         </tr>
         </thead>
         <tbody>
@@ -74,13 +74,13 @@ function ProcessEmptyOrderTable(){
 function ProcessOrdersToTable(){
     $file = fopen($_SESSION['file'], "a+");
     $result = "";
-    $result .= "<table class=\"tg\" id=\"userTable\" name = \"userTable\">
+    $result .= "<table class=\"tg\" id=\"orderTable\" name = \"orderTable\">
     <thead>
     <th class="tg-header">Order Number</th>
     <th class="tg-header">User</th>
-    <th class="tg-header">Total number of Products</th>
-    <th class="tg-header">Sub-total</th>
-    <th class="tg-header">No of products</th>
+    <th class="tg-header">Item Number</th>
+    <th class="tg-header">Quantity</th>
+    <th class="tg-header">Address</th>
     <tbody>";
     $count = 0;
     while (!feof($file)) {   //reading file line by line
