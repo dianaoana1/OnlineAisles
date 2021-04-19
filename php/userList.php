@@ -37,7 +37,7 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
 
 <body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
-        <a class="navbar-brand" href="..\..\html\Main Page.html">Online Aisles</a>
+        <a class="navbar-brand" href="Main Page.php">Online Aisles</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -84,8 +84,10 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
                     <div class="dropdown show">
                         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#9881;</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="..\html\Back end\change password.html" target="_blank"> Change Password</a>
-                            <a class="dropdown-item" href="..\html\Back end\account-info.html" target="_self"> Account Info</a></a>
+                        <a class="dropdown-item" href="..\html\Back end\change password.html" target="_blank"> Change
+                                Password</a>
+                            <a class="dropdown-item" href="..\html\Back end\account-info.html" target="_self"> Account
+                                Info</a></a>
                             <a class="dropdown-item" href="..\html\Back end\delete-user.html" target="_blank">Delete Account</a>
                         </div>
                 </li>
