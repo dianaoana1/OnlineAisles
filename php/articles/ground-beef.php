@@ -90,10 +90,10 @@ $productCurrPrice=getPrice($product);
                 <li class="nav-item">
                 <?php
                     if (isset($_SESSION['userLoggedIn'])){?>
-                        <a class="nav-link" href="logout.php" target="_blank">Logout</a><?php
+                        <a class="nav-link" href="../../php/logout.php" target="_blank">Logout</a><?php
                     }
                     else{?>
-                        <a class="nav-link" href="Login.php" target="_blank">Login / Sign up</a>
+                        <a class="nav-link" href="../../php/Login.php" target="_blank">Login / Sign up</a>
                     <?php
                     }
                     ?>   
