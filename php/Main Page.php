@@ -144,28 +144,28 @@ $broccoli="Broccoli";
                         <h3 style="text-align: center;"> Quick links:</h3>
                         <div class="row" style="width: 100%;text-align: center !important;">
                             <p class="col" id="col-fruits">
-                                <a class="nav-link" href="..\html\Product links/fruits.html" target="_self">
+                                <a class="nav-link" href="..\php\Product links/fruits.php" target="_self">
                                     Fruits</a>
                             </p>
                             <p class="col" id="col-veg">
-                                <a class="nav-link" href="..\html\Product links/Vegetables.html" target="_self">
+                                <a class="nav-link" href="..\php\Product links/Vegetables.php" target="_self">
 
                                     Vegetables</a>
                             </p>
                             <p class="col" id="col-egg">
-                                <a class="nav-link" href="..\html\Product links/dairy and eggs.html" target="_self">Dairy and
+                                <a class="nav-link" href="..\php\Product links/dairy and eggs.php" target="_self">Dairy and
                                     Eggs</a>
                             </p>
                             <p class="col" id="col-meat">
-                                <a class="nav-link" href="..\html\Product links/meats and poultry.html" target="_self">Meat and
+                                <a class="nav-link" href="..\php\Product links/meats and poultry.php" target="_self">Meat and
                                     Poultry</a>
                             </p>
                             <p class="col" id="col-sea">
-                                <a class="nav-link" href="..\html\Product links/seafood.html" target="_self">Fish and
+                                <a class="nav-link" href="..\php\Product links/seafood.php" target="_self">Fish and
                                     Seafood</a>
                             </p>
                             <p class="col" id="col-cer">
-                                <a class="nav-link" href="..\html\Product links/cereal products.html" target="_self">Cereal
+                                <a class="nav-link" href="..\php\Product links/cereal products.php" target="_self">Cereal
                                     Products</a>
                             </p>
 

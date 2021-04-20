@@ -23,7 +23,7 @@ if(empty($_SESSION['cart'])){
     $chicken = new item(8, "whole chicken", getPrice("Whole Chicken"), 0, "../Images/chicken.jpg");
     $eggs = new item(9, "dozen of eggs", getPrice("Eggs"), 0, "../Images/eggs.jpeg");
     $groundbeef = new item(10, "ground beef", getPrice("Ground Beef"), 0, "../Images/ground-beef.jpg");
-    $lobster = new item(11, "lobster", getPrice("Lobster"), 0, "../../Images/lobster.jpg");
+    $lobster = new item(11, "lobster", getPrice("Lobster"), 0, "../Images/lobster.jpg");
     $milk = new item(12, "milk", getPrice("Milk"), 0, "../Images/milk.jpg");
     $mushrooms = new item(13, "mushrooms", getPrice("Mushrooms"), 0, "../Images/mushrooms.jpg");
     $pasta = new item(14, "fusilli", getPrice("Fusilli"), 0, "../Images/pasta.jpg");
