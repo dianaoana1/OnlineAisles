@@ -74,7 +74,7 @@ require ("userListFunctions.php");
                             </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Login.html">Login / Sign up</a>
+                        <a class="nav-link" href="Login.php">Login / Sign up</a>
                     </li>
                     <li class="nav-item">
                     <li class="nav-item dropdown">
