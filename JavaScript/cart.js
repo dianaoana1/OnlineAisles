@@ -28,7 +28,7 @@ function addToCartClicked(event) {
 
 //increment button
 function increaseQuantity() {
-    var quantity = event.target.parentNode.previousSibling.parentNode.children[4].innerHTML++;
+    event.target.parentNode.previousSibling.parentNode.children[4].innerHTML++;
     totalCalculators();
 }
 
@@ -90,18 +90,35 @@ function totalCalculators() {
     estimatedTotalCalculator();
 }
 
+/*
 function subTotalCalculator() {
     var subTotal = 0;
     var table = document.getElementById("cartTable");
     var tableRows = table.rows;
     for (var i = 1; i < tableRows.length; i++) {
-        var price = parseFloat(tableRows[i].cells[6].innerText);
+        var price = parseFloat(tableRows[i].cells[0].innerText);
         var quantity = tableRows[i].cells[4].innerText;
         total_per_item = parseFloat(price.substring(1)) * quantity;
         subTotal += total_per_item;
     }
     subTotalStr = subTotal.toFixed(2);
     document.getElementById("subtotal").innerText = "$" + subTotalStr;
+    return subTotal;
+}
+*/
+function subTotalCalculator() {
+    var subtotal = 0;
+    var table = document.getElementById("cartTable");
+    var tableRows = table.rows;
+    for (var i = 1; i < tableRows.length; i++) {
+        var price = parseFloat(document.getElementById("price").innerText);
+        var quantity = parseFloat(document.getElementById("qty").innerText);
+        var priceperitem = price*quantity;
+        subtotal += priceperitem;
+    }
+    subtotalStr = subtotal.toFixed(2);
+    document.write(subtotalStr);
+    document.getElementById("subtotal").innerHTML = "$" + subtotalStr;
     return subTotal;
 }
 

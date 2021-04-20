@@ -157,7 +157,7 @@ $mushroomsCurrPrice=getPrice($mushrooms);
         </div>
     </div>
     </div>
-    <script>productPriceSet('broccoli','')</script>
+    <script></script>
     <div style="clear: both"></div>
     <div style="clear: both"></div>
     <footer>

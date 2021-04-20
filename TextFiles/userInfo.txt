@@ -2,6 +2,3 @@ oumbar	pass1	Barry	Oumar	oum@gmail.com	514-163-4896	514-135-4863	3 main
 mattb	pass2	Beaulieu	Matthew	mattewb@hotmail.com	514-514-5145	514-514-5146	123 mcgill
 dianaMer	pass3	Merlusca	Diana	dmerl@gmail.com	514-656-8979	514-656-8975	2525 concordia
 user2	pass2	bobo	javascript	bobo@gmail.com	514-656-8979	514-656-8975	124 first ave
-oumbar	ezpassword	Barry	Oumar	obarry@yahoo.com	438-797-1832	514-135-4863	2 concordia st
-hvvcnvmb,n	mok	Barry	Oumar	jjjj@live.ca	15819837585	345678999876	3581 Aylmer Street, Montreal, Select your province
-nn	huyt	Barry	Oumar	jui@live.ca	15819837585	8765445678	3581 Aylmer Street, Montreal, British Columbia

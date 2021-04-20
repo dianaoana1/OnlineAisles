@@ -1,5 +1,1 @@
--verify the last links in php pages
--add admin rights to userlistphp
--get values for p2 from the database
--get the values for the product pages from the database
--get the values for the shopping cart from the database
+
