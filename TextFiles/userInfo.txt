@@ -1,4 +1,2 @@
-oumbar1	pass1	Barry	Oumar	oum@gmail.com	514-163-4896	514-135-4863	3 main
 dianaMer	pass3	Merlusca	Diana	dmerl@gmail.com	514-656-8979	514-656-8975	2525 concordia
 user2	pass2	bobo	javascript	bobo@gmail.com	514-656-8979	514-656-8975	124 first ave
-lol123	123	Beaulieu	Matthew	matthew.beaulieu631@gmail.com	450-689-4336		631 rue maisonneuve, Laval, Quebec

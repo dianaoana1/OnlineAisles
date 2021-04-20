@@ -182,7 +182,7 @@ $productCurrPrice=getPrice($product);
                 </li>
                 <li>
                     <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                    <p><a href="mailto:zixi.quan@concordia.ca?subject=SOEN287">online_grocerystore@groceries.ca</a>
+                    <p><a href="mailto:zixi.quan@concordia.ca?subject=SOEN287">online_aisles@groceries.ca</a>
                     </p>
                 </li>
                 <li>
