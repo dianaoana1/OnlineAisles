@@ -112,7 +112,7 @@ ini_set('display_errors', 1);
                 <label for="password"><b>Password</b></label><br>
                 <input type="password" id="password" name="password"><br>
                 <p>
-                    <a class="forgot-pass" href="Back end\verification code.html">Forgot password?</a>
+                    <a class="forgot-pass" href="..\html\Back end\verification code.html">Forgot password?</a>
                 </p>
                 <input class="btn btn-primary" type="submit" value="Login" name="logged">
                 <input class="btn btn-primary" type="reset" value="Reset">
