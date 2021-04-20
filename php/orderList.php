@@ -2,7 +2,7 @@
 if (!isset($_SESSION)) {
     session_start();
 }
-//require_once('orderListFunctions.php');
+require_once('orderListFunctions.php');
 $thisPage = htmlspecialchars($_SERVER["PHP_SELF"]);
 $_SESSION['currentPage'] = htmlspecialchars($_SERVER["PHP_SELF"]);
 $_SESSION['file'] = "..\TextFiles\orderInfo.txt";

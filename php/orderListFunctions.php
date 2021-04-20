@@ -73,10 +73,10 @@ function ProcessOrdersToTable(){
     $result = "";
     $result .= "<table class=\"tg\" id=\"orderTable\" name = \"orderTable\">
     <thead>
-    <th class="tg-header">Order Number</th>
-    <th class="tg-header">User</th>
-    <th class="tg-header">Item Number</th>
-    <th class="tg-header">Quantity</th>
+    <th class=\"tg-header\">Order Number</th>
+    <th class=\"tg-header\">User</th>
+    <th class=\"tg-header\">Item Number</th>
+    <th class=\"tg-header\">Quantity</th>
     <tbody>";
     $count = 0;
     while (!feof($file)) {   //reading file line by line
@@ -123,10 +123,10 @@ function ProcessOrderList()
     $result = "";
     $result .= "<table class=\"tg\" id=\"orderTable\" name = \"orderTable\">
     <thead>
-    <th class="tg-header">Order Number</th>
-    <th class="tg-header">User</th>
-    <th class="tg-header">Item Number</th>
-    <th class="tg-header">Quantity</th>
+    <th class=\"tg-header\">Order Number</th>
+    <th class=\"tg-header\">User</th>
+    <th class=\"tg-header\">Item Number</th>
+    <th class=\"tg-header\">Quantity</th>
     <tbody>";
     $count = 0;
     while (!feof($file)) {   //reading file line by line
