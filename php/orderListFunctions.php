@@ -96,19 +96,19 @@ function ProcessOrdersToTable(){
 
 }
 
-function newRow($count, $ordernum, $username, $itemNum, $quantity)
+function newRow($count, $username, $itemNum, $quantity)
 {
-    $ordernum = $count;
+    $userID = $count;
     if ($count % 2 == 0) {
         return "<tr>
-        <td class=\"tg-even\">" . $ordernum . "</td>
+        <td class=\"tg-even\">" . $userID . "</td>
         <td class=\"tg-even\">" . $username . "</td>
         <td class=\"tg-even\">" . $itemNum . "</td>
         <td class=\"tg-even\">" . $quantity . "</td>
     </tr>";
     } else {
         return "<tr>
-        <td class=\"tg-even\">" . $ordernum . "</td>
+        <td class=\"tg-even\">" . $userID . "</td>
         <td class=\"tg-even\">" . $username . "</td>
         <td class=\"tg-even\">" . $itemNum . "</td>
         <td class=\"tg-even\">" . $quantity . "</td>
@@ -140,12 +140,12 @@ function ProcessOrderList()
     echo $result;
 }
 
-function addOrderInfoToFile($ordernum, $username, $itemNum, $quantity)
+function addOrderInfoToFile($userID, $username, $itemNum, $quantity)
 {
     if (fileIsEmpty($_SESSION['file'])) {
-        $orderInfo = $ordernum ."\t" . $username ."\t" . $itemNum . "\t" . $quantity;
+        $orderInfo = $userID ."\t" . $username ."\t" . $itemNum . "\t" . $quantity;
     } else {
-        $orderInfo =  "\n" . $ordernum ."\t" . $username ."\t" . $itemNum . "\t" . $quantity;
+        $orderInfo =  "\n" . $userID ."\t" . $username ."\t" . $itemNum . "\t" . $quantity;
     }
     if (file_exists($_SESSION['file'])) {
         $file = fopen($_SESSION['file'], 'a') or die("Unable to open 'orderInfo.txt'.");
@@ -167,9 +167,9 @@ function getLastLine(){
     fclose($file);
 }
 
-function editOrderInfoFile($ordernum, $username, $itemNum, $quantity)
+function editOrderInfoFile($userID, $username, $itemNum, $quantity)
 {
-    $orderInfo = $username ."\t" . $itemNum . "\t" . $quantity;
+    $orderInfo = $userID ."\t" . $username ."\t" . $itemNum . "\t" . $quantity;
     $file = fopen("..\TextFiles\orderInfo.txt", 'r') or die("Unable to open 'orderInfo.txt'.");
     $tempFile = fopen("..\TextFiles\\tempOrderInfo.txt", 'w') or die("Unable to open 'tempOrderInfo.txt'.");
     $lineCount = 1;
@@ -178,7 +178,7 @@ function editOrderInfoFile($ordernum, $username, $itemNum, $quantity)
     echo $lastLine;
     while (!feof($file)) {
         $line = fgets($file);
-        if ($lineCount==$ordernum) {
+        if ($lineCount==$userID) {
             if ($lineCount == $lastLine){
                 echo $lastLine;
                 fwrite($tempFile, $orderInfo);
@@ -208,7 +208,7 @@ function editOrderInfoFile($ordernum, $username, $itemNum, $quantity)
     fclose($tempFile);
 }
 
-function deleteOrderFromFile($ordernum)
+function deleteOrderFromFile($userID)
 {
     $file = fopen("..\TextFiles\orderInfo.txt", 'r') or die("Unable to open 'orderInfo.txt'.");
     $tempFile = fopen("..\TextFiles\\tempOrderInfo.txt", 'w') or die("Unable to open 'tempOrderInfo.txt'.");
@@ -216,7 +216,7 @@ function deleteOrderFromFile($ordernum)
     //copying orderInfo.txt to tempOrderInfo.txt
     while (!feof($file)) {
         $line = fgets($file);
-        if ($lineCount!=$ordernum) {
+        if ($lineCount!=$userID) {
             fwrite($tempFile, $line);
         }
         $lineCount++;
@@ -237,7 +237,7 @@ function deleteOrderFromFile($ordernum)
     fclose($tempFile);
 }
 
-function editUser($ordernum)
+function editUser($userID)
 {
     $thisPage = htmlspecialchars($_SERVER["PHP_SELF"]);
     if (!isset($_POST['edit'])) {
@@ -245,7 +245,7 @@ function editUser($ordernum)
         $lineCount = 1;
         while (!feof($file)) {   //reading file line by line
             $line = fgets($file);
-            if ($lineCount == $ordernum) {
+            if ($lineCount == $userID) {
                 $lineArr = explode("\t", $line);
                 $ordernum = $lineArr[0];
                 $username = $lineArr[1];
@@ -281,7 +281,7 @@ function editUser($ordernum)
         $itemNum = $_POST['itemNum'];
         $quantity = $_POST['quantity'];
         
-        editUserInfoFile($orderNum, $username, $itemNum, $quantity);
+        editUserInfoFile($userID, $username, $itemNum, $quantity);
         header('Location: orderList.php');
     }
 }
