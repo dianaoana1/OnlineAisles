@@ -99,7 +99,7 @@ ini_set('display_errors', 1);
                 </li>
             </ul>
             <div class="shopping-cart-holder">
-                <a class="nav-link shopping-cart" href="shopping_cart.html">&#128722; </a>
+                <a class="nav-link shopping-cart" href="shoppingcart.php">&#128722; </a>
             </div>
         </div>
     </nav>
@@ -118,7 +118,7 @@ ini_set('display_errors', 1);
                 <input class="btn btn-primary" type="reset" value="Reset">
             </form>
             <br>
-            <p>Don't have an account? Sign up <em><a href="Signup.php" target="_blank">here</a></em></p>
+            <p>Don't have an account? Sign up <em><a href="Signup.php" target="_self">here</a></em></p>
         </div>
     </div>
     </div>
