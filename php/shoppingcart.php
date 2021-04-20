@@ -149,7 +149,7 @@ ini_set('display_errors', 1);
                                         style=\" border-radius:100%; padding: 3px 9px;\" name=\"decrease\" onclick=\"decreaseQuantity()\"
                                         value=&#8722; />
                                         </td>
-                                        <td class=\"tg-even item-quantity\">$quantity</td>
+                                        <td id=\"qty\" class=\"tg-even item-quantity\">$quantity</td>
                                         <td class=\"tg-even\" style=\"text-align:left\"><input type=\"button\" class=\"btn btn-primary\"
                                         style=\" border-radius:100%; padding: 3px 9px;\" name=\"increase\" onclick=\"increaseQuantity()\"
                                         value=&#43; />
@@ -206,7 +206,7 @@ ini_set('display_errors', 1);
                 <input type="text" placeholder="Enter code here" style="margin: 10px 0px;width:auto !important">
                 <div>
                     <table>  <tr>
-                        <td><a href="checkout.html" class="btn btn-primary" style ="width:150px; margin-right:5px;">Go to
+                        <td><a href="..\html\checkout.html" class="btn btn-primary" style ="width:150px; margin-right:5px;">Go to
                     Checkout</a></td>
                         <td><a href="Main Page.html" class="btn btn-primary" style ="width:160px;">Return Shopping</a></td>
                     </tr>
