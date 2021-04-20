@@ -116,7 +116,7 @@ if(!empty($_POST['submit'])) {
         <tbody>
           <?php
           $id=$_GET['id'];
-          $product=file("../productDatabase.txt");
+          $product=file("../TextFiles/productDatabase.txt");
           $line=explode("*",$product[$id]);
           ?>
             <form action="" method="post">

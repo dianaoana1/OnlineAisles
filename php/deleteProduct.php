@@ -1,7 +1,7 @@
 <?php
 echo $id=$_GET['id'];
 
-$product=file("../productDatabase.txt");
+$product=file("../TextFiles/productDatabase.txt");
 foreach ($product as $k=>$p) {
     
     if ($k==$id) { 
@@ -10,8 +10,8 @@ foreach ($product as $k=>$p) {
         break;
     }
 }
-unlink("../productDatabase.txt");
-$fp=fopen("../productDatabase.txt","w");
+unlink("../TextFiles/productDatabase.txt");
+$fp=fopen("../TextFiles/productDatabase.txt","w");
 foreach ($product as $value) {
 fwrite($fp,$value);
 }
