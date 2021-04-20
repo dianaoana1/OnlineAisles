@@ -1,4 +1,4 @@
-Apple*Vegetables & Fruits*0.75*300*Apples are perfect for a quick and filling snack. Being high in fiber and water it leaves the impression of being satiated and refreshed.
+Apple*Vegetables & Fruits*1*300*Apples are perfect for a quick and filling snack. Being high in fiber and water it leaves the impression of being satiated and refreshed.
 Banana*Vegetables & Fruits*0.25*300*Bananas are rich in fibers and many minerals such as zinc which is an oligo-element (present in little quantities in the body). It therefore contains important vitamins for our immune system.
 Pear*Vegetables & Fruits*1.05*200*Belly-fat killers, pear are helpfull in weight loss and beneficit gut and heart health. And remember to eat the peel which contains most nutrients!
 Carrots*Vegetables & Fruits*2.99*150*They might not help you get rid of your glasses, but carrots are indeed protected your eyes by being a good source of antioxidants lutein and beta carotene. They also improve the overall health.
@@ -10,6 +10,7 @@ Two-Sausages*Meat*3.75*500*Depending on the sausages, they can can be high or lo
 Eggs*Dairy & Eggs*2.99*150*Eggs are one of the best source of protein and can be eaten everyday (3max). They are filling, rich and full of "good" cholesterol, you already know what is on your breakfast table tomorrow!
 Cheese*Dairy & Eggs*6.09*300*Cheese is not only the enemy of people having lactose intolerance, it is high in saturated fat and salt leading to cardiovascular disease. However it still has a lot of calcium and proteins.
 Milk*Dairy & Eggs*4.99*60*Drinking milk is essential especially at a young age for bone and dental health due to it's high calcium contration. The downside is that dairy product such as milk contain cholesterol, saturated fat and a lot of calories that can cause obesity and some disease such as diabetes.
+Butter*Dairy & Eggs*4.69*3000*What is one disease that everyone fears? Cancer, butter lowers the chances of developping a form of it because of its concentration in beta-carotene that is transformed in vitamine A in the body.
 Rice*Cereal Product*19.99*250*Rice is rich in many vitamins such as niacin,thiamine, riboflavin and others. It also contains minerals and is high in carb, but white rice being refined has less carbs but has a higher glycemic index than brown rice.
 Slice Bread*Cereal Product*1.69*300*What could boost the starting of your day better than a high source of carbs and fiber? Bread, especially whole grain is important for health and helps prevent many disease due to all the fiber it contains.
 Cereals*Cereal Product*4.99*45*The majority of cereal nowadays are loaded with sugard making them bad for your health. It can cause several disease such as type 2 diabetes, obesity and other.

@@ -17,7 +17,7 @@ body {
 .container {
     padding: 0px !important;
     width: 100vw;
-    margin-bottom: 100px;
+    margin-bottom: 0px;
     height: 65vh;
 }
 
@@ -403,7 +403,7 @@ select {
 }
 
 #acc-img {
-    width: 17vw;
+    width: 15vw;
     max-height: 450px;
     height: 20vh;
     pointer-events: none;

@@ -2,7 +2,7 @@
 if(!empty($_POST['submit'])) {
 
     $id=$_GET['id'];
-    $product=file("../productDatabase.txt");
+    $product=file("../TextFiles/productDatabase.txt");
     foreach ($product as $k=>$p) {
         
         if ($k==$id) { 
@@ -11,8 +11,8 @@ if(!empty($_POST['submit'])) {
             break;
         }
     }
-    unlink("../productDatabase.txt");
-    $fp=fopen("../productDatabase.txt","w");
+    unlink("../TextFiles/productDatabase.txt");
+    $fp=fopen("../TextFiles/productDatabase.txt","w");
     foreach ($product as $value) {
     fwrite($fp,$value);
     }
