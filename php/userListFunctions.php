@@ -20,28 +20,28 @@ function addUser()
         <div class="form-popup" id="addUserForm">
             <form action="<?php echo $_SESSION['currentPage']; ?>" class="form-container" method="POST">
                 <h3>Adding User</h3>
-                <label for="username"><b>Username</b></label>
+                <label for="username"><b>*Username</b></label>
                 <input type="text" pattern="[a-zA-Z0-9]{1,20}" placeholder="Enter username" id="usernameForm" name="username" required />
 
-                <label for="password"><b>Password</b></label>
+                <label for="password"><b>*Password</b></label>
                 <input required type="text" placeholder="Enter password" id="passwordForm" name="password"/> 
 
-                <label for="lastName"><b>Last name</b></label>
+                <label for="lastName"><b>*Last name</b></label>
                 <input type="text" pattern="[a-zA-Z]{1,20}" placeholder="Enter last name" id="lastNameForm" name="lastName" required />
 
-                <label for="firstName"><b>First name</b></label>
+                <label for="firstName"><b>*First name</b></label>
                 <input type="text" pattern="[a-zA-Z]{1,20}" placeholder="Enter first name" id="firstNameForm" name="firstName" required />
 
-                <label for="email"><b>Email</b></label>
+                <label for="email"><b>*Email</b></label>
                 <input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter email" id="emailForm" name="email" required />
 
-                <label for="tel1"><b>Tel.1</b></label>
+                <label for="tel1"><b>*Tel.1</b></label>
                 <input type="text" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Enter phone number" id="tel1Form" name="tel1" required />
 
-                <label for="tel2"><b>Tel.2</b></label>
-                <input type="text" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Enter phone number" id="tel2Form" name="tel2" required />
+                <label for="tel2"><b>&nbsp Tel.2</b></label>
+                <input type="text" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Enter phone number" id="tel2Form" name="tel2"/>
 
-                <label for="address"><b>Address</b></label>
+                <label for="address"><b>*Address</b></label>
                 <input type="text" placeholder="Enter address" id="addressForm" name="address" required />
                 <br>
                 <button type="submit" class="btn btn-primary" name="add">Add New User</button>
@@ -88,28 +88,28 @@ function editUser($userID)
         <div class="form-popup" id="editUserForm">
             <form action="<?php echo $thisPage; ?>" class="form-container" method="POST">
                 <h3>Editing User</h3>
-                <label for="username"><b>Username</b></label>
+                <label for="username"><b>*Username</b></label>
                 <input required type="text" pattern="[a-zA-Z0-9]{1,20}" placeholder="Enter username" id="usernameForm" name="username" value="<?php echo $username; ?>" />
 
-                <label for="password"><b>Password</b></label>
+                <label for="password"><b>*Password</b></label>
                 <input required type="text" placeholder="Enter password" id="passwordForm" name="password" value="<?php echo $password; ?>" />  
 
-                <label for="lastName"><b>Last name</b></label>
+                <label for="lastName"><b>*Last name</b></label>
                 <input required type="text" pattern="[a-zA-Z]{1,20}" placeholder="Enter last name" id="lastNameForm" name="lastName" value="<?php echo $lastName; ?>" />
 
-                <label for="firstName"><b>First name</b></label>
+                <label for="firstName"><b>*First name</b></label>
                 <input required type="text" pattern="[a-zA-Z]{1,20}" placeholder="Enter first name" id="firstNameForm" name="firstName" value="<?php echo $firstName; ?>" />
 
-                <label for="email"><b>Email</b></label>
+                <label for="email"><b>*Email</b></label>
                 <input required type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter email" id="emailForm" name="email" value="<?php echo $email; ?>" />
 
-                <label for="tel1"><b>Tel.1</b></label>
+                <label for="tel1"><b>*Tel.1</b></label>
                 <input required type="text" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Enter phone number" id="tel1Form" name="tel1" value="<?php echo $tel1; ?>" />
 
-                <label for="tel2"><b>Tel.2</b></label>
-                <input required type="text" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Enter phone number" id="tel2Form" name="tel2" value="<?php echo $tel2; ?>" />
+                <label for="tel2"><b>&nbsp Tel.2</b></label>
+                <input type="text" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Enter phone number" id="tel2Form" name="tel2" value="<?php echo $tel2; ?>" />
 
-                <label for="address"><b>Address</b></label>
+                <label for="address"><b>*Address</b></label>
                 <input required type="text" placeholder="Enter address" id="addressForm" name="address" value="<?php echo $address; ?>" />
                 <br>
                 <button type="submit" class="btn btn-primary" name="edit">Save Changes</button>
@@ -292,12 +292,10 @@ function editUserInfoFile($userID, $username, $password, $lastName, $firstName, 
     $lineCount = 1;
     //copying userInfo.txt to tempUserInfo.txt
     $lastLine = getLastLine();
-    echo $lastLine;
     while (!feof($file)) {
         $line = fgets($file);
         if ($lineCount==$userID) {
             if ($lineCount == $lastLine){
-                echo $lastLine;
                 fwrite($tempFile, $userInfo);
             }
             else{

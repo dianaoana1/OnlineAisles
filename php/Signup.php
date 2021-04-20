@@ -146,17 +146,17 @@ require ("userListFunctions.php");
                         <div class="row">
                             <div class="col-md">
                                 <label for="FirstName"><span class="error">* </span>FIRST NAME</label><br>
-                                <input type="text" id="FirstName" name="FirstName" required>
+                                <input type="text" pattern="[a-zA-Z]{1,20}" id="FirstName" name="FirstName" required>
                             </div>
                             <div class="col-md">
                                 <label for="LastName"><span class="error" required>* </span>LAST NAME</label><br>
-                                <input type="text" id="LastName" name="LastName">
+                                <input type="text" pattern="[a-zA-Z]{1,20}" id="LastName" name="LastName">
                             </div>
                         </div>
                         <div class="row">
                                 <div class="col-md">
-                                <label for="UserName"><span class="error">* </span>USER NAME</label><br>
-                                <input type="text" id="UserName" name="UserName" required>
+                                <label for="UserName"><span class="error">* </span>USERNAME</label><br>
+                                <input type="text" pattern="[a-zA-Z0-9]{1,20}" id="UserName" name="UserName" required>
                             </div>
                         </div>
                     </div>
@@ -215,18 +215,18 @@ require ("userListFunctions.php");
                                 <input type="text" id="Postal Code" name="PostalCode" required>
                             </div>
                             <div class="col-md">
-                                <label for="cellphone"><span class="error">* </span>CELLPHONE NUMBER</label><br>
-                                <input type="text" class="Cellphone" name="Cellphone" required>
+                                <label for="cellphone"><span class="error">* </span>PRIMARY PHONE</label><br>
+                                <input type="text" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="Cellphone" name="Cellphone" required>
                             </div>
                             <div class="col-md">
-                                <label for="telephone">PHONE NUMBER (HOME)</label><br>
-                                <input type="text" class="telephone" name="telephone">
+                                <label for="telephone">SECONDARY PHONE</label><br>
+                                <input type="text" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="telephone" name="telephone">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md">
                                 <label for="email"><span class="error">* </span>EMAIL</label><br>
-                                <input type="text" class="email" name="email" required>
+                                <input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="email" name="email" required>
                             </div>
                             <div class="col-md">
                                 <label for="confirm-email"><span class="error">* </span>CONFIRM EMAIL</label><br>
