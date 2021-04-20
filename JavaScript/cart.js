@@ -28,20 +28,20 @@ function addToCartClicked(event) {
 
 //increment button
 function increaseQuantity() {
-    event.target.parentNode.previousSibling.parentNode.children[4].innerHTML++;
+    event.target.parentNode.previousSibling.parentNode.children[4].value++;
     totalCalculators();
 }
 
 //decrement button
 function decreaseQuantity(array) {
-    var quantity = event.target.parentNode.previousSibling.parentNode.children[4].innerHTML--;
+    var quantity = event.target.parentNode.previousSibling.parentNode.children[4].value--;
     if (quantity < 2) {
         answer = confirm("Are you sure you want to remove this item from your cart?");
         if (answer) {
             deleteItem();
         }
         else {
-            var quantity = event.target.parentNode.previousSibling.parentNode.children[4].innerHTML++;
+            var quantity = event.target.parentNode.previousSibling.parentNode.children[4].value++;
         }
     }
     totalCalculators();
@@ -56,7 +56,7 @@ function deleteItem() {
     var td = event.target.parentNode;
     var tr = td.parentNode;
     tr.parentNode.removeChild(tr);
-    if (document.getElementById("cartTable").rows.length == 1) {
+    if (tableRows == 2) {
         alert("Cart is now empty. Return shopping to refill your cart.");
         totalCalculators();
     }
@@ -98,7 +98,8 @@ function subTotalCalculator() {
     for (var i = 2; i < tableRows.length; i++) {
         var price = parseFloat(tableRows[i].cells[6].innerText);
         console.log(price);
-        var quantity = parseFloat(tableRows[i].cells[4].innerText);
+        var quantity =tableRows[i].cells[4].firstChild.value;
+        console.log(quantity);
         total_per_item = parseFloat(price) * quantity;
         subTotal += total_per_item;
     }
