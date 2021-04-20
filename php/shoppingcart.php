@@ -108,76 +108,76 @@ ini_set('display_errors', 1);
 
     <!-- <div id="mega-container" style="max-width100%;height:100%"> -->
     <div class="container" style="margin-bottom: 100px;">
-        <div class="cart-table" style = "overflow:auto; margin:50px; position:left absolute; max-width:75%">
-            <form action="updateprices.php" method="POST">
-                <div>
-                    <table class="tg" id="cartTable">
-                        <label>
-                            <h3 style="font-size: 2rem">My Shopping Cart</h3>
-                        </label>
-                        <thead>
-                            <tr>
-                                <th class="tg-header">Items</th>
-                                <th class="tg-header">Preview</th>
-                                <th class="tg-header">Product</th>
-                                <th class="tg-header" colspan="3">Quantity</th>
-                                <th class="tg-header" style="text-align:left !important" colspan="2">Price</th>
+            <div class="cart-table" style = "overflow:auto; margin:50px; position:left absolute; max-width:75%">
+                <form action="updateprices.php" method="POST">
+                    <div>
+                        <table class="tg" id="cartTable">
+                            <label>
+                                <h3 style="font-size: 2rem">My Shopping Cart</h3>
+                            </label>
+                            <thead>
+                                <tr>
+                                    <th class="tg-header">Items</th>
+                                    <th class="tg-header">Preview</th>
+                                    <th class="tg-header">Product</th>
+                                    <th class="tg-header" colspan="3">Quantity</th>
+                                    <th class="tg-header" style="text-align:left !important" colspan="2">Price</th>
 
-                            </tr>
-                        </thead>
-                        <tbody class="item-list">
-                            <tr class="cart-row">
-                                <?php
-                                if(isset($_SESSION['cart'])){
-                                    $_SESSION['count'] = 1;
-                                    $count = $_SESSION['count'];
-                                    $file = fopen($_SESSION['productcart'], "r") or die("cannot read file productCart.txt");
-                                    while(!feof($file)){
-                                        $line = fgets($file);
-                                        $lineArr = explode("\t",$line);
-                                        if((int)$lineArr[3] > 0){
-                                            $_SESSION['prodnum'.$count] = $lineArr[0];
-                                            $_SESSION['image'. $count] = $lineArr[4];
-                                            $image = $_SESSION['image'. $count];
-                                            (int)$_SESSION['quantity'.$count] = $lineArr[3];
-                                            $quantity = $_SESSION['quantity'.$count];
-                                            $_SESSION['items'] = array();
-                                            array_push($_SESSION['items'],$lineArr[1]);
-                                            $item = $lineArr[1];
-                                            (float)$_SESSION['price'.$count] = $lineArr[2];
-                                            $price = $_SESSION['price'.$count];
-                                            //<td id=\"qty$count\" class=\"tg-even item-quantity\">$quantity</td>
-                                            echo "
-                                            <tr name = \"row$count\" class=\"cart-row\">
-                                                <td class=\"tg-even\">$count</td>
-                                                <td name=\"image$count\" class=\"tg-even\"><img id=\"image\" src=\"$image\" width=\"60\" height=\"60\"></td>
-                                                <td class=\"tg-even\">$item</td>
-            
-                                                <td class=\"tg-even\" style=\"text-align:right\"><input type=\"button\" class=\"btn btn-primary\"
-                                                style=\" border-radius:100%; padding: 3px 9px;\" name=\"decrease\" onclick=\"decreaseQuantity()\"
-                                                value=&#8722; />
-                                                </td>
-                                                <td><input class = \"quantity\" name=\"quantity$count\" type=\"number\" onclick=\"totalCalculators()\" value=\"$quantity\"></td>
-                                                <td class=\"tg-even\" style=\"text-align:left\"><input type=\"button\" class=\"btn btn-primary\"
-                                                style=\" border-radius:100%; padding: 3px 9px;\" name=\"increase\" onclick=\"increaseQuantity()\"
-                                                value=&#43; />
-                                                </td>
-            
-                                                <td id = \"price\" class=\"tg-even item-price\">$price</td>
-                                                <td class=\"tg-even\"><input type=\"button\" class=\"btn btn-primary\"
-                                                style=\" border-radius:100%; padding: 3px 10px;\" name=\"delete\" onclick=\"deleteItem()\" value=\"×\" />
-                                                </td>
-                                            </tr>
-                                            ";
-                                            $count++;
+                                </tr>
+                            </thead>
+                            <tbody class="item-list">
+                                <tr class="cart-row">
+                                    <?php
+                                    if(isset($_SESSION['cart'])){
+                                        $_SESSION['count'] = 1;
+                                        $count = $_SESSION['count'];
+                                        $file = fopen($_SESSION['productcart'], "r") or die("cannot read file productCart.txt");
+                                        while(!feof($file)){
+                                            $line = fgets($file);
+                                            $lineArr = explode("\t",$line);
+                                            if((int)$lineArr[3] > 0){
+                                                $_SESSION['prodnum'.$count] = $lineArr[0];
+                                                $_SESSION['image'. $count] = $lineArr[4];
+                                                $image = $_SESSION['image'. $count];
+                                                (int)$_SESSION['quantity'.$count] = $lineArr[3];
+                                                $quantity = $_SESSION['quantity'.$count];
+                                                $_SESSION['items'] = array();
+                                                array_push($_SESSION['items'],$lineArr[1]);
+                                                $item = $lineArr[1];
+                                                (float)$_SESSION['price'.$count] = $lineArr[2];
+                                                $price = $_SESSION['price'.$count];
+                                                //<td id=\"qty$count\" class=\"tg-even item-quantity\">$quantity</td>
+                                                echo "
+                                                <tr name = \"row$count\" class=\"cart-row\">
+                                                    <td class=\"tg-even\">$count</td>
+                                                    <td name=\"image$count\" class=\"tg-even\"><img id=\"image\" src=\"$image\" width=\"60\" height=\"60\"></td>
+                                                    <td class=\"tg-even\">$item</td>
+                
+                                                    <td class=\"tg-even\" style=\"text-align:right\"><input type=\"button\" class=\"btn btn-primary\"
+                                                    style=\" border-radius:100%; padding: 3px 9px;\" name=\"decrease\" onclick=\"decreaseQuantity()\"
+                                                    value=&#8722; />
+                                                    </td>
+                                                    <td><input class = \"quantity\" name=\"quantity$count\" type=\"number\" onclick=\"totalCalculators()\" value=\"$quantity\"></td>
+                                                    <td class=\"tg-even\" style=\"text-align:left\"><input type=\"button\" class=\"btn btn-primary\"
+                                                    style=\" border-radius:100%; padding: 3px 9px;\" name=\"increase\" onclick=\"increaseQuantity()\"
+                                                    value=&#43; />
+                                                    </td>
+                
+                                                    <td id = \"price\" class=\"tg-even item-price\">$price</td>
+                                                    <td class=\"tg-even\"><input type=\"button\" class=\"btn btn-primary\"
+                                                    style=\" border-radius:100%; padding: 3px 10px;\" name=\"delete\" onclick=\"deleteItem()\" value=\"×\" />
+                                                    </td>
+                                                </tr>
+                                                ";
+                                                $count++;
+                                            }
                                         }
                                     }
-                                }
 
-                                ?>
-
+                                    ?>
+                                </tr>
                             </tbody>
-                    </table>
+                        </table>
                     </div>
                     <div id="subTotal" style="position:right absolute;  margin:30px 50px;; max-width: 25%;">
                             
@@ -215,9 +215,11 @@ ini_set('display_errors', 1);
                                 </table>
                             </div>
                         </p>
-
-                </div>
-            </form
+                    </div>
+                </form>
+            </div>
+        
+        
     </div>
 
     <footer id="footer">
