@@ -136,7 +136,7 @@ $productCurrPrice=getPrice($product);
                         <h4 class = "price_apple" name="price">$<?php echo $productCurrPrice?>/un</h4>
                         <script></script>
                         <input class = "quantity" name="quantity" type="number" value="1">
-                        <input type="submit" class="button add-to-cart" onclick="add()" name ="1" value="Add to Cart">
+                        <input type="submit" class="button add-to-cart" name ="1" value="Add to Cart">
                     </form>
                 </div>
                 <div class="right-side">

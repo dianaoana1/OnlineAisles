@@ -8,6 +8,11 @@ echo "$count";
 function totalprice(){
     $subtotal = 0;
     
+    $_SESSION['productcart'] = "..\TextFiles\productCart.txt";
+    $file = $_SESSION['productcart'];
+
+    $filedirect = fopen($file, "r") or die("cannot open file");
+
     for($i=1; $i <=$_SESSION['count']; $i++){
         $qty=$_POST['quantity'.$i];
         $subtotal += $qty;

@@ -1,4 +1,4 @@
-1	apple	0.75	0	../Images/apple.png
+1	apple	1.75	4	../Images/apple.png
 2	banana	0.25	0	../Images/banana.jpg
 3	bread	1.69	0	../Images/bread.jpg
 4	broccoli	3.19	0	../Images/brocco.jpg
@@ -6,10 +6,10 @@
 6	cereals	4.99	0	../Images/cereal.jpg
 7	cheese	6.09	0	../Images/cheese.jpg
 8	whole chicken	12.54	0	../Images/chicken.jpg
-9	dozen of eggs	2.99	4	../Images/eggs.jpeg
+9	dozen of eggs	2.99	0	../Images/eggs.jpeg
 10	ground beef	1.54	0	../Images/ground-beef.jpg
 11	lobster	21.35	0	../../Images/lobster.jpg
-12	milk	4.99	5	../Images/milk.jpg
+12	milk	4.99	0	../Images/milk.jpg
 13	mushrooms	2.49	0	../Images/mushrooms.jpg
 14	fusilli	2.49	0	../Images/pasta.jpg
 15	pear	1.05	0	../Images/pear.jpg
