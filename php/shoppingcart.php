@@ -256,9 +256,6 @@ ini_set('display_errors', 1);
             </ul>
         </div>
     </footer>
-    <script>
-        document.write(totalCalculators());
-    </script>
 </body>
 
 </html>
