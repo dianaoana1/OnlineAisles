@@ -15,6 +15,9 @@ table, th, td {
     border-right: none !important;
 }
 
+.trhead {
+    width: 150px;
+}
 
 .tg {
     border-collapse: collapse;

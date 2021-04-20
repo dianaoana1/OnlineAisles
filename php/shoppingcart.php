@@ -116,7 +116,7 @@ ini_set('display_errors', 1);
                                 <h3 style="font-size: 2rem">My Shopping Cart</h3>
                             </label>
                             <thead>
-                                <tr>
+                                <tr class="trhead">
                                     <th class="tg-header">Items</th>
                                     <th class="tg-header">Preview</th>
                                     <th class="tg-header">Product</th>
@@ -153,7 +153,7 @@ ini_set('display_errors', 1);
                                                     <td name=\"image$count\" class=\"tg-even\"><img id=\"image\" src=\"$image\" width=\"60\" height=\"60\"></td>
                                                     <td class=\"tg-even\">$item</td>
 
-                                                    <td><input class = \"quantity\" name=\"quantity$count\" type=\"number\" onclick=\"totalCalculators()\" value=\"$quantity\"></td>
+                                                    <td colspan=\"3\"><input class = \"quantity\" name=\"quantity$count\" type=\"number\" onclick=\"totalCalculators()\" value=\"$quantity\"></td>
                 
                                                     <td id = \"price\" class=\"tg-even item-price\">$price</td>
                                                     <td class=\"tg-even\"><input type=\"button\" class=\"btn btn-primary\"

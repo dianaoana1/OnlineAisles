@@ -96,9 +96,9 @@ function subTotalCalculator() {
     var table = document.getElementById("cartTable");
     var tableRows = table.rows;
     for (var i = 2; i < tableRows.length; i++) {
-        var price = parseFloat(tableRows[i].cells[6].innerText);
+        var price = parseFloat(tableRows[i].cells[4].innerText);
         console.log(price);
-        var quantity =tableRows[i].cells[4].firstChild.value;
+        var quantity =tableRows[i].cells[3].firstChild.value;
         console.log(quantity);
         total_per_item = parseFloat(price) * quantity;
         subTotal += total_per_item;
