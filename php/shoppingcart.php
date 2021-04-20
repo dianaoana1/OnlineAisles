@@ -126,23 +126,27 @@ ini_set('display_errors', 1);
                 <tbody class="item-list">
                     <tr class="cart-row">
                         <?php
-                        $qtyarr = array();
                         if(isset($_SESSION['cart'])){
-                            $count = 1;
+                            $_SESSION['count'] = 1;
+                            $count = $_SESSION['count'];
                             $file = fopen($_SESSION['productcart'], "r") or die("cannot read file productCart.txt");
                             while(!feof($file)){
                                 $line = fgets($file);
                                 $lineArr = explode("\t",$line);
                                 if((int)$lineArr[3] > 0){
-                                    $image = $lineArr[4];
-                                    (int)$quantity = $lineArr[3];
-                                    array_push($qtyarr, $quantity);
-                                    $item = $lineArr[1];
-                                    (float)$price = $lineArr[2];
+                                    $_SESSION['prodnum'.$count] = $lineArr[0];
+                                    $_SESSION['image'. $count] = $lineArr[4];
+                                    $image = $_SESSION['image'. $count];
+                                    (int)$_SESSION['quantity'.$count] = $lineArr[3];
+                                    $quantity = $_SESSION['quantity' . $count];
+                                    $_SESSION['item'.$count] = $lineArr[1];
+                                    $item = $_SESSION['item'.$count];
+                                    (float)$_SESSION['price'.$count] = $lineArr[2];
+                                    $price = $_SESSION['price'.$count];
                                     echo "
-                                    <tr class=\"cart-row\">
+                                    <tr name = \"row$count\" class=\"cart-row\">
                                         <td class=\"tg-even\">$count</td>
-                                        <td class=\"tg-even\"><img id=\"image\" src=\"$image\" width=\"60\" height=\"60\"></td>
+                                        <td name=\"image$count\" class=\"tg-even\"><img id=\"image\" src=\"$image\" width=\"60\" height=\"60\"></td>
                                         <td class=\"tg-even\">$item</td>
     
                                         <td class=\"tg-even\" style=\"text-align:right\"><input type=\"button\" class=\"btn btn-primary\"
@@ -164,11 +168,6 @@ ini_set('display_errors', 1);
                                     $count++;
                                 }
                             }
-                        }
-
-                        if(isset($_POST['decrease'])){
-                            $item = $_POST['decrease'];
-                            echo "hello";
                         }
 
                         ?>
@@ -206,11 +205,14 @@ ini_set('display_errors', 1);
                 <input type="text" placeholder="Enter code here" style="margin: 10px 0px;width:auto !important">
                 <div>
                     <table>  <tr>
-                        <td><a href="..\html\checkout.html" class="btn btn-primary" style ="width:150px; margin-right:5px;">Go to
+                        <td><a href="..\html\checkout.html" class="btn btn-primary" name="checkout" action="updateprices.php"style ="width:150px; margin-right:5px;">Go to
                     Checkout</a></td>
-                        <td><a href="Main Page.html" class="btn btn-primary" style ="width:160px;">Return Shopping</a></td>
+                        <td><a href="Main Page.html" class="btn btn-primary" name="returnshopping"  style ="width:160px;">Return Shopping</a></td>
                     </tr>
-                </table>
+                    </table>
+                    <?php
+                    
+                    ?>
                   
                 </div>
 

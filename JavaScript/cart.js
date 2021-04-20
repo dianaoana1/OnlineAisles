@@ -60,7 +60,7 @@ function deleteItem() {
         alert("Cart is now empty. Return shopping to refill your cart.");
         totalCalculators();
     }
-    for (var i = 1; i <= tableRows; i++) {
+    for (var i = 2; i <= tableRows; i++) {
         document.getElementById("cartTable").rows[i].cells[0].innerText = i;
         totalCalculators();
     }
@@ -90,50 +90,55 @@ function totalCalculators() {
     estimatedTotalCalculator();
 }
 
-/*
+
 function subTotalCalculator() {
     var subTotal = 0;
     var table = document.getElementById("cartTable");
     var tableRows = table.rows;
-    for (var i = 1; i < tableRows.length; i++) {
-        var price = parseFloat(tableRows[i].cells[0].innerText);
-        var quantity = tableRows[i].cells[4].innerText;
-        total_per_item = parseFloat(price.substring(1)) * quantity;
+    for (var i = 2; i < tableRows.length; i++) {
+        var price = parseFloat(tableRows[i].cells[6].innerText);
+        console.log(price);
+        var quantity = parseFloat(tableRows[i].cells[4].innerText);
+        total_per_item = parseFloat(price) * quantity;
         subTotal += total_per_item;
     }
     subTotalStr = subTotal.toFixed(2);
     document.getElementById("subtotal").innerText = "$" + subTotalStr;
+    console.log(subTotalStr);
     return subTotal;
 }
-*/
+
+/*
 function subTotalCalculator() {
     var subtotal = 0;
     var table = document.getElementById("cartTable");
     var tableRows = table.rows;
+    document.write(tableRows.length);
     for (var i = 1; i < tableRows.length; i++) {
         var price = parseFloat(document.getElementById("price").innerText);
         var quantity = parseFloat(document.getElementById("qty").innerText);
+        document.write(price + "\t" + quantity+ "\t");
         var priceperitem = price*quantity;
+        document.write(priceperitem);
         subtotal += priceperitem;
     }
     subtotalStr = subtotal.toFixed(2);
-    document.write(subtotalStr);
     document.getElementById("subtotal").innerHTML = "$" + subtotalStr;
     return subTotal;
 }
-
+*/
 function GSTcalculator() {
     var gst = 0;
-    gstStr = (subTotalCalculator() * 0.0998).toFixed(2);
-    gst = (subTotalCalculator() * 0.0998);
+    gstStr = parseFloat((subTotalCalculator() * 0.0998).toFixed(2));
+    gst = parseFloat((subTotalCalculator() * 0.0998));
     document.getElementById("GST").innerText = "$" + gstStr;
     return gst;
 }
 
 function QSTcalculator() {
     var qst = 0;
-    qstStr = (subTotalCalculator() * 0.05).toFixed(2);
-    qst = (subTotalCalculator() * 0.05);
+    qstStr = parseFloat((subTotalCalculator() * 0.05).toFixed(2));
+    qst = parseFloat((subTotalCalculator() * 0.05));
     document.getElementById("QST").innerText = "$" + qstStr;
     return qst;
 }
