@@ -20,7 +20,7 @@ function totalprice(){
 }
 
 if(isset($_POST['checkout'])){
-    $dataline = $_SESSION['count']+1 . "\t" . totalprice() . "\t";
+    $dataline = $_SESSION['count'] . "\t" . totalprice() . "\t";
     echo "$dataline";
     for($i = 2; $i <= $_SESSION['count']; $i++){
         $dataline += $_SESSION['prodnum'.($i-1)];

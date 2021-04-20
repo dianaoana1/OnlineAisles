@@ -61,9 +61,10 @@ function deleteItem() {
         totalCalculators();
     }
     for (var i = 2; i <= tableRows; i++) {
-        document.getElementById("cartTable").rows[i].cells[0].innerText = i;
+        //document.getElementById("cartTable").rows[i].cells[0].innerText = (i+1);
         totalCalculators();
     }
+    totalCalculators();
 }
 
 /*
