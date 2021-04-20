@@ -1,10 +1,9 @@
 <?php
 session_start();
-error_reporting(~0);
-ini_set('display_errors', 1);
+
 
 $count = $_SESSION['count'];
-echo "$count";
+
 function totalprice(){
     $subtotal = 0;
     
@@ -16,17 +15,17 @@ function totalprice(){
     for($i=1; $i <=$_SESSION['count']; $i++){
         $qty=$_POST['quantity'.$i];
         $subtotal += $qty;
-        echo "$qty";
+       
     }
 
-    echo "$subtotal";
+  
     $total = $subtotal * 1.05 * 1.0998;
     return $total;
 }
 
 if(isset($_POST['checkout'])){
     $dataline = $_SESSION['count'] . "\t" . totalprice() . "\t";
-    echo "$dataline";
+ 
     for($i = 2; $i <= $_SESSION['count']; $i++){
         $dataline += $_SESSION['prodnum'.($i-1)];
     }
@@ -34,7 +33,7 @@ if(isset($_POST['checkout'])){
     $filedirect = fopen($file, "w+") or die("cannot open file");
     fwrite($filedirect,$dataline);
 
-    echo 'Successfully written to file!';
+   
 }
 
 $data = file("..\TextFiles\productCart.txt");
