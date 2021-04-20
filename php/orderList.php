@@ -1,5 +1,5 @@
 <?php
-if(!isset($_SESSION)) {
+if (!isset($_SESSION)) {
     session_start();
 }
 //require_once('orderListFunctions.php');
@@ -28,16 +28,18 @@ $_SESSION['file'] = "..\TextFiles\orderInfo.txt";
     <script src="..\JavaScript\UserList.js"></script>
     <link rel="icon" type="image/png" href="..\Images\favicon.png">
     <style>
-        .notAdmin{
+        .notAdmin {
             text-align: center;
         }
-        .out-of-order{
-            max-width:70vw;
+
+        .out-of-order {
+            max-width: 70vw;
         }
     </style>
 </head>
+
 <body>
-<nav class="navbar navbar-expand-md bg-dark navbar-dark ">
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
         <a class="navbar-brand" href="Main Page.php">Online Aisles</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -70,14 +72,13 @@ $_SESSION['file'] = "..\TextFiles\orderInfo.txt";
                 </li>
                 <li class="nav-item">
                     <?php
-                    if (isset($_SESSION['userLoggedIn'])){?>
+                    if (isset($_SESSION['userLoggedIn'])) { ?>
                         <a class="nav-link" href="logout.php" target="_blank">Logout</a><?php
-                    }
-                    else{?>
+                                                                                    } else { ?>
                         <a class="nav-link" href="Login.php" target="_blank">Login / Sign up</a>
                     <?php
-                    }
-                    ?>     
+                                                                                    }
+                    ?>
                 </li>
                 <li class="nav-item">
                 </li>
@@ -87,29 +88,29 @@ $_SESSION['file'] = "..\TextFiles\orderInfo.txt";
             </div>
         </div>
     </nav>
-    <div class = "container" style="max-width: 96%; height:100%;margin-top:60px; margin-bottom:327px ">
+    <div class="container" style="max-width: 96%; height:100%;margin-top:60px; margin-bottom:327px ">
         <div class="order-table" style="overflow-x:auto;">
-        <?php
-            if ($_SESSION['userLoggedIn']!= "admin"){?>
-            <div class = "notAdmin">
-                <h3>Sorry, this page cannot be accessed at this time.</h3><a href = "Login.php" target="_self"><h5>Log on as an administrator</a> to access full website functionality.</h5>
-                <br>
-                <img src="..\Images\out-of-order.png" class="out-of-order" alt="Cannot display photo">
-            </div>              
-               <?php 
-            }
-            else{?>
+            <?php
+            if ($_SESSION['userLoggedIn'] != "admin") { ?>
+                <div class="notAdmin">
+                    <h3>Sorry, this page cannot be accessed at this time.</h3><a href="Login.php" target="_self">
+                        <h5>Log on as an administrator
+                    </a> to access full website functionality.</h5>
+                    <br>
+                    <img src="..\Images\out-of-order.png" class="out-of-order" alt="Cannot display photo">
+                </div>
+            <?php
+            } else { ?>
                 <div class="order-table" style="overflow:auto;">
                 <?php
                 if (fileIsEmpty($_SESSION['file'])) {
                     ProcessEmptyOrderTable();
-                }
-                else {
+                } else {
                     ProcessOrdersToTable();
                 }
-            }?>
+            } ?>
 
-            <!--<table class="tg" id="orderTable">
+                <!--<table class="tg" id="orderTable">
                 <thead>
                     <tr>
                         <th class="tg-header">Order Number</th>
@@ -187,48 +188,48 @@ $_SESSION['file'] = "..\TextFiles\orderInfo.txt";
                 onclick="deleteSelectedRows()">Delete
                 Order</a>
         </div>-->
+                </div>
         </div>
-    </div>
-    <div style="clear: both"></div>
-    <div style="clear: both"></div>
-    <footer>
-        <div class="section contactInfo">
-            <h3>Contact Info</h3>
-            <ul class="info">
-                <li>
-                    <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-                    <p>123 Main Street<br /> Montreal, QC<br /> Canada</p>
-                </li>
-                <li>
-                    <span><i class="fa fa-phone" aria-hidden="true"></i></span>
-                    <p><a href="tel:5141234567">514-123-4567</a></p>
-                </li>
-                <li>
-                    <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                    <p><a href="mailto:online_grocerystore@groceries.ca?subject=Customer Feedback">online_grocerystore@groceries.ca</a></p>
-                </li>
-                <li>
-                    <span><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                    <p><a href="..\html\contactUsFrom.html">Help us improve your experience</a></p>
-                </li>
-            </ul>
-        </div>
-        <div class="section about-us">
-            <h3>About Us</h3>
-            <p>
-                At the start of 2020, the coronavirus pandemic brought on new difficulties for many people with pre-existing
-                medical conditions. Something as simple as grocery shopping was now a high risk activity for those who were more
-                succeptible to serious illnesses cause by the Covid-19 virus. Our goal is to make grocery shopping safe and
-                affordable for all Canadians so that no one is has to face food insecurity in these difficult times.
-            </p>
-            <ul class="icons">
-                <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                <li><a href="https://www.instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                <li><a href="https://www.youtube.com/"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-            </ul>
-        </div>
-    </footer>
+        <div style="clear: both"></div>
+        <div style="clear: both"></div>
+        <footer>
+            <div class="section contactInfo">
+                <h3>Contact Info</h3>
+                <ul class="info">
+                    <li>
+                        <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                        <p>123 Main Street<br /> Montreal, QC<br /> Canada</p>
+                    </li>
+                    <li>
+                        <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                        <p><a href="tel:5141234567">514-123-4567</a></p>
+                    </li>
+                    <li>
+                        <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                        <p><a href="mailto:online_grocerystore@groceries.ca?subject=Customer Feedback">online_grocerystore@groceries.ca</a></p>
+                    </li>
+                    <li>
+                        <span><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                        <p><a href="..\html\contactUsFrom.html">Help us improve your experience</a></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="section about-us">
+                <h3>About Us</h3>
+                <p>
+                    At the start of 2020, the coronavirus pandemic brought on new difficulties for many people with pre-existing
+                    medical conditions. Something as simple as grocery shopping was now a high risk activity for those who were more
+                    succeptible to serious illnesses cause by the Covid-19 virus. Our goal is to make grocery shopping safe and
+                    affordable for all Canadians so that no one is has to face food insecurity in these difficult times.
+                </p>
+                <ul class="icons">
+                    <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.youtube.com/"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </footer>
 </body>
 
 </html>
