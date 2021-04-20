@@ -128,7 +128,7 @@ $_SESSION['file'] = "..\TextFiles\userInfo.txt";
                 </li>
                 <li>
                     <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                    <p><a href="mailto:online_grocerystore@groceries.ca?subject=Customer Feedback">online_grocerystore@groceries.ca</a></p>
+                    <p><a href="mailto:online_grocerystore@groceries.ca?subject=Customer Feedback">online_aisles@groceries.ca</a></p>
                 </li>
                 <li>
                     <span><i class="fa fa-smile-o" aria-hidden="true"></i></span>
