@@ -105,23 +105,23 @@ require ("userListFunctions.php");
             <form class="sign-up-form" method = "post" action="Signup.php">
                 <div class="card">
                     <h2>
-                    <span class="error">* </span>Do you have an OGS membership card?
+                    <span class="error">* </span>Do you have an OA membership card?
                     </h2>
                     <div class="card-form">
                         <div class="row">
                             <div class="col-md">
                                 <input type="radio" name="havecard" required value="Yes" /> <b>I already have a card</b>
-                                <p>and I would like to create an onlinegorcerystore.ca profile to access my personalized
+                                <p>and I would like to create an onlineaisles.ca profile to access my personalized
                                     offers.</p>
                             </div>
                             <div class="col-md">
-                                <input type="radio" name="havecard" value="Want" /> <b>I want an OGS membership card</b>
+                                <input type="radio" name="havecard" value="Want" /> <b>I want an OA membership card</b>
                                 <p>to access all the perks of the program including personalized offers.</p>
                             </div>
                             <div class="col-md">
-                                <input type="radio" name="havecard" value="No" /> <b>I do not want an OGS membership
+                                <input type="radio" name="havecard" value="No" /> <b>I do not want an OA membership
                                     card</b>
-                                <p>but I wish to create an onlinegrocerystore.ca profile to shop online or recieve the
+                                <p>but I wish to create an onlineaisles.ca profile to shop online or recieve the
                                     newsletter.</p>
                             </div>
                         </div>
