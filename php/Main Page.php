@@ -131,8 +131,8 @@ $broccoli="Broccoli";
                     <div class="text">
                         <h4 style="color:rgb(59, 50, 28);">Our motto is that the customer always comes first </h4>
                         <p style="color:rgb(73, 61, 34); font-weight: bold">Online Aisles has been opened
-                            since
-                            2020 is one of the fastest growing companies in Canada</p>
+                            since 
+                            2020  and is one of the fastest growing companies in Canada</p>
                     </div>
                     <img src="..\Images\Grocery.jpg" alt="grocerypicture" width="25%" height="25%">
                     <img src="..\Images\grocery2.jpg" alt="secgrocerypicture" width="25%" height="25%">

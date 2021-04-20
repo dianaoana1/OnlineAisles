@@ -1,4 +1,4 @@
-Apple*Vegetables & Fruits*1*300*Apples are perfect for a quick and filling snack. Being high in fiber and water it leaves the impression of being satiated and refreshed.
+Apple*Vegetables & Fruits*0.75*300*Apples are perfect for a quick and filling snack. Being high in fiber and water it leaves the impression of being satiated and refreshed.
 Banana*Vegetables & Fruits*0.25*300*Bananas are rich in fibers and many minerals such as zinc which is an oligo-element (present in little quantities in the body). It therefore contains important vitamins for our immune system.
 Pear*Vegetables & Fruits*1.05*200*Belly-fat killers, pear are helpfull in weight loss and beneficit gut and heart health. And remember to eat the peel which contains most nutrients!
 Carrots*Vegetables & Fruits*2.99*150*They might not help you get rid of your glasses, but carrots are indeed protected your eyes by being a good source of antioxidants lutein and beta carotene. They also improve the overall health.
