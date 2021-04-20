@@ -1,5 +1,5 @@
-1	apple	1	0	../Images/apple.png
-2	banana	0.25	0	../Images/banana.jpg
+1	apple	0.75	0	../Images/apple.png
+2	banana	0.25	1	../Images/banana.jpg
 3	bread	1.69	0	../Images/bread.jpg
 4	broccoli	3.19	0	../Images/brocco.jpg
 5	carrots	2.99	0	../Images/carrots.jpg

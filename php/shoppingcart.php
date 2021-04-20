@@ -152,16 +152,8 @@ ini_set('display_errors', 1);
                                                     <td class=\"tg-even\">$count</td>
                                                     <td name=\"image$count\" class=\"tg-even\"><img id=\"image\" src=\"$image\" width=\"60\" height=\"60\"></td>
                                                     <td class=\"tg-even\">$item</td>
-                
-                                                    <td class=\"tg-even\" style=\"text-align:right\"><input type=\"button\" class=\"btn btn-primary\"
-                                                    style=\" border-radius:100%; padding: 3px 9px;\" name=\"decrease\" onclick=\"decreaseQuantity()\"
-                                                    value=&#8722; />
-                                                    </td>
+
                                                     <td><input class = \"quantity\" name=\"quantity$count\" type=\"number\" onclick=\"totalCalculators()\" value=\"$quantity\"></td>
-                                                    <td class=\"tg-even\" style=\"text-align:left\"><input type=\"button\" class=\"btn btn-primary\"
-                                                    style=\" border-radius:100%; padding: 3px 9px;\" name=\"increase\" onclick=\"increaseQuantity()\"
-                                                    value=&#43; />
-                                                    </td>
                 
                                                     <td id = \"price\" class=\"tg-even item-price\">$price</td>
                                                     <td class=\"tg-even\"><input type=\"button\" class=\"btn btn-primary\"
