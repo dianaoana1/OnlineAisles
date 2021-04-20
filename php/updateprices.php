@@ -1,6 +1,7 @@
 <?php
 session_start();
-include_once 'shoppingcart.php';
+error_reporting(~0);
+ini_set('display_errors', 1);
 
 $count = $_SESSION['count'];
 echo "$count";
@@ -37,23 +38,25 @@ function replacequantity($data){
 }
 
 if(isset($_POST['returnshopping'])){
-    $items = $_SESSION['item'];
+    $products = $_SESSION['items'];
     $_SESSION['productcart'] = "..\TextFiles\productCart.txt";
     $file = $_SESSION['productcart'];
 
     $filedirect = fopen($file, "w+") or die("cannot open file");
-    while(!feof($file)){
-        $line = fgets($file);
-        $lineArr = explode("\t",$line);
-        for($i=0;$i<count($items);$i++){
-            if($lineArr[1] == $items[$i]){
-                $lineArr[3] = $_POST['quantity'.($i+1)];
-            }
-        }
-        $line = implode("\t", $lineArr);
-        fwrite($filedirect, $line);
-    }
-    header('Location: Main Page.php');
+    echo "$products[0] <br>";
+    echo "$products[1] <br>";
+    // while(!feof($file)){
+    //     $line = fgets($file);
+    //     $lineArr = explode("\t",$line);
+    //     for($i=0;$i<count($items);$i++){
+    //         if($lineArr[1] == $items[$i]){
+    //             $lineArr[3] = $_POST['quantity'.($i+1)];
+    //         }
+    //     }
+    //     $line = implode("\t", $lineArr);
+    //     fwrite($filedirect, $line);
+    // }
+    //header('Location: Main Page.php');
 }
 ?>
 
