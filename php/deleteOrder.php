@@ -30,7 +30,7 @@ fclose($fp);
 
 $subject = "Test mail";
 $message = "Hello! Your order deleted.";
-$from = "someonelse@example.com";
+$from = "6666wswzy6666@gmail.com";
 $headers = "From: $from";
 mail($to,$subject,$message,$headers);
 
