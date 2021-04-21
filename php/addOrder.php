@@ -1,25 +1,3 @@
-<?php
-if(!empty($_POST['submit'])) {
-
-    $id=$_GET['id'];
-    $order=file("..\TextFiles\orderInfo.txt");
-    foreach ($order as $k=>$o) {
-        
-        if ($k==$id) { 
-            $order[$k]=$_POST['user']."\t".$_POST['product']."\t".$_POST['quantity']."\t".$_POST['price'];
-            break;
-        }
-    }
-    unlink("..\TextFiles\orderInfo.txt");
-    $fp=fopen("..\TextFiles\orderInfo.txt","w");
-    foreach ($order as $value) {
-    fwrite($fp,$value);
-    }
-    fclose($fp);
-    echo "<script>location.href='orderList.php';</script>";
-}
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -103,36 +81,36 @@ if(!empty($_POST['submit'])) {
         <table class="tg" id="productTable">
         <thead>
           <tr>
-          
-            <th class="tg-header">User</th>
-            <th class="tg-header">Products</th>
-            <th class="tg-header">quantity</th>
-            <th class="tg-header">price</th>
+            <th class="tg-header">Product Name</th>
+            <th class="tg-header">Price</th>
+            <th class="tg-header">Quantity</th>
+           
             <th class="tg-header">Select Item</th>
-            
           </tr>
         </thead>
         <tbody>
-          <?php
-          $id=$_GET['id'];
-          $order=file("..\TextFiles\orderInfo.txt");
-          $line=explode("\t",$order[$id]);
-          
-          ?>
-            <form action="" method="post">
-            <tr>
-            <td><?php echo $line[0];?></td>
-            <td><?php echo $line[1];?></td>
-            <td class="tg-odd"><input type="text" name="quantity" value="<?php echo $line[2];?>"></td>
-            <td><?php echo $line[3];?></td>
-            <input type="hidden" name="user" value="<?php echo $line[0];?>">
-            <input type="hidden" name="product" value="<?php echo $line[1];?>">
-            <input type="hidden" name="price" value="<?php echo $line[3];?>">
 
-            <td class="tg-odd">
-                <input type="submit" name="submit" value="edit" class="btn btn-primary">
+            <form action="" method="post">
+            <?php
+                   
+                $cart=file("..\TextFiles\productCart.txt");
+                foreach ($cart as $k=>$c) {
+                    $line=explode("\t",$c);
+            ?>
+            <tr>
+            <td class="tg-odd"><?php echo $line[1];?></td>
+            <td class="tg-odd"><?php echo $line[2];?></td>
+            <td class="tg-odd"><?php echo $line[3];?></td>
+            
+            <td>
+            <a type="text" name="edit-product-button" style="font-weight: bold;" class="btn btn-primary" href="addOrderAct.php?id=<?php echo $k;?>" >Order</a>
+            
             </td>
           </tr>
+            <?php
+                }
+            ?>
+
           </form>
 
         </tbody>

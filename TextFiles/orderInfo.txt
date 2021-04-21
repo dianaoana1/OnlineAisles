@@ -1,1 +1,2 @@
-1	5.77395	
+oumbar	Apple	11	0.75
+oumbar	Apple	11	0.75

@@ -98,7 +98,7 @@ $_SESSION['file'] = "..\TextFiles\orderInfo.txt";
                 </li>
                 <li>
                     <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                    <p><a href="mailto:zixi.quan@concordia.ca?subject=SOEN287">online_aisles@groceries.ca</a></p>
+                    <p><a href="mailto:zixi.quan@concordia.ca?subject=SOEN287">online_grocerystore@groceries.ca</a></p>
                 </li>
                 <li>
                     <span><i class="fa fa-smile-o" aria-hidden="true"></i></span>
