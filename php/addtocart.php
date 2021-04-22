@@ -35,7 +35,23 @@ if(empty($_SESSION['cart'])){
 
     $_SESSION['cart'] = array($apple, $banana, $bread, $broccoli, $carrots, $cereals, $cheese, $chicken, $eggs, $groundbeef, $lobster, $milk, $mushrooms, $pasta, $pear, $rice, $salmon, $sausages, $shrimps);
 
-}
+} 
+// else{
+//     $newfile = "..\TextFiles\\newqty.txt";
+
+//     $linearr = array();
+//     if(filesize($newfile)){
+//         $newfiledirect = fopen($newfile, "r") or die("cannot open file");
+//         while(!feof($newfiledirect)){
+//             array_push(fgets($newfiledirect), $linearr);
+//         }
+//         for($i=0; $i < 19; $i++){
+//             if($_SESSION['cart'][$i] -> get_quantity() != (int)$linearr[$i]){
+//                 $_SESSION['cart'][$i] -> set_quantity((int)$linearr[$i]);
+//             }
+//         }
+//     }
+// }
 
 $quantity = $_POST["quantity"];
 
