@@ -35,7 +35,21 @@ if(!isset($_SESSION['cart'])){
 
     $_SESSION['cart'] = array($apple, $banana, $bread, $broccoli, $carrots, $cereals, $cheese, $chicken, $eggs, $groundbeef, $lobster, $milk, $mushrooms, $pasta, $pear, $rice, $salmon, $sausages, $shrimps);
 
-} 
+} else{
+    $file = "..\TextFiles\productCart.txt";
+    $filedirect = fopen($file, "r+") or die("cannot open file");
+    $qtyarr = array();
+    while(!feof($filedirect)){
+        $line = fgets($filedirect);
+        $linearr = explode("\t", $line);
+        array_push($qtyarr, $linearr[3]);
+    }
+    for($i=0;$i<19;$i++){
+        if($_SESSION['cart'][$i] -> get_quantity() != (int)$qtyarr[$i]){
+            $_SESSION['cart'][$i] -> set_quantity((int)$qtyarr[$i]);
+        }
+    }
+}
 
 $quantity = $_POST["quantity"];
 

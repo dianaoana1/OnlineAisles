@@ -195,6 +195,7 @@ ini_set('display_errors', 1);
                                 <th style="font-size: 18px; text-align:right" id = "estimatedTotal">$0.00</th>
                             </tr>
                         </table>
+                        <script>totalCalculators();</script>
                         <p style="font-size: 16px; margin:10px 0px; ">Discount code :
                             <br />
                             <input type="text" placeholder="Enter code here" style="margin: 10px 0px;width:auto !important">

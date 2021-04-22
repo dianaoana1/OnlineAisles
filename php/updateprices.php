@@ -18,8 +18,6 @@ function updatequantities(){
             $novalue = 0;
             array_push($qtyarr, $novalue);
         }
-        $q1 = $qtyarr[$i-1];
-        echo "$q1\t";
     }
     $_SESSION['productcart'] = "..\TextFiles\productCart.txt";
     $file = $_SESSION['productcart'];
@@ -40,11 +38,8 @@ function updatequantities(){
                 (int)$lineArr[3] = (int)$qtyarr[$count];
                 $count++;
             }
-            $newqty = $qtyarr[$count];
-            echo "$count";
         }
 
-        fwrite($newfiledirect, $lineArr[3]."\n");
         $newline = implode("\t", $lineArr);
         $contents = file_get_contents($file);
         $contents = str_replace($line, $newline, $contents);
@@ -72,55 +67,14 @@ function totalprice(){
 }
 
 if(isset($_POST['checkout'])){
-    $dataline = $_SESSION['count'] . "\t" . totalprice() . "\t";
- 
-    for($i = 2; $i <= $_SESSION['count']; $i++){
-        $dataline += $_SESSION['prodnum'.($i-1)];
-    }
-    $file = "..\TextFiles\checkout.txt";
-    $filedirect = fopen($file, "w+") or die("cannot open file");
-    fwrite($filedirect,$dataline);
-
+    updatequantities();
     //empties cart
     unset($_SESSION['cart']);
-
-   
 }
 
 if(isset($_POST['returnshopping'])){
     updatequantities();
-    unset($_SESSION['cart']);
-    $file = "..\TextFiles\\newqty.txt";
-    $filedirect = fopen($file, "r") or die("cannot open file");
-    $linearr = array();
-    while(!feof($filedirect)){
-        $line = fgets($filedirect);
-        array_push($linearr, (int)fgets($filedirect));
-        echo "$line";
-    }
-    $apple = new Item(1, "apple", getPrice("Apple"), $linearr[0], "../Images/apple.png");
-    $banana = new item(2, "banana", getPrice("Banana"), $linearr[1], "../Images/banana.jpg");
-    $bread = new item(3, "bread", getPrice("Slice Bread"), $linearr[2], "../Images/bread.jpg");
-    $broccoli = new item(4, "broccoli", getPrice("Broccoli"), $linearr[3], "../Images/brocco.jpg");
-    $carrots = new item(5, "carrots", getPrice("Carrots"), $linearr[4], "../Images/carrots.jpg");
-    $cereals = new item(6, "cereals", getPrice("Cereals"), $linearr[5], "../Images/cereal.jpg");
-    $cheese = new item(7, "cheese", getPrice("Cheese"), $linearr[6], "../Images/cheese.jpg");
-    $chicken = new item(8, "whole chicken", getPrice("Whole Chicken"), $linearr[7], "../Images/chicken.jpg");
-    $eggs = new item(9, "dozen of eggs", getPrice("Eggs"), $linearr[8], "../Images/eggs.jpeg");
-    $groundbeef = new item(10, "ground beef", getPrice("Ground Beef"), $linearr[9], "../Images/ground-beef.jpg");
-    $lobster = new item(11, "lobster", getPrice("Lobster"), $linearr[10], "../Images/lobster.jpg");
-    $milk = new item(12, "milk", getPrice("Milk"), $linearr[11], "../Images/milk.jpg");
-    $mushrooms = new item(13, "mushrooms", getPrice("Mushrooms"), $linearr[12], "../Images/mushrooms.jpg");
-    $pasta = new item(14, "fusilli", getPrice("Fusilli"), $linearr[13], "../Images/pasta.jpg");
-    $pear = new item(15, "pear", getPrice("Pear"), $linearr[14], "../Images/pear.jpg");
-    $rice = new item(16, "rice", getPrice("Rice"), $linearr[15], "../Images/rice.png");
-    $salmon = new item(17, "salmon", getPrice("Salmon"), $linearr[16], "../Images/salmon.jpg");
-    $sausages = new item(18, "sausages", getPrice("Two-Sausages"), $linearr[17], "../Images/sausages.jpg");
-    $shrimps = new item(19, "shrimps", getPrice("Shrimps"), $linearr[18], "../Images/shrimp.jpg");
-
-    //note bug first qty takes place of previous product
-
-    $_SESSION['cart'] = array($apple, $banana, $bread, $broccoli, $carrots, $cereals, $cheese, $chicken, $eggs, $groundbeef, $lobster, $milk, $mushrooms, $pasta, $pear, $rice, $salmon, $sausages, $shrimps);
+    //redirects to main page
     header('Location: Main Page.php');
 }
 ?>
