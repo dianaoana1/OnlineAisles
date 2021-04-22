@@ -4,21 +4,64 @@ session_start();
 
 $count = $_SESSION['count'];
 
+function updatequantities(){
+    $qtyarr = array();
+    
+    for($i = 1; $i <= $_SESSION['count']; $i++){
+        if(isset($_POST['quantity'.$i])){
+            array_push($qtyarr, isset($_POST['quantity'.$i]));
+        }
+        else{
+            array_push($qtyarr, -1);
+        }
+        $q1 = $_POST['quantity'.$i];
+        echo "$q1";
+    }
+    $_SESSION['productcart'] = "..\TextFiles\productCart.txt";
+    $file = $_SESSION['productcart'];
+
+    $filedirect = fopen($file, "r+") or die("cannot open file");
+    while(!feof($filedirect)){
+        $line = fgets($filedirect);
+        $lineArr = explode("\t",$line);
+        $count = 0;
+        if((int)$lineArr[3] > 0){
+            if($qtyArr[$count] == -1){
+                $lineArr[3] = 0;
+                $count++;
+            } else if ((int)$lineArr[3] == $qtyArr[$count]){
+                $count++;
+            } else {
+                $lineArr[3] = $qtyArr[$count];
+                $count++;
+            }
+            
+            $newline = implode("\t", $lineArr);
+            $contents = file_get_contents($file);
+            $contents = str_replace($line, $newline, $contents);
+            file_put_contents($file, $contents);
+
+        }
+
+    }
+
+}
+
 function totalprice(){
     $subtotal = 0;
-    
+    updatequantities();
+
     $_SESSION['productcart'] = "..\TextFiles\productCart.txt";
     $file = $_SESSION['productcart'];
 
     $filedirect = fopen($file, "r") or die("cannot open file");
 
-    for($i=1; $i <=$_SESSION['count']; $i++){
-        $qty=$_POST['quantity'.$i];
-        $subtotal += $qty;
-       
+    while(!feof($filedirect)){
+        $line = fgets($filedirect);
+        $lineArr = explode("\t",$line);
+        $subtotal += ($lineArr[2]*$lineArr[3]);
     }
 
-  
     $total = $subtotal * 1.05 * 1.0998;
     return $total;
 }
@@ -29,38 +72,16 @@ if(isset($_POST['checkout'])){
     for($i = 2; $i <= $_SESSION['count']; $i++){
         $dataline += $_SESSION['prodnum'.($i-1)];
     }
-    $file = "..\TextFiles\orderInfo.txt";
+    $file = "..\TextFiles\checkout.txt";
     $filedirect = fopen($file, "w+") or die("cannot open file");
     fwrite($filedirect,$dataline);
 
    
 }
 
-$data = file("..\TextFiles\productCart.txt");
-function replacequantity($data){
-
-}
-
 if(isset($_POST['returnshopping'])){
-    $products = $_SESSION['items'];
-    $_SESSION['productcart'] = "..\TextFiles\productCart.txt";
-    $file = $_SESSION['productcart'];
-
-    $filedirect = fopen($file, "w+") or die("cannot open file");
-    echo "$products[0] <br>";
-    echo "$products[1] <br>";
-    // while(!feof($file)){
-    //     $line = fgets($file);
-    //     $lineArr = explode("\t",$line);
-    //     for($i=0;$i<count($items);$i++){
-    //         if($lineArr[1] == $items[$i]){
-    //             $lineArr[3] = $_POST['quantity'.($i+1)];
-    //         }
-    //     }
-    //     $line = implode("\t", $lineArr);
-    //     fwrite($filedirect, $line);
-    // }
-    //header('Location: Main Page.php');
+    updatequantities();
+    header('Location: Main Page.php');
 }
 ?>
 

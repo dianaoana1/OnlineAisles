@@ -1,8 +1,5 @@
 <?php
 
-include_once 'php\productClass.php';
-include_once 'php\addtocart.php';
-
 session_start();
 error_reporting(~0);
 ini_set('display_errors', 1);
@@ -129,9 +126,9 @@ ini_set('display_errors', 1);
                                 <tr class="cart-row">
                                     <?php
                                     if(isset($_SESSION['cart'])){
-                                        $_SESSION['count'] = 1;
-                                        $count = $_SESSION['count'];
+                                        $count = 1;
                                         $file = fopen($_SESSION['productcart'], "r") or die("cannot read file productCart.txt");
+                                        $_SESSION['items'] = array();
                                         while(!feof($file)){
                                             $line = fgets($file);
                                             $lineArr = explode("\t",$line);
@@ -141,7 +138,6 @@ ini_set('display_errors', 1);
                                                 $image = $_SESSION['image'. $count];
                                                 (int)$_SESSION['quantity'.$count] = $lineArr[3];
                                                 $quantity = $_SESSION['quantity'.$count];
-                                                $_SESSION['items'] = array();
                                                 array_push($_SESSION['items'],$lineArr[1]);
                                                 $item = $lineArr[1];
                                                 (float)$_SESSION['price'.$count] = $lineArr[2];
@@ -164,6 +160,9 @@ ini_set('display_errors', 1);
                                                 $count++;
                                             }
                                         }
+                                        $_SESSION['count'] = $count-1;
+                                        $count = $_SESSION['count'];
+                                        echo "$count <br>";
                                     }
 
                                     ?>
