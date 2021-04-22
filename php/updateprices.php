@@ -9,42 +9,44 @@ function updatequantities(){
     
     for($i = 1; $i <= $_SESSION['count']; $i++){
         if(isset($_POST['quantity'.$i])){
-            array_push($qtyarr, isset($_POST['quantity'.$i]));
+            array_push($qtyarr, $_POST['quantity'.$i]);
         }
         else{
-            array_push($qtyarr, -1);
+            $novalue = 0;
+            array_push($qtyarr, $novalue);
         }
-        $q1 = $_POST['quantity'.$i];
-        echo "$q1";
+        $q1 = $qtyarr[$i-1];
+        echo "$q1" + "\t";
     }
     $_SESSION['productcart'] = "..\TextFiles\productCart.txt";
     $file = $_SESSION['productcart'];
 
     $filedirect = fopen($file, "r+") or die("cannot open file");
+
+    $newfile = "..\TextFiles\\newqty.txt";
+    $newfiledirect = fopen($newfile, "w+") or die("cannot open file");
+
+    $count = 0;
     while(!feof($filedirect)){
         $line = fgets($filedirect);
         $lineArr = explode("\t",$line);
-        $count = 0;
         if((int)$lineArr[3] > 0){
-            if($qtyArr[$count] == -1){
-                $lineArr[3] = 0;
-                $count++;
-            } else if ((int)$lineArr[3] == $qtyArr[$count]){
+            if ((int)$lineArr[3] == (int)$qtyarr[$count]){
                 $count++;
             } else {
-                $lineArr[3] = $qtyArr[$count];
+                (int)$lineArr[3] = (int)$qtyarr[$count];
                 $count++;
             }
-            
-            $newline = implode("\t", $lineArr);
-            $contents = file_get_contents($file);
-            $contents = str_replace($line, $newline, $contents);
-            file_put_contents($file, $contents);
-
+            $newqty = $qtyarr[$count];
+            echo "$count";
         }
 
+        fwrite($newfiledirect, $lineArr[3]."\n");
+        $newline = implode("\t", $lineArr);
+        $contents = file_get_contents($file);
+        $contents = str_replace($line, $newline, $contents);
+        file_put_contents($file, $contents);
     }
-
 }
 
 function totalprice(){
@@ -59,7 +61,7 @@ function totalprice(){
     while(!feof($filedirect)){
         $line = fgets($filedirect);
         $lineArr = explode("\t",$line);
-        $subtotal += ($lineArr[2]*$lineArr[3]);
+        $subtotal += ((float)$lineArr[2]*(float)$lineArr[3]);
     }
 
     $total = $subtotal * 1.05 * 1.0998;
